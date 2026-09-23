@@ -16,8 +16,8 @@ def write_csv(p, rows, fields):
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument("--data-root",type=Path,default=Path("E题数据/E题数据"))
-    ap.add_argument("--out",type=Path,default=Path("outputs/问题1_全量特征结果"))
+    ap.add_argument("--data-root",type=Path,default=Path(__file__).resolve().parents[1] / "E题数据" / "E题数据")
+    ap.add_argument("--out",type=Path,default=Path(__file__).resolve().parents[1] / "outputs" / "问题1_全量特征结果")
     args=ap.parse_args(); out=args.out.resolve(); root=args.data_root.resolve()
     label_path,video_root=q1.find_inputs(root); labels=q1.load_labels(label_path)
     # Remove account and server-specific absolute paths from portable files.
@@ -65,7 +65,7 @@ def main():
     # Scrub previous-run absolute home/project locations from the progress log.
     log_path=out/"run.log"
     if log_path.exists():
-        project=Path(__file__).resolve().parent
+        project=Path(__file__).resolve().parents[1]
         raw=log_path.read_text(encoding="utf-8",errors="replace")
         raw=raw.replace(str(project),".").replace(str(out),args.out.as_posix())
         log_path.write_text(raw,encoding="utf-8")
@@ -147,7 +147,7 @@ def main():
         if n: durations.extend((times[:,1]-times[:,0]).tolist())
         d.close()
     # No generated CSV/JSON/log should contain the machine-specific project root.
-    project=str(Path(__file__).resolve().parent)
+    project=str(Path(__file__).resolve().parents[1])
     private_refs=[]
     for p in out.rglob("*"):
         if p.suffix.lower() in {".csv",".json",".log"} and p.is_file():

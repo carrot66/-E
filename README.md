@@ -1,58 +1,43 @@
 # 第二十三届研究生数学建模竞赛 E 题：多模态情感识别
 
-本仓库包含第一问的 MOSEI 词级多模态特征提取代码和结果，以及第二问的缺失模态情感预测代码。竞赛原始附件、视频、数据集压缩包和预训练模型权重不纳入仓库；请按竞赛官方渠道获取附件，并在本机设置数据目录。第二问的工作结果目前仅保存在本地与远程项目目录，尚未推送到 GitHub。
+仓库按题目问题拆分为两个独立目录：
 
-## 项目文件
+- [`question1/`](question1/)：第一问的 100 条原始视频三模态特征提取、词级时序对齐、ASR 诊断和质量审计。
+- [`question2/`](question2/)：第二问的缺失模态鲁棒情感模型、消融实验、验证集分析和附件 3 推理。
+- [`outputs/`](outputs/)：已生成的第一问全量特征结果及本地实验结果。原始数据、完整 MOSEI 压缩包、缓存和模型权重不上传。
 
-- `mosei_solution.py`：早期基线，已由第二问代码替代。
-- `q1_feature_extract.py`：第一问特征提取和词级时序对齐。
-- `q1_asr_evaluate.py`：第一问独立ASR解码与WER/CER诊断，区分识别误差和强制对齐质量。
-- `audit_q1_outputs.py`：检查第一问输出覆盖率、时间区间及路径信息。
-- `问题1_特征提取与时序对齐说明.md`：按题目第1问(1)–(4)组织的方案、结果与典型样本说明。
-- `outputs/问题1_全量特征结果/`：100条样本的逐词特征文件、中文汇总表、审计记录和典型样本视频帧；`问题1_全量特征文件_提交版.zip` 可直接作为全量特征附件。
-- `README_Q1.md`：第一问方法、运行方式与产物说明。
-- `q2_experiment.py`、`q2_ensemble.py`、`q2_predict_ensemble.py`：第二问训练、选模和独立推理。
-- `q2_error_analysis.py`、`q2_visualize_ensemble.py`：第二问错误归因与验证集图表。
-- `README_Q2.md`、`问题2_鲁棒性模型与结果说明.md`：第二问运行流程及现阶段实测结论。
+## 第一问
 
-## 安装
+阅读 [`question1/README_Q1.md`](question1/README_Q1.md) 和 [`question1/问题1_特征提取与时序对齐说明.md`](question1/问题1_特征提取与时序对齐说明.md)。第一问产物在 `outputs/问题1_全量特征结果/`，其中包含逐样本 NPZ、词级对齐表、100 条汇总表、审计记录和提交版 ZIP。
+
+从仓库根目录运行：
 
 ```bash
-python -m pip install -r requirements.txt
-```
-
-第一问需要单独安装与共享 CUDA/PyTorch 环境兼容的 MediaPipe 依赖，具体 overlay 虚拟环境命令见 `README_Q1.md`。特征提取需要 FFmpeg 和兼容的 GPU（也可使用 CPU，但运行会较慢）；预训练模型首次使用时会下载模型权重。
-
-## 第一问运行
-
-在竞赛附件目录下准备原始 MOSEI 视频及 `label-100.xlsx`，然后执行：
-
-```bash
-"$HOME/venvs/q1mp/bin/python" q1_feature_extract.py \
-  --data-root "/path/to/E题数据" \
+python -m pip install --target "$Q1_SITE" -r question1/q1_requirements.txt
+python question1/q1_feature_extract.py \
+  --data-root "E题数据/E题数据" \
   --out "outputs/问题1_全量特征结果" \
-  --visual-fps 10 \
-  --resume
-```
-
-检查已有结果：
-
-```bash
-"$HOME/venvs/q1mp/bin/python" audit_q1_outputs.py \
-  --data-root "/path/to/E题数据" \
+  --visual-fps 10 --resume
+python question1/audit_q1_outputs.py \
+  --data-root "E题数据/E题数据" \
   --out "outputs/问题1_全量特征结果"
 ```
 
 ## 第二问
 
-第二问的训练、消融、附件3全量预测和独立复核方法见 `README_Q2.md`。目前验证集收益明显，但留出测试集的 Macro-F1 未稳定超过基线，因此暂未按“效果好了再同步”的约定推送 GitHub。
+阅读 [`question2/README_Q2.md`](question2/README_Q2.md) 和 [`question2/问题2_鲁棒性模型与结果说明.md`](question2/问题2_鲁棒性模型与结果说明.md)。默认路径均相对仓库根目录，数据与权重通过命令行参数或本地目录提供。
 
-## 旧版基线
-
-`mosei_solution.py` 的训练与推理命令及数据格式要求见脚本帮助：
+安装第二问依赖并从根目录运行：
 
 ```bash
-python mosei_solution.py --help
+python -m pip install -r question2/requirements.txt
+python question2/q2_prepare_safe_full_data.py
+python question2/q2_full_mosei_experiment.py --device cuda:1
+python question2/q2_full_bert_text_experiment.py --mode train --device cuda:1
+python question2/q2_full_bert_fusion_experiment.py --mode train --device cuda:1
+python question2/q2_predict_fixed_text_mixture.py --device cuda:1
 ```
 
-当前代码和输出是可复现的建模起点；结果仍需通过合适的数据划分、消融和重复实验进行验证，不代表竞赛名次保证。
+第二问脚本会把训练缓存、模型权重和预测结果写到被 `.gitignore` 排除的 `work/` 与 `outputs/` 子目录；不会读取或上传完整 MOSEI test 标签。
+
+`question2/legacy_mosei_solution.py` 仅保留早期基线，正式实验以同目录的 `q2_*.py` 为准。`n

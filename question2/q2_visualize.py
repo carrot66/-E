@@ -12,7 +12,7 @@ mpl.rcParams.update({
     'axes.linewidth': .8, 'svg.fonttype': 'none', 'pdf.fonttype': 42,
 })
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / 'outputs' / '问题2_首轮实验结果'
 OUT = RESULT / '图表'
 COLORS = {'普通融合': '#7A8FA6', '连续缺失增强': '#B7A1C6', '动态门控': '#2E8B8B', '门控蒸馏': '#D98E5B'}

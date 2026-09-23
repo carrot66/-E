@@ -11,7 +11,7 @@ from torch import nn
 from torch.utils.data import Dataset, DataLoader
 from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error
 
-DEFAULT_DATA_ROOT = Path(__file__).resolve().parent / 'E题数据' / 'E题数据'
+DEFAULT_DATA_ROOT = Path(__file__).resolve().parents[1] / 'E题数据' / 'E题数据'
 
 def seed_all(s=2026):
     random.seed(s); np.random.seed(s); torch.manual_seed(s); torch.cuda.manual_seed_all(s)

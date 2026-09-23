@@ -38,7 +38,7 @@ def main():
         banks.append({'hide':hide,'t':norm_text(text,observed,stats)})
     quick=scenarios(va,encoder,cache,stats,source_hash)
     full=scenarios(va,encoder,cache,stats,source_hash,full=True,repeats=2)
-    provenance=dict(config); provenance['code_sha256']=sha(ROOT/'q2_experiment.py')
+    provenance=dict(config); provenance['code_sha256']=sha(ROOT/'question2/q2_experiment.py')
     provenance['variant']='hierarchical neutral gate and polarity gate'
     selected=[]
     for seed in (2026,2027,2028):

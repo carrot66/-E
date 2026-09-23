@@ -13,6 +13,8 @@ import openpyxl
 import torch
 from transformers import AutoModelForCTC, AutoTokenizer
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 MODEL = 'facebook/wav2vec2-base-960h'
 WORD = re.compile(r"[A-Z0-9]+(?:'[A-Z0-9]+)*")
 
@@ -65,9 +67,9 @@ def load_reference(path: Path) -> dict[str, str]:
 @torch.inference_mode()
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data-root', type=Path, default=Path('E题数据/E题数据'))
-    parser.add_argument('--manifest', type=Path, default=Path('outputs/问题1_全量特征结果/sample_manifest.csv'))
-    parser.add_argument('--out', type=Path, default=Path('outputs/问题1_ASR独立评估'))
+    parser.add_argument('--data-root', type=Path, default=PROJECT_ROOT / 'E题数据' / 'E题数据')
+    parser.add_argument('--manifest', type=Path, default=PROJECT_ROOT / 'outputs' / '问题1_全量特征结果' / 'sample_manifest.csv')
+    parser.add_argument('--out', type=Path, default=PROJECT_ROOT / 'outputs' / '问题1_ASR独立评估')
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)

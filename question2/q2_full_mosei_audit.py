@@ -20,7 +20,7 @@ import numpy as np
 from q2_group_cv_audit import make_group_folds, sha256_id_order
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def get_video(sample_id: str) -> str:

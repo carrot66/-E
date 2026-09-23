@@ -23,7 +23,7 @@ import torch.nn.functional as F
 from torch import nn
 from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error, confusion_matrix
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 MODEL_ID = 'google-bert/bert-base-uncased'
 MODEL_REVISION = '86b5e0934494bd15c9632b12f734a8a67f723594'
 METHODS = {'baseline': '普通融合', 'augmentation': '连续缺失增强', 'gated': '动态门控', 'distilled': '门控蒸馏', 'hierarchical': '分层门控'}

@@ -35,7 +35,7 @@ from q2_full_mosei_experiment import (audit_splits, class_weights,
 from q2_scattered_gap_experiment import (get_banks, make_scattered_suite,
                                          profile)
 
-CONFIG_PATH = ROOT / 'q2_full_bert_fusion_config.json'
+CONFIG_PATH = Path(__file__).resolve().parent / 'q2_full_bert_fusion_config.json'
 DEFAULT_OUT = ROOT / 'outputs/问题2_完整数据监督BERT融合实验'
 FROZEN_OUT = ROOT / 'outputs/问题2_完整MOSEI训练实验'
 LABEL_CSV = (ROOT / 'work/full_mosei/CMU-MOSEI_完整版_对齐特征与标签/'

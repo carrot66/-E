@@ -10,7 +10,7 @@ mpl.rcParams.update({'font.family':'sans-serif',
     'font.sans-serif':['WenQuanYi Micro Hei','Arial','DejaVu Sans'],
     'font.size':8,'axes.spines.right':False,'axes.spines.top':False,
     'axes.linewidth':.8,'svg.fonttype':'none','pdf.fonttype':42})
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'outputs/问题2_优化实验结果'
 DEST=BASE/'图表'
 DEST.mkdir(parents=True,exist_ok=True)
