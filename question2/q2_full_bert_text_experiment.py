@@ -27,8 +27,8 @@ from q2_experiment import ROOT, derive_masks, dump, metrics, runtime, seed_all, 
 CONFIG_PATH = Path(__file__).resolve().parent / 'q2_full_bert_text_config.json'
 FULL_SOURCE = ROOT / 'work/full_mosei/safe_train_valid.pkl'
 SAFE_MANIFEST = ROOT / 'work/full_mosei/safe_train_valid.manifest.json'
-DEFAULT_OUT = ROOT / 'outputs/问题2_完整数据BERT文本编码实验'
-SAFETY_AUDIT = (ROOT / 'outputs/问题2_完整版MOSEI安全整合审计/'
+DEFAULT_OUT = ROOT / 'outputs/question2/问题2_完整数据BERT文本编码实验'
+SAFETY_AUDIT = (ROOT / 'outputs/question2/问题2_完整版MOSEI安全整合审计/'
                 '问题2_完整版MOSEI与竞赛数据安全整合审计.json')
 
 

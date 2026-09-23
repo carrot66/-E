@@ -1,0 +1,21 @@
+{
+  "source_sha256": "45eccfb748a87c80ecab9bfac29582e7b1466bf6605ff29d3b338a75120bf791",
+  "label_csv_sha256": "52d885bd1e8b29a4c06a69e2b1dd67dd02f7bcbdfa38ad918144fd5673a83521",
+  "code_sha256": "3d8e461fc865affba3ecaa3f98d48c8ba4684481cf8779343d4e9e65ab00c158",
+  "seed": 2026,
+  "bert_model": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "python": "3.12.13",
+  "torch": "2.9.0+cu128",
+  "train_samples": 16326,
+  "validation_samples": 1871,
+  "architecture": "Fusion hidden96, one temporal Transformer; clean teacher ungated, student gated",
+  "teacher_loss": "class-weighted CE + 0.6 SmoothL1",
+  "student_loss": "teacher loss + 0.2*4 KL(T=2) + 0.1 SmoothL1 on eligible teacher train predictions",
+  "optimizer": "AdamW lr=3e-4 wd=1e-3, batch64, dropout0.2, clip1",
+  "teacher_selection": "full valid clean Macro-F1 - 0.1 MAE",
+  "student_selection": "0.4 clean F1 + 0.3 contiguous F1 + 0.3 scattered F1 - 0.1 weighted MAE",
+  "student_augmentation": "35% clean, 30% contiguous T/A/V subsets 10/30/50%, 35% scattered common TAV 10/20/30%",
+  "student_acceptance": "full-valid score >= teacher score + 0.005; clean F1 >= teacher clean F1 - 0.01",
+  "test_and_attachment3_policy": "no test or attachment3 data used for fitting, early stopping or selection",
+  "attachment2_valid_note": "subset of full valid, descriptive only, not independent selection"
+}

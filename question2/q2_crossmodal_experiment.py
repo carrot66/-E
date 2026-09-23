@@ -391,10 +391,10 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-root', default='E题数据/E题数据')
-    parser.add_argument('--out', default='outputs/问题2_交叉模态一致性实验')
+    parser.add_argument('--out', default='outputs/question2/问题2_交叉模态一致性实验')
     parser.add_argument('--seed', type=int, default=2026)
     parser.add_argument('--device', default='cuda:1')
     parser.add_argument('--epochs', type=int, default=40)
     parser.add_argument('--patience', type=int, default=7)
-    parser.add_argument('--baseline-checkpoint', default='outputs/问题2_首轮实验结果/问题2_门控蒸馏_种子2026.pt')
+    parser.add_argument('--baseline-checkpoint', default='outputs/question2/问题2_首轮实验结果/问题2_门控蒸馏_种子2026.pt')
     main(parser.parse_args())

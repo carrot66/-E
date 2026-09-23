@@ -1,0 +1,55 @@
+{
+  "all_100": {
+    "samples": 100,
+    "reference_words": 1934,
+    "word_edits": 766,
+    "WER": 0.3960703205791106,
+    "reference_chars": 10614,
+    "char_edits": 2856,
+    "CER": 0.26907857546636516
+  },
+  "non_silent": {
+    "samples": 98,
+    "reference_words": 1910,
+    "word_edits": 742,
+    "WER": 0.38848167539267014,
+    "reference_chars": 10468,
+    "char_edits": 2710,
+    "CER": 0.2588842185708827
+  },
+  "by_alignment": {
+    "proportional_fallback_low_ctc_confidence": {
+      "samples": 19,
+      "reference_words": 278,
+      "word_edits": 302,
+      "WER": 1.0863309352517985,
+      "reference_chars": 1582,
+      "char_edits": 1328,
+      "CER": 0.8394437420986094
+    },
+    "proportional_fallback_silent_audio": {
+      "samples": 2,
+      "reference_words": 24,
+      "word_edits": 24,
+      "WER": 1.0,
+      "reference_chars": 146,
+      "char_edits": 146,
+      "CER": 1.0
+    },
+    "wav2vec2_ctc_forced_alignment": {
+      "samples": 79,
+      "reference_words": 1632,
+      "word_edits": 440,
+      "WER": 0.2696078431372549,
+      "reference_chars": 8886,
+      "char_edits": 1382,
+      "CER": 0.15552554580238578
+    }
+  },
+  "normalization": "uppercase; punctuation removed except intraword apostrophe; CER includes spaces",
+  "method": "greedy CTC decode without supplying reference transcript",
+  "reference": "competition label-100.xlsx, not manually corrected",
+  "model": "facebook/wav2vec2-base-960h",
+  "model_revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "caution": "alignment groups are selected using confidence from the same CTC model; they are diagnostic subsets, not independent ASR benchmarks"
+}

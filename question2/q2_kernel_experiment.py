@@ -51,7 +51,7 @@ def consistent_regression(class_index: np.ndarray, raw: np.ndarray) -> np.ndarra
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-root', type=Path, default=ROOT / 'E题数据/E题数据')
-    parser.add_argument('--out', type=Path, default=ROOT / 'outputs/问题2_核特征浅层对照')
+    parser.add_argument('--out', type=Path, default=ROOT / 'outputs/question2/问题2_核特征浅层对照')
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)

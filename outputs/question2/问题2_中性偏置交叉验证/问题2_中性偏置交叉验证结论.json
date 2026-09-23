@@ -1,0 +1,154 @@
+{
+  "purpose": "validation-only neutral-logit calibration diagnostic",
+  "data_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "model_checkpoint_sha256": {
+    "distilled_2026": "e2cdcb93677c78a0aa2b744b1e7a495db9fd1ea125fa6bfdef74e97a7971abf7",
+    "distilled_2027": "45ce6a5275a86d417db7698e2a50832167fc00dee7dc40db2728d39245a1b60f",
+    "distilled_2028": "d2fee9296bbc4c1422016ecaadc8c1b40a077b4f8d2a3c33348ef87bfd9dbd7f"
+  },
+  "grid": [
+    -1.0,
+    -0.9,
+    -0.8,
+    -0.7,
+    -0.6,
+    -0.5,
+    -0.4,
+    -0.3,
+    -0.2,
+    -0.1,
+    -0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "grouping": "video ID, 5-fold stratified grouped cross-fit",
+  "folds": [
+    {
+      "fold": 1,
+      "holdout_n": 147,
+      "holdout_video_groups": 52,
+      "holdout_class_counts": [
+        42,
+        37,
+        68
+      ],
+      "fit_selected_neutral_bias": 0.2,
+      "fit_score": 0.5526732188307338,
+      "holdout_score_before": 0.5742860298141261,
+      "holdout_score_after": 0.5707591600116232,
+      "holdout_clean_F1_before": 0.6479273442061302,
+      "holdout_clean_F1_after": 0.6451285184179564,
+      "holdout_missing_F1_before": 0.6178422075447723,
+      "holdout_missing_F1_after": 0.6132391036587415
+    },
+    {
+      "fold": 2,
+      "holdout_n": 145,
+      "holdout_video_groups": 47,
+      "holdout_class_counts": [
+        40,
+        37,
+        68
+      ],
+      "fit_selected_neutral_bias": -0.1,
+      "fit_score": 0.5432643642218784,
+      "holdout_score_before": 0.6209156321120428,
+      "holdout_score_after": 0.6131911952740459,
+      "holdout_clean_F1_before": 0.6975738609596878,
+      "holdout_clean_F1_after": 0.6861389817911557,
+      "holdout_missing_F1_before": 0.6664419099191373,
+      "holdout_missing_F1_after": 0.6625249303156975
+    },
+    {
+      "fold": 3,
+      "holdout_n": 144,
+      "holdout_video_groups": 48,
+      "holdout_class_counts": [
+        41,
+        36,
+        67
+      ],
+      "fit_selected_neutral_bias": 0.2,
+      "fit_score": 0.5600465914986255,
+      "holdout_score_before": 0.5457058769490648,
+      "holdout_score_after": 0.5390893677073745,
+      "holdout_clean_F1_before": 0.592360891141379,
+      "holdout_clean_F1_after": 0.582652329749104,
+      "holdout_missing_F1_before": 0.6051894414100861,
+      "holdout_missing_F1_after": 0.6012560976479142
+    },
+    {
+      "fold": 4,
+      "holdout_n": 145,
+      "holdout_video_groups": 42,
+      "holdout_class_counts": [
+        41,
+        37,
+        67
+      ],
+      "fit_selected_neutral_bias": -0.1,
+      "fit_score": 0.5832954354870815,
+      "holdout_score_before": 0.45641939460455466,
+      "holdout_score_after": 0.4450125913428385,
+      "holdout_clean_F1_before": 0.5231434670261769,
+      "holdout_clean_F1_after": 0.5239814595020053,
+      "holdout_missing_F1_before": 0.5212572511704354,
+      "holdout_missing_F1_after": 0.4981012171087662
+    },
+    {
+      "fold": 5,
+      "holdout_n": 147,
+      "holdout_video_groups": 50,
+      "holdout_class_counts": [
+        42,
+        37,
+        68
+      ],
+      "fit_selected_neutral_bias": 0.1,
+      "fit_score": 0.5572969997849582,
+      "holdout_score_before": 0.5623623508059449,
+      "holdout_score_after": 0.556116376941405,
+      "holdout_clean_F1_before": 0.632215669547371,
+      "holdout_clean_F1_after": 0.6212681375472072,
+      "holdout_missing_F1_before": 0.6045494611798141,
+      "holdout_missing_F1_after": 0.6037473020922862
+    }
+  ],
+  "OOF_before": {
+    "score": 0.5539247755634427,
+    "clean_Macro_F1": 0.620798489893552,
+    "missing_Macro_F1": 0.6048740909898792,
+    "clean_MAE": 0.5823522806167603,
+    "missing_MAE": 0.5958780169486999,
+    "clean_Accuracy": 0.635989010989011
+  },
+  "OOF_after": {
+    "score": 0.5483241702663679,
+    "clean_Macro_F1": 0.6148525726684334,
+    "missing_Macro_F1": 0.5997355166283405,
+    "clean_MAE": 0.5824164748191833,
+    "missing_MAE": 0.5969810128211975,
+    "clean_Accuracy": 0.6291208791208791
+  },
+  "OOF_recall_before_Negative_Neutral_Positive": [
+    0.6844660194174758,
+    0.5271739130434783,
+    0.665680473372781
+  ],
+  "OOF_recall_after_Negative_Neutral_Positive": [
+    0.6844660194174758,
+    0.5217391304347826,
+    0.6538461538461539
+  ],
+  "test_used_for_selection_or_metrics": false,
+  "attachment3_read": false,
+  "interpretation_limit": "The underlying checkpoint was itself selected on full validation, so cross-fit offset diagnostics are not a new independent holdout."
+}

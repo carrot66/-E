@@ -1,0 +1,37 @@
+{
+  "safe_data_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "safe_manifest_sha256": "194f8f0e32b6f3f1513b3bbf1be6126ac4084198c7158976b34b15db9724d82e",
+  "fold_manifest_sha256": "5079fc86da5604c11adf20a35784e952c2f54215fd447b1c80c44a65a3f7cbbd",
+  "script_sha256": "faa54adbe9856405abbc992c41328f5903f4febb010930c1731c2925201a39fc",
+  "fold": 0,
+  "seed": 2026,
+  "fit_samples": 13061,
+  "internal_validation_samples": 3265,
+  "train_valid_video_overlap": 0,
+  "normalization": "fit on four train folds only",
+  "full_valid_or_test_used": false,
+  "model": "Fusion teacher ungated + student gated; hidden96 one temporal Transformer",
+  "loss": "weighted CE +0.6 SmoothL1; student correct-teacher KD 0.2*4 KL(T=2)+0.1 SmoothL1",
+  "augmentation": "35% clean/30% contiguous 10,30,50%/35% scattered TAV 10,20,30%",
+  "teacher_selection": "fold0 clean MacroF1 -0.1 MAE",
+  "student_selection": "fold0 0.4 clean F1+0.3 contiguous F1+0.3 scattered F1-0.1 corresponding MAE",
+  "settings": [
+    {
+      "name": "current",
+      "learning_rate": 0.0003,
+      "dropout": 0.2
+    },
+    {
+      "name": "conservative",
+      "learning_rate": 0.0001,
+      "dropout": 0.3
+    }
+  ],
+  "acceptance": "conservative student score >= current+0.005 and clean F1 >=current-0.01 and scattered F1 >=current-0.01",
+  "max_teacher_epochs": 12,
+  "max_student_epochs": 16,
+  "patience": 5,
+  "batch_size": 64,
+  "python": "3.12.13",
+  "torch": "2.9.0+cu128"
+}

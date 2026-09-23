@@ -1,7 +1,14 @@
 E题数据/
 work/
 outputs/*
-!outputs/问题1_全量特征结果/
+!outputs/question1/
+!outputs/question1/**
+!outputs/question2/
+!outputs/question2/**/
+outputs/question2/**/*.pt
+outputs/question2/**/*.pth
+outputs/question2/**/*.bin
+outputs/question2/**/*.pkl
 __pycache__/
 *.py[cod]
 .env

@@ -336,9 +336,9 @@ if __name__ == "__main__":
     parser.add_argument("--attachment2-labels", default=ROOT / "E题数据/E题数据/附件2-数据集特征文件/label.xlsx")
     parser.add_argument("--old-checkpoints", nargs=3, required=True,
                         metavar=("DISTILLED_2026", "DISTILLED_2027", "DISTILLED_2028"))
-    parser.add_argument("--teacher-checkpoint", default=ROOT / "outputs/问题2_完整MOSEI训练实验/完整数据_干净教师_种子2026.pt")
-    parser.add_argument("--student-checkpoint", default=ROOT / "outputs/问题2_完整MOSEI训练实验/完整数据_缺失蒸馏学生_种子2026.pt")
-    parser.add_argument("--output", default=ROOT / "outputs/问题2_完整版验证同口径对照")
+    parser.add_argument("--teacher-checkpoint", default=ROOT / "outputs/question2/问题2_完整MOSEI训练实验/完整数据_干净教师_种子2026.pt")
+    parser.add_argument("--student-checkpoint", default=ROOT / "outputs/question2/问题2_完整MOSEI训练实验/完整数据_缺失蒸馏学生_种子2026.pt")
+    parser.add_argument("--output", default=ROOT / "outputs/question2/问题2_完整版验证同口径对照")
     parser.add_argument("--cache", default=ROOT / "work/问题2_特征缓存")
     parser.add_argument("--device", default="cuda:1")
     parser.add_argument("--bootstrap-replicates", type=int, default=1000)

@@ -61,14 +61,14 @@ def selection_score(rows):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--data-root', default=str(ROOT/'E题数据/E题数据'))
-    parser.add_argument('--out', default=str(ROOT/'outputs/问题2_优化实验结果'))
+    parser.add_argument('--out', default=str(ROOT/'outputs/question2/问题2_优化实验结果'))
     parser.add_argument('--device', default='cuda:1')
     args=parser.parse_args(); runtime(args.device); seed_all(2026)
     root=Path(args.data_root); out=Path(args.out); out.mkdir(parents=True, exist_ok=True)
     source=root/'附件2-数据集特征文件/aligned_50.pkl'; source_hash=sha(source)
-    originals={2026:ROOT/'outputs/问题2_首轮实验结果',
-               2027:ROOT/'outputs/问题2_重复实验_种子2027',
-               2028:ROOT/'outputs/问题2_重复实验_种子2028'}
+    originals={2026:ROOT/'outputs/question2/问题2_首轮实验结果',
+               2027:ROOT/'outputs/question2/问题2_重复实验_种子2027',
+               2028:ROOT/'outputs/question2/问题2_重复实验_种子2028'}
     paths={}
     for seed, folder in originals.items():
         for method in ('baseline','augmentation','gated','distilled'):

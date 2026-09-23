@@ -1,0 +1,26 @@
+{
+  "full_data": {
+    "train": {
+      "samples": 16326,
+      "videos": 2249
+    },
+    "valid": {
+      "samples": 1871,
+      "videos": 300
+    }
+  },
+  "attachment2": {
+    "train": 3395,
+    "valid": 728,
+    "test": 727
+  },
+  "full_train_additional_to_attachment2_train": 12931,
+  "full_train_vs_attachment2_valid_test_video_overlap": 0,
+  "full_train_valid_video_overlap": 0,
+  "annex3_train_valid_feature_matches": 0,
+  "independent_annex3_safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884",
+  "label_mapping": "Negative=0 for r<0; Neutral=1 for r=0; Positive=2 for r>0",
+  "policy": "Only full-data train used to fit; full-data valid selects. Full/attachment2 test excluded.",
+  "joint_zero_unk_masked_train": 0,
+  "joint_zero_unk_masked_valid": 0
+}

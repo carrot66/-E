@@ -11,7 +11,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument('--checkpoint',required=True)
     p.add_argument('--data-root',default=str(ROOT/'E题数据/E题数据'))
-    p.add_argument('--out',default=str(ROOT/'outputs/问题2_附件3预测'))
+    p.add_argument('--out',default=str(ROOT/'outputs/question2/问题2_附件3预测'))
     p.add_argument('--device',default='cuda:1')
     a=p.parse_args(); runtime(a.device)
     ck=torch.load(a.checkpoint,map_location=a.device,weights_only=False)

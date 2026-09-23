@@ -1,0 +1,533 @@
+{
+  "policy": "附件3只作输入重合检查，绝不读取其匹配来源的标签。匹配到完整训练集的视频必须全组排除。",
+  "zip_csv": {
+    "samples": 22856,
+    "videos": 3225,
+    "split_counts": {
+      "train": 16326,
+      "valid": 1871,
+      "test": 4659
+    },
+    "split_video_counts": {
+      "train": 2249,
+      "valid": 300,
+      "test": 676
+    },
+    "train_class_counts": {
+      "Positive": 8048,
+      "Neutral": 3540,
+      "Negative": 4738
+    },
+    "valid_class_counts": {
+      "Positive": 932,
+      "Neutral": 433,
+      "Negative": 506
+    },
+    "test_label_policy": "完整版test的标签字段在读取CSV后立即置空；不做标签统计或核对",
+    "original_samples_all_present": 4850,
+    "original_train_valid_mode_label_text_mismatch": {
+      "mode": 0,
+      "regression_label": 0,
+      "raw_text": 0
+    },
+    "additional_samples": 18006,
+    "additional_by_split": {
+      "train": 12931,
+      "valid": 1143,
+      "test": 3932
+    },
+    "additional_train_from_existing_train_videos": 10600,
+    "additional_train_from_entirely_new_videos": 2331,
+    "additional_train_overlapping_original_valid_test_videos": 0,
+    "optional_label_T_A_V_nonempty": {
+      "label_T": 0,
+      "label_A": 0,
+      "label_V": 0
+    }
+  },
+  "full_feature_shapes": {
+    "train": {
+      "text_bert": {
+        "shape": [
+          16326,
+          3,
+          50
+        ],
+        "dtype": "int64"
+      },
+      "text": {
+        "shape": [
+          16326,
+          50,
+          768
+        ],
+        "dtype": "float32"
+      },
+      "audio": {
+        "shape": [
+          16326,
+          50,
+          74
+        ],
+        "dtype": "float64"
+      },
+      "vision": {
+        "shape": [
+          16326,
+          50,
+          35
+        ],
+        "dtype": "float64"
+      }
+    },
+    "valid": {
+      "text_bert": {
+        "shape": [
+          1871,
+          3,
+          50
+        ],
+        "dtype": "int64"
+      },
+      "text": {
+        "shape": [
+          1871,
+          50,
+          768
+        ],
+        "dtype": "float32"
+      },
+      "audio": {
+        "shape": [
+          1871,
+          50,
+          74
+        ],
+        "dtype": "float64"
+      },
+      "vision": {
+        "shape": [
+          1871,
+          50,
+          35
+        ],
+        "dtype": "float64"
+      }
+    },
+    "test": {
+      "text_bert": {
+        "shape": [
+          4659,
+          3,
+          50
+        ],
+        "dtype": "int64"
+      },
+      "text": {
+        "shape": [
+          4659,
+          50,
+          768
+        ],
+        "dtype": "float32"
+      },
+      "audio": {
+        "shape": [
+          4659,
+          50,
+          74
+        ],
+        "dtype": "float64"
+      },
+      "vision": {
+        "shape": [
+          4659,
+          50,
+          35
+        ],
+        "dtype": "float64"
+      }
+    }
+  },
+  "full_input_feature_quality": {
+    "train": {
+      "content_positions": 373243,
+      "unknown_id100_content_positions": 15,
+      "unknown_id100_attended_positions": 15,
+      "unknown_id100_with_audio_zero": 0,
+      "unknown_id100_with_vision_zero": 0,
+      "unknown_id100_with_both_av_zero": 0,
+      "attention_zero_content_positions": 0,
+      "audio_zero_content_positions": 191,
+      "vision_zero_content_positions": 19601,
+      "whole_audio_unavailable_samples": 0,
+      "whole_vision_unavailable_samples": 482,
+      "attention_mask_at_50_samples": 1254,
+      "nonfinite_input_values": 0
+    },
+    "valid": {
+      "content_positions": 44841,
+      "unknown_id100_content_positions": 2,
+      "unknown_id100_attended_positions": 2,
+      "unknown_id100_with_audio_zero": 0,
+      "unknown_id100_with_vision_zero": 0,
+      "unknown_id100_with_both_av_zero": 0,
+      "attention_zero_content_positions": 0,
+      "audio_zero_content_positions": 94,
+      "vision_zero_content_positions": 2020,
+      "whole_audio_unavailable_samples": 0,
+      "whole_vision_unavailable_samples": 41,
+      "attention_mask_at_50_samples": 143,
+      "nonfinite_input_values": 0
+    },
+    "test": {
+      "content_positions": 107199,
+      "unknown_id100_content_positions": 0,
+      "unknown_id100_attended_positions": 0,
+      "unknown_id100_with_audio_zero": 0,
+      "unknown_id100_with_vision_zero": 0,
+      "unknown_id100_with_both_av_zero": 0,
+      "attention_zero_content_positions": 0,
+      "audio_zero_content_positions": 83,
+      "vision_zero_content_positions": 6331,
+      "whole_audio_unavailable_samples": 0,
+      "whole_vision_unavailable_samples": 174,
+      "attention_mask_at_50_samples": 342,
+      "nonfinite_input_values": 0
+    }
+  },
+  "annex3_feature_matches": [
+    {
+      "annex3_sample": "附件3_01",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": true,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_02",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_03",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_04",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_05",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_06",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_07",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_08",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_09",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_10",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_11",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_12",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_13",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_14",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": true,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_15",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_16",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_17",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_18",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_19",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_20",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_21",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_22",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_23",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_24",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": true,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_25",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": true,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_26",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_27",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_28",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_29",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    },
+    {
+      "annex3_sample": "附件3_30",
+      "visible_token_candidates": 1,
+      "observed_AV_exact_matches": 1,
+      "matched_split": "test",
+      "matched_video_id_for_training_exclusion": null,
+      "overlaps_competition_attachment2_test": false,
+      "warning": ""
+    }
+  ],
+  "annex3_unique_matches": 30,
+  "annex3_match_split_counts": {
+    "test": 30
+  },
+  "annex3_overlap_with_competition_test_samples": 4,
+  "competition_test_samples_after_excluding_annex3_overlap": 723,
+  "train_videos_excluded_due_to_annex3_overlap": [],
+  "safe_train_sample_count_after_annex3_exclusion": 16326,
+  "safe_train_video_count_after_annex3_exclusion": 2249,
+  "safe_train_grouped_5fold_summary": {
+    "0": {
+      "validation_samples": 3265,
+      "training_samples": 13061,
+      "validation_video_groups": 450,
+      "validation_class_counts_negative_neutral_positive": [
+        947,
+        708,
+        1610
+      ]
+    },
+    "1": {
+      "validation_samples": 3265,
+      "training_samples": 13061,
+      "validation_video_groups": 450,
+      "validation_class_counts_negative_neutral_positive": [
+        948,
+        708,
+        1609
+      ]
+    },
+    "2": {
+      "validation_samples": 3265,
+      "training_samples": 13061,
+      "validation_video_groups": 450,
+      "validation_class_counts_negative_neutral_positive": [
+        947,
+        708,
+        1610
+      ]
+    },
+    "3": {
+      "validation_samples": 3266,
+      "training_samples": 13060,
+      "validation_video_groups": 449,
+      "validation_class_counts_negative_neutral_positive": [
+        948,
+        708,
+        1610
+      ]
+    },
+    "4": {
+      "validation_samples": 3265,
+      "training_samples": 13061,
+      "validation_video_groups": 450,
+      "validation_class_counts_negative_neutral_positive": [
+        948,
+        708,
+        1609
+      ]
+    }
+  },
+  "safe_train_5fold_video_overlap_count": 0
+}

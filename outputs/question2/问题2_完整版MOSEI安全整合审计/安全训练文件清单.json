@@ -1,0 +1,74 @@
+{
+  "source_sha256": "45eccfb748a87c80ecab9bfac29582e7b1466bf6605ff29d3b338a75120bf791",
+  "label_csv_sha256": "52d885bd1e8b29a4c06a69e2b1dd67dd02f7bcbdfa38ad918144fd5673a83521",
+  "independent_safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884",
+  "safe_pickle_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "safe_pickle_bytes": 410154414,
+  "splits": {
+    "train": {
+      "samples": 16326,
+      "videos": 2249,
+      "class_counts": [
+        4738,
+        3540,
+        8048
+      ],
+      "bert_token_shape": [
+        16326,
+        3,
+        50
+      ],
+      "audio_shape": [
+        16326,
+        50,
+        74
+      ],
+      "vision_shape": [
+        16326,
+        50,
+        35
+      ],
+      "natural_unk_positions": 15,
+      "joint_zero_unk_positions": 0
+    },
+    "valid": {
+      "samples": 1871,
+      "videos": 300,
+      "class_counts": [
+        506,
+        433,
+        932
+      ],
+      "bert_token_shape": [
+        1871,
+        3,
+        50
+      ],
+      "audio_shape": [
+        1871,
+        50,
+        74
+      ],
+      "vision_shape": [
+        1871,
+        50,
+        35
+      ],
+      "natural_unk_positions": 2,
+      "joint_zero_unk_positions": 0
+    }
+  },
+  "train_valid_video_overlap": 0,
+  "excluded_fields": [
+    "text",
+    "annotations",
+    "entire_test_split"
+  ],
+  "dtype_changes": {
+    "text_bert": "int32",
+    "audio": "float32",
+    "vision": "float32",
+    "regression_labels": "float32"
+  },
+  "policy": "Only the one-time preparation step deserializes the monolithic source; subsequent trainers must load this train/valid-only pickle."
+}

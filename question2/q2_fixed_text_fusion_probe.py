@@ -30,8 +30,8 @@ from q2_full_bert_text_experiment import (CONFIG_PATH as TEXT_CONFIG,
                                            read_safety_audit, tensors)
 from q2_scattered_gap_experiment import make_scattered_suite
 
-OUT = ROOT / 'outputs/问题2_固定文本融合验证'
-FULL_STUDENT = (ROOT / 'outputs/问题2_完整MOSEI训练实验/'
+OUT = ROOT / 'outputs/question2/问题2_固定文本融合验证'
+FULL_STUDENT = (ROOT / 'outputs/question2/问题2_完整MOSEI训练实验/'
                 '完整数据_缺失蒸馏学生_种子2026.pt')
 
 

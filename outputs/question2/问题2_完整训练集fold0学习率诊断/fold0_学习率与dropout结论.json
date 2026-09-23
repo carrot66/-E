@@ -1,0 +1,58 @@
+{
+  "settings": {
+    "current": {
+      "learning_rate": 0.0003,
+      "dropout": 0.2,
+      "teacher": {
+        "selection_score": 0.5509370868813194,
+        "clean_F1": 0.6353108392749558,
+        "clean_MAE": 0.5656751990318298,
+        "contiguous_30pct_mean_F1": 0.6072223268474717,
+        "contiguous_30pct_mean_MAE": 0.6000577211380005,
+        "scattered_TAV_mean_F1": 0.5808875385310225,
+        "scattered_TAV_mean_MAE": 0.6330489615599314
+      },
+      "student": {
+        "selection_score": 0.5652390465069788,
+        "clean_F1": 0.638787948580348,
+        "clean_MAE": 0.5588858723640442,
+        "contiguous_30pct_mean_F1": 0.6186418510927388,
+        "contiguous_30pct_mean_MAE": 0.5835197567939758,
+        "scattered_TAV_mean_F1": 0.6070543328013135,
+        "scattered_TAV_mean_MAE": 0.6041320164998373
+      },
+      "teacher_best_epoch": 2,
+      "student_best_epoch": 2,
+      "teacher_checkpoint_sha256": "7fe25e4ed1888da44d432f29d87ced2c7d9921f85b4ebdf8c0a83fd7ac76f26e",
+      "student_checkpoint_sha256": "e7e53ac7bb203065b314716891236e6afb75904f1c83aa9e270744d55ec373ea"
+    },
+    "conservative": {
+      "learning_rate": 0.0001,
+      "dropout": 0.3,
+      "teacher": {
+        "selection_score": 0.5474684945273346,
+        "clean_F1": 0.6365846417995881,
+        "clean_MAE": 0.5646820068359375,
+        "contiguous_30pct_mean_F1": 0.6038240959299455,
+        "contiguous_30pct_mean_MAE": 0.6008598804473877,
+        "scattered_TAV_mean_F1": 0.5701361379527566,
+        "scattered_TAV_mean_MAE": 0.6246785223484039
+      },
+      "student": {
+        "selection_score": 0.5664104818752751,
+        "clean_F1": 0.6391959760479915,
+        "clean_MAE": 0.5496504306793213,
+        "contiguous_30pct_mean_F1": 0.6181611815102468,
+        "contiguous_30pct_mean_MAE": 0.5785721898078918,
+        "scattered_TAV_mean_F1": 0.6085899064911602,
+        "scattered_TAV_mean_MAE": 0.598335067431132
+      },
+      "teacher_best_epoch": 6,
+      "student_best_epoch": 6,
+      "teacher_checkpoint_sha256": "a9916c62784a4c22964f941a9f3613314a5f10521f812c2379324712bcc9bf70",
+      "student_checkpoint_sha256": "e8d712ab267cf33ff79c470bad73cdc168c117a014f70108845fd9ed6fc7241d"
+    }
+  },
+  "conservative_passed_predeclared_rule": false,
+  "interpretation_limit": "Single train-only video fold diagnoses optimization; full-valid remains untouched here."
+}

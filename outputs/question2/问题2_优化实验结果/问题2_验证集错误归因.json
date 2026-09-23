@@ -1,0 +1,152 @@
+{
+  "model": "distilled",
+  "sample_count": 728,
+  "Negative": {
+    "n": 206,
+    "classification_error_rate": 0.3155339805825243,
+    "MAE": 0.7120312544906023
+  },
+  "Neutral": {
+    "n": 184,
+    "classification_error_rate": 0.47282608695652173,
+    "MAE": 0.28867428676913615
+  },
+  "Positive": {
+    "n": 338,
+    "classification_error_rate": 0.3343195266272189,
+    "MAE": 0.6631891399445619
+  },
+  "text_native_availability": [
+    {
+      "group": "原始有效位置均可观测",
+      "n": 728,
+      "mean_missing": 0.0,
+      "classification_error_rate": 0.364010989010989,
+      "MAE": 0.5823522479283613
+    }
+  ],
+  "audio_native_availability": [
+    {
+      "group": "原始有效位置均可观测",
+      "n": 727,
+      "mean_missing": 0.0,
+      "classification_error_rate": 0.36451169188445665,
+      "MAE": 0.5831532826572862
+    },
+    {
+      "group": "存在原始不可观测位置",
+      "n": 1,
+      "mean_missing": 0.9583333333333334,
+      "classification_error_rate": 0.0,
+      "MAE": 0.0
+    }
+  ],
+  "vision_native_availability": [
+    {
+      "group": "原始有效位置均可观测",
+      "n": 643,
+      "mean_missing": 0.0,
+      "classification_error_rate": 0.3483670295489891,
+      "MAE": 0.5757970129071647
+    },
+    {
+      "group": "存在原始不可观测位置",
+      "n": 85,
+      "mean_missing": 0.5202215958977996,
+      "classification_error_rate": 0.4823529411764706,
+      "MAE": 0.6319406728534137
+    }
+  ],
+  "largest_absolute_errors": [
+    {
+      "id": "f_ZJ7L14oYQ$_$21",
+      "true": "Positive",
+      "pred": "Negative",
+      "true_intensity": 2.0,
+      "predicted_intensity": -1.389341950416565,
+      "absolute_error": 3.3893418312072754,
+      "text": "They just so much more convenient than stupid boots that take forever to put on and just aren't comfortable!"
+    },
+    {
+      "id": "102858$_$6",
+      "true": "Positive",
+      "pred": "Negative",
+      "true_intensity": 2.6666667461395264,
+      "predicted_intensity": -0.40609145164489746,
+      "absolute_error": 3.072758197784424,
+      "text": "It's probably three of the best (stutter) holiday specials made in the last (uhh) let's see"
+    },
+    {
+      "id": "266791$_$23",
+      "true": "Negative",
+      "pred": "Positive",
+      "true_intensity": -2.6666667461395264,
+      "predicted_intensity": 0.35738036036491394,
+      "absolute_error": 3.0240471363067627,
+      "text": "As you're watching the movie it looks like they're actually looking at cue cards and reading these words for the first time, that's how the delivery is"
+    },
+    {
+      "id": "130456$_$3",
+      "true": "Positive",
+      "pred": "Negative",
+      "true_intensity": 2.3333332538604736,
+      "predicted_intensity": -0.621032178401947,
+      "absolute_error": 2.9543654918670654,
+      "text": "(uhh) It's, out of five stars, I would give it a five"
+    },
+    {
+      "id": "130456$_$11",
+      "true": "Positive",
+      "pred": "Negative",
+      "true_intensity": 1.6666666269302368,
+      "predicted_intensity": -1.2202603816986084,
+      "absolute_error": 2.8869271278381348,
+      "text": "It it (stutter) involves like, (uhh) theoretical physics and just so much stuff and Donnie Darko no matter how weird he is is still really funny"
+    },
+    {
+      "id": "rojyUp4FPSg$_$9",
+      "true": "Positive",
+      "pred": "Negative",
+      "true_intensity": 2.0,
+      "predicted_intensity": -0.6779108643531799,
+      "absolute_error": 2.677910804748535,
+      "text": "So if you have a really overpowering scent, it will clash and just create something that's really not what we wanted."
+    },
+    {
+      "id": "102858$_$4",
+      "true": "Positive",
+      "pred": "Positive",
+      "true_intensity": 3.0,
+      "predicted_intensity": 0.4622068405151367,
+      "absolute_error": 2.5377931594848633,
+      "text": "This one disc contains not only Garfield, not only Garfield's Halloween, Halloween (stutter) Adventure, a special I've I've (stutter) watched almost every year since I was about fo"
+    },
+    {
+      "id": "102408$_$5",
+      "true": "Negative",
+      "pred": "Positive",
+      "true_intensity": -2.0,
+      "predicted_intensity": 0.5086119771003723,
+      "absolute_error": 2.5086119174957275,
+      "text": "I couldn't wait til it was over, but you know if you have little boys then, you know, they probably would like this movie"
+    },
+    {
+      "id": "Vuay0mVKkik$_$3",
+      "true": "Negative",
+      "pred": "Positive",
+      "true_intensity": -2.0,
+      "predicted_intensity": 0.4098903238773346,
+      "absolute_error": 2.4098904132843018,
+      "text": "And when I was going to school it was really difficult for me to find avenues and resources to be able to reach higher education."
+    },
+    {
+      "id": "252998$_$7",
+      "true": "Positive",
+      "pred": "Negative",
+      "true_intensity": 1.3333333730697632,
+      "predicted_intensity": -0.9997453689575195,
+      "absolute_error": 2.3330788612365723,
+      "text": "(uhh) I think the best line in the movie comes from Tori Spelling when she looks at Parker Posey and says no you're not insane you're just incredibly spoiled"
+    }
+  ]
+}

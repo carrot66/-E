@@ -1,0 +1,30 @@
+{
+  "validation_scores": {
+    "text_only": 0.5622425478284082,
+    "fusion_only": 0.5628739263399123,
+    "fixed_50_20": 0.5713180852583954,
+    "zero_aware_fixed": 0.5713169176596289
+  },
+  "clean_Macro_F1": {
+    "text_only": 0.6321950811970554,
+    "fusion_only": 0.6305285852859462,
+    "fixed_50_20": 0.6383691954669959,
+    "zero_aware_fixed": 0.6383691954669959
+  },
+  "scattered_TAV_mean_Macro_F1": {
+    "text_only": 0.6026896709511697,
+    "fusion_only": 0.6035707251277607,
+    "fixed_50_20": 0.6138509102716266,
+    "zero_aware_fixed": 0.6138509102716266
+  },
+  "fixed_rule": "T observed fraction >=0.5: text/fusion=0.5/0.5; otherwise=0.2/0.8",
+  "zero_aware_rule": "same fixed rule, except 0 observed text gives text weight 0",
+  "rules_fixed_before_label_evaluation": true,
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "safe_manifest_sha256": "194f8f0e32b6f3f1513b3bbf1be6126ac4084198c7158976b34b15db9724d82e",
+  "safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884",
+  "text_delta_sha256": "40f00c751b2d6e48db023e40d31697acecdf22e4b5c19cacb2213616c6e4f52f",
+  "fusion_checkpoint_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "text_missing_before_both_bert_encoders": true,
+  "full_test_or_annex3_labels_read": false
+}

@@ -1,0 +1,14 @@
+{
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "script_sha256": "976674e568d8fa23f81249d040f72c4512e6857cfeedc5413b1cb8fa91a7a0c8",
+  "teacher_sha256": "20e8574852093630fa9350cc86b25a6eb0997e76a02025d567ea035f66f092d7",
+  "comparison_sha256": "e2cdcb93677c78a0aa2b744b1e7a495db9fd1ea125fa6bfdef74e97a7971abf7",
+  "bert_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "seed": 2026,
+  "python": "3.12.13",
+  "torch": "2.9.0+cu128",
+  "training": "40% clean, 25% standard 10/30/50% gaps, 20% text 50/70% contiguous gaps, 15% whole-text blackout",
+  "same_as_existing": "Fusion architecture, weighted CE + 0.6 SmoothL1, conditional KD, AdamW 3e-4, wd 1e-3, batch64, patience7, same validation selection score",
+  "evaluation_predeclared": "clean, T 50/70%, TAV 50/70%, all 56 missing scenarios",
+  "selection_data": "validation only; attachment-2 test and attachment-3 are not used for design, training or selection"
+}

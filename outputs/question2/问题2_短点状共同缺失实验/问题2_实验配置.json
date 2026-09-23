@@ -1,0 +1,18 @@
+{
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "script_sha256": "8007bb4a07807ddc0d285e4e303044809d39ca9e398940fe752ecfa9f9ff6ad4",
+  "teacher_sha256": "20e8574852093630fa9350cc86b25a6eb0997e76a02025d567ea035f66f092d7",
+  "baseline_sha256": "e2cdcb93677c78a0aa2b744b1e7a495db9fd1ea125fa6bfdef74e97a7971abf7",
+  "bert_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "seed": 2026,
+  "python": "3.12.13",
+  "torch": "2.9.0+cu128",
+  "training": "35% clean, 30% original contiguous 10/30/50% random subset, 35% scattered shared TAV 10/20/30% runs mostly 1-4 tokens",
+  "architecture": "unchanged Fusion(gated=True), hidden=96, dropout=0.2",
+  "loss": "weighted CE + 0.6 SmoothL1; eligible clean teacher prediction: 0.2*4 KL(T=2) + 0.1 SmoothL1",
+  "optimizer": "AdamW lr=3e-4 wd=1e-3 batch64 patience7 clip1",
+  "selection_score": "0.4 clean F1 + 0.3 original quick mean F1 + 0.3 scattered TAV mean F1 - 0.1 same-weight MAE",
+  "validation": "complete, T/A/V/AV/TAV 30% contiguous, TAV scattered 10/20/30% x2 masks",
+  "predeclared_acceptance": "score +0.005; clean F1 >=baseline-0.01; contiguous mean F1 >=baseline-0.01; scattered mean F1 >=baseline+0.02",
+  "test_or_attachment3_used_for_selection": false
+}

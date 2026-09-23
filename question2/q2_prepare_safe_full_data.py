@@ -182,7 +182,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', default=ROOT/'work/full_mosei/CMU-MOSEI_完整版_对齐特征与标签/aligned_50.pkl')
-    parser.add_argument('--safety-audit', default=ROOT/'outputs/问题2_完整版MOSEI安全整合审计/问题2_完整版MOSEI与竞赛数据安全整合审计.json')
+    parser.add_argument('--safety-audit', default=ROOT/'outputs/question2/问题2_完整版MOSEI安全整合审计/问题2_完整版MOSEI与竞赛数据安全整合审计.json')
     parser.add_argument('--output', default=ROOT/'work/full_mosei/safe_train_valid.pkl')
     parser.add_argument('--expected-source-sha256', default=EXPECTED_FULL_SHA256)
     main(parser.parse_args())

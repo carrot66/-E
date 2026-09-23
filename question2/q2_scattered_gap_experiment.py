@@ -155,7 +155,7 @@ def check_text_leakage(train, encoder, scattered):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-root', type=Path, default=ROOT / 'E题数据/E题数据')
-    parser.add_argument('--out', type=Path, default=ROOT / 'outputs/问题2_短点状共同缺失实验')
+    parser.add_argument('--out', type=Path, default=ROOT / 'outputs/question2/问题2_短点状共同缺失实验')
     parser.add_argument('--device', default='cuda:1')
     parser.add_argument('--seed', type=int, default=2026)
     parser.add_argument('--epochs', type=int, default=30)
@@ -165,7 +165,7 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     source = args.data_root / '附件2-数据集特征文件/aligned_50.pkl'
     source_hash = sha(source)
-    original_dir = ROOT / 'outputs/问题2_首轮实验结果'
+    original_dir = ROOT / 'outputs/question2/问题2_首轮实验结果'
     teacher_path = original_dir / f'问题2_普通融合_种子{args.seed}.pt'
     baseline_path = original_dir / f'问题2_门控蒸馏_种子{args.seed}.pt'
     models, checkpoints = load_models({'teacher': teacher_path,

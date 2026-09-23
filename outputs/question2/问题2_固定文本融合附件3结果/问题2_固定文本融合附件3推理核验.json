@@ -1,0 +1,13 @@
+{
+  "count": 30,
+  "rule": "text ratio >=0.5: 0.5; otherwise: 0.2",
+  "full_test_labels_used": false,
+  "masked_joint_unknown_positions": 131,
+  "safe_source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "safe_manifest_sha256": "194f8f0e32b6f3f1513b3bbf1be6126ac4084198c7158976b34b15db9724d82e",
+  "safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884",
+  "text_delta_sha256": "40f00c751b2d6e48db023e40d31697acecdf22e4b5c19cacb2213616c6e4f52f",
+  "fusion_checkpoint_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "repeat_inference_identical": true,
+  "probabilities_sum_to_one": true
+}

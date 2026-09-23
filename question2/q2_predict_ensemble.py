@@ -11,9 +11,9 @@ from q2_ensemble import load_models, predict_ensemble
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('--model-dir',default=str(ROOT/'outputs/问题2_优化实验结果'))
+    parser.add_argument('--model-dir',default=str(ROOT/'outputs/question2/问题2_优化实验结果'))
     parser.add_argument('--data-root',default=str(ROOT/'E题数据/E题数据'))
-    parser.add_argument('--out',default=str(ROOT/'outputs/问题2_独立集成推理'))
+    parser.add_argument('--out',default=str(ROOT/'outputs/question2/问题2_独立集成推理'))
     parser.add_argument('--device',default='cuda:1')
     args=parser.parse_args(); runtime(args.device)
     model_dir=Path(args.model_dir); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)

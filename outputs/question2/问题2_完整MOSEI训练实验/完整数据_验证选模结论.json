@@ -1,0 +1,28 @@
+{
+  "selected": "student",
+  "student_accepted": true,
+  "teacher_full_valid": {
+    "selection_score": 0.5566846871513915,
+    "clean_F1": 0.6318720212849573,
+    "clean_MAE": 0.5543813705444336,
+    "contiguous_30pct_mean_F1": 0.6057323891592463,
+    "contiguous_30pct_mean_MAE": 0.5825023531913758,
+    "scattered_TAV_mean_F1": 0.5987745852695642,
+    "scattered_TAV_mean_MAE": 0.5921962757905325
+  },
+  "student_full_valid": {
+    "selection_score": 0.5628739263399123,
+    "clean_F1": 0.6305285852859462,
+    "clean_MAE": 0.5424532294273376,
+    "contiguous_30pct_mean_F1": 0.6176042572940548,
+    "contiguous_30pct_mean_MAE": 0.5596841692924499,
+    "scattered_TAV_mean_F1": 0.6035707251277607,
+    "scattered_TAV_mean_MAE": 0.5733782748381296
+  },
+  "teacher_checkpoint": "完整数据_干净教师_种子2026.pt",
+  "teacher_sha256": "78b776ca4724c1ae5a3199f6e2d9bc2f29d9b6e2092deae784650fe4ee777500",
+  "student_checkpoint": "完整数据_缺失蒸馏学生_种子2026.pt",
+  "student_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "elapsed_seconds": 318.5770995616913,
+  "caveat": "Attachment-2 valid is a subset of full valid; attachment2/full test and attachment3 untouched."
+}

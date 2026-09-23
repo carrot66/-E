@@ -1,0 +1,37 @@
+{
+  "safe_source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "safe_manifest_sha256": "194f8f0e32b6f3f1513b3bbf1be6126ac4084198c7158976b34b15db9724d82e",
+  "original_full_source_sha256": "45eccfb748a87c80ecab9bfac29582e7b1466bf6605ff29d3b338a75120bf791",
+  "label_csv_sha256": "52d885bd1e8b29a4c06a69e2b1dd67dd02f7bcbdfa38ad918144fd5673a83521",
+  "safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884",
+  "script_sha256": "e5fafb39f55f48bca76901e38c4f73f3ac7279f8fc548c1cdaaaff1711ad0d0b",
+  "fusion_config_sha256": "d176e3683005c8252b0c6ab39596233ec03d46f77f3c8b75deb62dd77667749b",
+  "text_delta_sha256": "40f00c751b2d6e48db023e40d31697acecdf22e4b5c19cacb2213616c6e4f52f",
+  "text_delta_revision": "86b5e0934494bd15c9632b12f734a8a67f723594-fine-40f00c751b2d6e48db023e40d31697acecdf22e4b5c19cacb2213616c6e4f52f-prebertmask-v1",
+  "text_delta_selected_epoch": 1,
+  "train_samples": 16326,
+  "validation_samples": 1871,
+  "mask_before_bert_checks": {
+    "missing_id_mutation_invariant": true,
+    "masked_context_reencoded": true,
+    "hidden_token_states_zero": true
+  },
+  "frozen_reference": {
+    "frozen_selected": "student",
+    "frozen_profile": {
+      "selection_score": 0.5628739263399123,
+      "clean_F1": 0.6305285852859462,
+      "clean_MAE": 0.5424532294273376,
+      "contiguous_30pct_mean_F1": 0.6176042572940548,
+      "contiguous_30pct_mean_MAE": 0.5596841692924499,
+      "scattered_TAV_mean_F1": 0.6035707251277607,
+      "scattered_TAV_mean_MAE": 0.5733782748381296
+    },
+    "frozen_source_sha256": "45eccfb748a87c80ecab9bfac29582e7b1466bf6605ff29d3b338a75120bf791",
+    "same_source_sha256": false,
+    "frozen_teacher_sha256": "78b776ca4724c1ae5a3199f6e2d9bc2f29d9b6e2092deae784650fe4ee777500",
+    "safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884"
+  },
+  "student_selection": "0.4 clean Macro-F1 + 0.3 contiguous mean Macro-F1 + 0.3 scattered mean Macro-F1 - 0.1 weighted MAE",
+  "no_full_test_or_annex3_labels": true
+}

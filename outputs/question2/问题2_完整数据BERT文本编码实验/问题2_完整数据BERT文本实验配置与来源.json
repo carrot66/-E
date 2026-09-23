@@ -1,0 +1,70 @@
+{
+  "config": {
+    "experiment": "full_mosei_supervised_text_encoder",
+    "seed": 2026,
+    "model_id": "google-bert/bert-base-uncased",
+    "model_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "unfreeze_last_layers": 2,
+    "bert_learning_rate": 1.5e-05,
+    "head_learning_rate": 0.0002,
+    "weight_decay": 0.001,
+    "batch_size": 32,
+    "maximum_epochs": 8,
+    "early_stopping_patience": 3,
+    "gradient_clip": 1.0,
+    "regression_loss_weight": 0.6,
+    "dropout": 0.1,
+    "training_augmentation": {
+      "clean_probability": 0.7,
+      "contiguous_probability": 0.15,
+      "scattered_probability": 0.15,
+      "rates": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "scattered_run_lengths": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "validation_selection": "0.5 clean Macro-F1 + 0.25 contiguous-T30 Macro-F1 + 0.25 scattered-T20 Macro-F1 - 0.1 corresponding weighted MAE",
+    "data_policy": "Input is safe_train_valid.pkl containing only full-MOSEI train and valid; fit on train, early stop on valid; no full test or attachment-3 labels; no GitHub or official-model mutation."
+  },
+  "provenance": {
+    "full_source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+    "safe_train_valid_manifest_sha256": "194f8f0e32b6f3f1513b3bbf1be6126ac4084198c7158976b34b15db9724d82e",
+    "original_full_source_sha256": "45eccfb748a87c80ecab9bfac29582e7b1466bf6605ff29d3b338a75120bf791",
+    "independent_safety_audit_sha256": "0f5cc3031a4779af6e2b9678e99f3e230ac65c5590559c55df7c99364f434884",
+    "script_sha256": "bffee0c94a04b10c349934587110b17c80045924fa7ca4d37a2ae5067bc880fd",
+    "config_sha256": "b7d19b0af5c9d6ae504c492c42f00bb1a27003dcd775f84e41a36158a4b207cf",
+    "bert_model_id": "google-bert/bert-base-uncased",
+    "bert_requested_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "bert_resolved_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "python": "3.12.13",
+    "torch": "2.9.0+cu128",
+    "transformers": "4.57.6",
+    "numpy": "2.2.6",
+    "train_count": 16326,
+    "valid_count": 1871,
+    "train_class_counts": [
+      4738,
+      3540,
+      8048
+    ],
+    "train_ids_sha256": "156e40317edc9bbf54ac8b24481523021e638d17317aa65a46b8542697a0644d",
+    "valid_ids_sha256": "670135b86983859e88875b47c009290bdae9e54e496f05a32febf81789a9bd17",
+    "train_natural_unk_positions": 15,
+    "valid_natural_unk_positions": 2,
+    "train_unk_with_both_av_zero": 0,
+    "valid_unk_with_both_av_zero": 0,
+    "train_valid_video_overlap": 0,
+    "masking_checks": {
+      "hidden_id_mutation_invariant": true,
+      "missing_token_vectors_zero": true
+    },
+    "selection_data": "full MOSEI valid only; full test and attachment 3 unused"
+  }
+}

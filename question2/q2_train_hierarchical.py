@@ -17,15 +17,15 @@ from q2_experiment import (ROOT, TextEncoder, block_mask, evaluate, fit_normaliz
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--data-root',default=str(ROOT/'E题数据/E题数据'))
-    p.add_argument('--out',default=str(ROOT/'outputs/问题2_分层模型实验'))
+    p.add_argument('--out',default=str(ROOT/'outputs/question2/问题2_分层模型实验'))
     p.add_argument('--device',default='cuda:1')
     p.add_argument('--epochs',type=int,default=30)
     args=p.parse_args(); runtime(args.device)
     root=Path(args.data_root); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)
     source=root/'附件2-数据集特征文件/aligned_50.pkl'; source_hash=sha(source)
     with source.open('rb') as f:data=pickle.load(f)
-    config=json.loads((ROOT/'outputs/问题2_首轮实验结果/问题2_实验配置.json').read_text(encoding='utf-8'))
-    ckpt=torch.load(ROOT/'outputs/问题2_首轮实验结果/问题2_普通融合_种子2026.pt',map_location='cpu',weights_only=False)
+    config=json.loads((ROOT/'outputs/question2/问题2_首轮实验结果/问题2_实验配置.json').read_text(encoding='utf-8'))
+    ckpt=torch.load(ROOT/'outputs/question2/问题2_首轮实验结果/问题2_普通融合_种子2026.pt',map_location='cpu',weights_only=False)
     stats=ckpt['stats']; encoder=TextEncoder(args.device,config['bert_revision'])
     cache=ROOT/'work/问题2_特征缓存'
     tr=normalize(prepare_split(data['train'],encoder,cache,'train',source_hash),stats)

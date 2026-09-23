@@ -8,7 +8,7 @@
 
 ## 第一问
 
-阅读 [`question1/README_Q1.md`](question1/README_Q1.md) 和 [`question1/问题1_特征提取与时序对齐说明.md`](question1/问题1_特征提取与时序对齐说明.md)。第一问产物在 `outputs/问题1_全量特征结果/`，其中包含逐样本 NPZ、词级对齐表、100 条汇总表、审计记录和提交版 ZIP。
+阅读 [`question1/README_Q1.md`](question1/README_Q1.md) 和 [`question1/问题1_特征提取与时序对齐说明.md`](question1/问题1_特征提取与时序对齐说明.md)。第一问产物在 `outputs/question1/问题1_全量特征结果/`，其中包含逐样本 NPZ、词级对齐表、100 条汇总表、审计记录和提交版 ZIP。
 
 从仓库根目录运行：
 
@@ -16,11 +16,11 @@
 python -m pip install --target "$Q1_SITE" -r question1/q1_requirements.txt
 python question1/q1_feature_extract.py \
   --data-root "E题数据/E题数据" \
-  --out "outputs/问题1_全量特征结果" \
+  --out "outputs/question1/问题1_全量特征结果" \
   --visual-fps 10 --resume
 python question1/audit_q1_outputs.py \
   --data-root "E题数据/E题数据" \
-  --out "outputs/问题1_全量特征结果"
+  --out "outputs/question1/问题1_全量特征结果"
 ```
 
 ## 第二问
@@ -40,4 +40,4 @@ python question2/q2_predict_fixed_text_mixture.py --device cuda:1
 
 第二问脚本会把训练缓存、模型权重和预测结果写到被 `.gitignore` 排除的 `work/` 与 `outputs/` 子目录；不会读取或上传完整 MOSEI test 标签。
 
-`question2/legacy_mosei_solution.py` 仅保留早期基线，正式实验以同目录的 `q2_*.py` 为准。`n
+`question2/legacy_mosei_solution.py` 仅保留早期基线，正式实验以同目录的 `q2_*.py` 为准。

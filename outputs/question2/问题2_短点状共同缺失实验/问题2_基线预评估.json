@@ -1,0 +1,9 @@
+{
+  "selection_score": 0.5306531149158233,
+  "clean_F1": 0.6087100728242844,
+  "clean_MAE": 0.5933941006660461,
+  "contiguous_30pct_mean_F1": 0.5900994879071236,
+  "contiguous_30pct_mean_MAE": 0.6094215273857116,
+  "scattered_TAV_mean_F1": 0.5690577005791526,
+  "scattered_TAV_mean_MAE": 0.6186553637186686
+}

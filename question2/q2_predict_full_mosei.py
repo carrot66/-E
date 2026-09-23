@@ -96,10 +96,10 @@ def run(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model-dir', default=ROOT / 'outputs/问题2_完整MOSEI训练实验')
+    parser.add_argument('--model-dir', default=ROOT / 'outputs/question2/问题2_完整MOSEI训练实验')
     parser.add_argument('--annex3-dir', default=ROOT / 'E题数据/E题数据/附件3-模态缺失特征样本/对齐版本')
     parser.add_argument('--safe-manifest', default=ROOT / 'work/full_mosei/safe_train_valid.manifest.json')
-    parser.add_argument('--safety-audit', default=ROOT / 'outputs/问题2_完整版MOSEI安全整合审计/问题2_完整版MOSEI与竞赛数据安全整合审计.json')
-    parser.add_argument('--out', default=ROOT / 'outputs/问题2_完整数据附件3推理结果')
+    parser.add_argument('--safety-audit', default=ROOT / 'outputs/question2/问题2_完整版MOSEI安全整合审计/问题2_完整版MOSEI与竞赛数据安全整合审计.json')
+    parser.add_argument('--out', default=ROOT / 'outputs/question2/问题2_完整数据附件3推理结果')
     parser.add_argument('--device', default='cuda:1')
     run(parser.parse_args())

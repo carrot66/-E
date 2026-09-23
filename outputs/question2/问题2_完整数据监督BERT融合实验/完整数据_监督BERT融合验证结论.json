@@ -1,0 +1,47 @@
+{
+  "new_selected": "student",
+  "new_profile": {
+    "selection_score": 0.5650522086660309,
+    "clean_F1": 0.6354885058737093,
+    "clean_MAE": 0.5375147461891174,
+    "contiguous_30pct_mean_F1": 0.6185436098325052,
+    "contiguous_30pct_mean_MAE": 0.5574911713600159,
+    "scattered_TAV_mean_F1": 0.6024350771047625,
+    "scattered_TAV_mean_MAE": 0.5737158258756002
+  },
+  "frozen_selected": "student",
+  "frozen_profile": {
+    "selection_score": 0.5628739263399123,
+    "clean_F1": 0.6305285852859462,
+    "clean_MAE": 0.5424532294273376,
+    "contiguous_30pct_mean_F1": 0.6176042572940548,
+    "contiguous_30pct_mean_MAE": 0.5596841692924499,
+    "scattered_TAV_mean_F1": 0.6035707251277607,
+    "scattered_TAV_mean_MAE": 0.5733782748381296
+  },
+  "delta": {
+    "selection_score": 0.002178282326118608,
+    "clean_F1": 0.004959920587763067,
+    "clean_MAE": -0.004938483238220215,
+    "contiguous_30pct_mean_F1": 0.0009393525384504553,
+    "contiguous_30pct_mean_MAE": -0.002192997932433993,
+    "scattered_TAV_mean_F1": -0.001135648022998148,
+    "scattered_TAV_mean_MAE": 0.0003375510374705737
+  },
+  "accepted_vs_frozen": false,
+  "acceptance_rule": "selected full-valid score at least +0.005; clean Macro-F1 no worse than -0.005; scattered mean Macro-F1 at least +0.005",
+  "teacher_checkpoint": "完整数据_干净教师_种子2026.pt",
+  "teacher_sha256": "b0f74a3b84de538e0f0b24a4490c07e5f853c94fa159255069fb842ff0285f73",
+  "student_checkpoint": "完整数据_缺失蒸馏学生_种子2026.pt",
+  "student_sha256": "7966111c361504feb35c744d49cfc762311a79eb17a442625f5a5c87537d0b68",
+  "text_delta_sha256": "40f00c751b2d6e48db023e40d31697acecdf22e4b5c19cacb2213616c6e4f52f",
+  "inference_repeatable": true,
+  "text_encoder_replay_exact": true,
+  "mask_before_bert": {
+    "missing_id_mutation_invariant": true,
+    "masked_context_reencoded": true,
+    "hidden_token_states_zero": true
+  },
+  "elapsed_seconds": 328.6197769641876,
+  "test_or_attachment3_labels_used": false
+}

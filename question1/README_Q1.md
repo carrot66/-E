@@ -34,7 +34,7 @@ conda activate vllm312
 export HF_ENDPOINT=https://hf-mirror.com
 "$HOME/venvs/q1mp/bin/python" question1/q1_feature_extract.py \
   --data-root "E题数据/E题数据" \
-  --out "outputs/问题1_全量特征结果" \
+  --out "outputs/question1/问题1_全量特征结果" \
   --visual-fps 10 \
   --resume
 ```
@@ -42,7 +42,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 先做单样本检查：
 
 ```bash
-"$HOME/venvs/q1mp/bin/python" question1/q1_feature_extract.py --data-root "E题数据/E题数据" --out outputs/问题1_检查样本 --limit 1
+"$HOME/venvs/q1mp/bin/python" question1/q1_feature_extract.py --data-root "E题数据/E题数据" --out outputs/question1/问题1_检查样本 --limit 1
 ```
 
 如果成功，运行完整 100 条。中断后使用同一输出目录加 `--resume` 继续。只有大小写匹配词典后的重新运行结果可作为最终产物。
@@ -59,7 +59,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 - `问题1_典型样本逐词对齐示例.csv`：典型片段每个词的语音区间、音视频帧和有效性信息。
 - `问题1_全量特征文件_提交版.zip`：100条样本特征文件、逐词对齐表、汇总表与复核材料的打包件，不含原始数据集。
 - `quality_audit.json`：自动核验覆盖率、时间戳一致性、掩码及路径脱敏。
-- `../outputs/问题1_ASR独立评估/`：补充的无参考转写 ASR 贪心解码、WER/CER 及人工复核候选；用 `python question1/q1_asr_evaluate.py --device cuda:0` 复算。
+- `../outputs/question1/问题1_ASR独立评估/`：补充的无参考转写 ASR 贪心解码、WER/CER 及人工复核候选；用 `python question1/q1_asr_evaluate.py --device cuda:0` 复算。
 
 完整的题目第1问文字说明、典型样本数据表和全量结果摘要见项目根目录的 `问题1_特征提取与时序对齐说明.md`。
 
@@ -69,4 +69,4 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 MediaPipe blendshape 是面部形变系数，不是情绪类别或概率；ImageNet 表示、LBP/灰度也属于通用外观特征。任何表情特征都需结合词级时序、语音韵律和人工抽查解释，不能把特征提取器的输出直接宣称为情绪识别结果。
 
-独立 ASR 诊断在全部100条上的 WER 为39.61%、CER 为26.91%，以题目给定的英文文本为参考；第一问的 CTC 强制对齐成功率79%不是 ASR 正确率。23条低置信或高 WER 样本已列为人工复核候选，详细口径见 `问题1_特征提取与时序对齐说明.md`。`n
+独立 ASR 诊断在全部100条上的 WER 为39.61%、CER 为26.91%，以题目给定的英文文本为参考；第一问的 CTC 强制对齐成功率79%不是 ASR 正确率。23条低置信或高 WER 样本已列为人工复核候选，详细口径见 `问题1_特征提取与时序对齐说明.md`。

@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument('--result-dir', default=str(ROOT / 'outputs/问题2_优化实验结果'))
+    parser.add_argument('--result-dir', default=str(ROOT / 'outputs/question2/问题2_优化实验结果'))
     args = parser.parse_args()
     directory = Path(args.result_dir)
     manifest = json.loads((directory / '问题2_集成选模结论.json').read_text(encoding='utf-8'))

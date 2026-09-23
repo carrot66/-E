@@ -1,0 +1,25 @@
+{
+  "selected": "distilled",
+  "members": [
+    "distilled_2026",
+    "distilled_2027",
+    "distilled_2028"
+  ],
+  "validation_scores": {
+    "baseline": 0.529824658799206,
+    "augmentation": 0.5242974852974643,
+    "gated": 0.5452248716094219,
+    "distilled": 0.5539247755634427,
+    "gated_distilled": 0.5533056310176574
+  },
+  "data_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "bert_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "selection_suite": "完整输入 + T/A/V/AV/TAV 30%连续缺失；仅验证集",
+  "checkpoint_sha256": {
+    "distilled_2026": "e2cdcb93677c78a0aa2b744b1e7a495db9fd1ea125fa6bfdef74e97a7971abf7",
+    "distilled_2027": "45ce6a5275a86d417db7698e2a50832167fc00dee7dc40db2728d39245a1b60f",
+    "distilled_2028": "d2fee9296bbc4c1422016ecaadc8c1b40a077b4f8d2a3c33348ef87bfd9dbd7f"
+  },
+  "test_used_for_selection": false,
+  "output_consistency_rule": "Neutral=0; Negative<=-0.01; Positive>=0.01; applied to all reported scores and predictions"
+}

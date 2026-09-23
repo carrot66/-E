@@ -11,7 +11,7 @@ mpl.rcParams.update({'font.family':'sans-serif',
     'font.size':8,'axes.spines.right':False,'axes.spines.top':False,
     'axes.linewidth':.8,'svg.fonttype':'none','pdf.fonttype':42})
 ROOT=Path(__file__).resolve().parents[1]
-BASE=ROOT/'outputs/问题2_优化实验结果'
+BASE=ROOT/'outputs/question2/问题2_优化实验结果'
 DEST=BASE/'图表'
 DEST.mkdir(parents=True,exist_ok=True)
 SELECTION=json.loads((BASE/'问题2_集成选模结论.json').read_text(encoding='utf-8'))

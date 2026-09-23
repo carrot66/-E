@@ -164,7 +164,7 @@ def run(args):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     p.add_argument('--data-root',default=str(ROOT/'E题数据/E题数据'))
-    p.add_argument('--out',default=str(ROOT/'outputs/问题2_BERT微调实验'))
+    p.add_argument('--out',default=str(ROOT/'outputs/question2/问题2_BERT微调实验'))
     p.add_argument('--device',default='cuda:1')
     p.add_argument('--seed',type=int,default=2026)
     p.add_argument('--epochs',type=int,default=12)

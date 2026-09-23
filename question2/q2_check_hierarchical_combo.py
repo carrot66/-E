@@ -7,11 +7,11 @@ from q2_ensemble import load_models, summarize, selection_score
 runtime('cuda:1')
 root=ROOT/'E题数据/E题数据'
 source=root/'附件2-数据集特征文件/aligned_50.pkl'; source_hash=sha(source)
-old=ROOT/'outputs/问题2_首轮实验结果'
-optimized=ROOT/'outputs/问题2_优化实验结果'
-hier=ROOT/'outputs/问题2_分层模型实验'
+old=ROOT/'outputs/question2/问题2_首轮实验结果'
+optimized=ROOT/'outputs/question2/问题2_优化实验结果'
+hier=ROOT/'outputs/question2/问题2_分层模型实验'
 paths={f'hierarchical_{s}':hier/f'种子{s}/问题2_分层门控_种子{s}.pt' for s in (2026,2027,2028)}
-paths.update({f'distilled_{s}':(old if s==2026 else ROOT/f'outputs/问题2_重复实验_种子{s}')/f'问题2_门控蒸馏_种子{s}.pt' for s in (2026,2027,2028)})
+paths.update({f'distilled_{s}':(old if s==2026 else ROOT/f'outputs/question2/问题2_重复实验_种子{s}')/f'问题2_门控蒸馏_种子{s}.pt' for s in (2026,2027,2028)})
 models,ckpts=load_models(paths,'cuda:1')
 stats=next(iter(ckpts.values()))['stats']
 encoder=TextEncoder('cuda:1',next(iter(ckpts.values()))['provenance']['bert_revision'])

@@ -51,8 +51,8 @@ def summarize(y, r, banks, idx, bias):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-root', type=Path, default=ROOT / 'E题数据/E题数据')
-    parser.add_argument('--model-dir', type=Path, default=ROOT / 'outputs/问题2_优化实验结果')
-    parser.add_argument('--out', type=Path, default=ROOT / 'outputs/问题2_中性偏置交叉验证')
+    parser.add_argument('--model-dir', type=Path, default=ROOT / 'outputs/question2/问题2_优化实验结果')
+    parser.add_argument('--out', type=Path, default=ROOT / 'outputs/question2/问题2_中性偏置交叉验证')
     parser.add_argument('--device', default='cuda:1')
     args = parser.parse_args()
     runtime(args.device)

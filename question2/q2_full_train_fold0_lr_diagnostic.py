@@ -262,8 +262,8 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--safe-data',default=ROOT/'work/full_mosei/safe_train_valid.pkl')
-    parser.add_argument('--fold-manifest',default=ROOT/'outputs/问题2_完整版MOSEI安全整合审计/问题2_完整版训练集视频分组五折清单.json')
-    parser.add_argument('--out',default=ROOT/'outputs/问题2_完整训练集fold0学习率诊断')
+    parser.add_argument('--fold-manifest',default=ROOT/'outputs/question2/问题2_完整版MOSEI安全整合审计/问题2_完整版训练集视频分组五折清单.json')
+    parser.add_argument('--out',default=ROOT/'outputs/question2/问题2_完整训练集fold0学习率诊断')
     parser.add_argument('--device',default='cuda:1')
     parser.add_argument('--seed',type=int,default=2026)
     parser.add_argument('--teacher-epochs',type=int,default=12)

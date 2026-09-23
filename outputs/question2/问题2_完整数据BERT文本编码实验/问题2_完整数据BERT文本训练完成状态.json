@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "best_epoch": 1,
+  "validation_score": 0.5573976242956713,
+  "checkpoint_sha256": "40f00c751b2d6e48db023e40d31697acecdf22e4b5c19cacb2213616c6e4f52f",
+  "checkpoint_bytes": 28767973,
+  "test_or_attachment3_used_for_selection": false
+}
