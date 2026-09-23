@@ -1,0 +1,14 @@
+{
+  "experiment": "full_mosei_cross_modal_token_interaction",
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "teacher_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "script_sha256": "ad15d446847d431fb12f35172cf218de6133cc58fdbcad6befbe55038aa1190d",
+  "train_samples": 16326,
+  "valid_samples": 1871,
+  "architecture": "three modality tokens per word, 2-layer 8-head cross-modal Transformer, 2-layer temporal Transformer, hidden=192, dropout=0.15",
+  "loss": "sqrt-frequency weighted CE + 0.6 SmoothL1 + teacher KL(T=2) and regression distillation on eligible augmented samples",
+  "optimizer": "AdamW lr=0.00015, weight_decay=1e-3, batch=64, clip=1, patience=6",
+  "augmentation": "35% clean, 30% contiguous modality subsets, 35% scattered shared TAV gaps",
+  "selection": "full valid clean + contiguous + scattered profile from the predeclared q2 score",
+  "data_policy": "safe train/valid only; full test and attachment-3 labels are never loaded"
+}

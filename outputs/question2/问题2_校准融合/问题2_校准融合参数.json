@@ -1,0 +1,14 @@
+{
+  "alpha_cross_modal": 0.8,
+  "class_bias": [
+    0.25,
+    0.20000000000000007,
+    0.0
+  ],
+  "calibration_macro_f1": 0.7491988959841217,
+  "calibration_n": 3265,
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "cross_checkpoint_sha256": "31fcae7dddea5f9008a1d42918dc0fc2daadb7115ccf1096b1424ac1ceb13d0f",
+  "student_checkpoint_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "fit_policy": "20% random calibration slice from official train only"
+}

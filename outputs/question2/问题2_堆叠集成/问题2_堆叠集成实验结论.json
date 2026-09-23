@@ -1,0 +1,15 @@
+{
+  "selection_score": 0.5653688584236922,
+  "clean": {
+    "Accuracy": 0.649919828968466,
+    "Macro_F1": 0.6331015253349882,
+    "MAE": 0.5260718464851379
+  },
+  "contiguous_30pct_mean_F1": 0.6137269523755818,
+  "contiguous_30pct_mean_MAE": 0.5470910787582397,
+  "scattered_TAV_mean_F1": 0.6081190067032618,
+  "scattered_TAV_mean_MAE": 0.5656644403934479,
+  "calibration_n": 4081,
+  "C": 0.2,
+  "test_or_attachment3_labels_used": false
+}

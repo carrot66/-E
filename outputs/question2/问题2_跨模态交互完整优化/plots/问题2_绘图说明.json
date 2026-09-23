@@ -1,0 +1,11 @@
+{
+  "figure_count": 5,
+  "files": [
+    "问题2_F1与MAE权衡.png",
+    "问题2_散点缺失率曲线.png",
+    "问题2_模型鲁棒性对比.png",
+    "问题2_缺失模态消融.png",
+    "问题2_逐轮训练_loss_Accuracy_F1_MAE.png"
+  ],
+  "test_labels_used": false
+}

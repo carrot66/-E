@@ -1,0 +1,23 @@
+{
+  "selected": "previous_full_student",
+  "cross_modal_profile": {
+    "selection_score": 0.5634073484774559,
+    "clean_F1": 0.6347611776714693,
+    "clean_MAE": 0.5329294204711914,
+    "contiguous_30pct_mean_F1": 0.6156490175890537,
+    "contiguous_30pct_mean_MAE": 0.552187442779541,
+    "scattered_TAV_mean_F1": 0.5996018265538007,
+    "scattered_TAV_mean_MAE": 0.5729858577251434
+  },
+  "previous_full_student_selection_score": 0.5628739263399123,
+  "acceptance_rule": "cross-modal score >= previous + 0.005; no automatic replacement otherwise",
+  "best_checkpoint": "/root/user/cs_tcci_fengzihuan/数模比赛题/outputs/question2/问题2_跨模态交互类别重权重/问题2_跨模态交互完整优化_best.pt",
+  "best_checkpoint_sha256": "85b15acf0a9e708834606ec80381292e94d99307d02e4d7d5ccd9603ec63c48d",
+  "last_checkpoint": "/root/user/cs_tcci_fengzihuan/数模比赛题/outputs/question2/问题2_跨模态交互类别重权重/问题2_跨模态交互完整优化_last.pt",
+  "last_checkpoint_sha256": "1b05e6a72db2061d8ee4641f833184713cd1b3736f719ad5263e3c3a655830e2",
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "teacher_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "elapsed_seconds": 226.62034034729004,
+  "test_or_attachment3_labels_used": false,
+  "model_saved": true
+}

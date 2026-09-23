@@ -1,0 +1,22 @@
+{
+  "calibrated_profile": {
+    "selection_score": 0.5710497797167232,
+    "clean": {
+      "subset": "none",
+      "rate": 0.0,
+      "position": "random",
+      "Accuracy": 0.6654195617316943,
+      "Macro_F1": 0.6388078458837154,
+      "MAE": 0.5294298529624939
+    },
+    "contiguous_30pct_mean_F1": 0.6232971357016301,
+    "contiguous_30pct_mean_MAE": 0.552368986606598,
+    "scattered_TAV_mean_F1": 0.611307507068176,
+    "scattered_TAV_mean_MAE": 0.5702162583669027
+  },
+  "target_65": false,
+  "target_70": false,
+  "test_or_attachment3_labels_used": false,
+  "model_saved": true,
+  "postprocess": "probability blend + train-split class-logit calibration"
+}
