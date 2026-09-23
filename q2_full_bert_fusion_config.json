@@ -1,0 +1,14 @@
+{
+  "experiment": "full_mosei_supervised_bert_fusion",
+  "seed": 2026,
+  "teacher_epochs": 25,
+  "student_epochs": 30,
+  "patience": 7,
+  "student_architecture": "Existing Fusion(gated=True, hidden=96, dropout=0.2)",
+  "teacher_architecture": "Existing Fusion(gated=False, hidden=96, dropout=0.2)",
+  "teacher_selection": "Full valid clean Macro-F1 - 0.1 MAE",
+  "student_selection": "0.4 clean Macro-F1 + 0.3 contiguous mean Macro-F1 + 0.3 scattered mean Macro-F1 - 0.1 weighted MAE",
+  "augmentations": "Same as q2_full_mosei_experiment: 35% clean, 30% contiguous T/A/V subsets at 10/30/50%, 35% scattered shared TAV at 10/20/30%",
+  "acceptance_vs_frozen_full_baseline": "selected full-valid score at least +0.005; clean Macro-F1 no worse than -0.005; scattered mean Macro-F1 at least +0.005",
+  "data_policy": "safe_train_valid.pkl only; no full test or attachment-3 labels. All missing text is redacted before fine-tuned BERT encoding."
+}

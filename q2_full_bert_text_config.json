@@ -1,0 +1,25 @@
+{
+  "experiment": "full_mosei_supervised_text_encoder",
+  "seed": 2026,
+  "model_id": "google-bert/bert-base-uncased",
+  "model_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "unfreeze_last_layers": 2,
+  "bert_learning_rate": 0.000015,
+  "head_learning_rate": 0.0002,
+  "weight_decay": 0.001,
+  "batch_size": 32,
+  "maximum_epochs": 8,
+  "early_stopping_patience": 3,
+  "gradient_clip": 1.0,
+  "regression_loss_weight": 0.6,
+  "dropout": 0.1,
+  "training_augmentation": {
+    "clean_probability": 0.7,
+    "contiguous_probability": 0.15,
+    "scattered_probability": 0.15,
+    "rates": [0.1, 0.2, 0.3],
+    "scattered_run_lengths": [1, 2, 3, 4]
+  },
+  "validation_selection": "0.5 clean Macro-F1 + 0.25 contiguous-T30 Macro-F1 + 0.25 scattered-T20 Macro-F1 - 0.1 corresponding weighted MAE",
+  "data_policy": "Input is safe_train_valid.pkl containing only full-MOSEI train and valid; fit on train, early stop on valid; no full test or attachment-3 labels; no GitHub or official-model mutation."
+}

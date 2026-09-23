@@ -1,4 +1,5 @@
 E题数据/
+work/
 outputs/*
 !outputs/问题1_全量特征结果/
 __pycache__/
