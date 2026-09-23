@@ -1,0 +1,15 @@
+{
+  "experiment": "full_mosei_cross_modal_mild_class_group_balancing",
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "teacher_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "script_sha256": "9f25f3f04f03530f6ad26c3251c392ae83a88be61c2a2d1098df0ae1eca07eb3",
+  "train_samples": 16326,
+  "valid_samples": 1871,
+  "architecture": "three modality tokens per word, 2-layer 8-head cross-modal Transformer, 2-layer temporal Transformer, hidden=128, dropout=0.2",
+  "loss": "frequency weighted CE power=0.5, label_smoothing=0, 0.6 SmoothL1, ordinal=0, supervised_contrastive=0, distillation_weight=0.2",
+  "optimizer": "AdamW lr=0.0002, weight_decay=1e-3, batch=64, clip=1, patience=6",
+  "augmentation": "0.35 clean, 0.3 contiguous modality subsets, 0.35 scattered shared TAV gaps",
+  "sampling": "class inverse-frequency power=0.35; video inverse-group power=0.1",
+  "selection": "full valid clean + contiguous + scattered profile from the predeclared q2 score",
+  "data_policy": "safe train/valid only; full test and attachment-3 labels are never loaded"
+}

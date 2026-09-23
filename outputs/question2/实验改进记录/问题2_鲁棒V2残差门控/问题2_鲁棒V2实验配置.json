@@ -1,0 +1,15 @@
+{
+  "experiment": "full_mosei_robust_v2_residual_quality_gate_mild_group_balance",
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "teacher_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "script_sha256": "b124241d0db97ebf6ea69fa39f651a6fe4153e66bc4d756ed7726ed3d419f131",
+  "train_samples": 16326,
+  "valid_samples": 1871,
+  "architecture": "quality-gated three modality tokens per word, 2-layer 8-head cross-modal Transformer, 2-layer temporal Transformer, hidden=128, dropout=0.2",
+  "loss": "frequency weighted CE power=0.5, label_smoothing=0, quality-weighted SmoothL1 weight=0.45, distillation_weight=0.2",
+  "optimizer": "AdamW lr=0.00015, weight_decay=1e-3, batch=64, clip=1, patience=7",
+  "sampling": "video-group replacement sampler with inverse group-size power=0.2",
+  "augmentation": "curriculum clean 0.65->0.4, contiguous 0.2->0.28, remainder scattered TAV gaps",
+  "selection": "full valid clean + contiguous + scattered profile from the predeclared q2 score",
+  "data_policy": "safe train/valid only; full test and attachment-3 labels are never loaded"
+}

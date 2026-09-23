@@ -1,0 +1,23 @@
+{
+  "selected": "previous_full_student",
+  "robust_v2_profile": {
+    "selection_score": 0.5560379237400188,
+    "clean_F1": 0.6295112432465187,
+    "clean_MAE": 0.5492087602615356,
+    "contiguous_30pct_mean_F1": 0.6114061469166475,
+    "contiguous_30pct_mean_MAE": 0.5664505243301392,
+    "scattered_TAV_mean_F1": 0.590672623448207,
+    "scattered_TAV_mean_MAE": 0.5809446175893148
+  },
+  "previous_full_student_selection_score": 0.5702501057,
+  "acceptance_rule": "cross-modal score >= previous + 0.005; no automatic replacement otherwise",
+  "best_checkpoint": "/root/user/cs_tcci_fengzihuan/数模比赛题/outputs/question2/问题2_鲁棒V2残差门控/问题2_鲁棒V2质量门控_best.pt",
+  "best_checkpoint_sha256": "364d5cf942ffa0de5aecfbc275ddb7f578b5392126b85599a0fc702e6baed4b7",
+  "last_checkpoint": "/root/user/cs_tcci_fengzihuan/数模比赛题/outputs/question2/问题2_鲁棒V2残差门控/问题2_鲁棒V2质量门控_last.pt",
+  "last_checkpoint_sha256": "222e59ea5d1b1a4fe7b6f74b0912577307b5bdd3b330a6052efc4d993d993c17",
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "teacher_sha256": "84ed3a570aa6139d0edbb003b5391ef76343cfaed3699160ab5e2a4c492b02f7",
+  "elapsed_seconds": 283.5630056858063,
+  "test_or_attachment3_labels_used": false,
+  "model_saved": true
+}
