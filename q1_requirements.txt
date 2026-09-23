@@ -1,0 +1,5 @@
+transformers==4.57.6
+openpyxl==3.1.5
+opencv-python-headless==4.11.0.86
+# PyTorch 2.9.0 / TorchAudio 2.9.0 / TorchVision 0.24.0 are installed in vllm312.
+# OpenCV, NumPy, and FFmpeg are provided by the remote environment.

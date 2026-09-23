@@ -1,0 +1,6 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,nearest_frame_sec
+0,They,0,4,0.0,0.4951,proportional_fallback_low_ctc_confidence,-5.46146,1,51,2,2,True,554,209,327,327,0.0
+1,are,5,8,0.4951,0.8665,proportional_fallback_low_ctc_confidence,-5.46146,1,38,2,2,True,729,0,265,253,0.5
+2,all,9,12,0.8665,1.2378,proportional_fallback_low_ctc_confidence,-5.46146,1,38,1,1,True,563,23,247,247,1.0
+3,very,13,17,1.2378,1.733,proportional_fallback_low_ctc_confidence,-5.46146,1,50,2,2,True,570,30,244,244,1.5
+4,safe,18,22,1.733,2.2281,proportional_fallback_low_ctc_confidence,-5.46146,1,50,2,2,True,568,13,261,261,2.0

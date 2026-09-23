@@ -1,0 +1,14 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,nearest_frame_sec
+0,Discussion,0,10,0.35,1.1926,proportional_fallback_low_ctc_confidence,-7.62268,1,85,2,2,True,649,119,175,175,1.0
+1,how,12,15,1.1926,1.4454,proportional_fallback_low_ctc_confidence,-7.62268,1,27,2,2,True,440,107,190,190,1.5
+2,to,16,18,1.4454,1.614,proportional_fallback_low_ctc_confidence,-7.62268,1,17,1,1,True,440,107,190,190,1.5
+3,discuss,19,26,1.614,2.2038,proportional_fallback_low_ctc_confidence,-7.62268,1,60,2,2,False,280,0,720,720,2.0
+4,ideas,27,32,2.2038,2.6252,proportional_fallback_low_ctc_confidence,-7.62268,1,44,2,2,False,280,0,720,720,2.5
+5,and,33,36,2.6252,2.8779,proportional_fallback_low_ctc_confidence,-7.62268,1,26,2,2,True,593,64,254,254,3.0
+6,opinions,37,45,2.8779,3.5521,proportional_fallback_low_ctc_confidence,-7.62268,1,68,2,2,True,593,64,254,254,3.0
+7,more,46,50,3.5521,3.8891,proportional_fallback_low_ctc_confidence,-7.62268,1,35,2,2,False,280,0,720,720,3.5
+8,effectively,51,62,3.8891,4.816,proportional_fallback_low_ctc_confidence,-7.62268,1,94,3,3,True,508,154,269,269,4.5
+9,than,63,67,4.816,5.1531,proportional_fallback_low_ctc_confidence,-7.62268,1,34,1,1,False,280,0,720,720,5.0
+10,a,68,69,5.1531,5.2374,proportional_fallback_low_ctc_confidence,-7.62268,1,10,1,1,False,280,0,720,720,5.0
+11,native,70,76,5.2374,5.743,proportional_fallback_low_ctc_confidence,-7.62268,1,51,2,2,True,230,301,132,132,5.5
+12,speaker,77,84,5.743,6.3328,proportional_fallback_low_ctc_confidence,-7.62268,1,60,3,3,True,231,302,129,129,6.0

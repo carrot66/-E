@@ -1,0 +1,8 @@
+E题数据/
+outputs/
+!outputs/question1_final/
+__pycache__/
+*.py[cod]
+.env
+.venv/
+models/

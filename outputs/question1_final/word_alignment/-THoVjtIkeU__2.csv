@@ -1,0 +1,11 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,nearest_frame_sec
+0,I,0,1,0.0401,0.0602,wav2vec2_ctc_forced_alignment,-0.57619,1,3,1,1,True,230,85,184,184,0.0
+1,think,2,7,0.1604,0.381,wav2vec2_ctc_forced_alignment,-0.57619,1,23,2,2,True,227,88,189,189,0.5
+2,social,8,14,1.2031,1.4437,wav2vec2_ctc_forced_alignment,-0.57619,1,25,2,2,True,222,74,191,191,1.5
+3,justice,15,22,1.5039,1.7846,wav2vec2_ctc_forced_alignment,-0.57619,1,29,2,2,True,222,74,191,191,1.5
+4,is,23,25,1.8648,1.9049,wav2vec2_ctc_forced_alignment,-0.57619,1,5,1,1,False,140,0,360,360,2.0
+5,extremely,26,35,1.9851,2.3661,wav2vec2_ctc_forced_alignment,-0.57619,1,39,2,2,False,140,0,360,360,2.0
+6,important,36,45,2.4262,2.7872,wav2vec2_ctc_forced_alignment,-0.57619,1,37,2,2,True,216,71,205,205,2.5
+7,for,46,49,2.8674,2.9877,wav2vec2_ctc_forced_alignment,-0.57619,1,13,1,1,True,223,73,191,191,3.0
+8,young,50,55,3.0879,3.2483,wav2vec2_ctc_forced_alignment,-0.57619,1,17,1,1,True,223,73,191,191,3.0
+9,people,56,62,3.3286,3.7095,wav2vec2_ctc_forced_alignment,-0.57619,1,39,1,1,True,219,73,193,193,3.5

@@ -1,15 +1,17 @@
 """Competition-ready baseline for the 2026 E problem.
 
-Train: python mosei_solution.py train --data-root "...\\E题数据\\E题数据"
-Infer missing-modality files and explainability files with --mode infer.
+By default, data is read from the bundled ``E题数据/E题数据`` directory.
+Pass ``--data-root`` to use a different data directory.
 """
-import argparse, csv, json, os, pickle, random
+import argparse, csv, pickle, random
 from pathlib import Path
 import numpy as np
 import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
 from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error
+
+DEFAULT_DATA_ROOT = Path(__file__).resolve().parent / 'E题数据' / 'E题数据'
 
 def seed_all(s=2026):
     random.seed(s); np.random.seed(s); torch.manual_seed(s); torch.cuda.manual_seed_all(s)
@@ -111,8 +113,8 @@ def infer(root,ckpt,out,kind='missing'):
 
 def main():
     ap=argparse.ArgumentParser(); sub=ap.add_subparsers(dest='cmd',required=True)
-    t=sub.add_parser('train'); t.add_argument('--data-root',required=True); t.add_argument('--out',default='outputs/best.pt'); t.add_argument('--epochs',type=int,default=35); t.add_argument('--batch',type=int,default=32)
-    i=sub.add_parser('infer'); i.add_argument('--data-root',required=True); i.add_argument('--ckpt',default='outputs/best.pt'); i.add_argument('--kind',choices=['missing','explain'],required=True); i.add_argument('--out',required=True)
+    t=sub.add_parser('train'); t.add_argument('--data-root',default=DEFAULT_DATA_ROOT); t.add_argument('--out',default='outputs/best.pt'); t.add_argument('--epochs',type=int,default=35); t.add_argument('--batch',type=int,default=32)
+    i=sub.add_parser('infer'); i.add_argument('--data-root',default=DEFAULT_DATA_ROOT); i.add_argument('--ckpt',default='outputs/best.pt'); i.add_argument('--kind',choices=['missing','explain'],required=True); i.add_argument('--out',required=True)
     a=ap.parse_args();
     if a.cmd=='train': train(a.data_root,a.out,a.epochs,a.batch)
     else: infer(a.data_root,a.ckpt,a.out,a.kind)

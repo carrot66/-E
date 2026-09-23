@@ -1,0 +1,16 @@
+{
+  "expected_samples": 100,
+  "attempted_samples": 100,
+  "successful_or_existing": 100,
+  "failed_or_missing": 0,
+  "total_word_rows": 1934,
+  "all_100_covered": true,
+  "elapsed_seconds": 251.2,
+  "output_dir": "outputs/question1_final",
+  "models": {
+    "text": "google-bert/bert-base-uncased",
+    "audio": "facebook/wav2vec2-base-960h",
+    "vision": "ResNet18_Weights.DEFAULT"
+  },
+  "failures": []
+}

@@ -1,27 +1,50 @@
-# CMU-MOSEI E题代码
+# 第二十三届研究生数学建模竞赛 E 题：多模态情感识别
 
-## 1. 安装
-```powershell
+本仓库包含题目建模基线、第一问的 MOSEI 词级多模态特征提取代码，以及已生成的第一问特征结果。竞赛原始附件、视频、数据集压缩包和预训练模型权重不纳入仓库；请按竞赛官方渠道获取附件，并在本机设置数据目录。
+
+## 项目文件
+
+- `mosei_solution.py`：后续问题的分类、缺失模态训练与预测基线。
+- `q1_feature_extract.py`：第一问特征提取和词级时序对齐。
+- `audit_q1_outputs.py`：检查第一问输出覆盖率、时间区间及路径信息。
+- `outputs/question1_final/`：100 条样本的第一问结果。
+- `README_Q1.md`：第一问方法、运行方式与产物说明。
+
+## 安装
+
+```bash
 python -m pip install -r requirements.txt
-```
-使用附件2的 `aligned_50.pkl`，因为附件3/4均有对齐版本。
-
-## 2. 训练
-```powershell
-python mosei_solution.py train --data-root "C:\Users\14494\Desktop\第二十三届中国研究生数学建模竞赛 - 中文题目\中文题目\E题\E题数据\E题数据" --out outputs\best.pt --epochs 35
-```
-训练目标：三分类交叉熵 + 0.35×SmoothL1情感强度回归。训练期间随机生成连续局部缺失和整模态缺失，模拟附件3。
-
-## 3. 附件3预测
-```powershell
-python mosei_solution.py infer --data-root "...\E题数据\E题数据" --ckpt outputs\best.pt --kind missing --out outputs\attachment3_predictions.csv
+python -m pip install -r q1_requirements.txt
 ```
 
-## 4. 附件4预测和解释
-```powershell
-python mosei_solution.py infer --data-root "...\E题数据\E题数据" --ckpt outputs\best.pt --kind explain --out outputs\attachment4_explanations.csv
-```
-解释列包括三模态作用权重、主要模态和各模态关键时间位置。位置从0开始，对应aligned_50的序列位置；论文中要进一步把位置映射回原始视频时间轴。
+第一问特征提取需要 PyTorch、FFmpeg 和兼容的 GPU（也可使用 CPU，但运行会较慢）；预训练模型首次使用时会下载模型权重。
 
-## 5. 比赛论文建议
-必须补充：验证集消融实验、不同缺失率曲线、随机种子重复实验、典型样本解释卡、问题1的100条特征提取与对齐日志。该代码是可复现基线，不能保证比赛名次。
+## 第一问运行
+
+在竞赛附件目录下准备原始 MOSEI 视频及 `label-100.xlsx`，然后执行：
+
+```bash
+python q1_feature_extract.py \
+  --data-root "/path/to/E题数据" \
+  --out outputs/question1_final \
+  --visual-fps 2 \
+  --resume
+```
+
+检查已有结果：
+
+```bash
+python audit_q1_outputs.py \
+  --data-root "/path/to/E题数据" \
+  --out outputs/question1_final
+```
+
+## 后续问题基线
+
+`mosei_solution.py` 的训练与推理命令及数据格式要求见脚本帮助：
+
+```bash
+python mosei_solution.py --help
+```
+
+当前代码和输出是可复现的建模起点；结果仍需通过合适的数据划分、消融和重复实验进行验证，不代表竞赛名次保证。

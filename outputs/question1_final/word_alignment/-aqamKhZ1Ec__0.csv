@@ -1,0 +1,15 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,nearest_frame_sec
+0,In,0,2,0.0,0.3157,wav2vec2_ctc_forced_alignment,-0.25469,1,33,2,2,True,297,81,432,432,0.0
+1,2008,3,7,0.3157,0.4735,wav2vec2_ctc_forced_alignment,-0.25469,1,16,1,1,True,298,74,441,441,0.5
+2,there,9,14,0.4735,1.2626,wav2vec2_ctc_forced_alignment,-0.25469,1,80,3,3,True,291,77,464,464,1.0
+3,were,15,19,1.2626,1.8939,wav2vec2_ctc_forced_alignment,-0.25469,1,64,2,2,True,288,77,480,480,1.5
+4,very,20,24,1.8939,2.5253,wav2vec2_ctc_forced_alignment,-0.25469,1,65,2,2,True,296,81,462,462,2.0
+5,serious,25,32,2.5253,3.6301,wav2vec2_ctc_forced_alignment,-0.25469,1,111,3,3,True,342,81,431,431,3.0
+6,tribal,33,39,3.6301,4.577,wav2vec2_ctc_forced_alignment,-0.25469,1,96,3,3,True,313,104,428,428,4.0
+7,warfare,40,47,4.577,5.6818,wav2vec2_ctc_forced_alignment,-0.25469,1,111,3,3,True,293,116,447,447,5.0
+8,in,48,50,5.6818,5.9975,wav2vec2_ctc_forced_alignment,-0.25469,1,33,2,2,True,313,93,440,440,6.0
+9,Kenya,51,56,5.9975,6.7866,wav2vec2_ctc_forced_alignment,-0.25469,1,80,3,3,True,331,82,439,439,6.5
+10,following,57,66,6.7866,8.2071,wav2vec2_ctc_forced_alignment,-0.25469,1,143,3,3,True,381,95,427,427,7.5
+11,a,67,68,8.2071,8.3649,wav2vec2_ctc_forced_alignment,-0.25469,1,16,2,2,True,406,122,419,419,8.5
+12,disputed,69,77,8.3649,9.6276,wav2vec2_ctc_forced_alignment,-0.25469,1,128,3,3,True,380,117,418,418,9.0
+13,election,78,86,9.6276,10.8902,wav2vec2_ctc_forced_alignment,-0.25469,1,127,3,3,True,396,100,427,427,10.5
