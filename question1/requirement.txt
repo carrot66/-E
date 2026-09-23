@@ -1,0 +1,14 @@
+# Python 3.11; install PyTorch separately (see README.md).
+numpy==1.26.4
+pandas==2.2.3
+openpyxl==3.1.5
+av==14.2.0
+soundfile==0.13.1
+opensmile==2.5.1
+opencv-python-headless==4.11.0.86
+Pillow==11.1.0
+transformers==4.51.3
+huggingface-hub==0.30.2
+tokenizers==0.21.1
+safetensors==0.5.3
+num2words==0.5.14

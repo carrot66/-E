@@ -1,0 +1,22 @@
+# Local environments, credentials and caches
+.venv/
+venv/
+.cache/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Generated runs and externally supplied inputs/models
+outputs*/
+models/
+data/
+E题数据/
+*.zip
+*.tar.gz
+*.log
+!results_snapshot/processing.log
+.DS_Store
+Thumbs.db

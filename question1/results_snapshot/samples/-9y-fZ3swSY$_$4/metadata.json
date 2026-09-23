@@ -1,0 +1,774 @@
+{
+  "row_index": 76,
+  "id": "-9y-fZ3swSY$_$4",
+  "video_id": "-9y-fZ3swSY",
+  "clip_id": "4",
+  "text": "I’ve seen this in US or in the US",
+  "label": 0.0,
+  "annotation": "Neutral",
+  "source": "-9y-fZ3swSY/4.mp4",
+  "source_sha256": "fe04a26710e85c58bdaad5a48618c7e0f742d82b0d920eb4a046c8f14a6921dc",
+  "fingerprint": "7d1cd18d693186ac61161e28cf1621ff20b332ae964cd7b67234328eb8e35162",
+  "media": {
+    "origin": 0.0,
+    "duration": 2.821029,
+    "streams": [
+      {
+        "type": "video",
+        "index": 0,
+        "start": 0.0,
+        "duration": 2.821028645833333
+      },
+      {
+        "type": "audio",
+        "index": 1,
+        "start": 0.0,
+        "duration": 2.6650113378684805
+      }
+    ]
+  },
+  "length": 6,
+  "modality_sources": {
+    "text": {
+      "file": "label-100.xlsx",
+      "row_index": 76,
+      "field": "text"
+    },
+    "audio": {
+      "file": "-9y-fZ3swSY/4.mp4",
+      "stream_index": 1
+    },
+    "vision": {
+      "file": "-9y-fZ3swSY/4.mp4",
+      "stream_index": 0
+    }
+  },
+  "words": [
+    {
+      "word": "I’ve",
+      "char_start": 0,
+      "char_end": 4,
+      "normalized": "I'VE",
+      "start": 0.3425,
+      "end": 0.5025,
+      "confidence": 0.42614588342361115,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 17,
+      "ctc_last_frame_exclusive": 25
+    },
+    {
+      "word": "seen",
+      "char_start": 5,
+      "char_end": 9,
+      "normalized": "SEEN",
+      "start": 0.5625,
+      "end": 0.7025,
+      "confidence": 0.6680588036005964,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 28,
+      "ctc_last_frame_exclusive": 35
+    },
+    {
+      "word": "this",
+      "char_start": 10,
+      "char_end": 14,
+      "normalized": "THIS",
+      "start": 0.7625,
+      "end": 0.9225,
+      "confidence": 0.09947084402429571,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 38,
+      "ctc_last_frame_exclusive": 46
+    },
+    {
+      "word": "in",
+      "char_start": 15,
+      "char_end": 17,
+      "normalized": "IN",
+      "start": 1.0425,
+      "end": 1.0825,
+      "confidence": 0.1226307354953806,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 52,
+      "ctc_last_frame_exclusive": 54
+    },
+    {
+      "word": "US",
+      "char_start": 18,
+      "char_end": 20,
+      "normalized": "US",
+      "start": 1.2225,
+      "end": 1.4825,
+      "confidence": 0.4175520146383782,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 61,
+      "ctc_last_frame_exclusive": 74
+    },
+    {
+      "word": "or",
+      "char_start": 21,
+      "char_end": 23,
+      "normalized": "OR",
+      "start": 1.8225,
+      "end": 1.8825,
+      "confidence": 0.9859494525547876,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 91,
+      "ctc_last_frame_exclusive": 94
+    },
+    {
+      "word": "in",
+      "char_start": 24,
+      "char_end": 26,
+      "normalized": "IN",
+      "start": 1.9625,
+      "end": 2.0025,
+      "confidence": 0.998805435224486,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 98,
+      "ctc_last_frame_exclusive": 100
+    },
+    {
+      "word": "the",
+      "char_start": 27,
+      "char_end": 30,
+      "normalized": "THE",
+      "start": 2.0425,
+      "end": 2.1425,
+      "confidence": 0.7424793892919357,
+      "valid": true,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 102,
+      "ctc_last_frame_exclusive": 107
+    },
+    {
+      "word": "US",
+      "char_start": 31,
+      "char_end": 33,
+      "normalized": "US",
+      "start": 2.2425,
+      "end": 2.5625,
+      "confidence": 0.0091138890660479,
+      "valid": false,
+      "observed_fraction": 1.0,
+      "ctc_first_frame": 112,
+      "ctc_last_frame_exclusive": 128
+    }
+  ],
+  "text_chunks": [
+    {
+      "token_start": 0,
+      "token_end": 12,
+      "char_start": 0,
+      "char_end": 33,
+      "emotion_probabilities": [
+        0.0047034649178385735,
+        0.006273599341511726,
+        0.0033523854799568653,
+        0.004893370904028416,
+        0.9287301301956177,
+        0.0036276825703680515,
+        0.04841946065425873
+      ]
+    }
+  ],
+  "text_alignment_error": null,
+  "frames": [
+    {
+      "frame_index": 0,
+      "pts": 0,
+      "start": 0.0,
+      "end": 0.2,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        448,
+        180,
+        142,
+        142
+      ],
+      "image": "frames/000000.jpg"
+    },
+    {
+      "frame_index": 6,
+      "pts": 3072,
+      "start": 0.2,
+      "end": 0.4,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        463,
+        172,
+        140,
+        140
+      ],
+      "image": "frames/000006.jpg"
+    },
+    {
+      "frame_index": 12,
+      "pts": 6144,
+      "start": 0.4,
+      "end": 0.6,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        486,
+        172,
+        133,
+        133
+      ],
+      "image": "frames/000012.jpg"
+    },
+    {
+      "frame_index": 18,
+      "pts": 9216,
+      "start": 0.6,
+      "end": 0.8,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        496,
+        161,
+        137,
+        137
+      ],
+      "image": "frames/000018.jpg"
+    },
+    {
+      "frame_index": 24,
+      "pts": 12288,
+      "start": 0.8,
+      "end": 1.0,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        506,
+        165,
+        138,
+        138
+      ],
+      "image": "frames/000024.jpg"
+    },
+    {
+      "frame_index": 30,
+      "pts": 15360,
+      "start": 1.0,
+      "end": 1.2,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        510,
+        160,
+        149,
+        149
+      ],
+      "image": "frames/000030.jpg"
+    },
+    {
+      "frame_index": 36,
+      "pts": 18432,
+      "start": 1.2,
+      "end": 1.4,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        507,
+        162,
+        154,
+        154
+      ],
+      "image": "frames/000036.jpg"
+    },
+    {
+      "frame_index": 42,
+      "pts": 21504,
+      "start": 1.4,
+      "end": 1.5999999999999999,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        517,
+        163,
+        155,
+        155
+      ],
+      "image": "frames/000042.jpg"
+    },
+    {
+      "frame_index": 48,
+      "pts": 24576,
+      "start": 1.6,
+      "end": 1.8,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        545,
+        155,
+        160,
+        160
+      ],
+      "image": "frames/000048.jpg"
+    },
+    {
+      "frame_index": 54,
+      "pts": 27648,
+      "start": 1.8,
+      "end": 2.0,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        556,
+        145,
+        168,
+        168
+      ],
+      "image": "frames/000054.jpg"
+    },
+    {
+      "frame_index": 60,
+      "pts": 30720,
+      "start": 2.0,
+      "end": 2.2,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        573,
+        158,
+        170,
+        170
+      ],
+      "image": "frames/000060.jpg"
+    },
+    {
+      "frame_index": 66,
+      "pts": 33792,
+      "start": 2.2,
+      "end": 2.4,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        584,
+        162,
+        170,
+        170
+      ],
+      "image": "frames/000066.jpg"
+    },
+    {
+      "frame_index": 72,
+      "pts": 36864,
+      "start": 2.4,
+      "end": 2.6,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        594,
+        172,
+        167,
+        167
+      ],
+      "image": "frames/000072.jpg"
+    },
+    {
+      "frame_index": 78,
+      "pts": 39936,
+      "start": 2.6,
+      "end": 2.8000000000000003,
+      "face_count": 1,
+      "valid": true,
+      "bbox": [
+        607,
+        169,
+        163,
+        163
+      ],
+      "image": "frames/000078.jpg"
+    }
+  ],
+  "timeline": [
+    {
+      "position": 0,
+      "start": 0.0,
+      "end": 0.5,
+      "text_source_indices": [
+        0
+      ],
+      "audio_source_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "vision_source_indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "position": 1,
+      "start": 0.5,
+      "end": 1.0,
+      "text_source_indices": [
+        0,
+        1,
+        2
+      ],
+      "audio_source_indices": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "vision_source_indices": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "position": 2,
+      "start": 1.0,
+      "end": 1.5,
+      "text_source_indices": [
+        3,
+        4
+      ],
+      "audio_source_indices": [
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "vision_source_indices": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "position": 3,
+      "start": 1.5,
+      "end": 2.0,
+      "text_source_indices": [
+        5,
+        6
+      ],
+      "audio_source_indices": [
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199
+      ],
+      "vision_source_indices": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "position": 4,
+      "start": 2.0,
+      "end": 2.5,
+      "text_source_indices": [
+        6,
+        7
+      ],
+      "audio_source_indices": [
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "vision_source_indices": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "position": 5,
+      "start": 2.5,
+      "end": 2.821029,
+      "text_source_indices": [],
+      "audio_source_indices": [
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264
+      ],
+      "vision_source_indices": [
+        12,
+        13
+      ]
+    }
+  ],
+  "quality_summary": {
+    "word_count": 9,
+    "valid_word_count": 8,
+    "mean_valid_word_confidence": 0.557636569781684,
+    "frame_count": 14,
+    "valid_face_frame_count": 14,
+    "multiple_face_frame_count": 0
+  },
+  "valid_counts": {
+    "text": 5,
+    "audio": 6,
+    "vision": 6
+  },
+  "feature_sha256": "f727050f49105719de8eb39b8e7622f425bf52f72f12acbed85f2532d316f1d8",
+  "audio_sha256": "e797357c3e168c72bd2c8f3c8bb4faf783868b32b052b021edf4d2044c321ec2"
+}

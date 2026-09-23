@@ -1,0 +1,17 @@
+{
+  "aligner": {
+    "repo": "facebook/wav2vec2-base-960h",
+    "revision": "local",
+    "files_sha256": "4303b94d2977b3b6c0085b892c2135ecdd5eefeb1a7b49cc4c8571a2f6b48747"
+  },
+  "text": {
+    "repo": "j-hartmann/emotion-english-distilroberta-base",
+    "revision": "local",
+    "files_sha256": "0ff2005b5c7a78157478c3b7b54e8cde377976c203ade70f316250d9bad631b8"
+  },
+  "vision": {
+    "repo": "trpakov/vit-face-expression",
+    "revision": "local",
+    "files_sha256": "a150435ff95dfb2f459fe359e7fd41f48af7da33844af5b1ac8ef33b40c1c9e5"
+  }
+}
