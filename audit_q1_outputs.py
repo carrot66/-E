@@ -17,7 +17,7 @@ def write_csv(p, rows, fields):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--data-root",type=Path,default=Path("E题数据/E题数据"))
-    ap.add_argument("--out",type=Path,default=Path("outputs/question1_final"))
+    ap.add_argument("--out",type=Path,default=Path("outputs/问题1_全量特征结果"))
     args=ap.parse_args(); out=args.out.resolve(); root=args.data_root.resolve()
     label_path,video_root=q1.find_inputs(root); labels=q1.load_labels(label_path)
     # Remove account and server-specific absolute paths from portable files.

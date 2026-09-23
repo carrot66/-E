@@ -1,6 +1,5 @@
 E题数据/
 outputs/*
-!outputs/question1_final/
 !outputs/问题1_全量特征结果/
 __pycache__/
 *.py[cod]

@@ -1,9 +1,0 @@
-﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,nearest_frame_sec
-0,going,0,5,0.0,0.3838,proportional_fallback_low_ctc_confidence,-4.81297,1,39,2,2,False,280,0,720,720,0.0
-1,to,6,8,0.3838,0.5373,proportional_fallback_low_ctc_confidence,-4.81297,1,17,1,1,False,280,0,720,720,0.5
-2,get,9,12,0.5373,0.7676,proportional_fallback_low_ctc_confidence,-4.81297,1,24,2,2,False,280,0,720,720,0.5
-3,married,13,20,0.7676,1.3049,proportional_fallback_low_ctc_confidence,-4.81297,1,54,2,2,False,280,0,720,720,1.0
-4,or,21,23,1.3049,1.4584,proportional_fallback_low_ctc_confidence,-4.81297,1,17,1,1,False,280,0,720,720,1.5
-5,are,24,27,1.4584,1.6887,proportional_fallback_low_ctc_confidence,-4.81297,1,24,1,1,False,280,0,720,720,1.5
-6,already,28,35,1.6887,2.226,proportional_fallback_low_ctc_confidence,-4.81297,1,55,2,2,False,280,0,720,720,2.0
-7,married,36,43,2.226,2.7633,proportional_fallback_low_ctc_confidence,-4.81297,1,54,3,3,False,280,0,720,720,2.5

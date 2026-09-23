@@ -698,7 +698,7 @@ def extract_one(record: dict[str,Any], video: Path, out_dir: Path, enc: Encoders
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--data-root",type=Path,default=Path("E题数据/E题数据"),help="competition E题数据 root")
-    ap.add_argument("--out",type=Path,default=Path("outputs/question1"))
+    ap.add_argument("--out",type=Path,default=Path("outputs/问题1_全量特征结果"))
     ap.add_argument("--cache-dir",type=Path,default=None)
     ap.add_argument("--face-landmarker-model",type=Path,default=None,help="MediaPipe .task file; downloaded automatically if omitted")
     ap.add_argument("--visual-fps",type=float,default=10.0)

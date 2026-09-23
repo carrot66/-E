@@ -1,6 +1,0 @@
-﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,nearest_frame_sec
-0,What,0,4,0.0,0.6513,proportional_fallback_low_ctc_confidence,-6.3646,1,66,2,2,True,545,243,160,160,0.5
-1,is,5,7,0.6513,0.9769,proportional_fallback_low_ctc_confidence,-6.3646,1,34,2,2,True,551,232,153,153,1.0
-2,a,8,9,0.9769,1.1397,proportional_fallback_low_ctc_confidence,-6.3646,1,17,1,1,True,551,232,153,153,1.0
-3,power,10,15,1.1397,1.9538,proportional_fallback_low_ctc_confidence,-6.3646,1,82,3,3,True,559,247,167,167,1.5
-4,pose,16,20,1.9538,2.605,proportional_fallback_low_ctc_confidence,-6.3646,1,67,2,2,True,548,257,156,156,2.5
