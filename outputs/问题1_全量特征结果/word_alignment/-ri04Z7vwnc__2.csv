@@ -1,0 +1,17 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,most,0,4,0.0,0.2896,proportional_fallback_low_ctc_confidence,-6.64921,1,29,3,3,False,280,0,720,720,-5.72959,3,False,False,False,0.1
+1,people,5,11,0.2896,0.724,proportional_fallback_low_ctc_confidence,-6.64921,1,44,5,5,False,280,0,720,720,-4.99246,5,False,False,False,0.5
+2,think,12,17,0.724,1.086,proportional_fallback_low_ctc_confidence,-6.64921,1,36,3,3,False,280,0,720,720,-5.80658,3,False,False,False,0.9
+3,it'll,18,23,1.086,1.3756,proportional_fallback_low_ctc_confidence,-6.64921,3,29,3,3,False,280,0,720,720,-5.01511,3,False,False,False,1.2
+4,sort,24,28,1.3756,1.6653,proportional_fallback_low_ctc_confidence,-6.64921,1,29,3,3,False,280,0,720,720,-5.68075,3,False,False,False,1.5
+5,itself,29,35,1.6653,2.0997,proportional_fallback_low_ctc_confidence,-6.64921,1,43,4,4,False,280,0,720,720,-7.90218,4,False,False,False,1.9
+6,out,36,39,2.0997,2.3169,proportional_fallback_low_ctc_confidence,-6.64921,1,22,3,3,False,280,0,720,720,-5.32156,3,False,False,False,2.2
+7,we'll,42,47,2.3169,2.6065,proportional_fallback_low_ctc_confidence,-6.64921,3,29,3,3,False,280,0,720,720,-7.01298,3,False,False,False,2.5
+8,discuss,48,55,2.6065,3.1133,proportional_fallback_low_ctc_confidence,-6.64921,1,51,5,5,False,280,0,720,720,-8.11319,5,False,False,False,2.9
+9,it,56,58,3.1133,3.2581,proportional_fallback_low_ctc_confidence,-6.64921,1,14,1,1,False,280,0,720,720,-7.53983,1,False,False,False,3.2
+10,later,59,64,3.2581,3.6201,proportional_fallback_low_ctc_confidence,-6.64921,1,37,4,4,False,280,0,720,720,-5.07299,4,False,False,False,3.4
+11,it's,67,71,3.6201,3.8373,proportional_fallback_low_ctc_confidence,-6.64921,3,21,2,2,False,280,0,720,720,-6.56814,2,False,False,False,3.7
+12,not,72,75,3.8373,4.0545,proportional_fallback_low_ctc_confidence,-6.64921,1,22,2,2,True,247,87,189,235,-9.60959,2,True,False,False,3.9
+13,something,76,85,4.0545,4.7062,proportional_fallback_low_ctc_confidence,-6.64921,1,65,7,7,True,249,94,189,235,-6.96914,7,True,False,False,4.4
+14,too,86,89,4.7062,4.9234,proportional_fallback_low_ctc_confidence,-6.64921,1,22,2,2,True,250,92,186,230,-9.27309,2,True,False,False,4.8
+15,important,90,99,4.9234,5.575,proportional_fallback_low_ctc_confidence,-6.64921,1,65,6,6,True,245,94,190,231,-6.76777,6,True,False,False,5.2

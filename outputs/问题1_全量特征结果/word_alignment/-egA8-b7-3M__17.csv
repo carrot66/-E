@@ -1,0 +1,17 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,As,0,2,0.6213,0.7015,wav2vec2_ctc_forced_alignment,-0.05367,1,8,1,1,True,328,66,140,156,-0.01232,1,True,False,True,0.7
+1,you,3,6,0.7616,0.8619,wav2vec2_ctc_forced_alignment,-0.05367,1,10,1,1,True,328,68,138,151,-0.00108,1,True,False,True,0.8
+2,have,7,11,0.9621,1.1024,wav2vec2_ctc_forced_alignment,-0.05367,1,14,2,2,True,330,63,137,155,-0.00115,2,True,False,True,1.0
+3,more,12,16,1.1825,1.3629,wav2vec2_ctc_forced_alignment,-0.05367,1,18,2,2,True,330,66,139,160,-0.07716,2,True,False,True,1.3
+4,experience,17,27,1.4431,2.0644,wav2vec2_ctc_forced_alignment,-0.05367,1,62,6,6,True,331,64,138,160,-0.02829,6,True,False,True,1.8
+5,you,29,32,3.2269,3.3071,wav2vec2_ctc_forced_alignment,-0.05367,1,8,1,1,True,331,69,137,161,-0.00194,1,True,False,True,3.3
+6,have,33,37,3.4073,3.5276,wav2vec2_ctc_forced_alignment,-0.05367,1,12,1,1,True,328,75,138,157,-0.11834,1,True,False,True,3.5
+7,more,38,42,3.5877,3.7681,wav2vec2_ctc_forced_alignment,-0.05367,1,18,2,2,True,328,77,138,161,-0.00957,2,True,False,True,3.7
+8,times,43,48,3.8483,4.189,wav2vec2_ctc_forced_alignment,-0.05367,1,34,3,3,True,329,78,137,160,-0.00454,3,True,False,True,4.0
+9,exhibiting,49,59,4.3093,4.8504,wav2vec2_ctc_forced_alignment,-0.05367,1,55,5,5,True,332,72,139,164,-0.0562,5,True,False,True,4.6
+10,you,61,64,5.2513,5.3515,wav2vec2_ctc_forced_alignment,-0.05367,1,10,1,1,True,344,60,139,159,-0.12728,1,True,False,True,5.3
+11,get,65,68,5.4116,5.5319,wav2vec2_ctc_forced_alignment,-0.05367,1,12,1,1,True,347,58,139,161,-0.00077,1,True,False,True,5.5
+12,to,69,71,5.592,5.6521,wav2vec2_ctc_forced_alignment,-0.05367,1,6,1,1,True,349,57,140,163,-0.11769,1,True,False,True,5.6
+13,know,72,76,5.7123,5.8726,wav2vec2_ctc_forced_alignment,-0.05367,1,16,1,1,True,352,61,139,157,-0.48041,1,True,False,True,5.8
+14,more,77,81,5.9528,6.1131,wav2vec2_ctc_forced_alignment,-0.05367,1,16,2,2,True,352,68,139,159,-3e-05,2,True,False,True,6.0
+15,people,82,88,6.1933,6.514,wav2vec2_ctc_forced_alignment,-0.05367,1,32,4,4,True,348,69,141,163,-0.00055,4,True,False,True,6.4

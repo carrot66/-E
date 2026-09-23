@@ -1,0 +1,12 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,Sometimes,0,9,0.0,0.6826,proportional_fallback_low_ctc_confidence,-6.56435,1,69,7,7,True,611,46,193,244,-7.55393,7,True,False,False,0.3
+1,we,10,12,0.6826,0.8343,proportional_fallback_low_ctc_confidence,-6.56435,1,15,2,2,True,610,44,189,244,-9.0121,2,True,False,False,0.8
+2,have,13,17,0.8343,1.1376,proportional_fallback_low_ctc_confidence,-6.56435,1,30,3,3,True,599,44,192,246,-5.34343,3,True,False,False,1.0
+3,to,18,20,1.1376,1.2893,proportional_fallback_low_ctc_confidence,-6.56435,1,15,1,1,True,595,36,195,254,-3.62939,1,True,False,False,1.2
+4,stretch,21,28,1.2893,1.8202,proportional_fallback_low_ctc_confidence,-6.56435,1,54,6,6,True,604,37,194,254,-5.94694,6,True,False,False,1.6
+5,that,29,33,1.8202,2.1236,proportional_fallback_low_ctc_confidence,-6.56435,1,30,3,3,True,609,40,190,245,-4.76582,3,True,False,False,2.0
+6,joint,34,39,2.1236,2.5028,proportional_fallback_low_ctc_confidence,-6.56435,1,38,4,4,True,610,36,194,244,-11.6347,4,True,False,False,2.3
+7,that,40,44,2.5028,2.8062,proportional_fallback_low_ctc_confidence,-6.56435,1,30,3,3,True,609,32,193,248,-6.25208,3,True,False,False,2.7
+8,is,45,47,2.8062,2.9579,proportional_fallback_low_ctc_confidence,-6.56435,1,15,1,1,True,606,38,192,245,-5.23033,1,True,False,False,2.9
+9,already,48,55,2.9579,3.4888,proportional_fallback_low_ctc_confidence,-6.56435,1,53,5,5,True,605,38,196,259,-4.58438,5,True,False,False,3.2
+10,irritated,56,65,3.4888,4.1714,proportional_fallback_low_ctc_confidence,-6.56435,1,69,7,7,True,608,37,194,256,-6.84819,7,True,False,False,3.8

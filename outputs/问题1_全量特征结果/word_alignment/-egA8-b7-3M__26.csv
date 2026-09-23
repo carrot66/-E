@@ -1,0 +1,16 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,We're,0,5,0.5218,0.7024,wav2vec2_ctc_forced_alignment,-0.12808,3,18,2,2,True,321,64,137,160,-0.24584,2,True,False,True,0.6
+1,updating,6,14,0.7827,1.164,wav2vec2_ctc_forced_alignment,-0.12808,2,38,4,4,True,322,64,138,159,-0.05419,4,True,False,True,1.0
+2,it,15,17,1.2443,1.2845,wav2vec2_ctc_forced_alignment,-0.12808,1,4,0,0,True,322,63,139,161,-0.02001,0,True,True,True,1.3
+3,all,18,21,1.4049,1.5454,wav2vec2_ctc_forced_alignment,-0.12808,1,14,1,1,True,321,64,139,161,-0.02324,1,True,False,True,1.5
+4,the,22,25,1.6056,1.6859,wav2vec2_ctc_forced_alignment,-0.12808,1,8,0,0,True,321,65,138,161,-0.02422,0,True,True,True,1.6
+5,time,26,30,1.7461,2.007,wav2vec2_ctc_forced_alignment,-0.12808,1,26,3,3,True,323,67,136,154,-0.0003,3,True,False,True,1.9
+6,and,31,34,2.4886,2.5689,wav2vec2_ctc_forced_alignment,-0.12808,1,8,1,1,True,323,66,139,158,-0.00011,1,True,False,True,2.5
+7,looking,35,42,2.6291,2.9101,wav2vec2_ctc_forced_alignment,-0.12808,1,29,3,3,True,325,68,137,150,-0.00063,3,True,False,True,2.8
+8,forward,43,50,3.0105,3.3115,wav2vec2_ctc_forced_alignment,-0.12808,1,30,3,3,True,329,59,135,159,-0.0037,3,True,False,True,3.2
+9,to,51,53,3.3918,3.4721,wav2vec2_ctc_forced_alignment,-0.12808,1,8,1,1,True,330,61,134,157,-7e-05,1,True,False,True,3.4
+10,your,54,58,3.5323,3.7129,wav2vec2_ctc_forced_alignment,-0.12808,1,18,2,2,True,328,65,136,162,-0.01048,2,True,False,True,3.6
+11,comments,59,67,3.7932,4.2748,wav2vec2_ctc_forced_alignment,-0.12808,1,48,5,5,True,329,68,136,162,-0.0525,5,True,False,True,4.0
+12,on,68,70,4.4755,4.5157,wav2vec2_ctc_forced_alignment,-0.12808,1,4,1,1,True,319,74,136,159,-0.00197,1,True,False,True,4.5
+13,our,71,74,4.616,4.6963,wav2vec2_ctc_forced_alignment,-0.12808,1,8,0,0,True,317,73,135,161,-0.7958,0,True,True,True,4.7
+14,videos,75,81,4.7365,5.2181,wav2vec2_ctc_forced_alignment,-0.12808,1,48,5,5,True,318,73,138,159,-0.59363,5,True,False,True,5.0

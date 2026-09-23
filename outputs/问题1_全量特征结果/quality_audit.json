@@ -1,0 +1,21 @@
+{
+  "expected_samples": 100,
+  "manifest_samples": 100,
+  "feature_files": 100,
+  "total_word_rows": 1934,
+  "ctc_fallback_samples": 21,
+  "ctc_fallback_rate": 0.21,
+  "ctc_fallback_word_rate": 0.15615305067218202,
+  "ctc_word_confidence_coverage": 0.9829369183040331,
+  "mean_face_detection_word_rate": 0.9052239316239317,
+  "mean_face_blendshape_valid_rate": 0.764453406354638,
+  "visual_nearest_frame_fallback_word_rate": 0.09358841778697001,
+  "audio_missing_samples": 2,
+  "ctc_confidence_mean": -1.503605306122449,
+  "word_duration_min_sec": 0.02000713348388672,
+  "word_duration_median_sec": 0.20021438598632812,
+  "word_duration_max_sec": 2.1245384216308594,
+  "path_anonymization_passed": true,
+  "errors": [],
+  "passed": true
+}

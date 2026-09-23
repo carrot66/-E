@@ -1,0 +1,16 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,They've,0,7,1.4451,1.6057,wav2vec2_ctc_forced_alignment,-0.35395,3,16,2,2,True,430,111,345,385,-0.03358,2,True,False,True,1.5
+1,been,8,12,1.6258,1.7462,wav2vec2_ctc_forced_alignment,-0.35395,1,12,1,1,True,428,109,346,388,-0.03696,1,True,False,True,1.7
+2,able,13,17,1.7663,1.9068,wav2vec2_ctc_forced_alignment,-0.35395,1,14,2,2,True,428,108,345,388,-0.00168,2,True,False,True,1.8
+3,to,18,20,1.967,2.0272,wav2vec2_ctc_forced_alignment,-0.35395,1,6,1,1,True,432,110,343,383,-0.07666,1,True,False,True,2.0
+4,find,21,25,2.1877,2.3885,wav2vec2_ctc_forced_alignment,-0.35395,1,20,2,2,True,436,104,346,394,-0.0029,2,True,False,True,2.3
+5,solutions,26,35,2.4487,2.9304,wav2vec2_ctc_forced_alignment,-0.35395,1,49,5,5,True,436,104,345,397,-0.03332,5,True,False,True,2.7
+6,or,36,38,3.0307,3.0709,wav2vec2_ctc_forced_alignment,-0.35395,1,4,0,0,True,431,109,349,389,-0.17044,0,True,True,True,3.1
+7,at,39,41,3.1712,3.2515,wav2vec2_ctc_forced_alignment,-0.35395,1,8,1,1,True,433,108,347,391,-0.59473,1,True,False,True,3.2
+8,least,42,47,3.2716,3.4121,wav2vec2_ctc_forced_alignment,-0.35395,1,14,2,2,True,436,111,346,389,-3.38038,2,True,False,True,3.3
+9,bring,48,53,3.4723,3.7332,wav2vec2_ctc_forced_alignment,-0.35395,1,26,3,3,True,434,104,347,398,-0.22446,3,True,False,True,3.6
+10,some,54,58,3.8135,3.9741,wav2vec2_ctc_forced_alignment,-0.35395,1,16,1,1,True,436,104,346,395,-0.01742,1,True,False,True,3.9
+11,answers,59,66,4.0744,4.3554,wav2vec2_ctc_forced_alignment,-0.35395,1,28,3,3,True,435,105,345,391,-0.64396,3,True,False,True,4.2
+12,to,67,69,4.3956,4.4357,wav2vec2_ctc_forced_alignment,-0.35395,1,4,1,1,True,437,104,345,396,-0.00863,1,True,False,True,4.4
+13,the,70,73,4.4759,4.5762,wav2vec2_ctc_forced_alignment,-0.35395,1,10,1,1,True,438,105,344,395,-0.07972,1,True,False,True,4.5
+14,table,74,79,4.6164,4.8773,wav2vec2_ctc_forced_alignment,-0.35395,1,26,2,2,True,437,106,346,393,-0.00535,2,True,False,True,4.7

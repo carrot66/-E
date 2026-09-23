@@ -1,0 +1,10 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,President,2,11,0.8035,1.2052,wav2vec2_ctc_forced_alignment,-0.76514,1,40,4,4,True,390,99,537,601,-0.00539,4,False,False,True,1.0
+1,Ronald,12,18,1.3258,1.6271,wav2vec2_ctc_forced_alignment,-0.76514,1,30,3,3,True,386,83,548,623,-0.10499,3,True,False,True,1.5
+2,Reagan,19,25,1.7074,2.0891,wav2vec2_ctc_forced_alignment,-0.76514,1,38,3,3,False,280,0,720,720,-1.6192,3,False,False,True,1.9
+3,blamed,26,32,2.2096,2.531,wav2vec2_ctc_forced_alignment,-0.76514,1,33,3,3,False,280,0,720,720,-0.01672,3,False,False,True,2.4
+4,the,33,36,2.6515,2.7319,wav2vec2_ctc_forced_alignment,-0.76514,1,8,1,1,False,280,0,720,720,-0.00082,1,False,False,True,2.7
+5,professional,37,49,2.7921,3.3746,wav2vec2_ctc_forced_alignment,-0.76514,1,58,6,6,False,280,0,720,720,-0.00637,6,False,False,True,3.1
+6,bureaucracy,50,61,3.4751,4.158,wav2vec2_ctc_forced_alignment,-0.76514,1,68,7,7,True,809,198,133,133,-0.28785,7,False,False,True,3.8
+7,of,62,64,4.3187,4.3589,wav2vec2_ctc_forced_alignment,-0.76514,1,4,0,0,True,815,180,139,139,-0.00063,0,False,True,True,4.3
+8,education,65,74,4.4794,5.1021,wav2vec2_ctc_forced_alignment,-0.76514,1,63,7,7,True,812,176,140,140,-2.77256,7,False,False,True,4.8

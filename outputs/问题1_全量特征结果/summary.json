@@ -1,0 +1,16 @@
+{
+  "expected_samples": 100,
+  "attempted_samples": 100,
+  "successful_or_existing": 100,
+  "failed_or_missing": 0,
+  "total_word_rows": 1934,
+  "all_100_covered": true,
+  "elapsed_seconds": 1072.24,
+  "output_dir": "问题1_全量特征结果",
+  "models": {
+    "text": "google-bert/bert-base-uncased",
+    "audio": "facebook/wav2vec2-base-960h",
+    "vision": "MediaPipe Face Landmarker + torchvision ResNet18_Weights.DEFAULT"
+  },
+  "failures": []
+}

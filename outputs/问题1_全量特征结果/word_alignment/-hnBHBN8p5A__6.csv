@@ -1,0 +1,14 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,Discussion,0,10,0.35,1.1926,proportional_fallback_low_ctc_confidence,-7.62268,1,85,8,8,True,723,106,199,199,-9.3223,8,False,False,False,0.8
+1,how,12,15,1.1926,1.4454,proportional_fallback_low_ctc_confidence,-7.62268,1,25,3,3,True,495,103,186,186,-8.79903,3,False,False,False,1.3
+2,to,16,18,1.4454,1.614,proportional_fallback_low_ctc_confidence,-7.62268,1,17,2,2,True,440,107,190,190,-5.92786,2,False,False,False,1.5
+3,discuss,19,26,1.614,2.2038,proportional_fallback_low_ctc_confidence,-7.62268,1,59,6,6,False,280,0,720,720,-7.38856,6,False,False,False,1.9
+4,ideas,27,32,2.2038,2.6252,proportional_fallback_low_ctc_confidence,-7.62268,1,42,4,4,False,280,0,720,720,-7.65448,4,False,False,False,2.4
+5,and,33,36,2.6252,2.8779,proportional_fallback_low_ctc_confidence,-7.62268,1,25,2,2,False,280,0,720,720,-4.3047,2,False,False,False,2.8
+6,opinions,37,45,2.8779,3.5521,proportional_fallback_low_ctc_confidence,-7.62268,1,68,7,7,True,625,60,252,252,-3.51252,7,False,False,False,3.2
+7,more,46,50,3.5521,3.8891,proportional_fallback_low_ctc_confidence,-7.62268,1,33,3,3,False,280,0,720,720,-4.40728,3,False,False,False,3.7
+8,effectively,51,62,3.8891,4.816,proportional_fallback_low_ctc_confidence,-7.62268,1,93,10,10,False,280,0,720,720,-10.5487,10,False,False,False,4.4
+9,than,63,67,4.816,5.1531,proportional_fallback_low_ctc_confidence,-7.62268,1,34,3,3,False,280,0,720,720,-7.73765,3,False,False,False,5.0
+10,a,68,69,5.1531,5.2374,proportional_fallback_low_ctc_confidence,-7.62268,1,8,1,1,False,280,0,720,720,-0.02489,1,False,False,False,5.2
+11,native,70,76,5.2374,5.743,proportional_fallback_low_ctc_confidence,-7.62268,1,51,5,5,True,230,301,132,132,-8.91853,5,False,False,False,5.5
+12,speaker,77,84,5.743,6.3328,proportional_fallback_low_ctc_confidence,-7.62268,1,59,6,6,True,231,302,129,129,-8.26917,6,False,False,False,6.0

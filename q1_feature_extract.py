@@ -24,10 +24,12 @@ import re
 import subprocess
 import sys
 import time
+import urllib.request
 from pathlib import Path
 from typing import Any
 
 import cv2
+import mediapipe as mp
 import numpy as np
 import openpyxl
 import torch
@@ -40,6 +42,8 @@ TEXT_MODEL = "google-bert/bert-base-uncased"
 SPEECH_MODEL = "facebook/wav2vec2-base-960h"
 SAMPLE_RATE = 16000
 CTC_MIN_MEAN_LOGPROB = -3.0
+FACE_LANDMARKER_URL = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task"
+BLENDSHAPE_DIM = 52
 WORD_RE = re.compile(r"[A-Za-z0-9]+(?:['’][A-Za-z0-9]+)*")
 LOGGER = logging.getLogger("q1")
 
@@ -50,6 +54,20 @@ def sha256_file(path: Path) -> str:
         for block in iter(lambda: f.read(1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
+
+
+def ensure_face_landmarker(path: Path) -> Path:
+    """Download the official MediaPipe face landmark/blendshape task if absent."""
+    path.parent.mkdir(parents=True,exist_ok=True)
+    if not path.is_file() or path.stat().st_size < 1_000_000:
+        tmp=path.with_suffix(path.suffix+".download")
+        LOGGER.info("downloading MediaPipe Face Landmarker model to %s",path)
+        urllib.request.urlretrieve(FACE_LANDMARKER_URL,tmp)
+        if tmp.stat().st_size < 1_000_000:
+            tmp.unlink(missing_ok=True)
+            raise RuntimeError("downloaded Face Landmarker model is unexpectedly small")
+        tmp.replace(path)
+    return path
 
 
 def find_inputs(data_root: Path) -> tuple[Path, Path]:
@@ -162,7 +180,7 @@ class Encoders:
         return features, counts
 
     @torch.inference_mode()
-    def audio(self, waveform: np.ndarray, transcript: str, duration: float) -> tuple[np.ndarray, np.ndarray, np.ndarray, str, float, tuple[float,float], float, float, bool]:
+    def audio(self, waveform: np.ndarray, transcript: str, duration: float):
         audio_rms=float(np.sqrt(np.mean(np.square(waveform,dtype=np.float64))))
         audio_peak=float(np.max(np.abs(waveform))) if len(waveform) else 0.0
         if audio_rms < 1e-5 or audio_peak < 1e-4:
@@ -172,7 +190,8 @@ class Encoders:
             times=proportional_times(transcript,duration)
             active=(0.0,duration)
             hidden=np.zeros((max(1,int(math.ceil(duration/0.02))),768),dtype=np.float32)
-            return hidden,times,np.asarray([duration/len(hidden)],np.float32),"proportional_fallback_silent_audio",float("nan"),active,audio_rms,audio_peak,False
+            word_conf=np.full(len(words),-1.0,np.float32); word_conf_valid=np.zeros(len(words),bool)
+            return hidden,times,np.asarray([duration/len(hidden)],np.float32),"proportional_fallback_silent_audio",float("nan"),word_conf,word_conf_valid,active,audio_rms,audio_peak,False
         active=speech_activity_interval(waveform,duration)
         # Wav2Vec2FeatureExtractor normalizes each waveform to zero mean/unit
         # variance. Applying the same transform is required for its published
@@ -188,10 +207,10 @@ class Encoders:
         hidden = base[0].float().cpu().numpy().astype(np.float32)
         logp = logits[0].float().log_softmax(-1).cpu().numpy()
         frame_sec = len(waveform) / SAMPLE_RATE / max(1, len(hidden))
-        word_times, method, confidence = ctc_word_alignment(
+        word_times,method,confidence,word_conf,word_conf_valid=ctc_word_alignment(
             logp, self.speech_proc.get_vocab(), self.speech_proc.pad_token_id,
             transcript, len(list(WORD_RE.finditer(transcript))), duration, active)
-        return hidden, word_times, np.asarray([frame_sec], dtype=np.float32), method, confidence, active, audio_rms, audio_peak, True
+        return hidden,word_times,np.asarray([frame_sec],np.float32),method,confidence,word_conf,word_conf_valid,active,audio_rms,audio_peak,True
 
     @torch.inference_mode()
     def vision(self, crops: list[np.ndarray], batch_size: int = 64) -> np.ndarray:
@@ -214,7 +233,7 @@ class Encoders:
 
 def ctc_word_alignment(logp: np.ndarray, vocab: dict[str, int], blank: int,
                        transcript: str, nwords: int, duration: float,
-                       active_bounds: tuple[float,float] | None = None) -> tuple[np.ndarray, str, float]:
+                       active_bounds: tuple[float,float] | None = None) -> tuple[np.ndarray,str,float,np.ndarray,np.ndarray]:
     words = list(WORD_RE.finditer(transcript))
     if len(words) != nwords:
         nwords = len(words)
@@ -231,8 +250,9 @@ def ctc_word_alignment(logp: np.ndarray, vocab: dict[str, int], blank: int,
             char_ids.append(int(vocab["|"])); char_word.append(-1)
     t_count = logp.shape[0]
     fallback = proportional_times(transcript, duration)
+    word_conf=np.full(len(words),-1.0,np.float32); word_conf_valid=np.zeros(len(words),bool)
     if not words or not char_ids or len(char_ids) > t_count:
-        return fallback, "proportional_fallback", float("nan")
+        return fallback,"proportional_fallback",float("nan"),word_conf,word_conf_valid
     ext = np.full(2 * len(char_ids) + 1, blank, dtype=np.int64)
     ext[1::2] = np.asarray(char_ids, dtype=np.int64)
     state_n = len(ext)
@@ -259,7 +279,7 @@ def ctc_word_alignment(logp: np.ndarray, vocab: dict[str, int], blank: int,
     state = max(end_candidates, key=lambda s: float(dp[s]))
     score = float(dp[state])
     if score <= neg / 2 or not np.isfinite(score):
-        return fallback, "proportional_fallback", float("nan")
+        return fallback,"proportional_fallback",float("nan"),word_conf,word_conf_valid
     frames: list[list[int]] = [[] for _ in char_ids]
     s = state
     for ti in range(t_count - 1, -1, -1):
@@ -268,7 +288,7 @@ def ctc_word_alignment(logp: np.ndarray, vocab: dict[str, int], blank: int,
         if ti > 0:
             s -= int(back[ti, s])
     intervals = np.full((len(words), 2), np.nan, dtype=np.float32)
-    char_conf = []
+    char_conf = []; per_word_char_conf=[[] for _ in words]
     for ci, fr in enumerate(frames):
         if fr:
             wi = char_word[ci]
@@ -278,20 +298,24 @@ def ctc_word_alignment(logp: np.ndarray, vocab: dict[str, int], blank: int,
                 else:
                     intervals[wi, 0] = min(intervals[wi, 0], lo)
                     intervals[wi, 1] = max(intervals[wi, 1], hi)
-                char_conf.extend(logp[fr, char_ids[ci]].tolist())
+                values=logp[fr,char_ids[ci]].tolist()
+                char_conf.extend(values); per_word_char_conf[wi].extend(values)
     intervals *= duration / max(1, t_count)
     intervals = fill_missing_intervals(intervals, transcript, duration)
     if len(intervals):
         intervals[:, 0] = np.clip(intervals[:, 0], 0, max(0, duration - 0.005))
         intervals[:, 1] = np.clip(intervals[:, 1], intervals[:, 0] + 0.005, duration)
     conf = float(np.mean(char_conf)) if char_conf else float("nan")
+    for wi,values in enumerate(per_word_char_conf):
+        if values:
+            word_conf[wi]=float(np.mean(values)); word_conf_valid[wi]=True
     if conf < CTC_MIN_MEAN_LOGPROB:
         # Weak transcript/audio agreement produces degenerate CTC durations.
         # Place words proportionally over the detected speech window and record
         # the fallback so it can be inspected instead of presented as CTC truth.
         lo,hi=active_bounds if active_bounds is not None else (0.0,duration)
-        return proportional_times(transcript,duration,lo,hi),"proportional_fallback_low_ctc_confidence",conf
-    return intervals, "wav2vec2_ctc_forced_alignment", conf
+        return proportional_times(transcript,duration,lo,hi),"proportional_fallback_low_ctc_confidence",conf,word_conf,word_conf_valid
+    return intervals,"wav2vec2_ctc_forced_alignment",conf,word_conf,word_conf_valid
 
 
 def proportional_times(text: str, duration: float, start: float = 0.0,
@@ -457,7 +481,7 @@ def lbp_uniform_hist(gray: np.ndarray) -> np.ndarray:
     return np.concatenate((*hist, means)).astype(np.float32)  # 4*10 + 9 = 49
 
 
-def read_video_frames(video: Path, fps_sample: float, face_detector: cv2.CascadeClassifier):
+def read_video_frames(video: Path, fps_sample: float, face_landmarker):
     cap = cv2.VideoCapture(str(video))
     if not cap.isOpened(): raise RuntimeError("OpenCV could not open video")
     source_fps = float(cap.get(cv2.CAP_PROP_FPS) or 0)
@@ -465,42 +489,71 @@ def read_video_frames(video: Path, fps_sample: float, face_detector: cv2.Cascade
     duration = nframes / source_fps if source_fps > 0 and nframes > 0 else 0.0
     if duration <= 0: raise RuntimeError("invalid fps/frame count")
     times = np.arange(0, duration, 1 / fps_sample, dtype=np.float32)
-    crops, handcrafted, used_face, bboxes = [], [], [], []
+    crops, handcrafted, blendshapes, used_face, valid_blendshape, bboxes = [], [], [], [], [], []
+    haar = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    blendshape_names: list[str] | None = None
     for t in times:
         cap.set(cv2.CAP_PROP_POS_MSEC, float(t) * 1000)
         ok, frame = cap.read()
         if not ok:
-            crops.append(np.zeros((64,64,3), np.uint8)); handcrafted.append(np.zeros(49,np.float32))
-            used_face.append(False); bboxes.append([0,0,0,0]); continue
+            crops.append(np.zeros((224,224,3), np.uint8)); handcrafted.append(np.zeros(49,np.float32))
+            blendshapes.append(np.zeros(BLENDSHAPE_DIM,np.float32))
+            used_face.append(False); valid_blendshape.append(False); bboxes.append([0,0,0,0]); continue
         h, w = frame.shape[:2]
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        detections = face_detector.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4,
-                                                     minSize=(24, 24))
-        if len(detections):
-            x,y,bw,bh=max(detections,key=lambda z:int(z[2])*int(z[3]))
-            pad_x,pad_y=int(.18*bw),int(.18*bh)
-            x0,y0=max(0,x-pad_x),max(0,y-pad_y); x1,y1=min(w,x+bw+pad_x),min(h,y+bh+pad_y)
-            crop=frame[y0:y1,x0:x1]; face=True; bbox=[int(x0),int(y0),int(x1-x0),int(y1-y0)]
+        rgb=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
+        result=face_landmarker.detect(mp.Image(image_format=mp.ImageFormat.SRGB,data=rgb))
+        if result.face_landmarks:
+            landmarks=result.face_landmarks[0]
+            xs=np.asarray([p.x for p in landmarks],np.float32)*w
+            ys=np.asarray([p.y for p in landmarks],np.float32)*h
+            x0,y0,x1,y1=float(xs.min()),float(ys.min()),float(xs.max()),float(ys.max())
+            pad_x,pad_y=.18*(x1-x0),.18*(y1-y0)
+            x0,y0=max(0,int(x0-pad_x)),max(0,int(y0-pad_y))
+            x1,y1=min(w,int(x1+pad_x)),min(h,int(y1+pad_y))
+            if x1<=x0 or y1<=y0:
+                crop=frame; face=False; blend_ok=False; bbox=[0,0,0,0]; bs=np.zeros(BLENDSHAPE_DIM,np.float32)
+            else:
+                crop=frame[y0:y1,x0:x1]; face=True; blend_ok=True; bbox=[x0,y0,x1-x0,y1-y0]
+                categories=result.face_blendshapes[0] if result.face_blendshapes else []
+                bs=np.asarray([c.score for c in categories],np.float32)
+                if bs.shape!=(BLENDSHAPE_DIM,):
+                    raise RuntimeError(f"MediaPipe returned {len(bs)} blendshapes; expected {BLENDSHAPE_DIM}")
+                names=[c.category_name for c in categories]
+                if blendshape_names is None: blendshape_names=names
+                elif names!=blendshape_names: raise RuntimeError("MediaPipe blendshape order changed within a clip")
         else:
-            # Keep complete sample coverage; centered upper-body/frame crop is
-            # explicitly marked so downstream analysis can filter it.
-            side=min(h,w); x0=max(0,(w-side)//2); y0=max(0,(h-side)//4)
-            crop=frame[y0:y0+side,y0:y0+side] if False else frame[y0:min(h,y0+side),x0:x0+side]
-            face=False; bbox=[int(x0),int(y0),int(side),int(side)]
+            # Haar is a conservative crop fallback only; blendshapes remain invalid.
+            gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+            detections=haar.detectMultiScale(gray,scaleFactor=1.1,minNeighbors=5,minSize=(48,48)) if not haar.empty() else ()
+            if len(detections):
+                x0,y0,bw,bh=max(detections,key=lambda b:int(b[2])*int(b[3]))
+                px,py=int(.18*bw),int(.18*bh); x0,y0=max(0,int(x0-px)),max(0,int(y0-py))
+                x1,y1=min(w,int(x0+bw+2*px)),min(h,int(y0+bh+2*py))
+                crop=frame[y0:y1,x0:x1]; bbox=[x0,y0,x1-x0,y1-y0]; face=True
+            else:
+                side=min(h,w); x0=max(0,(w-side)//2); y0=max(0,(h-side)//4)
+                crop=frame[y0:min(h,y0+side),x0:x0+side]
+                bbox=[int(x0),int(y0),int(side),int(side)]; face=False
+            blend_ok=False; bs=np.zeros(BLENDSHAPE_DIM,np.float32)
         gray_crop=cv2.cvtColor(crop,cv2.COLOR_BGR2GRAY)
         crops.append(cv2.resize(crop,(224,224),interpolation=cv2.INTER_AREA))
-        handcrafted.append(lbp_uniform_hist(gray_crop)); used_face.append(face); bboxes.append(bbox)
+        handcrafted.append(lbp_uniform_hist(gray_crop)); blendshapes.append(bs)
+        used_face.append(face); valid_blendshape.append(blend_ok); bboxes.append(bbox)
     cap.release()
-    return duration, source_fps, times, crops, np.asarray(handcrafted,np.float32), np.asarray(used_face,bool), np.asarray(bboxes,np.int32)
+    return (duration,source_fps,times,crops,np.asarray(handcrafted,np.float32),
+            np.asarray(blendshapes,np.float32),np.asarray(used_face,bool),np.asarray(valid_blendshape,bool),
+            np.asarray(bboxes,np.int32),blendshape_names or [])
 
 
 def pool_by_word(feat: np.ndarray, frame_times: np.ndarray, intervals: np.ndarray) -> tuple[np.ndarray, list[int]]:
     if len(intervals) == 0: return np.zeros((0, feat.shape[-1]),np.float32), []
     if len(feat) == 0: return np.zeros((len(intervals), 0),np.float32), [0]*len(intervals)
-    half_step = float(np.median(np.diff(frame_times))) / 2 if len(frame_times) > 1 else 0.01
     out=np.zeros((len(intervals),feat.shape[1]),np.float32); counts=[]
     for i,(a,b) in enumerate(intervals):
-        sel=(frame_times >= max(0,a-half_step)) & (frame_times < b+half_step)
+        # Strict interval pooling avoids leaking neighboring-word frames.
+        # Short intervals with no sampled frame use the nearest midpoint frame
+        # and are recorded with a zero in counts for downstream QC.
+        sel=(frame_times >= a) & (frame_times < b)
         ids=np.flatnonzero(sel)
         if not len(ids): ids=np.asarray([int(np.argmin(np.abs(frame_times-(a+b)/2)))]); counts.append(0)
         else: counts.append(len(ids))
@@ -548,16 +601,18 @@ def write_csv(path: Path, rows: list[dict[str,Any]]):
 
 
 def extract_one(record: dict[str,Any], video: Path, out_dir: Path, enc: Encoders,
-                face_detector: cv2.CascadeClassifier, visual_fps: float) -> tuple[dict[str,Any],list[dict[str,Any]]]:
+                face_landmarker, visual_fps: float) -> tuple[dict[str,Any],list[dict[str,Any]]]:
     start=time.time(); text=record["text"]; matches=list(WORD_RE.finditer(text)); words=[m.group(0) for m in matches]
     if not words: raise ValueError("transcript contains no word tokens")
     wave=decode_audio(video)
-    duration,source_fps,frame_times,crops,vision49,face_flags,bboxes=read_video_frames(video,visual_fps,face_detector)
+    (duration,source_fps,frame_times,crops,vision49,blendshape_frames,
+     face_flags,blendshape_flags,bboxes,blendshape_names)=read_video_frames(video,visual_fps,face_landmarker)
     wav_duration=len(wave)/SAMPLE_RATE
     # Preserve original video time as master timeline; ffmpeg audio is aligned
     # from t=0. Duration mismatch is recorded for the audit trail.
     duration=min(duration,wav_duration)
-    wav2vec,word_times,rep_period,align_method,ctc_conf,audio_active_bounds,audio_rms,audio_peak,audio_present=enc.audio(wave,text,duration)
+    (wav2vec,word_times,rep_period,align_method,ctc_conf,ctc_word_conf,
+     ctc_word_conf_valid,audio_active_bounds,audio_rms,audio_peak,audio_present)=enc.audio(wave,text,duration)
     if len(word_times)!=len(words): raise RuntimeError("CTC word alignment count mismatch")
     text_features,subtoken_counts=enc.text_words(text,words)
     audio74,audio_times=mel_mfcc_prosody(wave)
@@ -566,11 +621,18 @@ def extract_one(record: dict[str,Any], video: Path, out_dir: Path, enc: Encoders
     wav_word,wav_counts=pool_audio_rep(wav2vec,float(rep_period[0]),word_times)
     resnet=enc.vision(crops)
     vision_word,vision_counts=pool_by_word(vision49,frame_times,word_times)
+    blendshape_word,blendshape_counts=pool_by_word(blendshape_frames,frame_times,word_times)
     resnet_word,_=pool_by_word(resnet,frame_times,word_times)
     face_float=face_flags.astype(np.float32).reshape(-1,1)
     face_word,frame_counts=pool_by_word(face_float,frame_times,word_times)
     face_present=face_word[:,0] > .5
+    bs_word, _=pool_by_word(blendshape_flags.astype(np.float32).reshape(-1,1),frame_times,word_times)
+    blendshape_present=bs_word[:,0] > .5
+    # Do not expose a partial blendshape average when the per-word validity mask is false.
+    blendshape_word[~blendshape_present]=0
     sid=f"{record['video_id']}__{record['clip_id']}"
+    n_words=len(words)
+    alignment_reliable=align_method=="wav2vec2_ctc_forced_alignment"
     out_dir.mkdir(parents=True,exist_ok=True)
     npz=out_dir/f"{sid}.npz"; tmp=npz.with_suffix(".npz.tmp")
     with tmp.open("wb") as f:
@@ -580,10 +642,19 @@ def extract_one(record: dict[str,Any], video: Path, out_dir: Path, enc: Encoders
             audio_present=np.asarray(audio_present),audio_rms=np.asarray(audio_rms,np.float32),audio_peak=np.asarray(audio_peak,np.float32),
             audio_active_bounds=np.asarray(audio_active_bounds,np.float32),
             words=np.asarray(words,dtype="U"),word_times=word_times.astype(np.float32),
+            ctc_char_log_confidence=ctc_word_conf,ctc_char_log_confidence_valid=ctc_word_conf_valid,
+            sequence_position=np.arange(n_words,dtype=np.int32),valid_length=np.asarray(n_words,np.int32),
+            padding_mask=np.zeros(n_words,dtype=bool),valid_mask=np.ones(n_words,dtype=bool),
+            text_valid=np.ones(n_words,dtype=bool),audio_valid=np.full(n_words,audio_present,dtype=bool),
+            vision_valid=np.ones(n_words,dtype=bool),face_blendshape_valid=blendshape_present,
+            alignment_reliable=np.full(n_words,alignment_reliable,dtype=bool),
+            vision_nearest_frame_fallback=np.asarray(vision_counts,dtype=np.int32)==0,
             text=text_features,audio=audio_word,vision=vision_word,
-            audio_wav2vec=wav_word,vision_resnet18=resnet_word,
+            audio_wav2vec=wav_word,vision_resnet18=resnet_word,face_blendshapes=blendshape_word,
+            face_blendshape_names=np.asarray(blendshape_names,dtype="U"),
+            face_blendshape_frame_counts=np.asarray(blendshape_counts,dtype=np.int16),
             audio_frame_times=audio_times,video_frame_times=frame_times,
-            face_detected=face_present,face_bboxes=bboxes[:len(frame_times)])
+            face_detected=face_present,face_blendshape_detected=blendshape_present,face_bboxes=bboxes[:len(frame_times)])
     tmp.replace(npz)
     word_rows=word_table(text,word_times,ctc_conf,align_method,subtoken_counts,
        audio_counts,vision_counts,frame_counts,face_present,
@@ -592,6 +663,11 @@ def extract_one(record: dict[str,Any], video: Path, out_dir: Path, enc: Encoders
     # Add a per-word visualization evidence location: the sampled frame nearest
     # the aligned word midpoint. Frame-level crop boxes are stored separately.
     for i,row in enumerate(word_rows):
+        row["ctc_char_log_confidence"]=round(float(ctc_word_conf[i]),5) if ctc_word_conf_valid[i] else ""
+        row["face_blendshape_frames"]=blendshape_counts[i]
+        row["face_blendshape_valid"]=bool(blendshape_present[i])
+        row["vision_nearest_frame_fallback"]=bool(vision_counts[i]==0)
+        row["alignment_reliable"]=alignment_reliable
         mid=(word_times[i,0]+word_times[i,1])/2
         fi=int(np.argmin(np.abs(frame_times-mid))) if len(frame_times) else -1
         row["nearest_frame_sec"]=round(float(frame_times[fi]),4) if fi>=0 else ""
@@ -604,10 +680,14 @@ def extract_one(record: dict[str,Any], video: Path, out_dir: Path, enc: Encoders
       "source_fps":round(source_fps,4),"visual_sample_fps":visual_fps,"word_count":len(words),
       "text_dim":text_features.shape[1],"audio_dim":audio_word.shape[1],"vision_dim":vision_word.shape[1],
       "audio_wav2vec_dim":wav_word.shape[1],"vision_resnet18_dim":resnet_word.shape[1],
+      "face_blendshape_dim":blendshape_word.shape[1],"valid_length":n_words,"padding":"none",
       "ctc_alignment":align_method,"ctc_log_confidence":round(ctc_conf,5) if np.isfinite(ctc_conf) else "",
       "audio_present":audio_present,"audio_rms":round(audio_rms,8),"audio_peak":round(audio_peak,8),
       "audio_active_start_sec":round(audio_active_bounds[0],4),"audio_active_end_sec":round(audio_active_bounds[1],4),
       "face_detection_rate":round(float(face_present.mean()),4) if len(face_present) else 0,
+      "face_blendshape_detection_rate":round(float(blendshape_present.mean()),4) if len(blendshape_present) else 0,
+      "haar_crop_fallback_rate":round(float(np.mean(face_present & ~blendshape_present)),4) if len(face_present) else 0,
+      "vision_nearest_frame_fallback_rate":round(float(np.mean(np.asarray(vision_counts)==0)),4) if vision_counts else 0,
       "label":record["label"],"annotation":record["annotation"],
       "feature_file":npz.relative_to(out_dir.parent).as_posix(),
       "word_alignment_file":per_word_path.relative_to(out_dir.parent).as_posix(),
@@ -620,7 +700,8 @@ def main():
     ap.add_argument("--data-root",type=Path,default=Path("E题数据/E题数据"),help="competition E题数据 root")
     ap.add_argument("--out",type=Path,default=Path("outputs/question1"))
     ap.add_argument("--cache-dir",type=Path,default=None)
-    ap.add_argument("--visual-fps",type=float,default=4.0)
+    ap.add_argument("--face-landmarker-model",type=Path,default=None,help="MediaPipe .task file; downloaded automatically if omitted")
+    ap.add_argument("--visual-fps",type=float,default=10.0)
     ap.add_argument("--limit",type=int,default=0,help="smoke-run only the first N records; 0=all")
     ap.add_argument("--sample-id",action="append",default=[],help="process only a selected video_id__clip_id; may be repeated")
     ap.add_argument("--resume",action="store_true",help="skip feature files already present")
@@ -639,24 +720,34 @@ def main():
     out.mkdir(parents=True,exist_ok=True)
     log_file=out/"run.log"
     fh=logging.FileHandler(log_file,encoding="utf-8"); fh.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s")); LOGGER.addHandler(fh)
+    face_model_path=ensure_face_landmarker(args.face_landmarker_model.expanduser() if args.face_landmarker_model else Path.home()/".cache/mosei-q1/face_landmarker.task")
     atomic_json(out/"model_and_environment.json",{
       "text_model":TEXT_MODEL,"speech_model":SPEECH_MODEL,
-      "visual_model":"torchvision ResNet18_Weights.DEFAULT (ImageNet-1K)",
+      "visual_model":f"MediaPipe Face Landmarker {mp.__version__} blendshapes (52-D) + torchvision ResNet18 ImageNet-1K (512-D)",
+      "face_landmarker_model":"MediaPipe Face Landmarker float16 task model",
+      "face_landmarker_model_url":FACE_LANDMARKER_URL,
+      "face_landmarker_model_sha256":sha256_file(face_model_path),
       "text_feature":"mean of BERT WordPiece hidden states overlapping each transcript word; 768-D",
       "audio_feature":"mean of per-word 74-D descriptors: 40 log-mel + 13 MFCC + 13 MFCC delta + RMS/ZCR/F0/voicing/centroid + three prosody deltas",
       "audio_context_feature":"mean wav2vec2 final-layer hidden state over forced-aligned word frames; 768-D",
-      "vision_feature":"mean of per-word 49-D spatial uniform-LBP and coarse luminance on detected face (whole-frame fallback marked)",
+      "vision_feature":"per-word mean of 52 MediaPipe blendshape coefficients plus 49-D LBP/luminance and 512-D ImageNet ResNet18 crop embeddings",
+      "vision_temporal_pooling":"strict word interval; nearest midpoint frame only when no sampled frame lands inside the interval",
       "vision_context_feature":"mean ImageNet ResNet-18 penultimate-layer activation on face crop; 512-D",
       "alignment":"wav2vec2 CTC Viterbi forced alignment to provided English transcript; proportional fallback recorded if alignment cannot be built",
       "ctc_fallback_rule":f"use proportional word-length intervals over energy-bounded speech region when mean CTC character log probability < {CTC_MIN_MEAN_LOGPROB}; silent audio is marked missing and uses proportional intervals over clip",
-      "visual_sampling_fps":args.visual_fps,"sample_rate_hz":SAMPLE_RATE,
+      "visual_sampling_fps":args.visual_fps,"face_crop_fallback":"OpenCV Haar face box used only when MediaPipe landmarks are absent; blendshape validity remains false",
+      "sample_rate_hz":SAMPLE_RATE,
       "torch":torch.__version__,"torchaudio":torchaudio.__version__,"transformers":__import__('transformers').__version__,
-      "opencv":cv2.__version__,"python":sys.version,"device":str(device),"data_root_label":args.data_root.as_posix(),
+      "opencv":cv2.__version__,"mediapipe":mp.__version__,"python":sys.version,"device":str(device),"data_root_label":args.data_root.name,
       "label_file_name":xlsx.name,"label_sha256":sha256_file(xlsx),"resume":args.resume,"seed":args.seed})
     # HF mirror is optional; use standard endpoint env variable when present.
     enc=Encoders(device,args.cache_dir)
-    face_model=cv2.CascadeClassifier(str(Path(cv2.data.haarcascades)/"haarcascade_frontalface_default.xml"))
-    if face_model.empty(): raise RuntimeError("OpenCV frontal-face cascade failed to load")
+    face_model=mp.tasks.vision.FaceLandmarker.create_from_options(
+        mp.tasks.vision.FaceLandmarkerOptions(
+            base_options=mp.tasks.BaseOptions(model_asset_path=str(face_model_path)),
+            running_mode=mp.tasks.vision.RunningMode.IMAGE,
+            num_faces=1,output_face_blendshapes=True,
+            min_face_detection_confidence=0.5,min_face_presence_confidence=0.5))
     if args.sample_id:
         wanted=set(args.sample_id); run_records=[r for r in records if f"{r['video_id']}__{r['clip_id']}" in wanted]
         missing=wanted-{f"{r['video_id']}__{r['clip_id']}" for r in run_records}
@@ -683,13 +774,14 @@ def main():
         except Exception as e:
             LOGGER.exception("sample failed: %s",sid)
             failures.append({"sample_id":sid,"video_id":r["video_id"],"clip_id":r["clip_id"],"video_file":video.relative_to(video.parents[1]).as_posix(),"error":repr(e)})
+    face_model.close()
     write_csv(out/"sample_manifest.csv",manifest)
     write_csv(out/"failures.csv",failures)
     summary={"expected_samples":len(records),"attempted_samples":len(run_records),
       "successful_or_existing":len(manifest),"failed_or_missing":len(failures),"total_word_rows":total_words,
       "all_100_covered":len(records)==100 and len(manifest)==100 and not failures,
-      "elapsed_seconds":round(time.time()-total_start,2),"output_dir":args.out.as_posix(),
-      "models":{"text":TEXT_MODEL,"audio":"facebook/wav2vec2-base-960h","vision":"ResNet18_Weights.DEFAULT"},
+      "elapsed_seconds":round(time.time()-total_start,2),"output_dir":args.out.name,
+      "models":{"text":TEXT_MODEL,"audio":SPEECH_MODEL,"vision":"MediaPipe Face Landmarker + torchvision ResNet18_Weights.DEFAULT"},
       "failures":failures}
     atomic_json(out/"summary.json",summary)
     LOGGER.info("finished: %s",json.dumps(summary,ensure_ascii=False))

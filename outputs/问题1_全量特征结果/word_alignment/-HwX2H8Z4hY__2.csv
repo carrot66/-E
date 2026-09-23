@@ -1,0 +1,8 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,President,3,12,0.0,0.9187,proportional_fallback_low_ctc_confidence,-5.14973,1,92,10,10,False,280,0,720,720,-9.16579,10,False,False,False,0.5
+1,Ronald,13,19,0.9187,1.5312,proportional_fallback_low_ctc_confidence,-5.14973,1,62,6,6,False,280,0,720,720,-11.32912,6,False,False,False,1.2
+2,Reagan,20,26,1.5312,2.1437,proportional_fallback_low_ctc_confidence,-5.14973,1,61,6,6,False,280,0,720,720,-7.52684,6,False,False,False,1.8
+3,Look,30,34,2.1437,2.5521,proportional_fallback_low_ctc_confidence,-5.14973,1,41,4,4,False,280,0,720,720,-0.0001,4,False,False,False,2.3
+4,at,35,37,2.5521,2.7562,proportional_fallback_low_ctc_confidence,-5.14973,1,20,2,2,True,34,364,77,77,-0.00314,2,False,False,False,2.7
+5,the,38,41,2.7562,3.0625,proportional_fallback_low_ctc_confidence,-5.14973,1,31,3,3,True,796,191,137,137,-0.0033,3,False,False,False,2.9
+6,record,42,48,3.0625,3.675,proportional_fallback_low_ctc_confidence,-5.14973,1,61,6,6,True,474,0,482,514,-0.00565,6,True,False,False,3.4

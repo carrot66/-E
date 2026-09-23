@@ -1,0 +1,12 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,So,0,2,0.0,0.15,proportional_fallback_silent_audio,,1,16,2,2,False,280,0,720,720,,2,False,False,False,0.1
+1,physical,3,11,0.15,0.7502,proportional_fallback_silent_audio,,1,60,6,6,False,280,0,720,720,,6,False,False,False,0.5
+2,therapists,12,22,0.7502,1.5004,proportional_fallback_silent_audio,,2,75,8,8,False,280,0,720,720,,8,False,False,False,1.1
+3,and,23,26,1.5004,1.7255,proportional_fallback_silent_audio,,1,22,2,2,False,280,0,720,720,,2,False,False,False,1.6
+4,chiropractors,27,40,1.7255,2.7008,proportional_fallback_silent_audio,,4,98,10,10,False,280,0,720,720,,10,False,False,False,2.2
+5,will,41,45,2.7008,3.0009,proportional_fallback_silent_audio,,1,30,3,3,False,280,0,720,720,,3,False,False,False,2.9
+6,do,46,48,3.0009,3.1509,proportional_fallback_silent_audio,,1,15,1,1,False,280,0,720,720,,1,False,False,False,3.1
+7,joint,49,54,3.1509,3.526,proportional_fallback_silent_audio,,1,37,4,4,False,280,0,720,720,,4,False,False,False,3.3
+8,manipulations,55,68,3.526,4.5013,proportional_fallback_silent_audio,,2,98,10,10,True,700,52,145,145,,10,False,False,False,4.0
+9,and,69,72,4.5013,4.7264,proportional_fallback_silent_audio,,1,22,2,2,True,700,52,145,145,,2,False,False,False,4.6
+10,mobilizations,73,86,4.7264,5.7017,proportional_fallback_silent_audio,,2,98,10,10,True,699,51,147,147,,10,False,False,False,5.2

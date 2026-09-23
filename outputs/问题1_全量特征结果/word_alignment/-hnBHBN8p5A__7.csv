@@ -1,0 +1,14 @@
+﻿word_index,word,char_start,char_end,start_sec,end_sec,ctc_alignment,ctc_log_confidence,bert_subtokens,audio_frames,video_frames,vision_appearance_frames,face_detected,bbox_x,bbox_y,bbox_w,bbox_h,ctc_char_log_confidence,face_blendshape_frames,face_blendshape_valid,vision_nearest_frame_fallback,alignment_reliable,nearest_frame_sec
+0,Picture,0,7,0.0,0.8121,proportional_fallback_low_ctc_confidence,-8.34433,1,82,9,9,False,280,0,720,720,-11.18091,9,False,False,False,0.4
+1,this,8,12,0.8121,1.2761,proportional_fallback_low_ctc_confidence,-8.34433,1,46,4,4,True,376,288,107,107,-12.24565,4,False,False,False,1.0
+2,before,14,20,1.2761,1.9722,proportional_fallback_low_ctc_confidence,-8.34433,1,70,7,7,True,375,287,107,107,-5.09772,7,False,False,False,1.6
+3,we,21,23,1.9722,2.2042,proportional_fallback_low_ctc_confidence,-8.34433,1,23,3,3,True,69,93,115,115,-13.95726,3,False,False,False,2.1
+4,actually,24,32,2.2042,3.1322,proportional_fallback_low_ctc_confidence,-8.34433,1,93,9,9,True,417,343,106,106,-8.32718,9,False,False,False,2.7
+5,start,33,38,3.1322,3.7123,proportional_fallback_low_ctc_confidence,-8.34433,1,58,6,6,True,416,343,107,107,-9.91901,6,False,False,False,3.4
+6,hacking,39,46,3.7123,4.5243,proportional_fallback_low_ctc_confidence,-8.34433,1,81,8,8,True,662,144,147,147,-9.69607,8,False,False,False,4.1
+7,we’re,48,53,4.5243,4.9884,proportional_fallback_low_ctc_confidence,-8.34433,3,46,4,4,True,631,125,168,168,-8.2226,4,False,False,False,4.8
+8,in,54,56,4.9884,5.2204,proportional_fallback_low_ctc_confidence,-8.34433,1,24,3,3,True,415,343,109,109,-5.0713,3,False,False,False,5.1
+9,a,57,58,5.2204,5.3364,proportional_fallback_low_ctc_confidence,-8.34433,1,11,1,1,True,372,286,109,109,-5.62985,1,False,False,False,5.3
+10,room,59,63,5.3364,5.8004,proportional_fallback_low_ctc_confidence,-8.34433,1,47,5,5,True,359,122,184,184,-10.4143,5,False,False,False,5.6
+11,formal,64,70,5.8004,6.4965,proportional_fallback_low_ctc_confidence,-8.34433,1,69,6,6,True,326,121,171,171,-7.82068,6,False,False,False,6.1
+12,setting,71,78,6.4965,7.3086,proportional_fallback_low_ctc_confidence,-8.34433,1,81,9,9,True,371,133,154,154,-3.74072,9,False,False,False,6.9
