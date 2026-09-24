@@ -25,21 +25,16 @@ python question1/audit_q1_outputs.py \
 
 ## 第二问
 
-阅读 [`question2/README_Q2.md`](question2/README_Q2.md) 和 [`question2/问题2_鲁棒性模型与结果说明.md`](question2/问题2_鲁棒性模型与结果说明.md)。默认路径均相对仓库根目录，数据与权重通过命令行参数或本地目录提供。
+阅读 [`question2/README_Q2.md`](question2/README_Q2.md) 和 [`question2/问题2_最终模型与四项结果说明.md`](question2/问题2_最终模型与四项结果说明.md)。当前选定方法是 DeBERTa-v3-small 文本分支与跨模态交互 Transformer 自适应融合。附件3全部30条的[提交版预测CSV](outputs/question2/问题2_附件3最终最优预测/问题2_附件3提交版预测.csv)及[结果图和说明](outputs/question2/问题2_附件3最终最优预测/结果说明.md)已归档；附件3无标签，不能计算测试集Acc/F1。
 
 问题二的正式训练与评估运行在服务器的 **1 号显卡**，即 `cuda:1`：**NVIDIA RTX A6000，49140 MiB（约 48 GiB）显存**。命令中的 `--device cuda:1` 均指这张卡。
 
-安装第二问依赖并从根目录运行：
+已有远程模型权重与本地预训练模型缓存时，从项目根目录复现附件3预测：
 
 ```bash
-python -m pip install -r question2/requirements.txt
-python question2/q2_prepare_safe_full_data.py
-python question2/q2_full_mosei_experiment.py --device cuda:1
-python question2/q2_full_bert_text_experiment.py --mode train --device cuda:1
-python question2/q2_full_bert_fusion_experiment.py --mode train --device cuda:1
-python question2/q2_predict_fixed_text_mixture.py --device cuda:1
+python question2/q2_predict_best_fusion_annex3.py --device cuda:1
 ```
 
-第二问脚本会把训练缓存、模型权重和预测结果写到被 `.gitignore` 排除的 `work/` 与 `outputs/` 子目录；不会读取或上传完整 MOSEI test 标签。
+第二问轻量预测结果、验证CSV、实验配置、图和说明存于 `outputs/question2/` 并同步GitHub；训练缓存与模型权重不上传。脚本不会读取完整MOSEI test或附件3标签。
 
 `question2/legacy_mosei_solution.py` 仅保留早期基线，正式实验以同目录的 `q2_*.py` 为准。

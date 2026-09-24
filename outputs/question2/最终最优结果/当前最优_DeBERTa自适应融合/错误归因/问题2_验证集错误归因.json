@@ -1,0 +1,73 @@
+{
+  "protocol": "Post-hoc audit of the selected model's labeled, video-disjoint validation split; no attachment-3 labels",
+  "validation_samples": 1871,
+  "correct": 1313,
+  "wrong": 558,
+  "Accuracy": 0.7017637626937466,
+  "Macro_F1": 0.6709016229063525,
+  "confusion_rows_true_columns_predicted": [
+    [
+      382,
+      75,
+      49
+    ],
+    [
+      73,
+      216,
+      144
+    ],
+    [
+      81,
+      136,
+      715
+    ]
+  ],
+  "per_class": {
+    "Negative": {
+      "support": 506,
+      "precision": 0.7126865671641791,
+      "recall": 0.7549407114624506,
+      "F1": 0.7332053742802304,
+      "misclassified": 124
+    },
+    "Neutral": {
+      "support": 433,
+      "precision": 0.5058548009367682,
+      "recall": 0.49884526558891457,
+      "F1": 0.5023255813953489,
+      "misclassified": 217
+    },
+    "Positive": {
+      "support": 932,
+      "precision": 0.7874449339207048,
+      "recall": 0.7671673819742489,
+      "F1": 0.7771739130434783,
+      "misclassified": 217
+    }
+  },
+  "error_directions": {
+    "Negative→Neutral": 75,
+    "Negative→Positive": 49,
+    "Neutral→Negative": 73,
+    "Neutral→Positive": 144,
+    "Positive→Negative": 81,
+    "Positive→Neutral": 136
+  },
+  "high_confidence_error_threshold": 0.8,
+  "high_confidence_error_count": 74,
+  "true_intensity_absolute_bands": {
+    "0–0.5": {
+      "n": 832,
+      "MAE": 0.39914121316640094
+    },
+    "0.5–1.5": {
+      "n": 717,
+      "MAE": 0.4441549620867773
+    },
+    "1.5–3": {
+      "n": 322,
+      "MAE": 0.8410408805986369
+    }
+  },
+  "note": "The highest class probability is an uncalibrated model score, not an empirical probability of correctness."
+}
