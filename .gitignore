@@ -9,6 +9,7 @@ outputs/question2/**/*.pt
 outputs/question2/**/*.pth
 outputs/question2/**/*.bin
 outputs/question2/**/*.pkl
+outputs/question2/**/*.tiff
 __pycache__/
 *.py[cod]
 .env

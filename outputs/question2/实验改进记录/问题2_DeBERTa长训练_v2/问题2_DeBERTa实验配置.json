@@ -1,0 +1,14 @@
+{
+  "model_path": "/root/user/cs_tcci_fengzihuan/.cache/huggingface/hub/models--cross-encoder--nli-deberta-v3-small/snapshots/fa2804872c3b4bd748f38c0185cc85775361e735",
+  "source_sha256": "654912d42be7055962774791723677cf7ca4785f2646bc2714927c6a546ce92f",
+  "train_samples": 16326,
+  "valid_samples": 1871,
+  "video_group_overlap": 0,
+  "train_layers": 4,
+  "max_length": 96,
+  "encoder_lr": 6e-06,
+  "head_lr": 8e-05,
+  "mask_probability": 0.2,
+  "selection": "clean Macro-F1 - 0.05*MAE",
+  "test_or_attachment3_labels_used": false
+}

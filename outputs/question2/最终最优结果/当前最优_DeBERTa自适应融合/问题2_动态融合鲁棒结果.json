@@ -1,0 +1,11 @@
+{
+  "selection_score": 0.5980107661811151,
+  "clean_F1": 0.6709016229063526,
+  "clean_MAE": 0.4924424162194532,
+  "contiguous_30pct_mean_F1": 0.6476891472354996,
+  "contiguous_30pct_mean_MAE": 0.5203660985834859,
+  "scattered_TAV_mean_F1": 0.6236501371774188,
+  "scattered_TAV_mean_MAE": 0.548099623300624,
+  "dynamic_rule": "DeBERTa ensemble weight = calibrated weight * observed text fraction",
+  "test_or_attachment3_labels_used": false
+}

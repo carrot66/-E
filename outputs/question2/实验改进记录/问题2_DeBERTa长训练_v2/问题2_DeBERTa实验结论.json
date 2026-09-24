@@ -1,0 +1,15 @@
+{
+  "best_epoch": 4,
+  "clean_metrics": {
+    "Accuracy": 0.6916087653661144,
+    "Macro_F1": 0.6520516296990524,
+    "Weighted_F1": 0.6866254269819142,
+    "MAE": 0.511275053024292
+  },
+  "selection_score": 0.6264878770478378,
+  "best_checkpoint": "/root/user/cs_tcci_fengzihuan/数模比赛题/outputs/question2/问题2_DeBERTa长训练_v2/问题2_DeBERTa文本最佳.pt",
+  "best_checkpoint_sha256": "418f6c01e045cda3a75f37dfbfab6d54c2ee0b1911dc12cb375cf499825ff59d",
+  "elapsed_seconds": 456.89392614364624,
+  "model_saved": true,
+  "test_or_attachment3_labels_used": false
+}

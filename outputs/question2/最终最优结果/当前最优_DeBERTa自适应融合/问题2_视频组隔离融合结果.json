@@ -1,0 +1,45 @@
+{
+  "selection_protocol": "weight and class biases selected on hash-split calibration video groups only",
+  "calibration_samples": 821,
+  "holdout_samples": 1050,
+  "calibration_videos": 142,
+  "holdout_videos": 158,
+  "video_overlap": 0,
+  "parameters": {
+    "weight_deberta": 0.675,
+    "neutral_bias": 0.12,
+    "positive_bias": -0.01999999999999999,
+    "calibration_F1": 0.6430346967846968
+  },
+  "cross_modal_full": {
+    "Accuracy": 0.672367717797969,
+    "Macro_F1": 0.6400936862801108,
+    "Weighted_F1": 0.673761354156126,
+    "MAE": 0.532985508441925
+  },
+  "deberta_full": {
+    "Accuracy": 0.692143238909674,
+    "Macro_F1": 0.6539228805219623,
+    "Weighted_F1": 0.6877917068417023,
+    "MAE": 0.5145966410636902
+  },
+  "ensemble_calibration": {
+    "Accuracy": 0.6772228989037758,
+    "Macro_F1": 0.6430346967846968,
+    "Weighted_F1": 0.6762545545873805,
+    "MAE": 0.47728633880615234
+  },
+  "ensemble_holdout": {
+    "Accuracy": 0.7209523809523809,
+    "Macro_F1": 0.6925512641847614,
+    "Weighted_F1": 0.7214480226560291,
+    "MAE": 0.5042930245399475
+  },
+  "ensemble_full_fixed_parameters": {
+    "Accuracy": 0.7017637626937466,
+    "Macro_F1": 0.6709016229063526,
+    "Weighted_F1": 0.7016755655192435,
+    "MAE": 0.49244242906570435
+  },
+  "test_or_attachment3_labels_used": false
+}

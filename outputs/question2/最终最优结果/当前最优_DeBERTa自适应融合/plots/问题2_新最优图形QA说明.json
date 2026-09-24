@@ -1,0 +1,19 @@
+{
+  "core_conclusion": "DeBERTa adaptive ensembling improves clean and missing-modality Macro-F1.",
+  "archetype": "quantitative grid",
+  "backend": "Python/matplotlib",
+  "validation_samples": 1871,
+  "split": "16,326 train; 1,871 video-disjoint valid",
+  "seeds": "one DeBERTa seed; deterministic missingness replicates",
+  "source_data": [
+    "outputs/question2/问题2_DeBERTa文本增强_v1/问题2_DeBERTa逐轮训练记录.csv",
+    "outputs/question2/问题2_DeBERTa文本增强_v1/问题2_缺失场景全量结果.csv"
+  ],
+  "excluded_rows": 0,
+  "exports": [
+    "SVG editable text",
+    "PDF TrueType text",
+    "PNG 600 dpi",
+    "TIFF 600 dpi"
+  ]
+}
