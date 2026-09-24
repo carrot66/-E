@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import pickle
@@ -9,7 +10,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score, mean_absolute_error, recall_score
 
 from q2_crossmodal_full_experiment import CrossModalFusion
 from q2_experiment import TextEncoder, normalize, predict, prepare_split, sha
@@ -28,6 +29,20 @@ def blend(a,b,w,neutral_bias=0.0,positive_bias=0.0):
     z=(1-w)*np.log(np.clip(a,1e-7,1))+w*np.log(np.clip(b,1e-7,1))
     z[:,1]+=neutral_bias; z[:,2]+=positive_bias
     z-=z.max(1,keepdims=True); p=np.exp(z); return p/p.sum(1,keepdims=True)
+
+
+def write_predictions(path, ids, y, r, p, pr):
+    names=['Negative','Neutral','Positive']; rows=[]
+    pred=p.argmax(1)
+    for i,sample_id in enumerate(ids):
+        rows.append({'sample_id':sample_id,'video_id':sample_id.split('$_$',1)[0],
+                     'true_class':names[int(y[i])],'predicted_class':names[int(pred[i])],
+                     'correct':bool(pred[i]==y[i]),'negative_probability':float(p[i,0]),
+                     'neutral_probability':float(p[i,1]),'positive_probability':float(p[i,2]),
+                     'true_intensity':float(r[i]),'predicted_intensity':float(pr[i]),
+                     'absolute_error':float(abs(r[i]-pr[i]))})
+    with Path(path).open('w',encoding='utf-8-sig',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 
 
 def main(args):
@@ -59,6 +74,7 @@ def main(args):
                     best={'weight_deberta':float(w),'neutral_bias':float(nb),'positive_bias':float(pb),'calibration_F1':f}
     p=blend(cross_p,db_p,best['weight_deberta'],best['neutral_bias'],best['positive_bias'])
     pr=(1-best['weight_deberta'])*cross_r+best['weight_deberta']*db_r
+    pred=p.argmax(1); matrix=confusion_matrix(va['y'],pred,labels=[0,1,2])
     result={'selection_protocol':'weight and class biases selected on hash-split calibration video groups only',
             'calibration_samples':int(calibration.sum()),'holdout_samples':int(holdout.sum()),
             'calibration_videos':len(set(groups[calibration])),'holdout_videos':len(set(groups[holdout])),
@@ -68,8 +84,13 @@ def main(args):
             'ensemble_calibration':score(va['y'][calibration],va['r'][calibration],p[calibration],pr[calibration]),
             'ensemble_holdout':score(va['y'][holdout],va['r'][holdout],p[holdout],pr[holdout]),
             'ensemble_full_fixed_parameters':score(va['y'],va['r'],p,pr),
+            'confusion_matrix_rows_true_columns_predicted':matrix.tolist(),
+            'per_class_recall':dict(zip(['Negative','Neutral','Positive'],
+                map(float,recall_score(va['y'],pred,labels=[0,1,2],average=None,zero_division=0)))),
             'test_or_attachment3_labels_used':False}
     Path(args.out).write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+    if args.predictions_csv:
+        write_predictions(args.predictions_csv,valid_ids,va['y'],va['r'],p,pr)
     print(json.dumps(result,ensure_ascii=False,indent=2))
 
 
@@ -77,5 +98,6 @@ if __name__=='__main__':
     ap=argparse.ArgumentParser()
     ap.add_argument('--safe-data',required=True); ap.add_argument('--cross-checkpoint',required=True)
     ap.add_argument('--deberta-predictions',required=True); ap.add_argument('--out',required=True)
+    ap.add_argument('--predictions-csv')
     ap.add_argument('--cache',default='work/问题2_特征缓存'); ap.add_argument('--device',default='cuda:1')
     main(ap.parse_args())

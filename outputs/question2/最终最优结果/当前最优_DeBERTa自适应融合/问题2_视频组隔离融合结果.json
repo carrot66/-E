@@ -41,5 +41,27 @@
     "Weighted_F1": 0.7016755655192435,
     "MAE": 0.49244242906570435
   },
+  "confusion_matrix_rows_true_columns_predicted": [
+    [
+      382,
+      75,
+      49
+    ],
+    [
+      73,
+      216,
+      144
+    ],
+    [
+      81,
+      136,
+      715
+    ]
+  ],
+  "per_class_recall": {
+    "Negative": 0.7549407114624506,
+    "Neutral": 0.49884526558891457,
+    "Positive": 0.7671673819742489
+  },
   "test_or_attachment3_labels_used": false
 }

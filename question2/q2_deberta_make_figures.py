@@ -102,12 +102,29 @@ def scenario_figures(rows,out):
     export(fig,out,'问题2_散点缺失率鲁棒曲线')
 
 
+def confusion_figure(ensemble,out):
+    matrix=np.asarray(ensemble['confusion_matrix_rows_true_columns_predicted'],dtype=float)
+    normalized=matrix/matrix.sum(1,keepdims=True)
+    labels=['Negative','Neutral','Positive']
+    fig,ax=plt.subplots(figsize=(4.5,3.9),constrained_layout=True)
+    image=ax.imshow(normalized,cmap='Blues',vmin=0,vmax=1)
+    for i in range(3):
+        for j in range(3):
+            color='white' if normalized[i,j]>.55 else '#202124'
+            ax.text(j,i,f'{normalized[i,j]:.1%}\n(n={int(matrix[i,j])})',ha='center',va='center',color=color,fontsize=7)
+    ax.set_xticks(range(3),labels); ax.set_yticks(range(3),labels)
+    ax.set(xlabel='Predicted class',ylabel='True class')
+    cbar=fig.colorbar(image,ax=ax,fraction=.047,pad=.04); cbar.set_label('Row-normalized proportion')
+    panel(ax,'a'); export(fig,out,'问题2_新最优归一化混淆矩阵')
+
+
 def main(args):
     rows=read_csv(args.train_csv); robust_rows=read_csv(args.robust_csv)
     old=json.loads(Path(args.old_json).read_text(encoding='utf-8'))['cross_modal_profile']
     new=json.loads(Path(args.new_json).read_text(encoding='utf-8'))
+    ensemble=json.loads(Path(args.ensemble_json).read_text(encoding='utf-8'))
     out=Path(args.out)
-    training_figure(rows,out); comparison_figure(old,new,out); scenario_figures(robust_rows,out)
+    training_figure(rows,out); comparison_figure(old,new,out); scenario_figures(robust_rows,out); confusion_figure(ensemble,out)
     qa={'core_conclusion':'DeBERTa adaptive ensembling improves clean and missing-modality Macro-F1.',
         'archetype':'quantitative grid','backend':'Python/matplotlib','validation_samples':1871,
         'split':'16,326 train; 1,871 video-disjoint valid','seeds':'one DeBERTa seed; deterministic missingness replicates',
@@ -119,5 +136,6 @@ def main(args):
 if __name__=='__main__':
     ap=argparse.ArgumentParser()
     ap.add_argument('--train-csv',required=True); ap.add_argument('--robust-csv',required=True)
-    ap.add_argument('--old-json',required=True); ap.add_argument('--new-json',required=True); ap.add_argument('--out',required=True)
+    ap.add_argument('--old-json',required=True); ap.add_argument('--new-json',required=True)
+    ap.add_argument('--ensemble-json',required=True); ap.add_argument('--out',required=True)
     main(ap.parse_args())
