@@ -6,7 +6,7 @@
 
 ## 环境与数据
 
-已运行环境：Python 3.12、PyTorch 2.9.0、Transformers 4.57.6、NumPy 2.2.6、scikit-learn 1.9.0、openpyxl 3.1.5、Matplotlib 3.11.2、RTX A6000。运行前安装 `question2/requirements.txt`，并将 `google-bert/bert-base-uncased` 的修订版 `86b5e0934494bd15c9632b12f734a8a67f723594` 缓存到 Hugging Face 本地缓存；脚本使用 `local_files_only=True`。如果题目数据不在默认的 `E题数据/E题数据/` 下，使用 `--data-root` 指向含三个附件子目录的位置。
+已运行环境：Python 3.12、PyTorch 2.9.0、Transformers 4.57.6、NumPy 2.2.6、scikit-learn 1.9.0、openpyxl 3.1.5、Matplotlib 3.11.2。正式训练与评估使用服务器的 **GPU 1（`cuda:1`）**，型号为 **NVIDIA RTX A6000**，总显存 **49140 MiB（约 48 GiB）**；文中的 `--device cuda:1` 均指这张显卡。运行前安装 `question2/requirements.txt`，并将 `google-bert/bert-base-uncased` 的修订版 `86b5e0934494bd15c9632b12f734a8a67f723594` 缓存到 Hugging Face 本地缓存；脚本使用 `local_files_only=True`。如果题目数据不在默认的 `E题数据/E题数据/` 下，使用 `--data-root` 指向含三个附件子目录的位置。
 
 附件2的划分是 train/valid/test = 3395/728/727。模型只使用 train 拟合；valid 用于提前停止和选模型；附件2 test 只用于定型后的诊断，附件3无标签，只输出预测。与标签表不一致的输入会报错。全零视觉、序列截断等情况会进入审计清单，不会被静默删除。
 

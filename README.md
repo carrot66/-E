@@ -27,6 +27,8 @@ python question1/audit_q1_outputs.py \
 
 阅读 [`question2/README_Q2.md`](question2/README_Q2.md) 和 [`question2/问题2_鲁棒性模型与结果说明.md`](question2/问题2_鲁棒性模型与结果说明.md)。默认路径均相对仓库根目录，数据与权重通过命令行参数或本地目录提供。
 
+问题二的正式训练与评估运行在服务器的 **1 号显卡**，即 `cuda:1`：**NVIDIA RTX A6000，49140 MiB（约 48 GiB）显存**。命令中的 `--device cuda:1` 均指这张卡。
+
 安装第二问依赖并从根目录运行：
 
 ```bash
