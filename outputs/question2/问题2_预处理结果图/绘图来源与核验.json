@@ -1,0 +1,10 @@
+{
+  "figure_count": 5,
+  "source_json": [
+    "outputs/question2/问题2_完整版MOSEI安全整合审计/问题2_完整版MOSEI与竞赛数据安全整合审计.json",
+    "outputs/question2/问题2_训练集分组交叉验证/问题2_数据泄漏与质量审计.json"
+  ],
+  "test_labels_used": false,
+  "annex3_labels_used": false,
+  "png_pdf_svg_count_each": 5
+}

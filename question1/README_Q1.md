@@ -63,6 +63,8 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 完整的题目第1问文字说明、典型样本数据表和全量结果摘要见项目根目录的 `问题1_特征提取与时序对齐说明.md`。
 
+另有 [8 张问题一补充结果图](../outputs/question1/问题1_补充结果图/)（PNG、PDF、SVG），覆盖全量质量、对齐置信度、ASR 诊断、典型样本特征和可复现流程。运行 `python question1/q1_make_figures.py` 可从现有第一问结果重绘；[配图核验与口径说明](q1_figures_QA.md)说明静音样本和 ASR 分组统计的处理。
+
 ## 复核要点
 
 首先核对 `quality_audit.json` 的 `passed` 为 `true`、覆盖率为 100%、回退比例与最近帧比例；其次核对每个 NPZ 内所有词级数组长度等于 `valid_length`，时间区间递增且落在视频时长内；最后分层抽查 CTC、低置信回退和静音样本的词、语音区间与视频帧，并回看同名 MP4。报告中必须把近似回退区间与真实强制对齐区分开。
