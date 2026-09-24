@@ -228,7 +228,9 @@ def fig08_pipeline(q, sm):
 
 def main():
     m,s,a,q,sm=load(); fig01_coverage(m,q,sm); fig02_duration(m); fig03_dimensions(s); fig04_heatmap(m); fig05_asr(a); fig06_typical(); fig07_quality_rank(m); fig08_pipeline(q,sm)
-    manifest={"figure_count":8,"source_samples":int(len(m)),"source_word_rows":int(q["total_word_rows"]),"output_dir":"outputs/question1/问题1_补充结果图","repository_formats":["svg","pdf","png"],"local_only_format":"tif","note":"补充图避开已有的词语-语音-视频帧复合图，专注全量统计、质量审计、特征序列和复现流程。"}
+    manifest={"figure_count":len(list(OUT.glob("q1_fig*.png"))),"source_samples":int(len(m)),"source_word_rows":int(q["total_word_rows"]),"output_dir":"outputs/question1/问题1_补充结果图","repository_formats":["svg","pdf","png"],"local_only_format":"tif","note":"补充图避开已有的词语-语音-视频帧复合图，专注全量统计、质量审计、特征序列和复现流程。"}
+    if (OUT/"q1_fig09_语音特征处理前后对比.png").is_file():
+        manifest["audio_comparison_figure"]="q1_fig09_语音特征处理前后对比"
     (OUT/"figure_manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 
 

@@ -10,7 +10,7 @@
 
 阅读 [`question1/README_Q1.md`](question1/README_Q1.md) 和 [`question1/问题1_特征提取与时序对齐说明.md`](question1/问题1_特征提取与时序对齐说明.md)。第一问产物在 `outputs/question1/问题1_全量特征结果/`，其中包含逐样本 NPZ、词级对齐表、100 条汇总表、审计记录和提交版 ZIP。
 
-[问题一补充结果图](outputs/question1/问题1_补充结果图/)包含 8 张可用于论文的中文统计图与流程图，另有[口径和质量核验说明](question1/q1_figures_QA.md)。
+[问题一补充结果图](outputs/question1/问题1_补充结果图/)包含 9 张可用于论文的中文统计图与流程图，其中[语音特征处理前后对比图](outputs/question1/问题1_补充结果图/q1_fig09_语音特征处理前后对比.png)展示了帧级提取、同尺度展示和真实的逐词池化；另有[口径和质量核验说明](question1/q1_figures_QA.md)。
 
 从仓库根目录运行：
 

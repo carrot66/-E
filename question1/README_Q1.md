@@ -63,7 +63,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 完整的题目第1问文字说明、典型样本数据表和全量结果摘要见项目根目录的 `问题1_特征提取与时序对齐说明.md`。
 
-另有 [8 张问题一补充结果图](../outputs/question1/问题1_补充结果图/)（PNG、PDF、SVG），覆盖全量质量、对齐置信度、ASR 诊断、典型样本特征和可复现流程。运行 `python question1/q1_make_figures.py` 可从现有第一问结果重绘；[配图核验与口径说明](q1_figures_QA.md)说明静音样本和 ASR 分组统计的处理。
+另有 [9 张问题一补充结果图](../outputs/question1/问题1_补充结果图/)（PNG、PDF、SVG），覆盖全量质量、对齐置信度、ASR 诊断、语音处理前后对比、典型样本特征和可复现流程。运行 `python question1/q1_make_figures.py` 重绘前 8 张；有原始视频和问题一提取环境时运行 `python question1/q1_audio_processing_comparison.py` 重绘第 9 张。[配图核验与口径说明](q1_figures_QA.md)说明数据与图表口径。
 
 ## 复核要点
 

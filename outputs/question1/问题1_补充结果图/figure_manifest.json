@@ -1,5 +1,5 @@
 {
-  "figure_count": 8,
+  "figure_count": 9,
   "source_samples": 100,
   "source_word_rows": 1934,
   "output_dir": "outputs/question1/问题1_补充结果图",
@@ -9,5 +9,6 @@
     "png"
   ],
   "local_only_format": "tif",
-  "note": "补充图避开已有的词语-语音-视频帧复合图，专注全量统计、质量审计、特征序列和复现流程。"
+  "note": "补充图避开已有的词语-语音-视频帧复合图，专注全量统计、质量审计、特征序列和复现流程。",
+  "audio_comparison_figure": "q1_fig09_语音特征处理前后对比"
 }
