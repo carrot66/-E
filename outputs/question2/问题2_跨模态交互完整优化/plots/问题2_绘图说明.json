@@ -1,7 +1,8 @@
 {
-  "figure_count": 5,
+  "figure_count": 6,
   "files": [
     "问题2_F1与MAE权衡.png",
+    "问题2_归一化混淆矩阵.png",
     "问题2_散点缺失率曲线.png",
     "问题2_模型鲁棒性对比.png",
     "问题2_缺失模态消融.png",

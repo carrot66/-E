@@ -5,12 +5,10 @@ import collections
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from q2_figure_style import use_chinese_font
 
-mpl.rcParams.update({
-    'font.family': 'sans-serif', 'font.sans-serif': ['WenQuanYi Micro Hei', 'Arial', 'DejaVu Sans'],
-    'font.size': 8, 'axes.spines.right': False, 'axes.spines.top': False,
-    'axes.linewidth': .8, 'svg.fonttype': 'none', 'pdf.fonttype': 42,
-})
+use_chinese_font()
+mpl.rcParams.update({'font.size': 8})
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / 'outputs' / '问题2_首轮实验结果'
@@ -49,8 +47,8 @@ def main():
         ax[j].bar(x-width/2, clean, width, label='完整输入', color='#CBD5DF')
         ax[j].bar(x+width/2, missing, width, label='连续缺失', color=[COLORS[n] for n in names])
         ax[j].set_xticks(x, ['拼接', '增强', '门控', '蒸馏'], rotation=15)
-        ax[j].set_ylabel('Macro-F1' if metric == 'Macro_F1' else 'MAE')
-        ax[j].set_title('(a) ' + ('分类消融' if metric == 'Macro_F1' else '强度回归消融'))
+        ax[j].set_ylabel('宏平均F1' if metric == 'Macro_F1' else '平均绝对误差')
+        ax[j].set_title(('（甲）分类消融' if metric == 'Macro_F1' else '（乙）强度回归消融'))
         ax[j].grid(axis='y', color='#E8ECEF', linewidth=.6); ax[j].set_axisbelow(True)
     ax[0].legend(loc='upper right', frameon=False, fontsize=7)
     save(fig, '问题2_模型消融对比')
@@ -58,6 +56,7 @@ def main():
     # Panel B: dynamic gate versus missing rate/type.
     gate = [r for r in rows if r['模型'] == '动态门控']
     fig, ax = plt.subplots(1, 2, figsize=(7.4, 3.0), constrained_layout=True)
+    fig.suptitle('初始门控模型的缺失比例与类型分析',fontsize=9,fontweight='bold')
     rates = [.1, .3, .5, .7]
     for subset, color, label in [('T', '#3D6FA5', '文本'), ('A', '#C66B3D', '语音'), ('V', '#5B8C5A', '视觉'), ('AV', '#8C63A8', '语音+视觉'), ('TAV', '#555555', '三模态')]:
         vals = []
@@ -65,12 +64,12 @@ def main():
             q = [r for r in gate if r['subset'] == subset and r['position'] == 'random' and abs(float(r['rate'])-rate)<1e-6]
             vals.append(mean([r['Macro_F1'] for r in q]) if q else np.nan)
         ax[0].plot(np.array(rates)*100, vals, marker='o', linewidth=1.5, label=label, color=color)
-    ax[0].set_xlabel('连续缺失比例 (%)'); ax[0].set_ylabel('Macro-F1'); ax[0].set_title('(b) 缺失比例规律')
+    ax[0].set_xlabel('连续缺失比例（%）'); ax[0].set_ylabel('宏平均F1'); ax[0].set_title('（甲）缺失比例规律')
     ax[0].grid(color='#E8ECEF', linewidth=.6); ax[0].legend(frameon=False, fontsize=7, ncol=2)
     subs = ['none', 'T', 'A', 'V', 'TA', 'TV', 'AV', 'TAV']; labels = ['完整', '文本', '语音', '视觉', '文+语', '文+视', '语+视', '三模态']
     vals = [mean([r['Macro_F1'] for r in gate if r['subset'] == s and (s == 'none' or (r['position'] == 'random' and abs(float(r['rate'])-.3)<1e-6))]) for s in subs]
     ax[1].bar(np.arange(len(subs)), vals, color=['#CBD5DF']+[COLORS['动态门控']]*7)
-    ax[1].set_xticks(np.arange(len(subs)), labels, rotation=28); ax[1].set_ylabel('Macro-F1'); ax[1].set_title('(c) 缺失类型（30%）')
+    ax[1].set_xticks(np.arange(len(subs)), labels, rotation=28); ax[1].set_ylabel('宏平均F1'); ax[1].set_title('（乙）缺失类型（30%）')
     ax[1].grid(axis='y', color='#E8ECEF', linewidth=.6); ax[1].set_axisbelow(True)
     save(fig, '问题2_缺失率与缺失类型规律')
 
@@ -83,10 +82,10 @@ def main():
     for i in range(3):
         for j in range(3): ax[0].text(j, i, str(mat[i,j]), ha='center', va='center', color='white' if mat[i,j] > mat.max()*.55 else '#183B56')
     ax[0].set_xticks(range(3), ['负向', '中性', '正向']); ax[0].set_yticks(range(3), ['负向', '中性', '正向'])
-    ax[0].set_xlabel('预测'); ax[0].set_ylabel('真实'); ax[0].set_title('(d) 验证集混淆矩阵')
+    ax[0].set_xlabel('预测'); ax[0].set_ylabel('真实'); ax[0].set_title('（甲）验证集混淆矩阵')
     true = np.asarray([float(r['真实强度']) for r in pred]); out = np.asarray([float(r['预测强度']) for r in pred]);
     ax[1].scatter(true, out, s=8, alpha=.42, color=COLORS['动态门控'], edgecolors='none')
-    ax[1].plot([-3,3],[-3,3], '--', color='#555555', linewidth=.9); ax[1].set(xlim=(-3.1,3.1), ylim=(-3.1,3.1), xlabel='真实情感强度', ylabel='预测情感强度', title='(e) 强度回归')
+    ax[1].plot([-3,3],[-3,3], '--', color='#555555', linewidth=.9); ax[1].set(xlim=(-3.1,3.1), ylim=(-3.1,3.1), xlabel='真实情感强度', ylabel='预测情感强度', title='（乙）强度回归')
     ax[1].grid(color='#E8ECEF', linewidth=.6); ax[1].set_axisbelow(True)
     save(fig, '问题2_验证集预测与错误分析')
 

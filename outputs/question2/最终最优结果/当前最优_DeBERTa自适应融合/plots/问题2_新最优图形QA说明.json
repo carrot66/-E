@@ -1,18 +1,18 @@
 {
-  "core_conclusion": "DeBERTa adaptive ensembling improves clean and missing-modality Macro-F1.",
+  "core_conclusion": "自适应融合模型在完整输入与模态缺失条件下均提升宏平均F1。",
   "archetype": "quantitative grid",
   "backend": "Python/matplotlib",
   "validation_samples": 1871,
   "split": "16,326 train; 1,871 video-disjoint valid",
   "seeds": "one DeBERTa seed; deterministic missingness replicates",
   "source_data": [
-    "outputs/question2/问题2_DeBERTa文本增强_v1/问题2_DeBERTa逐轮训练记录.csv",
-    "outputs/question2/问题2_DeBERTa文本增强_v1/问题2_缺失场景全量结果.csv"
+    "outputs/question2/最终最优结果/当前最优_DeBERTa自适应融合/问题2_DeBERTa逐轮训练记录.csv",
+    "outputs/question2/最终最优结果/当前最优_DeBERTa自适应融合/问题2_缺失场景全量结果.csv"
   ],
   "excluded_rows": 0,
   "exports": [
-    "SVG editable text",
-    "PDF TrueType text",
+    "SVG 中文字形轮廓",
+    "PDF 嵌入中文字体",
     "PNG 600 dpi",
     "TIFF 600 dpi"
   ]
