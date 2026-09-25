@@ -1,0 +1,8 @@
+{
+  "metric": "Macro_F1",
+  "threshold": 0.65,
+  "value": 0.6432399504374707,
+  "passed": false,
+  "smoke": false,
+  "scope": "official validation used for model selection; no guaranteed future/test score"
+}

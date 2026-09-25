@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_run.py", line 60, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_run.py", line 54, in main
+    run_report(args)
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_report.py", line 7, in run_report
+    shared_report(args)
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v2_report.py", line 21, in run_report
+    explanation = csv_read(out / '附件4预测/全量预测与解释.csv')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v2_common.py", line 29, in csv_read
+    with Path(path).open(encoding='utf-8-sig', newline='') as f: return list(csv.DictReader(f))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/user/cs_tcci_yeguoao/miniconda3/envs/MathE/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/user/cs_tcci_yeguoao/MathE/outputs/question3/q3_v5_01/附件4预测/全量预测与解释.csv'

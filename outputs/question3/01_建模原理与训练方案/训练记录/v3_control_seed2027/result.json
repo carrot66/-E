@@ -1,0 +1,48 @@
+{
+  "name": "v3_control_seed2027",
+  "config": {
+    "rank": 8,
+    "dropout": 0.3,
+    "head_lr": 0.0002,
+    "adapter_lr": 0.0001,
+    "seed": 2027,
+    "lora_layers": 4,
+    "hierarchical": true,
+    "full_layers": 0,
+    "fusion": "residual",
+    "weight_power": 0.5,
+    "smoothing": 0.03,
+    "reg_weight": 0.3,
+    "text_ce": 0.2,
+    "text_reg": 0.1,
+    "av_aux": 0.05,
+    "augmentation": 0.15
+  },
+  "best_epoch": 8,
+  "checkpoint": "训练记录/v3_control_seed2027/best.pt",
+  "sha256": "0a4a5effe66220507b0f1a854923eee480cdde6b528665fb4b44d0e85884fbba",
+  "Accuracy": 0.6401098901098901,
+  "Macro_F1": 0.6244278453402473,
+  "Weighted_F1": 0.6428536593969646,
+  "MAE": 0.5825964212417603,
+  "Pearson": 0.6669406173277493,
+  "sign_conflict_rate": 0.3118131868131868,
+  "confusion_matrix": [
+    [
+      136,
+      34,
+      36
+    ],
+    [
+      30,
+      95,
+      59
+    ],
+    [
+      28,
+      75,
+      235
+    ]
+  ],
+  "prediction_sha256": "c75f84e965a665b60f7b631420606dd8fe9c46b4f34fcb7ee01a65596f51a6ea"
+}

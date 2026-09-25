@@ -1,0 +1,48 @@
+{
+  "name": "v3_control",
+  "config": {
+    "rank": 8,
+    "dropout": 0.3,
+    "head_lr": 0.0002,
+    "adapter_lr": 0.0001,
+    "seed": 2026,
+    "lora_layers": 4,
+    "hierarchical": true,
+    "full_layers": 0,
+    "fusion": "residual",
+    "weight_power": 0.5,
+    "smoothing": 0.03,
+    "reg_weight": 0.3,
+    "text_ce": 0.2,
+    "text_reg": 0.1,
+    "av_aux": 0.05,
+    "augmentation": 0.15
+  },
+  "best_epoch": 6,
+  "checkpoint": "训练记录/v3_control/best.pt",
+  "sha256": "70a653752154b3933cd8e9bd8597d8e058292dc041cfa8eaa46942ddbc18da71",
+  "Accuracy": 0.635989010989011,
+  "Macro_F1": 0.6296213112514762,
+  "Weighted_F1": 0.6455336119714825,
+  "MAE": 0.5964540839195251,
+  "Pearson": 0.670696039949991,
+  "sign_conflict_rate": 0.37637362637362637,
+  "confusion_matrix": [
+    [
+      133,
+      49,
+      24
+    ],
+    [
+      25,
+      111,
+      48
+    ],
+    [
+      22,
+      97,
+      219
+    ]
+  ],
+  "prediction_sha256": "57eaa4db8add36a900cb4eecc3527fd3b4f99a3a056fd1370a1e079aedce5c94"
+}

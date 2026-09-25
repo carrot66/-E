@@ -1,0 +1,49 @@
+{
+  "name": "token_interaction_light",
+  "config": {
+    "rank": 8,
+    "dropout": 0.3,
+    "head_lr": 0.0002,
+    "adapter_lr": 7.5e-05,
+    "seed": 2026,
+    "lora_layers": 4,
+    "hierarchical": false,
+    "full_layers": 0,
+    "fusion": "token_interaction",
+    "weight_power": 0.5,
+    "smoothing": 0.03,
+    "reg_weight": 0.3,
+    "text_ce": 0.2,
+    "text_reg": 0.1,
+    "av_aux": 0.05,
+    "augmentation": 0.2,
+    "token_layers": 2
+  },
+  "best_epoch": 6,
+  "checkpoint": "训练记录/token_interaction_light/best.pt",
+  "sha256": "7291fcd10411d3a9b7f1d2b9b61ed86b4e752d0b093ee225577b5395885b03c1",
+  "Accuracy": 0.6387362637362637,
+  "Macro_F1": 0.6158492054226561,
+  "Weighted_F1": 0.6405806818423279,
+  "MAE": 0.6001822352409363,
+  "Pearson": 0.6420131855586202,
+  "sign_conflict_rate": 0.3090659340659341,
+  "confusion_matrix": [
+    [
+      110,
+      57,
+      39
+    ],
+    [
+      19,
+      100,
+      65
+    ],
+    [
+      18,
+      65,
+      255
+    ]
+  ],
+  "prediction_sha256": "dc0849ba94010022b93de83b017366abc8c057e59c6718555e21907220f0a314"
+}

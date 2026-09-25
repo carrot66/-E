@@ -1,0 +1,725 @@
+﻿sample_id,modality,window_units,unit_start,feature_indices,text,char_start,char_end_exclusive,text_mapping_status,start_seconds,end_seconds,time_mapping_status,target_class,contrast_class,class_margin_effect,intensity_effect,after_target_probability,selected,direction
+101787$_$9,text,5,2,"[3, 4, 5, 6, 7]",umm) Harrison Ford plays,5,29,verified,,,unresolved,Neutral,Negative,0.4839237891350989,0.03588131070137024,0.40801499557434845,True,support
+101787$_$9,text,5,13,"[15, 16, 17, 18, 19]",", a gruff cargo pilot",60,81,verified,,,unresolved,Neutral,Negative,0.3316437104481055,0.031222686171531677,0.4448614120493998,True,support
+101787$_$9,text,1,17,[19],pilot,76,81,verified,,,unresolved,Neutral,Negative,0.1863787980240308,0.016024522483348846,0.4770460088296005,True,support
+101787$_$9,text,3,7,"[8, 9, 10, 11]",his (stutter,30,42,verified,,,unresolved,Neutral,Negative,-0.4280781850441615,-0.04721362888813019,0.5687578913308947,True,oppose
+101787$_$9,text,3,5,"[6, 7, 8]",Ford plays his,19,33,verified,,,unresolved,Neutral,Negative,-0.4238250208108718,-0.05599190294742584,0.5653374426071424,True,oppose
+101787$_$9,text,1,8,[9],(,34,35,verified,,,unresolved,Neutral,Negative,-0.3753921439712642,-0.043142154812812805,0.5657461672479456,True,oppose
+101787$_$9,audio,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Neutral,Negative,0.14983294268203184,0.03061535954475403,0.4926994314591754,True,support
+101787$_$9,audio,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Neutral,Negative,0.1128426770591413,0.01402352750301361,0.4951999356385036,True,support
+101787$_$9,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Neutral,Negative,0.10456095768555929,0.012270361185073853,0.4974335166218617,True,support
+101787$_$9,vision,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.1712924607544266,-0.01172606647014618,0.5450443234178497,True,oppose
+101787$_$9,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.15559989618281334,-0.01243908703327179,0.5427370632070097,True,oppose
+101787$_$9,vision,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.13364387645480558,-0.008750870823860168,0.5392009600759495,True,oppose
+128763$_$12,text,3,10,"[11, 12, 13]",stuff then I,35,47,verified,,,unresolved,Negative,Positive,1.2813326749557452,-0.45374584197998047,0.33601933730752853,True,support
+128763$_$12,text,5,12,"[13, 14, 15, 16, 17]",I mean I would suggest,46,68,verified,,,unresolved,Negative,Positive,1.1772530588734078,-0.31034186482429504,0.26013976940780525,True,support
+128763$_$12,text,1,13,[14],mean,48,52,verified,,,unresolved,Negative,Positive,0.6524859468097111,-0.2361484169960022,0.4743643977437038,True,support
+128763$_$12,text,5,2,"[3, 4, 5, 6, 7]",if you're into,7,21,verified,,,unresolved,Negative,Positive,-1.0973056623718151,0.6379956305027008,0.8404294269220969,True,oppose
+128763$_$12,text,1,15,[16],would,55,60,verified,,,unresolved,Negative,Positive,-1.027129198492085,0.5374184548854828,0.8193595619313131,True,oppose
+128763$_$12,text,5,5,"[6, 7, 8, 9, 10]",re into that kind of,14,34,verified,,,unresolved,Negative,Positive,-0.744178275652986,0.4111553728580475,0.7876956788502801,True,oppose
+128763$_$12,audio,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Negative,Positive,0.09976563282047046,-0.021459579467773438,0.6283099853649015,True,support
+128763$_$12,audio,3,5,"[6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,0.03575083493527176,-0.0126381516456604,0.6294313805729138,True,support
+128763$_$12,audio,1,15,[16],,,,not_applicable,,,unresolved,Negative,Positive,0.03301209944338224,-0.005289345979690552,0.6295326024447623,True,support
+128763$_$12,audio,3,8,"[9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.045757472280250955,0.02428741753101349,0.6437010158623501,True,oppose
+128763$_$12,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.03071438071307986,0.018946155905723572,0.6505840451648037,True,oppose
+128763$_$12,audio,1,4,[5],,,,not_applicable,,,unresolved,Negative,Positive,-0.03026922788021058,0.011092007160186768,0.641408772842363,True,oppose
+128763$_$12,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Negative,Positive,0.4438660561244583,-0.18423420935869217,0.5057255391102815,True,support
+128763$_$12,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Negative,Positive,0.2228723479620317,-0.09275399148464203,0.5689572019398765,True,support
+128763$_$12,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Positive,0.17837311119346977,-0.0777597725391388,0.5774432692709726,True,support
+223431$_$5,text,3,12,"[13, 14, 15]",start killing all,58,75,verified,,,unresolved,Negative,Neutral,1.161484595128774,-0.21956142783164978,0.29386077841992597,True,support
+223431$_$5,text,5,8,"[9, 10, 11, 12, 13]",aliens get loose and start,37,63,verified,,,unresolved,Negative,Neutral,0.7586602164645144,-0.1770021915435791,0.36727452672740557,True,support
+223431$_$5,text,3,14,"[15, 16, 17]",all the inhabitants,72,91,verified,,,unresolved,Negative,Neutral,0.547711846930485,-0.1386847347021103,0.4187659048873626,True,support
+223431$_$5,text,5,0,"[1, 2, 3, 4, 5]",Crashes on earth in a,0,21,verified,,,unresolved,Negative,Neutral,-0.7875082381567768,0.22016136348247528,0.6948675325010264,True,oppose
+223431$_$5,text,1,3,[4],in,17,19,verified,,,unresolved,Negative,Neutral,-0.7174686962041263,0.2172112911939621,0.6910108775702405,True,oppose
+223431$_$5,text,5,3,"[4, 5, 6, 7, 8]",in a small town and,17,36,verified,,,unresolved,Negative,Neutral,-0.6464516338588646,0.1676727682352066,0.6651793633081277,True,oppose
+223431$_$5,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.3686674121525758,0.12308065593242645,0.6277201546681831,True,oppose
+223431$_$5,audio,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.30492307517618844,0.10139410197734833,0.6143479504143264,True,oppose
+223431$_$5,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.23010288439536808,0.09359447658061981,0.6000285293296723,True,oppose
+223431$_$5,vision,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Negative,Neutral,0.48321049265683436,-0.11570049822330475,0.43862127718206817,True,support
+223431$_$5,vision,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Neutral,0.3487724180297923,-0.08324682712554932,0.4682203381197137,True,support
+223431$_$5,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Neutral,0.2943559819412771,-0.07056627422571182,0.47993380337087854,True,support
+237009$_$7,text,5,3,"[4, 5, 6, 7, 8]",I was just greatly disappointed,6,37,verified,,,unresolved,Negative,Positive,3.3734311060563793,-2.111704170703888,0.28552695289681257,True,support
+237009$_$7,text,5,0,"[1, 2, 3, 4, 5]",(umm) I was,0,11,verified,,,unresolved,Negative,Positive,0.5286529806572116,-0.4826362133026123,0.9049700361309505,True,support
+237009$_$7,text,1,1,[2],umm,1,4,verified,,,unresolved,Negative,Positive,0.13768980029577005,-0.12753891944885254,0.9247033196224365,True,support
+237009$_$7,text,1,6,[7],greatly,17,24,verified,,,unresolved,Negative,Positive,-0.09288624631614706,-0.056818246841430664,0.9332370943030863,True,oppose
+237009$_$7,text,1,4,[5],was,8,11,verified,,,unresolved,Negative,Positive,-0.016966086527743673,-0.0027436017990112305,0.9305940145387843,True,oppose
+237009$_$7,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,0.06264694481031441,0.0356215238571167,0.9223884642113709,True,support
+237009$_$7,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,0.017698572710594718,0.03178966045379639,0.9242147754046286,True,support
+237009$_$7,audio,1,6,[7],,,,not_applicable,,,unresolved,Negative,Positive,0.0037369442775041506,0.01988363265991211,0.9286816496350693,True,support
+237009$_$7,audio,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Negative,Positive,-0.02902553380243411,0.03754293918609619,0.9282592976497903,True,oppose
+237009$_$7,audio,1,4,[5],,,,not_applicable,,,unresolved,Negative,Positive,-0.014809852608237417,0.024806618690490723,0.9294262826230303,True,oppose
+237009$_$7,audio,1,5,[6],,,,not_applicable,,,unresolved,Negative,Positive,-0.011713103999337005,0.025864243507385254,0.9293694731867251,True,oppose
+237009$_$7,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,0.11901239068426062,-0.0690990686416626,0.921735483085582,True,support
+237009$_$7,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,0.08149503783290646,-0.018800854682922363,0.9235329804800962,True,support
+237009$_$7,vision,1,4,[5],,,,not_applicable,,,unresolved,Negative,Positive,0.014717556121063957,-0.007176876068115234,0.9287446058134647,True,support
+237009$_$7,vision,1,3,[4],,,,not_applicable,,,unresolved,Negative,Positive,-0.0005378568395890682,0.009357213973999023,0.929161626202757,True,oppose
+241629$_$5,text,5,15,"[17, 18, 19, 20, 21, 22, 23]",twenty-seven hideous bridesmaid,60,91,verified,,,unresolved,Negative,Positive,2.300719187605072,-0.6713622808456421,0.19794154195903038,True,support
+241629$_$5,text,1,18,[20],hideous,73,80,verified,,,unresolved,Negative,Positive,2.18932537594089,-0.6616284847259521,0.20616477687010198,True,support
+241629$_$5,text,1,17,[19],seven,67,72,verified,,,unresolved,Negative,Positive,0.7539090303138675,-0.33182843029499054,0.5800148438974411,True,support
+241629$_$5,text,5,19,"[21, 22, 23, 24, 25, 26, 27]",bridesmaid dresses to prove it,81,111,verified,,,unresolved,Negative,Positive,-1.0245904576851748,0.8424119353294373,0.9055116124584142,True,oppose
+241629$_$5,text,5,6,"[8, 9, 10, 11, 12]",been in twenty-seven,12,32,verified,,,unresolved,Negative,Positive,-0.4887577763755113,0.37157005071640015,0.8467808959757609,True,oppose
+241629$_$5,text,1,22,[26],prove,103,108,verified,,,unresolved,Negative,Positive,-0.3814460152827561,0.2471601366996765,0.8232829665020871,True,oppose
+241629$_$5,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.20045823677071706,0.1253381371498108,0.7911341705039796,True,oppose
+241629$_$5,audio,5,20,"[21, 22, 23, 24, 25]",,,,not_applicable,,,unresolved,Negative,Positive,-0.16882248884912543,0.10984963178634644,0.7885881404214043,True,oppose
+241629$_$5,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Positive,-0.1458053093807854,0.08692139387130737,0.7824020487098879,True,oppose
+241629$_$5,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Negative,Positive,0.2151466805501958,-0.12276139855384827,0.6972673419753048,True,support
+241629$_$5,vision,5,19,"[20, 21, 22, 23, 24]",,,,not_applicable,,,unresolved,Negative,Positive,0.21101156864133697,-0.11860865354537964,0.6988786451519553,True,support
+241629$_$5,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,0.1851453631918234,-0.10575196146965027,0.7094006638926288,True,support
+252998$_$1,text,5,5,"[7, 8, 9, 10, 11]","Hamilton, (umm)",28,43,verified,,,unresolved,Neutral,Positive,0.38278410059078316,-0.06995779275894165,0.43934855927288863,True,support
+252998$_$1,text,5,0,"[1, 2, 3, 4, 5, 6]","Starring Parker Posey, Josh",0,27,verified,,,unresolved,Neutral,Positive,0.32691416802359086,-0.04723373055458069,0.4455452733719552,True,support
+252998$_$1,text,5,10,"[12, 13, 14, 15, 16, 17]","Tori Spelling, Freddie Prinz",44,72,verified,,,unresolved,Neutral,Positive,0.20004882787263245,-0.02279677987098694,0.46792654621167323,True,support
+252998$_$1,text,1,7,[9],(,38,39,verified,,,unresolved,Neutral,Positive,-0.007808091146096818,0.0049544572830200195,0.5151859799553581,True,oppose
+252998$_$1,text,1,4,[6],Josh,23,27,verified,,,unresolved,Neutral,Positive,-0.005903581049531592,0.0042840540409088135,0.5150206556770844,True,oppose
+252998$_$1,text,1,3,[5],",",21,22,verified,,,unresolved,Neutral,Positive,-0.0014131686385929765,0.005403667688369751,0.5154539619878326,True,oppose
+252998$_$1,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,0.019067082034694982,-0.012386739253997803,0.5125910112762181,True,support
+252998$_$1,audio,1,7,[8],,,,not_applicable,,,unresolved,Neutral,Positive,0.017060343610131312,-0.005042016506195068,0.5132815735423764,True,support
+252998$_$1,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,0.01497498266325048,-0.008512794971466064,0.5126799159035513,True,support
+252998$_$1,audio,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.0926567358641951,0.007508665323257446,0.5312171508789726,True,oppose
+252998$_$1,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.03686970617805485,-0.0034340620040893555,0.5218279171787603,True,oppose
+252998$_$1,audio,1,17,[18],,,,not_applicable,,,unresolved,Neutral,Positive,-0.029261423648964113,0.0042893290519714355,0.5214477977440497,True,oppose
+252998$_$1,vision,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Neutral,Positive,0.005900124686501584,0.003555864095687866,0.5214849680074827,True,support
+252998$_$1,vision,1,9,[10],,,,not_applicable,,,unresolved,Neutral,Positive,0.0020832714827665466,0.0004953145980834961,0.5171785521053023,True,support
+252998$_$1,vision,1,14,[15],,,,not_applicable,,,unresolved,Neutral,Positive,0.0019333632399614054,0.0006374716758728027,0.5170887198089562,True,support
+252998$_$1,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.01716445220400542,0.006667405366897583,0.5246466816032994,True,oppose
+252998$_$1,vision,3,10,"[11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.010085117641985053,0.005456149578094482,0.5215234964423167,True,oppose
+252998$_$1,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.008479950565923433,0.005146026611328125,0.5236349337220996,True,oppose
+257247$_$2,text,3,3,"[4, 5, 6, 7]",(uhh),5,10,verified,,,unresolved,Neutral,Positive,0.3052733941315723,-0.07084885239601135,0.4248606963974492,True,support
+257247$_$2,text,1,2,[3],s,3,4,verified,,,unresolved,Neutral,Positive,0.18718398056919472,-0.04281088709831238,0.4582225083309216,True,support
+257247$_$2,text,1,13,[15],the,53,56,verified,,,unresolved,Neutral,Positive,0.13335262232411105,-0.024845749139785767,0.46750133809800454,True,support
+257247$_$2,text,5,8,"[10, 11, 12, 13, 14]",director of Independence Day and,20,52,verified,,,unresolved,Neutral,Positive,-0.3360455735750959,0.09567895531654358,0.5259188115495403,True,oppose
+257247$_$2,text,1,10,[12],Independence,32,44,verified,,,unresolved,Neutral,Positive,-0.29043510158863406,0.06845226883888245,0.5403407611784661,True,oppose
+257247$_$2,text,3,4,"[5, 6, 7, 8]",uhh) from,6,15,verified,,,unresolved,Neutral,Positive,-0.2598151604833122,0.07099887728691101,0.5190125174147544,True,oppose
+257247$_$2,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Positive,0.052687734917038265,-0.014109820127487183,0.4836711354692826,True,support
+257247$_$2,audio,3,12,"[13, 14, 15]",,,,not_applicable,,,unresolved,Neutral,Positive,0.04744838606566426,-0.012870043516159058,0.4848003950267475,True,support
+257247$_$2,audio,3,6,"[7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,0.03428239154350354,-0.005738049745559692,0.48449240174397457,True,support
+257247$_$2,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.07571367636170456,0.021442800760269165,0.5029137965322613,True,oppose
+257247$_$2,audio,3,15,"[16, 17, 18]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.0349627877897154,0.009613007307052612,0.500814543541826,True,oppose
+257247$_$2,audio,1,3,[4],,,,not_applicable,,,unresolved,Neutral,Positive,-0.022369204096713946,0.007100492715835571,0.49588292533367373,True,oppose
+257247$_$2,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,0.15071462748344466,-0.03579068183898926,0.46913250904373843,True,support
+257247$_$2,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,0.14946857201129082,-0.03540578484535217,0.4689421194543734,True,support
+257247$_$2,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Neutral,Positive,0.14072789209701442,-0.03223404288291931,0.470452783143043,True,support
+273539$_$3,text,3,26,"[28, 29, 30]",has little substance,101,121,verified,,,unresolved,Negative,Positive,3.772415972452867,-1.2594704926013947,0.08816579791308524,True,support
+273539$_$3,text,5,22,"[24, 25, 26, 27, 28]",umm) this film has,86,104,verified,,,unresolved,Negative,Positive,2.820232769815311,-0.8231174647808075,0.15681909587648635,True,support
+273539$_$3,text,5,18,"[20, 21, 22, 23, 24]",having done so (umm,70,89,verified,,,unresolved,Negative,Positive,1.1602994195410195,-0.46705812215805054,0.4567293015471979,True,support
+273539$_$3,text,5,15,"[17, 18, 19, 20, 21]",much more soft having done,55,81,verified,,,unresolved,Negative,Positive,-0.7987753995677762,0.4904409348964691,0.8760858677679564,True,oppose
+273539$_$3,text,1,16,[18],more,60,64,verified,,,unresolved,Negative,Positive,-0.7514424271787652,0.5027505457401276,0.8815572668052295,True,oppose
+273539$_$3,text,1,19,[21],done,77,81,verified,,,unresolved,Negative,Positive,-0.6948368315159863,0.4219845235347748,0.8670120725173526,True,oppose
+273539$_$3,audio,3,8,"[9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,0.1505615656559045,-0.07889336347579956,0.7559937121919309,True,support
+273539$_$3,audio,3,6,"[7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Positive,0.053057632609643024,-0.02974092960357666,0.7725542453770234,True,support
+273539$_$3,audio,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Negative,Positive,0.043729898115493215,-0.01975497603416443,0.7764604298662136,True,support
+273539$_$3,audio,5,22,"[23, 24, 25, 26, 27]",,,,not_applicable,,,unresolved,Negative,Positive,-0.2543471628371501,0.1655113399028778,0.8217531189298639,True,oppose
+273539$_$3,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.20972533547736893,0.12340030074119568,0.8144138521471598,True,oppose
+273539$_$3,audio,5,25,"[26, 27, 28, 29, 30]",,,,not_applicable,,,unresolved,Negative,Positive,-0.19605652868224555,0.1329369843006134,0.8123445225328949,True,oppose
+273539$_$3,vision,5,25,"[26, 27, 28, 29, 30]",,,,not_applicable,,,unresolved,Negative,Positive,0.2631496007485645,-0.1514584720134735,0.727520797853268,True,support
+273539$_$3,vision,1,27,[28],,,,not_applicable,,,unresolved,Negative,Positive,0.07817054124211009,-0.04573974013328552,0.7640695237413796,True,support
+273539$_$3,vision,1,28,[29],,,,not_applicable,,,unresolved,Negative,Positive,0.07368980077951703,-0.04389980435371399,0.7649105944994167,True,support
+273539$_$3,vision,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.11327162694261017,0.04914996027946472,0.7938936351989365,True,oppose
+273539$_$3,vision,5,16,"[17, 18, 19, 20, 21]",,,,not_applicable,,,unresolved,Negative,Positive,-0.10750165473914097,0.04889926314353943,0.7929573450704467,True,oppose
+273539$_$3,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,-0.08118075434216276,0.03591412305831909,0.7886732126054332,True,oppose
+273539$_$9,text,5,30,"[32, 33, 34, 35, 36, 37, 38]",sleezy (umm) waste,129,147,verified,,,unresolved,Negative,Positive,4.57774033441148,-1.9990107417106628,0.11508250312449163,True,support
+273539$_$9,text,5,25,"[27, 28, 29, 30, 31]",It's just kinda,113,128,verified,,,unresolved,Negative,Positive,3.4781068985398194,-1.6821683645248413,0.2606336057416904,True,support
+273539$_$9,text,1,34,[38],waste,142,147,verified,,,unresolved,Negative,Positive,2.510613778505206,-1.3851182460784912,0.47588025059003114,True,support
+273539$_$9,text,5,37,"[41, 42, 43, 44, 45]",completes your mind type of,156,183,verified,,,unresolved,Negative,Positive,-0.35575517132387624,0.4285222291946411,0.9275920975450442,True,oppose
+273539$_$9,text,1,37,[41],completes,156,165,verified,,,unresolved,Negative,Positive,-0.2904264137182824,0.31551826000213623,0.9243436124074074,True,oppose
+273539$_$9,text,3,10,"[11, 12, 13, 14]",but originality wise,40,60,verified,,,unresolved,Negative,Positive,-0.281973096374065,0.2611401081085205,0.9225115991086719,True,oppose
+273539$_$9,audio,3,2,"[3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,0.012358310156830754,-0.008605122566223145,0.9073922980115464,True,support
+273539$_$9,audio,1,12,[13],,,,not_applicable,,,unresolved,Negative,Positive,0.001291420519138331,-0.0030388832092285156,0.907427953558838,True,support
+273539$_$9,audio,1,42,[43],,,,not_applicable,,,unresolved,Negative,Positive,0.0010113024970914708,-0.0026274919509887695,0.9073738938194851,True,support
+273539$_$9,audio,5,35,"[36, 37, 38, 39, 40]",,,,not_applicable,,,unresolved,Negative,Positive,-0.05064522860848397,0.03848397731781006,0.9111722349205458,True,oppose
+273539$_$9,audio,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Negative,Positive,-0.04807797270457126,0.04426121711730957,0.9112824678253738,True,oppose
+273539$_$9,audio,5,31,"[32, 33, 34, 35, 36]",,,,not_applicable,,,unresolved,Negative,Positive,-0.04704217252312626,0.03747546672821045,0.9110715310795295,True,oppose
+273539$_$9,vision,3,43,"[44, 45, 46]",,,,not_applicable,,,unresolved,Negative,Positive,0.01545949833063709,-0.014030933380126953,0.9061045123115953,True,support
+273539$_$9,vision,3,37,"[38, 39, 40]",,,,not_applicable,,,unresolved,Negative,Positive,0.006140117843244308,-0.006482601165771484,0.9065964998563479,True,support
+273539$_$9,vision,1,26,[27],,,,not_applicable,,,unresolved,Negative,Positive,0.00572203788066572,-0.0056961774826049805,0.9067940760134,True,support
+273539$_$9,vision,5,19,"[20, 21, 22, 23, 24]",,,,not_applicable,,,unresolved,Negative,Positive,-0.05337125074994864,0.04219019412994385,0.9097914158455215,True,oppose
+273539$_$9,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.04108620564827703,0.03144705295562744,0.9093634417075636,True,oppose
+273539$_$9,vision,5,22,"[23, 24, 25, 26, 27]",,,,not_applicable,,,unresolved,Negative,Positive,-0.033963822460017834,0.026262879371643066,0.90857208938854,True,oppose
+290546$_$7,text,3,11,"[13, 14, 15]",) teen flick,33,45,verified,,,unresolved,Negative,Neutral,0.7407266356270201,-0.11348512768745422,0.28440544966160314,True,support
+290546$_$7,text,3,0,"[1, 2, 3]",I think it,0,10,verified,,,unresolved,Negative,Neutral,0.7005101343196992,-0.0724990963935852,0.304423204082238,True,support
+290546$_$7,text,5,13,"[15, 16, 17, 18, 19]",flick more than anything because,40,72,verified,,,unresolved,Negative,Neutral,0.6174850522076996,-0.06901088356971741,0.3207888091619398,True,support
+290546$_$7,text,3,10,"[11, 12, 13, 14]",stutter) teen,26,39,verified,,,unresolved,Negative,Neutral,-0.7541125868894127,0.1620301902294159,0.5986800588472231,True,oppose
+290546$_$7,text,3,42,"[46, 47, 48]",to school at,172,184,verified,,,unresolved,Negative,Neutral,-0.5489368145682169,0.11176504194736481,0.5544900482157282,True,oppose
+290546$_$7,text,1,14,[16],more,46,50,verified,,,unresolved,Negative,Neutral,-0.2750868584393378,0.06376594305038452,0.5019683223880826,True,oppose
+290546$_$7,audio,5,43,"[44, 45, 46, 47, 48]",,,,not_applicable,,,unresolved,Negative,Neutral,0.05018108977189495,0.00045946240425109863,0.4313055610280677,True,support
+290546$_$7,audio,3,15,"[16, 17, 18]",,,,not_applicable,,,unresolved,Negative,Neutral,0.041373735626575536,-0.010970830917358398,0.426843178342826,True,support
+290546$_$7,audio,5,35,"[36, 37, 38, 39, 40]",,,,not_applicable,,,unresolved,Negative,Neutral,0.03251046344809827,0.0012157410383224487,0.4347043175286116,True,support
+290546$_$7,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.054620437747663786,0.02222752571105957,0.45355915872398556,True,oppose
+290546$_$7,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.05349840487905588,0.016371190547943115,0.45387639955576103,True,oppose
+290546$_$7,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.04684656781409835,0.01751050353050232,0.45182551418748096,True,oppose
+290546$_$7,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Negative,Neutral,0.1358758376770559,-0.03133571147918701,0.40809990570677945,True,support
+290546$_$7,vision,1,17,[18],,,,not_applicable,,,unresolved,Negative,Neutral,0.07218137372193101,-0.015488922595977783,0.4215025442517392,True,support
+290546$_$7,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Negative,Neutral,0.06561096103297082,-0.018873661756515503,0.4221817494076847,True,support
+290546$_$7,vision,1,43,[44],,,,not_applicable,,,unresolved,Negative,Neutral,-0.0009851730070729037,0.001585245132446289,0.4381663343295768,True,oppose
+32681$_$1,text,3,11,"[12, 13, 14, 15]",did (stutter,39,51,verified,,,unresolved,Negative,Positive,2.9537799666454054,-0.9570540487766266,0.13438123118459355,True,support
+32681$_$1,text,3,16,"[18, 19, 20]",in the box,58,68,verified,,,unresolved,Negative,Positive,2.0579678234609178,-0.7286719381809235,0.24897782320055098,True,support
+32681$_$1,text,1,11,[12],did,39,42,verified,,,unresolved,Negative,Positive,1.9386908062208073,-0.7624161541461945,0.29042733749460997,True,support
+32681$_$1,text,1,15,[17],good,53,57,verified,,,unresolved,Negative,Positive,-0.8589725181734096,0.5338086783885956,0.8519799840537,True,oppose
+32681$_$1,text,3,7,"[8, 9, 10]","the weekend,",22,34,verified,,,unresolved,Negative,Positive,-0.6525916867469048,0.4185769855976105,0.8319703221244608,True,oppose
+32681$_$1,text,5,15,"[17, 18, 19, 20, 21]",good in the box office,53,75,verified,,,unresolved,Negative,Positive,-0.6523605242143073,0.3386712968349457,0.7878946802517754,True,oppose
+32681$_$1,audio,1,16,[17],,,,not_applicable,,,unresolved,Negative,Positive,0.06459991779026253,-0.039192020893096924,0.7515226450139733,True,support
+32681$_$1,audio,1,11,[12],,,,not_applicable,,,unresolved,Negative,Positive,0.043838280801535845,-0.025282204151153564,0.7550983875228238,True,support
+32681$_$1,audio,1,10,[11],,,,not_applicable,,,unresolved,Negative,Positive,0.0233856574971143,-0.013372987508773804,0.7581692649322402,True,support
+32681$_$1,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.1767924995424115,0.10932782292366028,0.7900741531583366,True,oppose
+32681$_$1,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Negative,Positive,-0.13858776998256306,0.08779773116111755,0.7862868602687182,True,oppose
+32681$_$1,audio,3,12,"[13, 14, 15]",,,,not_applicable,,,unresolved,Negative,Positive,-0.11969388941910242,0.08326315879821777,0.780473822468031,True,oppose
+32681$_$1,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Negative,Positive,0.33668028175929865,-0.19921395182609558,0.6970795523110276,True,support
+32681$_$1,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Negative,Positive,0.2632239024684302,-0.1774536371231079,0.7152057589911258,True,support
+32681$_$1,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Negative,Positive,0.18812881269161696,-0.13759851455688477,0.7275292410322077,True,support
+32681$_$1,vision,1,16,[17],,,,not_applicable,,,unresolved,Negative,Positive,-0.009610224909928577,0.0033052265644073486,0.7614917095288788,True,oppose
+32681$_$1,vision,1,6,[7],,,,not_applicable,,,unresolved,Negative,Positive,-0.004850328985898988,-0.0014629662036895752,0.761649338596253,True,oppose
+5kaCGzjYukM$_$2,text,1,24,"[28, 29, 30, 31]",reprehensible,116,129,verified,,,unresolved,Negative,Positive,2.438211020212306,-1.1948981285095215,0.3639480248380514,True,support
+5kaCGzjYukM$_$2,text,3,27,"[34, 35, 36]",possible way.,139,152,verified,,,unresolved,Negative,Positive,0.9898441695240856,-0.6763450503349304,0.7312959027618734,True,support
+5kaCGzjYukM$_$2,text,5,4,"[5, 6, 7, 8, 9, 10, 11, 12]",t want to relinquish the,11,35,verified,,,unresolved,Negative,Positive,0.5684458127771386,-0.3476918339729309,0.827620186981293,True,support
+5kaCGzjYukM$_$2,text,5,13,"[17, 18, 19, 20, 21]",without mentioning that we’,57,84,verified,,,unresolved,Negative,Positive,-0.26071100165915695,0.27356547117233276,0.9054839627318081,True,oppose
+5kaCGzjYukM$_$2,text,1,14,[18],mentioning,65,75,verified,,,unresolved,Negative,Positive,-0.21547178210060824,0.21480649709701538,0.9018974893323969,True,oppose
+5kaCGzjYukM$_$2,text,1,2,[3],didn,6,10,verified,,,unresolved,Negative,Positive,-0.21176530293991824,0.20418471097946167,0.9017212730647354,True,oppose
+5kaCGzjYukM$_$2,audio,1,33,[34],,,,not_applicable,,,unresolved,Negative,Positive,0.00039792467635635376,-0.0019946694374084473,0.8832669706877292,True,support
+5kaCGzjYukM$_$2,audio,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Negative,Positive,-0.13467794780323494,0.10132712125778198,0.8951624156185627,True,oppose
+5kaCGzjYukM$_$2,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Positive,-0.12457374577162827,0.08733445405960083,0.8938187884217238,True,oppose
+5kaCGzjYukM$_$2,audio,5,14,"[15, 16, 17, 18, 19]",,,,not_applicable,,,unresolved,Negative,Positive,-0.11140561704761343,0.0818282961845398,0.8928780781214044,True,oppose
+5kaCGzjYukM$_$2,vision,5,27,"[28, 29, 30, 31, 32]",,,,not_applicable,,,unresolved,Negative,Positive,0.07307659516326304,-0.06182760000228882,0.8756192914228721,True,support
+5kaCGzjYukM$_$2,vision,5,30,"[31, 32, 33, 34, 35]",,,,not_applicable,,,unresolved,Negative,Positive,0.05192551540542256,-0.04812675714492798,0.8775385107105935,True,support
+5kaCGzjYukM$_$2,vision,5,24,"[25, 26, 27, 28, 29]",,,,not_applicable,,,unresolved,Negative,Positive,0.03609655351067209,-0.031379520893096924,0.879218009409362,True,support
+5kaCGzjYukM$_$2,vision,3,19,"[20, 21, 22]",,,,not_applicable,,,unresolved,Negative,Positive,-0.01654314935775769,0.013563871383666992,0.8843210173258523,True,oppose
+5kaCGzjYukM$_$2,vision,1,16,[17],,,,not_applicable,,,unresolved,Negative,Positive,-0.0072577251689947,0.006399571895599365,0.8835353131992937,True,oppose
+5kaCGzjYukM$_$2,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Negative,Positive,-0.005180183284673845,0.006091773509979248,0.883148181109335,True,oppose
+6hFiTU77Sm0$_$1,text,5,6,"[7, 8, 9, 10, 11]",aid; each college does,38,60,verified,,,unresolved,Positive,Neutral,0.6174422151863501,0.2162710428237915,0.3270501500338962,True,support
+6hFiTU77Sm0$_$1,text,3,1,"[2, 3, 4]",are tons of,6,17,verified,,,unresolved,Positive,Neutral,0.5709879657350274,0.1555679440498352,0.35729092949915114,True,support
+6hFiTU77Sm0$_$1,text,1,6,[7],aid,38,41,verified,,,unresolved,Positive,Neutral,0.39692515611068113,0.12074011564254761,0.3912285188846999,True,support
+6hFiTU77Sm0$_$1,text,1,12,[13],differently,64,75,verified,,,unresolved,Positive,Neutral,-0.8524514472078656,-0.3077576756477356,0.6864217011990821,True,oppose
+6hFiTU77Sm0$_$1,text,5,8,"[9, 10, 11, 12, 13]",each college does it differently,43,75,verified,,,unresolved,Positive,Neutral,-0.7535247043883623,-0.2517498731613159,0.65917107847829,True,oppose
+6hFiTU77Sm0$_$1,text,1,4,[5],different,18,27,verified,,,unresolved,Positive,Neutral,-0.670397272688813,-0.23533564805984497,0.6341737452835987,True,oppose
+6hFiTU77Sm0$_$1,audio,1,12,[13],,,,not_applicable,,,unresolved,Positive,Neutral,0.0001510649161755584,-0.0028825700283050537,0.4841609896199555,True,support
+6hFiTU77Sm0$_$1,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.2678175789244652,-0.09352660179138184,0.5475489103442946,True,oppose
+6hFiTU77Sm0$_$1,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.23604266302105503,-0.07857251167297363,0.5408125157551068,True,oppose
+6hFiTU77Sm0$_$1,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.15913803972304452,-0.057281553745269775,0.5206416035303063,True,oppose
+6hFiTU77Sm0$_$1,vision,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Positive,Neutral,0.12953072069517324,0.04305049777030945,0.45878403446097443,True,support
+6hFiTU77Sm0$_$1,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.20519276565433797,-0.07088756561279297,0.5399636989743615,True,oppose
+6hFiTU77Sm0$_$1,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.17507373751408628,-0.04702186584472656,0.5327837422152971,True,oppose
+6hFiTU77Sm0$_$1,vision,1,11,[12],,,,not_applicable,,,unresolved,Positive,Neutral,-0.04551731979324847,-0.015913188457489014,0.4973531060957103,True,oppose
+6hFiTU77Sm0$_$2,text,5,0,"[1, 2, 3, 4, 5]",Sometimes you might have to,0,27,verified,,,unresolved,Neutral,Positive,0.3957275247843133,-0.0917360782623291,0.40409956882424947,True,support
+6hFiTU77Sm0$_$2,text,1,3,[4],have,20,24,verified,,,unresolved,Neutral,Positive,0.297467893623655,-0.06788027286529541,0.4238129859570781,True,support
+6hFiTU77Sm0$_$2,text,5,9,"[10, 11, 12, 13, 14]",school does it and how,48,70,verified,,,unresolved,Neutral,Positive,0.1940163766595968,-0.03479409217834473,0.4307231177120002,True,support
+6hFiTU77Sm0$_$2,text,1,5,[6],learn,28,33,verified,,,unresolved,Neutral,Positive,-0.1191472091469481,0.030123919248580933,0.48550451238828646,True,oppose
+6hFiTU77Sm0$_$2,text,1,15,[16],.,78,79,verified,,,unresolved,Neutral,Positive,-0.05773251264207624,0.015621840953826904,0.4723597409739633,True,oppose
+6hFiTU77Sm0$_$2,text,1,6,[7],about,34,39,verified,,,unresolved,Neutral,Positive,-0.05129769860667022,0.016669929027557373,0.46878225579492555,True,oppose
+6hFiTU77Sm0$_$2,audio,3,8,"[9, 10, 11]",,,,not_applicable,,,unresolved,Neutral,Positive,0.0024014565416895506,-0.005585223436355591,0.4659351450204399,True,support
+6hFiTU77Sm0$_$2,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.08129134930332405,0.008849471807479858,0.47575796430383666,True,oppose
+6hFiTU77Sm0$_$2,audio,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.049441602225846704,0.011573642492294312,0.4715240605903163,True,oppose
+6hFiTU77Sm0$_$2,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.03299928042574163,-0.00253450870513916,0.47182877243674115,True,oppose
+6hFiTU77Sm0$_$2,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,0.07181602727756031,-0.014582455158233643,0.4586285702271267,True,support
+6hFiTU77Sm0$_$2,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Neutral,Positive,0.06735740978037164,-0.013041496276855469,0.45794335686203697,True,support
+6hFiTU77Sm0$_$2,vision,1,15,[16],,,,not_applicable,,,unresolved,Neutral,Positive,0.022942393437187292,-0.00487634539604187,0.46323935396964494,True,support
+6hFiTU77Sm0$_$2,vision,3,7,"[8, 9, 10]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.009286663743233836,0.002001732587814331,0.4703186844056511,True,oppose
+80566$_$4,text,3,4,"[5, 6, 7]",an American icon,20,36,verified,,,unresolved,Positive,Negative,1.6617414090404994,0.8557779490947723,0.3540561011348949,True,support
+80566$_$4,text,5,0,"[1, 2, 3, 4, 5]",And they are almost an,0,22,verified,,,unresolved,Positive,Negative,1.5606067107757664,0.891569048166275,0.2710995745608693,True,support
+80566$_$4,text,1,0,[1],And,0,3,verified,,,unresolved,Positive,Negative,0.9598565221051415,0.5516261458396912,0.49883057215856436,True,support
+80566$_$4,text,1,3,[4],almost,13,19,verified,,,unresolved,Positive,Negative,-0.44615257617747583,-0.11261105537414551,0.7888720312116253,True,oppose
+80566$_$4,audio,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Positive,Negative,0.05963565833978368,-0.08976590633392334,0.7491436514080931,True,support
+80566$_$4,audio,1,5,[6],,,,not_applicable,,,unresolved,Positive,Negative,0.018572591218330325,-0.007062196731567383,0.7350085133725153,True,support
+80566$_$4,audio,1,6,[7],,,,not_applicable,,,unresolved,Positive,Negative,0.015680432536446798,-0.0031713247299194336,0.735299930396822,True,support
+80566$_$4,audio,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Positive,Negative,-0.0655871438266058,-0.1023329496383667,0.7621524634020213,True,oppose
+80566$_$4,audio,1,4,[5],,,,not_applicable,,,unresolved,Positive,Negative,-0.011584373942089554,-0.05175292491912842,0.7472498709526552,True,oppose
+80566$_$4,audio,1,3,[4],,,,not_applicable,,,unresolved,Positive,Negative,-0.0019611482451122875,-0.032744765281677246,0.7413916533428523,True,oppose
+80566$_$4,vision,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Positive,Negative,-0.6322351496526759,-0.360934853553772,0.8292677842038594,True,oppose
+80566$_$4,vision,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Positive,Negative,-0.3401354770456282,-0.2162569761276245,0.7941425193084583,True,oppose
+80566$_$4,vision,1,4,[5],,,,not_applicable,,,unresolved,Positive,Negative,-0.1497067079802059,-0.08020007610321045,0.7608018389698321,True,oppose
+80855$_$12,text,3,11,"[18, 19, 20]",is in this,59,69,verified,,,unresolved,Neutral,Negative,0.3902074824924243,0.05021759867668152,0.4482381194806988,True,support
+80855$_$12,text,3,0,"[1, 2, 3, 4, 5, 6]",David Schwimmer and,0,19,verified,,,unresolved,Neutral,Negative,0.25385173305585285,0.02213895320892334,0.4686686921130219,True,support
+80855$_$12,text,3,5,"[9, 10, 11, 12, 13, 14]",playing David Schwimmer,29,52,verified,,,unresolved,Neutral,Negative,0.14514397270839918,-0.006065383553504944,0.480415066511055,True,support
+80855$_$12,text,1,4,[8],guy,25,28,verified,,,unresolved,Neutral,Negative,-0.32444402288674024,-0.05758368968963623,0.542640934929525,True,oppose
+80855$_$12,text,1,3,[7],some,20,24,verified,,,unresolved,Neutral,Negative,-0.17904278843782995,-0.028729557991027832,0.5391203126726523,True,oppose
+80855$_$12,text,1,10,[17],dad,55,58,verified,,,unresolved,Neutral,Negative,-0.14860674499719906,-0.021146684885025024,0.540560745355121,True,oppose
+80855$_$12,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Negative,0.10048766748990623,0.016569167375564575,0.5062904135533908,True,support
+80855$_$12,audio,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Neutral,Negative,0.09441750558502437,0.01958070695400238,0.5104187482457496,True,support
+80855$_$12,audio,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Neutral,Negative,0.0874423415185378,0.018860623240470886,0.5118861419417864,True,support
+80855$_$12,vision,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.12807711631696028,-0.005888074636459351,0.5416046464060884,True,oppose
+80855$_$12,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.11895113140900127,-0.004893451929092407,0.5401813426599906,True,oppose
+80855$_$12,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.11887093840227703,-0.0026500821113586426,0.5418940894577078,True,oppose
+FB_b1dm0SRY$_$9,text,3,23,"[26, 27, 28]",cannot walk away,104,120,verified,,,unresolved,Negative,Positive,1.5548237799408042,-0.4889298230409622,0.30173478560371814,True,support
+FB_b1dm0SRY$_$9,text,5,15,"[16, 17, 18, 19, 20, 21, 22]",obligated to show up every,68,94,verified,,,unresolved,Negative,Positive,1.2765410704416873,-0.4216543585062027,0.37305798813226176,True,support
+FB_b1dm0SRY$_$9,text,5,18,"[21, 22, 23, 24, 25]","up every day, you",86,103,verified,,,unresolved,Negative,Positive,1.2396903062704157,-0.3792658895254135,0.36403060926361397,True,support
+FB_b1dm0SRY$_$9,text,1,14,[15],legally,60,67,verified,,,unresolved,Negative,Positive,-0.42788765499985404,0.21859215199947357,0.7885000882083613,True,oppose
+FB_b1dm0SRY$_$9,text,1,25,[28],away,116,120,verified,,,unresolved,Negative,Positive,-0.36584962535197274,0.16454963386058807,0.7639471156406674,True,oppose
+FB_b1dm0SRY$_$9,text,1,2,[3],when,8,12,verified,,,unresolved,Negative,Positive,-0.3212216591084358,0.15353499352931976,0.7654908513859953,True,oppose
+FB_b1dm0SRY$_$9,audio,1,21,[22],,,,not_applicable,,,unresolved,Negative,Positive,0.003720425405131067,-0.004521653056144714,0.6926898825204183,True,support
+FB_b1dm0SRY$_$9,audio,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Negative,Positive,-0.3308363698291781,0.15193955600261688,0.7612039967453521,True,oppose
+FB_b1dm0SRY$_$9,audio,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Negative,Positive,-0.31436851258109977,0.1396668702363968,0.7559274962068454,True,oppose
+FB_b1dm0SRY$_$9,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Negative,Positive,-0.2927024167634462,0.13016508519649506,0.7530580265685074,True,oppose
+FB_b1dm0SRY$_$9,vision,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Negative,Positive,0.09944381531173563,-0.042074546217918396,0.6711366114058186,True,support
+FB_b1dm0SRY$_$9,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Negative,Positive,0.057991060557874397,-0.02558988332748413,0.6800060987350907,True,support
+FB_b1dm0SRY$_$9,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Negative,Positive,0.05091082460947316,-0.023104310035705566,0.6835460051719016,True,support
+FB_b1dm0SRY$_$9,vision,5,19,"[20, 21, 22, 23, 24]",,,,not_applicable,,,unresolved,Negative,Positive,-0.12799359444002967,0.062204763293266296,0.7102058488742095,True,oppose
+FB_b1dm0SRY$_$9,vision,5,16,"[17, 18, 19, 20, 21]",,,,not_applicable,,,unresolved,Negative,Positive,-0.05185157288942843,0.02746950089931488,0.6974929899644683,True,oppose
+FB_b1dm0SRY$_$9,vision,5,22,"[23, 24, 25, 26, 27]",,,,not_applicable,,,unresolved,Negative,Positive,-0.0467442079298368,0.02615131437778473,0.6932004235879274,True,oppose
+FB_b1dm0SRY$_$8,text,3,5,"[6, 7, 8]","fascinating setting,",21,41,verified,,,unresolved,Positive,Neutral,1.745092354662805,0.7147244513034821,0.4117815696278917,True,support
+FB_b1dm0SRY$_$8,text,3,3,"[4, 5, 6]",is a fascinating,16,32,verified,,,unresolved,Positive,Neutral,1.5822869746290533,0.6551472246646881,0.45787126134213124,True,support
+FB_b1dm0SRY$_$8,text,1,8,[9],especially,42,52,verified,,,unresolved,Positive,Neutral,0.19108619212214584,0.1067577600479126,0.7678149151138708,True,support
+FB_b1dm0SRY$_$8,text,5,11,"[12, 13, 14, 15, 16]",or summer camp where you,69,93,verified,,,unresolved,Positive,Neutral,-0.26701337258676117,-0.1492406129837036,0.8218619787843159,True,oppose
+FB_b1dm0SRY$_$8,text,3,9,"[10, 11, 12]",boarding school or,53,71,verified,,,unresolved,Positive,Neutral,-0.2526873654977757,-0.16122472286224365,0.8245737561919788,True,oppose
+FB_b1dm0SRY$_$8,text,1,18,[19],stuck,105,110,verified,,,unresolved,Positive,Neutral,-0.20927164747415028,-0.12784087657928467,0.824627414115506,True,oppose
+FB_b1dm0SRY$_$8,audio,1,13,[14],,,,not_applicable,,,unresolved,Positive,Neutral,0.006518998973091827,0.006434082984924316,0.794466273465631,True,support
+FB_b1dm0SRY$_$8,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.20064393684932358,-0.11704885959625244,0.8202319644945256,True,oppose
+FB_b1dm0SRY$_$8,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.1893693053309613,-0.10749661922454834,0.8193697625509073,True,oppose
+FB_b1dm0SRY$_$8,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.12060993925326069,-0.06322407722473145,0.8107437449057462,True,oppose
+FB_b1dm0SRY$_$8,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Positive,Neutral,0.0354603496592194,0.025586724281311035,0.7930429421536004,True,support
+FB_b1dm0SRY$_$8,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Positive,Neutral,0.027926373865466037,0.02213895320892334,0.7945088359360931,True,support
+FB_b1dm0SRY$_$8,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Neutral,0.024950586581457435,0.017077326774597168,0.794013613889736,True,support
+FB_b1dm0SRY$_$8,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.09196379429341484,-0.05909252166748047,0.8111465013946971,True,oppose
+FB_b1dm0SRY$_$8,vision,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.039004382796517634,-0.030827879905700684,0.8033619157719605,True,oppose
+FB_b1dm0SRY$_$8,vision,1,11,[12],,,,not_applicable,,,unresolved,Positive,Neutral,-0.029168710867942593,-0.017866015434265137,0.8002018392432767,True,oppose
+Fy0Uid9afM8$_$4,text,3,4,"[5, 6, 7]",first victims of,17,33,verified,,,unresolved,Negative,Neutral,1.6207209798734474,-0.2342010736465454,0.16795562280377124,True,support
+Fy0Uid9afM8$_$4,text,3,0,"[1, 2, 3]",But they are,0,12,verified,,,unresolved,Negative,Neutral,1.364872905535838,-0.19209495186805725,0.21550551148897562,True,support
+Fy0Uid9afM8$_$4,text,3,6,"[7, 8, 9]",of these policies,31,48,verified,,,unresolved,Negative,Neutral,1.191930937016444,-0.2516942620277405,0.22742067006674874,True,support
+Fy0Uid9afM8$_$4,text,1,4,[5],first,17,22,verified,,,unresolved,Negative,Neutral,-2.0999666413409255,0.7762848138809204,0.851015933859339,True,oppose
+Fy0Uid9afM8$_$4,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.47069116883108797,0.17423298954963684,0.5976436211886612,True,oppose
+Fy0Uid9afM8$_$4,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Negative,Neutral,-0.40175224971761725,0.15969271957874298,0.5865312007547135,True,oppose
+Fy0Uid9afM8$_$4,audio,1,5,[6],,,,not_applicable,,,unresolved,Negative,Neutral,-0.17675988688480715,0.0452478751540184,0.5274216257439238,True,oppose
+Fy0Uid9afM8$_$4,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Neutral,0.3253235183221399,-0.12014484405517578,0.410056999807226,True,support
+Fy0Uid9afM8$_$4,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Negative,Neutral,0.20480436277697456,-0.08941853046417236,0.43442592875349345,True,support
+Fy0Uid9afM8$_$4,vision,1,6,[7],,,,not_applicable,,,unresolved,Negative,Neutral,0.1128727918578254,-0.032833732664585114,0.46224545597660605,True,support
+Fy0Uid9afM8$_$4,vision,1,4,[5],,,,not_applicable,,,unresolved,Negative,Neutral,-0.024861580953803974,0.0008946806192398071,0.49261722772282024,True,oppose
+HmXXW45eZL4$_$4,text,5,11,"[12, 13, 14, 15, 16]","start crying, run off",44,65,verified,,,unresolved,Negative,Positive,0.7078284513359328,-0.6804196834564209,0.8611894200255275,True,support
+HmXXW45eZL4$_$4,text,5,4,"[5, 6, 7, 8, 9]",", look sad, look",20,36,verified,,,unresolved,Negative,Positive,0.49311842985384846,-0.4824965000152588,0.8871663182107172,True,support
+HmXXW45eZL4$_$4,text,5,1,"[2, 3, 4, 5, 6]","ever look hurt, look",6,26,verified,,,unresolved,Negative,Positive,0.34128565258616916,-0.3773578405380249,0.899361059695993,True,support
+HmXXW45eZL4$_$4,text,1,3,[4],hurt,16,20,verified,,,unresolved,Negative,Positive,-0.07207540835049953,0.12362468242645264,0.9299131584288821,True,oppose
+HmXXW45eZL4$_$4,text,3,0,"[1, 2, 3]",Never ever look,0,15,verified,,,unresolved,Negative,Positive,-0.055087642250201796,0.0925748348236084,0.9283083274207808,True,oppose
+HmXXW45eZL4$_$4,text,1,10,[11],",",42,43,verified,,,unresolved,Negative,Positive,-0.04721188962255063,0.0759270191192627,0.9280906776536665,True,oppose
+HmXXW45eZL4$_$4,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.10234645998334546,0.1442164182662964,0.9299171323672818,True,oppose
+HmXXW45eZL4$_$4,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.08776264783544852,0.11947894096374512,0.9296262811011489,True,oppose
+HmXXW45eZL4$_$4,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,-0.08386586352749825,0.12441587448120117,0.9295000498902835,True,oppose
+HmXXW45eZL4$_$4,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Positive,0.0006596768892128679,0.0005674362182617188,0.9251056660341306,True,support
+HmXXW45eZL4$_$4,vision,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Negative,Positive,-0.027432231478071945,0.04143667221069336,0.9262359159001624,True,oppose
+HmXXW45eZL4$_$4,vision,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Negative,Positive,-0.014923106731903779,0.028472065925598145,0.9258574835217488,True,oppose
+HmXXW45eZL4$_$4,vision,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Positive,-0.008659799740136975,0.019991755485534668,0.9256736866583228,True,oppose
+JAnRCQ9A0vI$_$1,text,1,3,[4],launched,18,26,verified,,,unresolved,Positive,Neutral,0.1991385454577803,0.06309226155281067,0.5316673412300296,True,support
+JAnRCQ9A0vI$_$1,text,5,3,"[4, 5, 6, 7, 8]",launched the system we decided,18,48,verified,,,unresolved,Positive,Neutral,0.15598137927377442,0.049994468688964844,0.5392481130557902,True,support
+JAnRCQ9A0vI$_$1,text,1,18,[19],all,93,96,verified,,,unresolved,Positive,Neutral,0.10252101712047812,0.03690779209136963,0.5551110981241777,True,support
+JAnRCQ9A0vI$_$1,text,3,11,"[12, 13, 14]",going to our,62,74,verified,,,unresolved,Positive,Neutral,-0.25054714379939,-0.07708489894866943,0.6358000583945022,True,oppose
+JAnRCQ9A0vI$_$1,text,5,35,"[36, 37, 38, 39, 40]",take those user names and,179,204,verified,,,unresolved,Positive,Neutral,-0.21110271741040232,-0.06757545471191406,0.6256442282754892,True,oppose
+JAnRCQ9A0vI$_$1,text,5,7,"[8, 9, 10, 11, 12]",decided that we were going,41,67,verified,,,unresolved,Positive,Neutral,-0.1992796873383833,-0.05656027793884277,0.6250345155135143,True,oppose
+JAnRCQ9A0vI$_$1,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Positive,Neutral,0.10590953273365045,0.0370023250579834,0.5561375820168069,True,support
+JAnRCQ9A0vI$_$1,audio,5,21,"[22, 23, 24, 25, 26]",,,,not_applicable,,,unresolved,Positive,Neutral,0.062127772393122394,0.014921605587005615,0.5652447722306367,True,support
+JAnRCQ9A0vI$_$1,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Positive,Neutral,0.05327966993264899,0.01693671941757202,0.5674545380978576,True,support
+JAnRCQ9A0vI$_$1,audio,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.034117616813227114,-0.014612555503845215,0.587531374306088,True,oppose
+JAnRCQ9A0vI$_$1,audio,5,26,"[27, 28, 29, 30, 31]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.023367436126302654,-0.010380148887634277,0.5849692407253744,True,oppose
+JAnRCQ9A0vI$_$1,audio,1,26,[27],,,,not_applicable,,,unresolved,Positive,Neutral,-0.015873068642946575,-0.006311476230621338,0.582282000647203,True,oppose
+JAnRCQ9A0vI$_$1,vision,3,0,"[45, 46, 47]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.06186810403437515,-0.015596866607666016,0.5932337157210686,True,oppose
+JAnRCQ9A0vI$_$1,vision,1,3,[48],,,,not_applicable,,,unresolved,Positive,Neutral,-0.01750337032395144,-0.0035463571548461914,0.5828283868002171,True,oppose
+KDjl2exStlI$_$4,text,5,13,"[15, 16, 17, 18, 19, 20, 21, 22]",of faults and even synchronization,86,120,verified,,,unresolved,Neutral,Positive,0.16655569757036548,-0.0055976808071136475,0.45341265185892426,True,support
+KDjl2exStlI$_$4,text,5,11,"[13, 14, 15, 16, 17]",", trapping of faults and",75,99,verified,,,unresolved,Neutral,Positive,0.12825441402617932,-0.017230719327926636,0.46612695876708277,True,support
+KDjl2exStlI$_$4,text,5,5,"[6, 7, 8, 9, 10, 11]","atomicity, scheduling and load",35,65,verified,,,unresolved,Neutral,Positive,0.12171367990519999,0.020679011940956116,0.44245484633945964,True,support
+KDjl2exStlI$_$4,text,3,2,"[3, 4, 5]",support reliability and,11,34,verified,,,unresolved,Neutral,Positive,-0.05721578586259457,0.04368901252746582,0.47715138134053264,True,oppose
+KDjl2exStlI$_$4,text,1,12,[14],trapping,77,85,verified,,,unresolved,Neutral,Positive,-0.033869683722806965,0.01858183741569519,0.48989029687125185,True,oppose
+KDjl2exStlI$_$4,text,1,18,[23],.,120,121,verified,,,unresolved,Neutral,Positive,-0.03371461696343636,0.007354706525802612,0.4942477532421945,True,oppose
+KDjl2exStlI$_$4,audio,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Neutral,Positive,0.04256964109404282,-0.0061661601066589355,0.48617627489958465,True,support
+KDjl2exStlI$_$4,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Neutral,Positive,0.030341001754137897,-0.0042168498039245605,0.48804468962532127,True,support
+KDjl2exStlI$_$4,audio,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Neutral,Positive,0.01873803099463256,-0.0030184686183929443,0.4881339310415801,True,support
+KDjl2exStlI$_$4,audio,5,18,"[19, 20, 21, 22, 23]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.05682956257906635,0.014475688338279724,0.5032503658522599,True,oppose
+KDjl2exStlI$_$4,audio,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.0385372482546128,0.00872763991355896,0.5006626306790227,True,oppose
+KDjl2exStlI$_$4,audio,1,18,[19],,,,not_applicable,,,unresolved,Neutral,Positive,-0.013829624733594614,0.003677666187286377,0.4935252960249596,True,oppose
+KDjl2exStlI$_$4,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Neutral,Positive,0.00978787341832199,-0.014535129070281982,0.5008009559084798,True,support
+KDjl2exStlI$_$4,vision,5,18,"[19, 20, 21, 22, 23]",,,,not_applicable,,,unresolved,Neutral,Positive,0.00791613626908294,-0.015448838472366333,0.5010092680787938,True,support
+KDjl2exStlI$_$4,vision,1,19,[20],,,,not_applicable,,,unresolved,Neutral,Positive,0.0046820611764729625,-0.005643755197525024,0.49397644114986894,True,support
+KDjl2exStlI$_$4,vision,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.0175932954050102,-0.012822538614273071,0.5025074902318187,True,oppose
+KDjl2exStlI$_$4,vision,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.011549144141618672,-0.01410338282585144,0.5025343014027016,True,oppose
+KDjl2exStlI$_$4,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.011311828194775275,-0.014500677585601807,0.503772195118784,True,oppose
+KpMCvUyQCXg$_$3,text,5,0,"[1, 2, 3, 4, 5, 6]",Auditing firms become aware of,0,30,verified,,,unresolved,Neutral,Positive,0.5111825333513603,0.27361448109149933,0.18842610403779236,True,support
+KpMCvUyQCXg$_$3,text,3,5,"[7, 8, 9]",problems towards the,31,51,verified,,,unresolved,Neutral,Positive,0.45337417929942603,-0.1762930154800415,0.37707115614645753,True,support
+KpMCvUyQCXg$_$3,text,1,3,[5],aware,22,27,verified,,,unresolved,Neutral,Positive,0.3629389656553986,0.2580738738179207,0.20958773404181336,True,support
+KpMCvUyQCXg$_$3,text,1,10,[12],April,59,64,verified,,,unresolved,Neutral,Positive,-0.19937696683062722,0.005459845066070557,0.49768798607941817,True,oppose
+KpMCvUyQCXg$_$3,text,3,1,"[3, 4, 5]",firms become aware,9,27,verified,,,unresolved,Neutral,Positive,-0.1128653447610587,-0.01863190531730652,0.4820591997817232,True,oppose
+KpMCvUyQCXg$_$3,text,1,8,[10],end,52,55,verified,,,unresolved,Neutral,Positive,-0.06652954229528996,-0.030985534191131592,0.45018027936432065,True,oppose
+KpMCvUyQCXg$_$3,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Neutral,Positive,0.1621557081142383,-0.039622336626052856,0.37557543604532495,True,support
+KpMCvUyQCXg$_$3,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,0.0648430530472538,-0.032296568155288696,0.40085037497690873,True,support
+KpMCvUyQCXg$_$3,audio,1,9,[10],,,,not_applicable,,,unresolved,Neutral,Positive,0.05869846421967895,-0.01130974292755127,0.3965962850120873,True,support
+KpMCvUyQCXg$_$3,audio,1,12,[13],,,,not_applicable,,,unresolved,Neutral,Positive,-0.01649287627200202,0.009187698364257812,0.4062386665948362,True,oppose
+KpMCvUyQCXg$_$3,audio,1,4,[5],,,,not_applicable,,,unresolved,Neutral,Positive,-0.0026054199350967755,-0.0031315982341766357,0.4093134437664732,True,oppose
+KpMCvUyQCXg$_$3,audio,1,1,[2],,,,not_applicable,,,unresolved,Neutral,Positive,-0.0018828504818677594,0.0033110976219177246,0.4049238407024055,True,oppose
+KpMCvUyQCXg$_$3,vision,3,10,"[11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Positive,0.026728177901077732,-0.02245807647705078,0.41173930772171796,True,support
+KpMCvUyQCXg$_$3,vision,1,2,[3],,,,not_applicable,,,unresolved,Neutral,Positive,0.004738925894141599,0.0003668069839477539,0.40622443425098226,True,support
+KpMCvUyQCXg$_$3,vision,1,0,[1],,,,not_applicable,,,unresolved,Neutral,Positive,0.0016209333582003493,-0.0014342069625854492,0.40820754729768266,True,support
+KpMCvUyQCXg$_$3,vision,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.03877829145771039,-0.022722095251083374,0.4389956646493376,True,oppose
+KpMCvUyQCXg$_$3,vision,3,3,"[4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.016001572155256327,-0.005354255437850952,0.4150604548621578,True,oppose
+KpMCvUyQCXg$_$3,vision,1,7,[8],,,,not_applicable,,,unresolved,Neutral,Positive,-0.012685986574508257,-0.0012527108192443848,0.41267514314280246,True,oppose
+MoQmPA7Q07Q$_$2,text,5,19,"[20, 21, 22, 23, 24]",s important to my life,87,109,verified,,,unresolved,Positive,Neutral,0.08889014660015615,0.07591521739959717,0.8521821840803655,True,support
+MoQmPA7Q07Q$_$2,text,5,2,"[3, 4, 5, 6, 7]",a result my finances are,7,31,verified,,,unresolved,Positive,Neutral,0.086215279603858,0.07755005359649658,0.8503817403683193,True,support
+MoQmPA7Q07Q$_$2,text,5,6,"[7, 8, 9, 10, 11]","are well, and I",28,43,verified,,,unresolved,Positive,Neutral,0.04482579854081026,0.04427015781402588,0.8534479729971424,True,support
+MoQmPA7Q07Q$_$2,text,1,16,[17],about,76,81,verified,,,unresolved,Positive,Neutral,-0.009682644071721924,-0.009917378425598145,0.8566162633249028,True,oppose
+MoQmPA7Q07Q$_$2,text,1,11,[12],can,44,47,verified,,,unresolved,Positive,Neutral,-0.009124731244182449,-0.010613799095153809,0.8559781400040302,True,oppose
+MoQmPA7Q07Q$_$2,text,1,13,[14],really,53,59,verified,,,unresolved,Positive,Neutral,-0.006586010073761361,-0.004820346832275391,0.8571867354015884,True,oppose
+MoQmPA7Q07Q$_$2,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.033850193351603775,-0.010158419609069824,0.8578705740931198,True,oppose
+MoQmPA7Q07Q$_$2,audio,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.032248632536971744,-0.010512232780456543,0.8581343818300894,True,oppose
+MoQmPA7Q07Q$_$2,audio,5,17,"[18, 19, 20, 21, 22]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.03141622436570657,-0.013573884963989258,0.8570495863159097,True,oppose
+MoQmPA7Q07Q$_$2,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Neutral,0.0027189447863147365,-0.00520169734954834,0.8583376855570538,True,support
+MoQmPA7Q07Q$_$2,vision,1,18,[19],,,,not_applicable,,,unresolved,Positive,Neutral,0.0004844934562102665,-0.0011757612228393555,0.857228951993999,True,support
+MoQmPA7Q07Q$_$2,vision,1,19,[20],,,,not_applicable,,,unresolved,Positive,Neutral,0.00044897502374441345,-0.001070857048034668,0.8572323827203379,True,support
+MoQmPA7Q07Q$_$2,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.01022977722627294,-0.01892077922821045,0.8589913195368555,True,oppose
+MoQmPA7Q07Q$_$2,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.009156668496797415,-0.015102267265319824,0.858962152149609,True,oppose
+MoQmPA7Q07Q$_$2,vision,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.007655375776773443,-0.012626171112060547,0.858994605636644,True,oppose
+OrYBtyO0aPI$_$1,text,1,8,"[9, 10, 11]",undercutting,34,46,verified,,,unresolved,Neutral,Positive,0.46513615326525737,-0.08645287156105042,0.44315737303955516,True,support
+OrYBtyO0aPI$_$1,text,3,11,"[14, 15, 16, 17]",in 4K pricing,63,76,verified,,,unresolved,Neutral,Positive,0.4457480704470749,0.1916533261537552,0.2691661980057808,True,support
+OrYBtyO0aPI$_$1,text,1,13,[17],pricing,69,76,verified,,,unresolved,Neutral,Positive,0.2249678426871562,0.09019553661346436,0.36730015086375567,True,support
+OrYBtyO0aPI$_$1,text,5,3,"[4, 5, 6, 7, 8]",surprising is how Apple is,7,33,verified,,,unresolved,Neutral,Positive,-0.2271911030588052,0.04260215163230896,0.5432553077432204,True,oppose
+OrYBtyO0aPI$_$1,text,5,0,"[1, 2, 3, 4, 5]",What's surprising is,0,20,verified,,,unresolved,Neutral,Positive,-0.15575703296924515,0.01731044054031372,0.528405897801127,True,oppose
+OrYBtyO0aPI$_$1,text,1,10,[13],competition,51,62,verified,,,unresolved,Neutral,Positive,-0.12156788947079022,0.0640893429517746,0.48088367243243463,True,oppose
+OrYBtyO0aPI$_$1,audio,3,6,"[7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,0.036750340473931775,-0.015572279691696167,0.4892921624246651,True,support
+OrYBtyO0aPI$_$1,audio,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Neutral,Positive,0.014399202695833613,-0.008370846509933472,0.487038271876634,True,support
+OrYBtyO0aPI$_$1,audio,1,16,[17],,,,not_applicable,,,unresolved,Neutral,Positive,0.0058324741063164875,-0.0006880462169647217,0.49327790175591774,True,support
+OrYBtyO0aPI$_$1,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.09723519098356526,0.02070680260658264,0.509721609119398,True,oppose
+OrYBtyO0aPI$_$1,audio,1,3,[4],,,,not_applicable,,,unresolved,Neutral,Positive,-0.03588995893972391,0.008422553539276123,0.5010582589417897,True,oppose
+OrYBtyO0aPI$_$1,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.031118891893420098,-0.002070397138595581,0.5005066375975693,True,oppose
+OrYBtyO0aPI$_$1,vision,5,0,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Neutral,Positive,0.08921956159072097,-0.004584997892379761,0.49270022645428746,True,support
+OrYBtyO0aPI$_$1,vision,1,1,[14],,,,not_applicable,,,unresolved,Neutral,Positive,0.017937350165916688,-0.0016708970069885254,0.4958380286257403,True,support
+OrYBtyO0aPI$_$1,vision,1,0,[13],,,,not_applicable,,,unresolved,Neutral,Positive,0.012063868211555251,-0.001772761344909668,0.4963054643079476,True,support
+Q4WzApjaCNI$_$0,text,1,11,[12],these,62,67,verified,,,unresolved,Positive,Neutral,0.26344770681022633,0.07836496829986572,0.4752225053169463,True,support
+Q4WzApjaCNI$_$0,text,1,0,[1],So,0,2,verified,,,unresolved,Positive,Neutral,0.18647075802638446,0.06320381164550781,0.497734854563586,True,support
+Q4WzApjaCNI$_$0,text,1,7,[8],special,37,44,verified,,,unresolved,Positive,Neutral,0.1504219023425838,0.05174756050109863,0.5045399502204467,True,support
+Q4WzApjaCNI$_$0,text,5,4,"[5, 6, 7, 8, 9]",into building a special theater,21,52,verified,,,unresolved,Positive,Neutral,-0.9360202688220892,-0.37751317024230957,0.7327765830985671,True,oppose
+Q4WzApjaCNI$_$0,text,3,8,"[9, 10, 11]",theater just for,45,61,verified,,,unresolved,Positive,Neutral,-0.4930567988452065,-0.1403275728225708,0.6558378983178331,True,oppose
+Q4WzApjaCNI$_$0,text,5,0,"[1, 2, 3, 4, 5]",So Wagner talked him into,0,25,verified,,,unresolved,Positive,Neutral,-0.4038531747824813,-0.13426423072814941,0.6396460293260237,True,oppose
+Q4WzApjaCNI$_$0,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,0.30243517011451704,0.10770505666732788,0.47475080021182586,True,support
+Q4WzApjaCNI$_$0,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,0.17188469115413185,0.0569189190864563,0.5009002129874202,True,support
+Q4WzApjaCNI$_$0,audio,1,12,[13],,,,not_applicable,,,unresolved,Positive,Neutral,0.0801640825245975,0.029962897300720215,0.5233393874154292,True,support
+Q4WzApjaCNI$_$0,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.17648125937326198,-0.05070316791534424,0.5794194195904064,True,oppose
+Q4WzApjaCNI$_$0,audio,3,4,"[5, 6, 7]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.06796583071026074,-0.028710603713989258,0.555016180408541,True,oppose
+Q4WzApjaCNI$_$0,audio,1,2,[3],,,,not_applicable,,,unresolved,Positive,Neutral,-0.040129357919852504,-0.012989640235900879,0.5500786694384804,True,oppose
+ROcTx5VEn7o$_$11,text,5,3,"[4, 5, 6, 7, 8, 9, 10]",margin we subtract fixed costs,21,51,verified,,,unresolved,Neutral,Positive,0.20973144018865075,-0.04509013891220093,0.4070423729526009,True,support
+ROcTx5VEn7o$_$11,text,5,0,"[1, 2, 3, 4, 5]",So from contribution margin we,0,30,verified,,,unresolved,Neutral,Positive,0.10286659212808114,-0.02250427007675171,0.4220605054269197,True,support
+ROcTx5VEn7o$_$11,text,5,6,"[9, 10, 11, 12, 13]",fixed costs and that equals,40,67,verified,,,unresolved,Neutral,Positive,0.09709360491599117,-0.018333017826080322,0.42556232210665185,True,support
+ROcTx5VEn7o$_$11,text,1,11,[14],our,68,71,verified,,,unresolved,Neutral,Positive,-0.02467101594496679,0.006856143474578857,0.4464953260973329,True,oppose
+ROcTx5VEn7o$_$11,text,1,24,[27],when,137,141,verified,,,unresolved,Neutral,Positive,-0.02335442279480926,0.006775856018066406,0.447878520383254,True,oppose
+ROcTx5VEn7o$_$11,text,5,25,"[28, 29, 30, 31, 32]",we use the Multi-,142,159,verified,,,unresolved,Neutral,Positive,-0.021723790237384133,0.005572706460952759,0.4443810423470688,True,oppose
+ROcTx5VEn7o$_$11,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Positive,0.021520773687516592,-0.008209139108657837,0.439680524603569,True,support
+ROcTx5VEn7o$_$11,audio,3,24,"[25, 26, 27]",,,,not_applicable,,,unresolved,Neutral,Positive,0.01069303386729381,-0.004907071590423584,0.44210014416687393,True,support
+ROcTx5VEn7o$_$11,audio,1,9,[10],,,,not_applicable,,,unresolved,Neutral,Positive,0.007328251266929375,-0.002644091844558716,0.4423025165341951,True,support
+ROcTx5VEn7o$_$11,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.04275628159699041,0.0042517781257629395,0.450024842081263,True,oppose
+ROcTx5VEn7o$_$11,audio,5,14,"[15, 16, 17, 18, 19]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.025300767161818172,-0.0006416440010070801,0.44692154309860377,True,oppose
+ROcTx5VEn7o$_$11,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.023861530179882795,0.00037091970443725586,0.44718590390632434,True,oppose
+ROcTx5VEn7o$_$11,vision,1,17,[18],,,,not_applicable,,,unresolved,Neutral,Positive,0.00530860421741175,-0.00048547983169555664,0.4429301853972903,True,support
+ROcTx5VEn7o$_$11,vision,1,6,[7],,,,not_applicable,,,unresolved,Neutral,Positive,0.002402168574858088,-0.0005592107772827148,0.44367095373120224,True,support
+ROcTx5VEn7o$_$11,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,0.0017197534472925824,0.0004024505615234375,0.44573785318238107,True,support
+ROcTx5VEn7o$_$11,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.08452537683570693,0.018707871437072754,0.4613815783989278,True,oppose
+ROcTx5VEn7o$_$11,vision,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.04161983035085326,0.009658873081207275,0.4535761168019398,True,oppose
+ROcTx5VEn7o$_$11,vision,5,19,"[20, 21, 22, 23, 24]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.03506266425235427,0.0091666579246521,0.4520423702202906,True,oppose
+TH32jop4FiI$_$17,text,1,5,[6],announced,28,37,verified,,,unresolved,Positive,Neutral,0.21375509806197934,0.07578593492507935,0.5831650922290683,True,support
+TH32jop4FiI$_$17,text,5,9,"[10, 11, 12, 13, 14]",first year of marriage equality,50,81,verified,,,unresolved,Positive,Neutral,0.18192171692236347,0.07142794132232666,0.5888999155577435,True,support
+TH32jop4FiI$_$17,text,1,13,[14],equality,73,81,verified,,,unresolved,Positive,Neutral,0.15372760738490243,0.05641824007034302,0.6002408102374654,True,support
+TH32jop4FiI$_$17,text,3,6,"[7, 8, 9]",that in the,38,49,verified,,,unresolved,Positive,Neutral,-0.36663817974989543,-0.14377009868621826,0.7088410296651403,True,oppose
+TH32jop4FiI$_$17,text,3,22,"[23, 24, 25]",couples got married,110,129,verified,,,unresolved,Positive,Neutral,-0.35725103169971106,-0.13391178846359253,0.7045487765568896,True,oppose
+TH32jop4FiI$_$17,text,3,1,"[2, 3, 4]",officials in Maine,4,22,verified,,,unresolved,Positive,Neutral,-0.3491651675979002,-0.14177042245864868,0.7019820200916205,True,oppose
+TH32jop4FiI$_$17,audio,1,27,[28],,,,not_applicable,,,unresolved,Positive,Neutral,0.008456432479343468,0.002715766429901123,0.6318550306958775,True,support
+TH32jop4FiI$_$17,audio,1,1,[2],,,,not_applicable,,,unresolved,Positive,Neutral,0.00378019732497481,0.0021744966506958008,0.6327673170216999,True,support
+TH32jop4FiI$_$17,audio,1,20,[21],,,,not_applicable,,,unresolved,Positive,Neutral,0.0023616192662143654,0.0008655190467834473,0.6332122297551367,True,support
+TH32jop4FiI$_$17,audio,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.16201741807376213,-0.05959993600845337,0.6669828286185885,True,oppose
+TH32jop4FiI$_$17,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.13231523510565424,-0.04512137174606323,0.6611670337333,True,oppose
+TH32jop4FiI$_$17,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.08857100406552876,-0.030424058437347412,0.6510548089207059,True,oppose
+TH32jop4FiI$_$17,vision,3,2,"[3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,0.028799904138754107,0.006774008274078369,0.6297817297180848,True,support
+TH32jop4FiI$_$17,vision,1,7,[8],,,,not_applicable,,,unresolved,Positive,Neutral,0.004107083725627625,-0.0003241896629333496,0.6335754547113696,True,support
+TH32jop4FiI$_$17,vision,1,6,[7],,,,not_applicable,,,unresolved,Positive,Neutral,0.002354587501241845,-0.00032192468643188477,0.6339169578406246,True,support
+TH32jop4FiI$_$17,vision,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.04556282000823564,-0.018945813179016113,0.6468839481347877,True,oppose
+TH32jop4FiI$_$17,vision,5,24,"[25, 26, 27, 28, 29]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.036405785387078726,-0.017257213592529297,0.6444730466193048,True,oppose
+TH32jop4FiI$_$17,vision,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.03347714459605411,-0.014427423477172852,0.6446580455254595,True,oppose
+TYJzg5IJN8o$_$11,text,5,23,"[25, 26, 27, 28, 29]",after President-elect Obama,107,134,verified,,,unresolved,Positive,Neutral,0.27407959125502035,0.04785701632499695,0.37610016605746693,True,support
+TYJzg5IJN8o$_$11,text,1,27,[29],Obama,129,134,verified,,,unresolved,Positive,Neutral,0.2229708250099095,0.03756529092788696,0.37815311248325717,True,support
+TYJzg5IJN8o$_$11,text,3,37,"[39, 40, 41]",issue that you,177,191,verified,,,unresolved,Positive,Neutral,0.1661714475123398,0.05577743053436279,0.36934370165909025,True,support
+TYJzg5IJN8o$_$11,text,5,5,"[6, 7, 8, 9, 10, 11]","lobbyist,  you may not",18,40,verified,,,unresolved,Positive,Neutral,-0.5747394274580939,-0.2677237391471863,0.6025777780734333,True,oppose
+TYJzg5IJN8o$_$11,text,5,8,"[10, 11, 12, 13, 14]",may not lobby during the,33,57,verified,,,unresolved,Positive,Neutral,-0.4908745113719484,-0.2376408576965332,0.5824870689222491,True,oppose
+TYJzg5IJN8o$_$11,text,3,3,"[4, 5, 6, 7]",are a lobbyist,12,26,verified,,,unresolved,Positive,Neutral,-0.2972709488193098,0.01590600609779358,0.4139200434573774,True,oppose
+TYJzg5IJN8o$_$11,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,0.09401965878554452,0.03178083896636963,0.3906086591321504,True,support
+TYJzg5IJN8o$_$11,audio,5,43,"[44, 45, 46, 47, 48]",,,,not_applicable,,,unresolved,Positive,Neutral,0.07415322160526627,0.01978650689125061,0.3973350635561235,True,support
+TYJzg5IJN8o$_$11,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,0.07116954317662816,0.01831352710723877,0.3984727731487992,True,support
+TYJzg5IJN8o$_$11,audio,1,25,[26],,,,not_applicable,,,unresolved,Positive,Neutral,-0.0035120335007604586,-0.0032899677753448486,0.4130629621752671,True,oppose
+TYJzg5IJN8o$_$11,audio,1,27,[28],,,,not_applicable,,,unresolved,Positive,Neutral,-0.0021010080885509597,-0.003930389881134033,0.41370033721831867,True,oppose
+TYJzg5IJN8o$_$11,audio,1,40,[41],,,,not_applicable,,,unresolved,Positive,Neutral,-0.0009696810964702207,-0.00010570883750915527,0.4121201922155764,True,oppose
+TYJzg5IJN8o$_$11,vision,1,24,[25],,,,not_applicable,,,unresolved,Positive,Neutral,0.0002338477813232931,-0.0024663805961608887,0.41273005147715297,True,support
+TYJzg5IJN8o$_$11,vision,5,18,"[19, 20, 21, 22, 23]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.038675776592682065,-0.03549829125404358,0.4305330296856617,True,oppose
+TYJzg5IJN8o$_$11,vision,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.03045705993428449,-0.029343903064727783,0.4278251165883789,True,oppose
+TYJzg5IJN8o$_$11,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.029260492504042057,-0.0225602388381958,0.42318600601286394,True,oppose
+Wrcf2xtqbkQ$_$9,text,5,15,"[17, 18, 19, 20, 21]",debating how exactly the trial,55,85,verified,,,unresolved,Neutral,Positive,0.2718099867257041,-0.04879659414291382,0.3955682270182632,True,support
+Wrcf2xtqbkQ$_$9,text,5,0,"[1, 2, 3, 4, 5, 6]",The Mladic trial is in,0,22,verified,,,unresolved,Neutral,Positive,0.21829330080479126,-0.023743122816085815,0.39110139470354766,True,support
+Wrcf2xtqbkQ$_$9,text,5,8,"[10, 11, 12, 13, 14]","trial phase, so they",31,51,verified,,,unresolved,Neutral,Positive,0.18939510968561213,-0.015617132186889648,0.4065231795436147,True,support
+Wrcf2xtqbkQ$_$9,text,1,3,[5],is,17,19,verified,,,unresolved,Neutral,Positive,-0.0258958673102323,0.010158658027648926,0.44731014139779773,True,oppose
+Wrcf2xtqbkQ$_$9,text,1,23,[25],",",101,102,verified,,,unresolved,Neutral,Positive,-0.023809645792190248,0.008159726858139038,0.4421400271190222,True,oppose
+Wrcf2xtqbkQ$_$9,text,1,24,[26],exchanging,103,113,verified,,,unresolved,Neutral,Positive,-0.019705555005951947,0.011497139930725098,0.43926782776757195,True,oppose
+Wrcf2xtqbkQ$_$9,audio,3,25,"[26, 27, 28]",,,,not_applicable,,,unresolved,Neutral,Positive,0.01033872443685846,-0.0029098987579345703,0.4395211379271013,True,support
+Wrcf2xtqbkQ$_$9,audio,1,11,[12],,,,not_applicable,,,unresolved,Neutral,Positive,0.0038531618441579596,-0.002376735210418701,0.4393378227031568,True,support
+Wrcf2xtqbkQ$_$9,audio,1,12,[13],,,,not_applicable,,,unresolved,Neutral,Positive,0.003134251728529547,-0.0021262764930725098,0.43960817505521876,True,support
+Wrcf2xtqbkQ$_$9,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.042384699571014095,0.006100296974182129,0.4467594088890805,True,oppose
+Wrcf2xtqbkQ$_$9,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.03874674125397093,0.0031666159629821777,0.446723028190796,True,oppose
+Wrcf2xtqbkQ$_$9,audio,5,19,"[20, 21, 22, 23, 24]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.038581816632605404,0.006792426109313965,0.4477663759313223,True,oppose
+Wrcf2xtqbkQ$_$9,vision,5,16,"[17, 18, 19, 20, 21]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.06649485836274005,0.0010573267936706543,0.45816871864431225,True,oppose
+Wrcf2xtqbkQ$_$9,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.05963025838959024,0.003637462854385376,0.45461077191367577,True,oppose
+Wrcf2xtqbkQ$_$9,vision,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.05572083805008399,-0.00036534667015075684,0.4565930181836372,True,oppose
+Wrcf2xtqbkQ$_$8,text,3,3,"[4, 5, 6]",I'm,11,14,verified,,,unresolved,Positive,Neutral,0.47232800430101163,0.13785529136657715,0.3743256775866087,True,support
+Wrcf2xtqbkQ$_$8,text,5,6,"[7, 8, 9, 10, 11]","going to, to be",15,30,verified,,,unresolved,Positive,Neutral,0.1762100146379335,0.10079863667488098,0.4086205740995423,True,support
+Wrcf2xtqbkQ$_$8,text,5,11,"[12, 13, 14, 15, 16]",present at some of the,31,53,verified,,,unresolved,Positive,Neutral,0.1621999457319685,0.09964519739151001,0.4180020008597496,True,support
+Wrcf2xtqbkQ$_$8,text,5,13,"[14, 15, 16, 17, 18]",some of the trials.,42,61,verified,,,unresolved,Positive,Neutral,-0.7876908536459244,-0.21705520153045654,0.6258041034030988,True,oppose
+Wrcf2xtqbkQ$_$8,text,1,16,[17],trials,54,60,verified,,,unresolved,Positive,Neutral,-0.34604461053602376,-0.1075788140296936,0.5571857537080327,True,oppose
+Wrcf2xtqbkQ$_$8,text,3,5,"[6, 7, 8]",m going to,13,23,verified,,,unresolved,Positive,Neutral,-0.27447633327426546,-0.06406432390213013,0.5355601418891502,True,oppose
+Wrcf2xtqbkQ$_$8,audio,1,11,[12],,,,not_applicable,,,unresolved,Positive,Neutral,0.018113606582866537,0.00827789306640625,0.47518776070668634,True,support
+Wrcf2xtqbkQ$_$8,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.1785865445010586,-0.05484896898269653,0.5277624678290662,True,oppose
+Wrcf2xtqbkQ$_$8,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.11380146554185566,-0.025807559490203857,0.5090178349238291,True,oppose
+Wrcf2xtqbkQ$_$8,audio,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.10955537046156172,-0.02683079242706299,0.5098391555419264,True,oppose
+Wrcf2xtqbkQ$_$8,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.09765108034559411,-0.04362291097640991,0.5113147347286012,True,oppose
+Wrcf2xtqbkQ$_$8,vision,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.09069888018511285,-0.051890790462493896,0.5111425313262008,True,oppose
+Wrcf2xtqbkQ$_$8,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.08596016058266176,-0.04216951131820679,0.5098809119675451,True,oppose
+WxajvjGKz7Y$_$0,text,5,0,"[1, 2, 3, 4, 5]",The second suggestion is to,0,27,verified,,,unresolved,Neutral,Positive,0.2182379866020614,-0.03286796808242798,0.5316107777638236,True,support
+WxajvjGKz7Y$_$0,text,5,3,"[4, 5, 6, 7, 8]","is to use a """,22,35,verified,,,unresolved,Neutral,Positive,0.1582063612411606,-0.019781291484832764,0.539827695621436,True,support
+WxajvjGKz7Y$_$0,text,5,6,"[7, 8, 9, 10, 11]","a ""strategies approach""",32,55,verified,,,unresolved,Neutral,Positive,0.12842705081352235,-0.003758072853088379,0.5250670052950545,True,support
+WxajvjGKz7Y$_$0,text,1,8,[9],strategies,35,45,verified,,,unresolved,Neutral,Positive,-0.018372551526559255,0.008339405059814453,0.550882511958824,True,oppose
+WxajvjGKz7Y$_$0,text,1,9,[10],approach,46,54,verified,,,unresolved,Neutral,Positive,-0.0062344895301688075,0.00015628337860107422,0.5636626730710292,True,oppose
+WxajvjGKz7Y$_$0,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.14618116243806412,0.03528185188770294,0.5766774677416272,True,oppose
+WxajvjGKz7Y$_$0,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.1440826306557793,0.031107276678085327,0.579197993074656,True,oppose
+WxajvjGKz7Y$_$0,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.13885740390740842,0.03046928346157074,0.5784377465280962,True,oppose
+WxajvjGKz7Y$_$0,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,0.1417896219908129,-0.02919963002204895,0.5546086451444505,True,support
+WxajvjGKz7Y$_$0,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,0.1175868812712969,-0.021493136882781982,0.5592441904658421,True,support
+WxajvjGKz7Y$_$0,vision,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Neutral,Positive,0.11601624547007872,-0.0195615291595459,0.5582569156886602,True,support
+ZaoFHcbRM9g$_$5,text,3,2,"[3, 4, 5]",WERE MARRIED 25,8,23,verified,,,unresolved,Neutral,Negative,0.6252816248994935,0.058717429637908936,0.3697760672083714,True,support
+ZaoFHcbRM9g$_$5,text,3,4,"[5, 6, 7]",25 YEARS BEFORE,21,36,verified,,,unresolved,Neutral,Negative,0.09422907350664755,-0.01358860731124878,0.4634939126044184,True,support
+ZaoFHcbRM9g$_$5,text,1,8,[9],FOUND,41,46,verified,,,unresolved,Neutral,Negative,0.08590705678215649,0.026268362998962402,0.4727914174088549,True,support
+ZaoFHcbRM9g$_$5,text,5,6,"[7, 8, 9, 10, 11]",BEFORE YOU FOUND OUT YOUR,30,55,verified,,,unresolved,Neutral,Negative,-0.43515424942495384,-0.08494067192077637,0.49036522347588823,True,oppose
+ZaoFHcbRM9g$_$5,text,5,9,"[10, 11, 12, 13, 14]",OUT YOUR HUSBAND WAS GAY,47,71,verified,,,unresolved,Neutral,Negative,-0.41765512949805306,-0.17198675870895386,0.42927556287920055,True,oppose
+ZaoFHcbRM9g$_$5,text,1,13,[14],GAY,68,71,verified,,,unresolved,Neutral,Negative,-0.40960271046710117,-0.08119675517082214,0.49883665127846066,True,oppose
+ZaoFHcbRM9g$_$5,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Negative,0.32865519572888124,0.04254534840583801,0.42685038991031266,True,support
+ZaoFHcbRM9g$_$5,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Neutral,Negative,0.2376940598381747,0.04523661732673645,0.4449754548780403,True,support
+ZaoFHcbRM9g$_$5,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Negative,0.08681394530443054,0.01715606451034546,0.46821836133865885,True,support
+ZaoFHcbRM9g$_$5,audio,1,4,[5],,,,not_applicable,,,unresolved,Neutral,Negative,-0.00909730781981355,-0.0011656880378723145,0.4814202090511713,True,oppose
+ZaoFHcbRM9g$_$5,vision,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.17895872853578343,-0.02713114023208618,0.50276301349856,True,oppose
+ZaoFHcbRM9g$_$5,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.1539723277509235,0.0021263211965560913,0.5120868680182451,True,oppose
+ZaoFHcbRM9g$_$5,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Negative,-0.13369257343705554,-0.028238415718078613,0.4932028713504577,True,oppose
+b1LEcg6z66g$_$8,text,3,2,"[3, 4, 5]",s simply not,3,15,verified,,,unresolved,Negative,Positive,3.9479649754724315,-1.7630656957626343,0.16923300657059137,True,support
+b1LEcg6z66g$_$8,text,5,4,"[5, 6, 7, 8, 9]",not good enough that how,12,36,verified,,,unresolved,Negative,Positive,2.5921594157262975,-1.3035102486610413,0.41665906585547735,True,support
+b1LEcg6z66g$_$8,text,5,16,"[17, 18, 19, 20, 21]",so dependent on your parents,69,97,verified,,,unresolved,Negative,Positive,0.7879039291929151,-0.5915104746818542,0.8060433292446931,True,support
+b1LEcg6z66g$_$8,text,3,6,"[7, 8, 9]",enough that how,21,36,verified,,,unresolved,Negative,Positive,-0.2848024571871779,0.3332878351211548,0.92035865633393,True,oppose
+b1LEcg6z66g$_$8,text,3,8,"[9, 10, 11]",how well you,33,45,verified,,,unresolved,Negative,Positive,-0.1709166721789237,0.16948926448822021,0.9099128393106269,True,oppose
+b1LEcg6z66g$_$8,text,1,13,[14],at,56,58,verified,,,unresolved,Negative,Positive,-0.08355206687955485,0.08697426319122314,0.9052515997572791,True,oppose
+b1LEcg6z66g$_$8,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,-0.18019564631683416,0.15555238723754883,0.9123862916634532,True,oppose
+b1LEcg6z66g$_$8,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.1646003188619698,0.1302410364151001,0.9113832009182147,True,oppose
+b1LEcg6z66g$_$8,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.12862027940613396,0.10679996013641357,0.9095377480762626,True,oppose
+b1LEcg6z66g$_$8,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,0.04268460850000677,-0.029766440391540527,0.8960758148882334,True,support
+b1LEcg6z66g$_$8,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,0.01773628216469758,-0.0037887096405029297,0.8977603642990789,True,support
+b1LEcg6z66g$_$8,vision,1,4,[5],,,,not_applicable,,,unresolved,Negative,Positive,0.012938118633690987,-0.009006619453430176,0.8983158955021696,True,support
+b1LEcg6z66g$_$8,vision,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Negative,Positive,-0.04947943014785494,0.06643950939178467,0.903876858557582,True,oppose
+b1LEcg6z66g$_$8,vision,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Positive,-0.03524611079731521,0.05105233192443848,0.9025720511373834,True,oppose
+b1LEcg6z66g$_$8,vision,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Negative,Positive,-0.02116760211661184,0.04387533664703369,0.9018228326550501,True,oppose
+bpvYdXVlgvc$_$4,text,5,4,"[5, 6, 7, 8, 9]",violation of this law if,21,45,verified,,,unresolved,Negative,Positive,2.850271881414983,-1.053810566663742,0.22861035586179926,True,support
+bpvYdXVlgvc$_$4,text,5,0,"[1, 2, 3, 4, 5]",Making him in direct violation,0,30,verified,,,unresolved,Negative,Positive,2.4565757324666224,-0.9929637312889099,0.3198837590262837,True,support
+bpvYdXVlgvc$_$4,text,1,4,[5],violation,21,30,verified,,,unresolved,Negative,Positive,1.8059866930068709,-0.8597524017095566,0.44462687136766427,True,support
+bpvYdXVlgvc$_$4,text,3,9,"[10, 11, 12]",it were to,46,56,verified,,,unresolved,Negative,Positive,-0.08091620959493584,0.08784008026123047,0.884908643809581,True,oppose
+bpvYdXVlgvc$_$4,text,3,0,"[1, 2, 3]",Making him in,0,13,verified,,,unresolved,Negative,Positive,-0.034510142620475914,0.08518475294113159,0.8805568703930432,True,oppose
+bpvYdXVlgvc$_$4,text,1,5,[6],of,31,33,verified,,,unresolved,Negative,Positive,-0.031931894276167494,0.0541110634803772,0.8773946920715242,True,oppose
+bpvYdXVlgvc$_$4,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Negative,Positive,-0.2287671432395859,0.18944090604782104,0.8960026009547333,True,oppose
+bpvYdXVlgvc$_$4,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Negative,Positive,-0.16840333847757005,0.12336975336074829,0.8875004965060843,True,oppose
+bpvYdXVlgvc$_$4,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.15511431884724347,0.1293870210647583,0.8886194983669573,True,oppose
+bpvYdXVlgvc$_$4,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Negative,Positive,0.1550455872158989,-0.13371747732162476,0.8425462307763848,True,support
+bpvYdXVlgvc$_$4,vision,1,3,[4],,,,not_applicable,,,unresolved,Negative,Positive,0.08098742721294672,-0.0677608847618103,0.857970448693447,True,support
+bpvYdXVlgvc$_$4,vision,1,4,[5],,,,not_applicable,,,unresolved,Negative,Positive,0.033034350418506886,-0.03259927034378052,0.864393960831948,True,support
+bpvYdXVlgvc$_$4,vision,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.039856689707227666,0.013882100582122803,0.8693285190954005,True,oppose
+bpvYdXVlgvc$_$4,vision,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Negative,Positive,-0.023023830733980066,0.00866013765335083,0.8673549730957603,True,oppose
+bpvYdXVlgvc$_$4,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Negative,Positive,-0.02136398868638878,0.005288302898406982,0.8671983466139659,True,oppose
+c1a1y9ytHH0$_$3,text,1,1,[2],possible,3,11,verified,,,unresolved,Positive,Neutral,0.04969450073326109,0.009885609149932861,0.4459639699472083,True,support
+c1a1y9ytHH0$_$3,text,3,12,"[13, 14, 15]",movement as you,62,77,verified,,,unresolved,Positive,Neutral,0.04085020127997718,0.0038570761680603027,0.4455007281548328,True,support
+c1a1y9ytHH0$_$3,text,3,14,"[15, 16, 17]",you count and,74,87,verified,,,unresolved,Positive,Neutral,0.018495015669726556,0.001927793025970459,0.45304417101924255,True,support
+c1a1y9ytHH0$_$3,text,5,5,"[6, 7, 8, 9, 10]",the beads needs to occur,30,54,verified,,,unresolved,Positive,Neutral,-0.2268215920984188,-0.05472457408905029,0.5140771144972056,True,oppose
+c1a1y9ytHH0$_$3,text,5,24,"[25, 26, 27, 28, 29]",the  horizontal counting bar.,124,153,verified,,,unresolved,Positive,Neutral,-0.21295904962740353,-0.0556674599647522,0.50822590238939,True,oppose
+c1a1y9ytHH0$_$3,text,5,8,"[9, 10, 11, 12, 13]",to occur in one movement,46,70,verified,,,unresolved,Positive,Neutral,-0.18375440561294754,-0.04130181670188904,0.5011599409224068,True,oppose
+c1a1y9ytHH0$_$3,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,0.10816660214699159,0.017858654260635376,0.43334425359907136,True,support
+c1a1y9ytHH0$_$3,audio,5,23,"[24, 25, 26, 27, 28]",,,,not_applicable,,,unresolved,Positive,Neutral,0.08710995538552346,0.012527823448181152,0.4387084631352534,True,support
+c1a1y9ytHH0$_$3,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,0.08281604152489541,0.01344919204711914,0.43928095387204913,True,support
+c1a1y9ytHH0$_$3,audio,1,14,[15],,,,not_applicable,,,unresolved,Positive,Neutral,-0.004251892866351414,-0.0013778209686279297,0.4593068302559342,True,oppose
+c1a1y9ytHH0$_$3,audio,1,18,[19],,,,not_applicable,,,unresolved,Positive,Neutral,-0.0005814376899873075,-0.0003133714199066162,0.45841113082876456,True,oppose
+c1a1y9ytHH0$_$3,vision,5,9,"[15, 16, 17, 18, 19]",,,,not_applicable,,,unresolved,Positive,Neutral,0.1073608676995933,0.03316357731819153,0.43407136732369983,True,support
+c1a1y9ytHH0$_$3,vision,5,6,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Positive,Neutral,0.03087666069033923,0.016751348972320557,0.45278894012232296,True,support
+c1a1y9ytHH0$_$3,vision,1,9,[15],,,,not_applicable,,,unresolved,Positive,Neutral,0.0283258691192525,0.007002681493759155,0.45171324952339803,True,support
+c1a1y9ytHH0$_$3,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.030620430810595622,0.005415856838226318,0.4676423261044008,True,oppose
+c1a1y9ytHH0$_$3,vision,3,5,"[11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.025968023697420795,0.0016643404960632324,0.46582896743391855,True,oppose
+c1a1y9ytHH0$_$3,vision,1,1,[2],,,,not_applicable,,,unresolved,Positive,Neutral,-0.01185889670277085,-0.0003292560577392578,0.46157809509949765,True,oppose
+g8Cl74tS3oY$_$2,text,5,11,"[12, 13, 14, 15, 16, 17, 18]",", the threat of defunding",57,82,verified,,,unresolved,Negative,Positive,2.644731587755219,-0.6873184442520142,0.14999162420387774,True,support
+g8Cl74tS3oY$_$2,text,5,15,"[16, 17, 18, 19, 20, 21, 22]",defunding the Corporation for Public,73,109,verified,,,unresolved,Negative,Positive,1.0836754387660372,-0.3635524958372116,0.41928160410277043,True,support
+g8Cl74tS3oY$_$2,text,1,13,[14],threat,63,69,verified,,,unresolved,Negative,Positive,0.9755253961234481,-0.3318408578634262,0.4338490510340317,True,support
+g8Cl74tS3oY$_$2,text,1,0,[1],While,0,5,verified,,,unresolved,Negative,Positive,-0.8145240200632637,0.47011005878448486,0.8487505097253184,True,oppose
+g8Cl74tS3oY$_$2,text,3,5,"[6, 7, 8]",first time this,22,37,verified,,,unresolved,Negative,Positive,-0.7016773743102662,0.40720510482788086,0.8316081318578412,True,oppose
+g8Cl74tS3oY$_$2,text,5,1,"[2, 3, 4, 5, 6]",this is not the first,6,27,verified,,,unresolved,Negative,Positive,-0.5905945117508535,0.34734100103378296,0.8171456596048228,True,oppose
+g8Cl74tS3oY$_$2,audio,1,31,[32],,,,not_applicable,,,unresolved,Negative,Positive,0.00544237912506218,-0.002704054117202759,0.6898045156492045,True,support
+g8Cl74tS3oY$_$2,audio,1,24,[25],,,,not_applicable,,,unresolved,Negative,Positive,0.0026565038979498024,0.00035369396209716797,0.6897421436698663,True,support
+g8Cl74tS3oY$_$2,audio,1,22,[23],,,,not_applicable,,,unresolved,Negative,Positive,0.0007200828767126577,-0.0016337484121322632,0.691262134249436,True,support
+g8Cl74tS3oY$_$2,audio,5,16,"[17, 18, 19, 20, 21]",,,,not_applicable,,,unresolved,Negative,Positive,-0.19149758543046524,0.08579164743423462,0.7376675475781119,True,oppose
+g8Cl74tS3oY$_$2,audio,5,13,"[14, 15, 16, 17, 18]",,,,not_applicable,,,unresolved,Negative,Positive,-0.16468600229345576,0.08129346370697021,0.7322441250965466,True,oppose
+g8Cl74tS3oY$_$2,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Negative,Positive,-0.12022466313036828,0.04833930730819702,0.7164236493749302,True,oppose
+g8Cl74tS3oY$_$2,vision,5,14,"[15, 16, 17, 18, 19]",,,,not_applicable,,,unresolved,Negative,Positive,0.23021407252501613,-0.10271382331848145,0.6313105823992714,True,support
+g8Cl74tS3oY$_$2,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Negative,Positive,0.12092871899305346,-0.059098511934280396,0.6577697477292208,True,support
+g8Cl74tS3oY$_$2,vision,1,15,[16],,,,not_applicable,,,unresolved,Negative,Positive,0.06424369016031828,-0.028893277049064636,0.6747984662051619,True,support
+g8Cl74tS3oY$_$2,vision,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.0756314547945316,0.03375643491744995,0.7015087518311549,True,oppose
+g8Cl74tS3oY$_$2,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,-0.04469357388926598,0.019171148538589478,0.6961924965915962,True,oppose
+g8Cl74tS3oY$_$2,vision,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Negative,Positive,-0.03449489149017748,0.012207478284835815,0.6931009285445112,True,oppose
+gVqs4TzqySw$_$2,text,3,9,"[10, 11, 12]","mutual idea,",28,40,verified,,,unresolved,Positive,Neutral,0.25157154095610434,0.09813696146011353,0.5779826415741537,True,support
+gVqs4TzqySw$_$2,text,3,16,"[17, 18, 19]",there is activity,58,75,verified,,,unresolved,Positive,Neutral,0.24256950599165972,0.07913470268249512,0.5758314329801271,True,support
+gVqs4TzqySw$_$2,text,5,22,"[23, 24, 25, 26, 27]",both sides of the interaction,88,117,verified,,,unresolved,Positive,Neutral,0.1687221030456253,0.05702441930770874,0.5975902779768488,True,support
+gVqs4TzqySw$_$2,text,5,6,"[7, 8, 9, 10, 11]",more of a mutual idea,18,39,verified,,,unresolved,Positive,Neutral,-0.6336756072736374,-0.2754402756690979,0.7585129423220863,True,oppose
+gVqs4TzqySw$_$2,text,5,3,"[4, 5, 6, 7, 8]",'s much more of,10,25,verified,,,unresolved,Positive,Neutral,-0.549777036717749,-0.2361433506011963,0.745950253484081,True,oppose
+gVqs4TzqySw$_$2,text,1,6,[7],more,18,22,verified,,,unresolved,Positive,Neutral,-0.33225215644283423,-0.14096039533615112,0.7094810273442159,True,oppose
+gVqs4TzqySw$_$2,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,0.14513935022234503,0.05482989549636841,0.6124703474329293,True,support
+gVqs4TzqySw$_$2,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,0.07799878756585044,0.028637945652008057,0.6266271315847456,True,support
+gVqs4TzqySw$_$2,audio,5,6,"[7, 8, 9, 10, 11]",,,,not_applicable,,,unresolved,Positive,Neutral,0.07345602912212446,0.031530916690826416,0.6281337570707289,True,support
+gVqs4TzqySw$_$2,audio,5,21,"[22, 23, 24, 25, 26]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.08595553449665472,-0.021060645580291748,0.6632028169965546,True,oppose
+gVqs4TzqySw$_$2,audio,5,18,"[19, 20, 21, 22, 23]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.03331285624604763,-0.007538318634033203,0.6511372112094784,True,oppose
+gVqs4TzqySw$_$2,audio,1,22,[23],,,,not_applicable,,,unresolved,Positive,Neutral,-0.019042468889816644,-0.004472076892852783,0.6462031382423917,True,oppose
+gVqs4TzqySw$_$2,vision,5,7,"[21, 22, 23, 24, 25]",,,,not_applicable,,,unresolved,Positive,Neutral,0.05607705667079732,0.02179628610610962,0.6301763188248926,True,support
+gVqs4TzqySw$_$2,vision,1,8,[22],,,,not_applicable,,,unresolved,Positive,Neutral,0.01992047775807404,0.008306682109832764,0.6372529847733585,True,support
+gVqs4TzqySw$_$2,vision,1,10,[24],,,,not_applicable,,,unresolved,Positive,Neutral,0.01792079628282428,0.005726993083953857,0.6373530321389803,True,support
+gVqs4TzqySw$_$2,vision,3,4,"[18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.06311298919960762,-0.019081711769104004,0.6571325315670455,True,oppose
+gVqs4TzqySw$_$2,vision,1,0,[2],,,,not_applicable,,,unresolved,Positive,Neutral,-0.02999474607936592,-0.008892953395843506,0.6488611724846834,True,oppose
+gVqs4TzqySw$_$2,vision,1,2,[8],,,,not_applicable,,,unresolved,Positive,Neutral,-0.029613651683309206,-0.008590757846832275,0.6486804550674014,True,oppose
+gVqs4TzqySw$_$4,text,5,2,"[3, 4, 5, 6, 7]",only use either wo or,8,29,verified,,,unresolved,Neutral,Positive,0.4831481228739335,-0.00648653507232666,0.279338306541147,True,support
+gVqs4TzqySw$_$4,text,1,2,[3],only,8,12,verified,,,unresolved,Neutral,Positive,0.286078986539946,-0.07646507024765015,0.35591751394078786,True,support
+gVqs4TzqySw$_$4,text,1,0,[1],You,0,3,verified,,,unresolved,Neutral,Positive,0.142598113301857,-0.03213268518447876,0.3803502402156747,True,support
+gVqs4TzqySw$_$4,text,1,3,[4],use,13,16,verified,,,unresolved,Neutral,Positive,-0.00614543673757173,0.022664964199066162,0.38964642477263894,True,oppose
+gVqs4TzqySw$_$4,audio,1,4,[5],,,,not_applicable,,,unresolved,Neutral,Positive,0.011920648372097276,-0.007126599550247192,0.40478672819159445,True,support
+gVqs4TzqySw$_$4,audio,3,1,"[2, 3, 4]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.2676734389180505,0.05658829212188721,0.46489790232922384,True,oppose
+gVqs4TzqySw$_$4,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.1784174852917696,0.026709288358688354,0.4471751359370236,True,oppose
+gVqs4TzqySw$_$4,audio,1,6,[7],,,,not_applicable,,,unresolved,Neutral,Positive,-0.05538042247388941,0.008336067199707031,0.41951451236807985,True,oppose
+gVqs4TzqySw$_$4,vision,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Neutral,Positive,0.5307096209659407,-0.1424127221107483,0.3228586328084736,True,support
+gVqs4TzqySw$_$4,vision,3,5,"[6, 7, 8]",,,,not_applicable,,,unresolved,Neutral,Positive,0.24966709313981406,-0.06812489032745361,0.3700595320113211,True,support
+gVqs4TzqySw$_$4,vision,1,3,[4],,,,not_applicable,,,unresolved,Neutral,Positive,0.08568898428576932,-0.023738443851470947,0.3938668171211165,True,support
+kfsO4c0Ekes$_$7,text,5,9,"[10, 11, 12, 13, 14]",strong; a lot of,35,51,verified,,,unresolved,Positive,Negative,0.14126903326531348,0.1944791078567505,0.7978858626885256,True,support
+kfsO4c0Ekes$_$7,text,5,2,"[3, 4, 5, 6, 7]",my message to Tony is,7,28,verified,,,unresolved,Positive,Negative,0.09767900914051086,0.05276966094970703,0.8168645989204434,True,support
+kfsO4c0Ekes$_$7,text,5,15,"[16, 17, 18, 19, 20]",love you and care for,59,80,verified,,,unresolved,Positive,Negative,0.08339470020582018,0.09239435195922852,0.8149311734427234,True,support
+kfsO4c0Ekes$_$7,text,1,14,[15],people,52,58,verified,,,unresolved,Positive,Negative,-0.04423917565711166,0.038236379623413086,0.8292194502799113,True,oppose
+kfsO4c0Ekes$_$7,text,1,8,[9],stay,30,34,verified,,,unresolved,Positive,Negative,-0.03823026976250077,0.029093265533447266,0.8288988573175643,True,oppose
+kfsO4c0Ekes$_$7,text,1,17,[18],and,68,71,verified,,,unresolved,Positive,Negative,-0.028331640669417624,0.02902543544769287,0.8284228132598169,True,oppose
+kfsO4c0Ekes$_$7,audio,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Negative,0.02980120719158119,-0.03217887878417969,0.8312281788278713,True,support
+kfsO4c0Ekes$_$7,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Negative,0.027003821175612064,-0.0272371768951416,0.8311857492527215,True,support
+kfsO4c0Ekes$_$7,audio,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Positive,Negative,0.02173538303149769,-0.034529685974121094,0.8319079236920828,True,support
+kfsO4c0Ekes$_$7,audio,3,5,"[6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Negative,-0.005824243221974168,-0.0020923614501953125,0.8303251573759872,True,oppose
+kfsO4c0Ekes$_$7,audio,3,22,"[23, 24, 25]",,,,not_applicable,,,unresolved,Positive,Negative,-0.004637617729114751,-0.011333942413330078,0.8313998038157722,True,oppose
+kfsO4c0Ekes$_$7,audio,1,25,[26],,,,not_applicable,,,unresolved,Positive,Negative,-0.00017130511958063366,-0.0019092559814453125,0.8296793782598247,True,oppose
+kfsO4c0Ekes$_$7,vision,5,11,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Positive,Negative,-0.08110155837912592,-0.04295313358306885,0.8373755058077577,True,oppose
+kfsO4c0Ekes$_$7,vision,5,14,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Negative,-0.07834136954364546,-0.04526400566101074,0.8373648477000247,True,oppose
+kfsO4c0Ekes$_$7,vision,5,8,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Positive,Negative,-0.07228746445060441,-0.03747081756591797,0.8365138854052802,True,oppose
+mHGaQ_nv9UY$_$13,text,3,33,"[38, 39, 40]",vast beyond words,139,156,verified,,,unresolved,Positive,Neutral,0.3332287786832683,0.07063287496566772,0.377260542480918,True,support
+mHGaQ_nv9UY$_$13,text,5,29,"[34, 35, 36, 37, 38]",it's just vast,129,143,verified,,,unresolved,Positive,Neutral,0.25683606498037326,0.04387962818145752,0.40397124856026884,True,support
+mHGaQ_nv9UY$_$13,text,3,25,"[30, 31, 32]","range, I",115,123,verified,,,unresolved,Positive,Neutral,0.23211387986587528,0.04342925548553467,0.4039389435401245,True,support
+mHGaQ_nv9UY$_$13,text,5,39,"[44, 45, 46, 47, 48]",which means probably by next,170,198,verified,,,unresolved,Positive,Neutral,-0.378064603152515,-0.09519779682159424,0.5163701990415726,True,oppose
+mHGaQ_nv9UY$_$13,text,5,0,"[1, 2, 3, 4, 5]",By opening up the RAM,0,21,verified,,,unresolved,Positive,Neutral,-0.21829098573659744,-0.027171850204467773,0.4717410436817021,True,oppose
+mHGaQ_nv9UY$_$13,text,1,42,[47],by,191,193,verified,,,unresolved,Positive,Neutral,-0.19311522034491668,-0.04891467094421387,0.4821799810147713,True,oppose
+mHGaQ_nv9UY$_$13,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,0.03831174408407845,0.012206315994262695,0.43600656756558004,True,support
+mHGaQ_nv9UY$_$13,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,0.019326793017115595,0.003646671772003174,0.44142233629211575,True,support
+mHGaQ_nv9UY$_$13,audio,1,3,[4],,,,not_applicable,,,unresolved,Positive,Neutral,0.013343139122013015,0.003814101219177246,0.44094067553690913,True,support
+mHGaQ_nv9UY$_$13,audio,5,41,"[42, 43, 44, 45, 46]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.0393762766145197,-0.007611691951751709,0.45221218880797126,True,oppose
+mHGaQ_nv9UY$_$13,audio,5,32,"[33, 34, 35, 36, 37]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.03899185352410517,-0.012454241514205933,0.4550862276951695,True,oppose
+mHGaQ_nv9UY$_$13,audio,5,35,"[36, 37, 38, 39, 40]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.0280916470377387,-0.0035602450370788574,0.4507417406013611,True,oppose
+mHGaQ_nv9UY$_$13,vision,3,8,"[9, 10, 11]",,,,not_applicable,,,unresolved,Positive,Neutral,0.0035012844774150453,-0.0016634464263916016,0.4442259422023052,True,support
+mHGaQ_nv9UY$_$13,vision,5,25,"[26, 27, 28, 29, 30]",,,,not_applicable,,,unresolved,Positive,Neutral,0.002580634850856911,-0.0035652518272399902,0.44545228183434843,True,support
+mHGaQ_nv9UY$_$13,vision,3,21,"[22, 23, 24]",,,,not_applicable,,,unresolved,Positive,Neutral,0.0025633034606635796,-0.0022544264793395996,0.4442603044574442,True,support
+mHGaQ_nv9UY$_$13,vision,5,32,"[33, 34, 35, 36, 37]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.025703773955156883,-0.017200112342834473,0.45363884631473855,True,oppose
+mHGaQ_nv9UY$_$13,vision,5,43,"[44, 45, 46, 47, 48]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.025291606129054567,-0.013311058282852173,0.45232510031821044,True,oppose
+mHGaQ_nv9UY$_$13,vision,5,35,"[36, 37, 38, 39, 40]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.025178300727234038,-0.015239030122756958,0.4534116217237164,True,oppose
+nUZYqTRSGDw$_$4,text,5,17,"[18, 19, 20, 21, 22]",government look at you as,82,107,verified,,,unresolved,Negative,Positive,1.1285024777277763,-0.7498854100704193,0.7683601441415735,True,support
+nUZYqTRSGDw$_$4,text,5,14,"[15, 16, 17, 18, 19]",and have the government look,69,97,verified,,,unresolved,Negative,Positive,0.9688815324104891,-0.6745532751083374,0.7963545474887516,True,support
+nUZYqTRSGDw$_$4,text,5,20,"[21, 22, 23, 24, 25]",you as a burden.,101,117,verified,,,unresolved,Negative,Positive,0.7973226739377937,-0.5565583109855652,0.8182667967939561,True,support
+nUZYqTRSGDw$_$4,text,1,15,[16],have,73,77,verified,,,unresolved,Negative,Positive,-0.0186585255564351,0.029143691062927246,0.9063676103428986,True,oppose
+nUZYqTRSGDw$_$4,text,1,1,[2],the,4,7,verified,,,unresolved,Negative,Positive,-0.007769219659687021,0.011066794395446777,0.9044232582824084,True,oppose
+nUZYqTRSGDw$_$4,text,1,4,[5],that,23,27,verified,,,unresolved,Negative,Positive,-0.004446595955161392,0.008709311485290527,0.9043610991665881,True,oppose
+nUZYqTRSGDw$_$4,audio,5,14,"[15, 16, 17, 18, 19]",,,,not_applicable,,,unresolved,Negative,Positive,-0.15989495829192046,0.14561688899993896,0.9154051473961065,True,oppose
+nUZYqTRSGDw$_$4,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,-0.13831566980077836,0.13811242580413818,0.9139669062859733,True,oppose
+nUZYqTRSGDw$_$4,audio,5,17,"[18, 19, 20, 21, 22]",,,,not_applicable,,,unresolved,Negative,Positive,-0.13741450820390222,0.1218346357345581,0.9137911132069697,True,oppose
+nUZYqTRSGDw$_$4,vision,3,21,"[22, 23, 24]",,,,not_applicable,,,unresolved,Negative,Positive,0.023758913145710547,-0.018442988395690918,0.9016590025763149,True,support
+nUZYqTRSGDw$_$4,vision,3,12,"[13, 14, 15]",,,,not_applicable,,,unresolved,Negative,Positive,0.017813668960012574,-0.01541292667388916,0.9023527234694086,True,support
+nUZYqTRSGDw$_$4,vision,3,5,"[6, 7, 8]",,,,not_applicable,,,unresolved,Negative,Positive,0.008490267838504373,-0.004588961601257324,0.9034068783205358,True,support
+nUZYqTRSGDw$_$4,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Negative,Positive,-0.040437254408208556,0.043824195861816406,0.9056494019100527,True,oppose
+nUZYqTRSGDw$_$4,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Negative,Positive,-0.021840754189618394,0.02300560474395752,0.9049501731851257,True,oppose
+nUZYqTRSGDw$_$4,vision,3,8,"[9, 10, 11]",,,,not_applicable,,,unresolved,Negative,Positive,-0.020874131991085676,0.024840950965881348,0.9054715844959724,True,oppose
+rojyUp4FPSg$_$26,text,1,8,[9],able,26,30,verified,,,unresolved,Positive,Neutral,0.3703451552149234,0.12584763765335083,0.5461054027062581,True,support
+rojyUp4FPSg$_$26,text,5,4,"[5, 6, 7, 8, 9]",you'll be able,16,30,verified,,,unresolved,Positive,Neutral,0.35829153554465465,0.1199834942817688,0.5482263424897612,True,support
+rojyUp4FPSg$_$26,text,5,8,"[9, 10, 11, 12, 13]",able to go to a,26,41,verified,,,unresolved,Positive,Neutral,0.2689127183608129,0.0920790433883667,0.5682493666393075,True,support
+rojyUp4FPSg$_$26,text,3,41,"[45, 46, 47]",and you enter,162,175,verified,,,unresolved,Positive,Neutral,-0.3726580806459123,-0.16346073150634766,0.7059182370657916,True,oppose
+rojyUp4FPSg$_$26,text,3,2,"[3, 4, 5]","code, you",10,19,verified,,,unresolved,Positive,Neutral,-0.32184954487135387,-0.13600939512252808,0.6971801724513226,True,oppose
+rojyUp4FPSg$_$26,text,3,0,"[1, 2, 3]",With that code,0,14,verified,,,unresolved,Positive,Neutral,-0.2917117762118633,-0.11932748556137085,0.6909509574821785,True,oppose
+rojyUp4FPSg$_$26,audio,5,28,"[29, 30, 31, 32, 33]",,,,not_applicable,,,unresolved,Positive,Neutral,0.020812413517129258,0.005363047122955322,0.6283951328187695,True,support
+rojyUp4FPSg$_$26,audio,1,28,[29],,,,not_applicable,,,unresolved,Positive,Neutral,0.006437965562678061,0.002266407012939453,0.6304923549138924,True,support
+rojyUp4FPSg$_$26,audio,1,32,[33],,,,not_applicable,,,unresolved,Positive,Neutral,0.0058766661722803315,0.0007737874984741211,0.6301698260747769,True,support
+rojyUp4FPSg$_$26,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.07887624268031301,-0.027144789695739746,0.6505287610358245,True,oppose
+rojyUp4FPSg$_$26,audio,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.0776729195089021,-0.023354530334472656,0.6498342495340734,True,oppose
+rojyUp4FPSg$_$26,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.07505480145089038,-0.024926185607910156,0.6489375827854902,True,oppose
+rojyUp4FPSg$_$26,vision,5,37,"[38, 39, 40, 41, 42]",,,,not_applicable,,,unresolved,Positive,Neutral,0.029825149273655982,0.015634775161743164,0.6264308273020507,True,support
+rojyUp4FPSg$_$26,vision,5,40,"[41, 42, 43, 44, 45]",,,,not_applicable,,,unresolved,Positive,Neutral,0.01302801109067142,0.009375572204589844,0.6298566147285883,True,support
+rojyUp4FPSg$_$26,vision,1,40,[41],,,,not_applicable,,,unresolved,Positive,Neutral,0.0074176629440456665,0.003601372241973877,0.630088204184893,True,support
+rojyUp4FPSg$_$26,vision,5,29,"[30, 31, 32, 33, 34]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.04885458582679303,-0.015343666076660156,0.6436281795584574,True,oppose
+rojyUp4FPSg$_$26,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.04593205651050236,-0.015447020530700684,0.6427197143037765,True,oppose
+rojyUp4FPSg$_$26,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.035594642657405196,-0.012017011642456055,0.6400613288978795,True,oppose
+tXQpm-nKxNA$_$5,text,5,4,"[5, 6, 7, 8, 9]",already pursuing an education abroad,17,53,verified,,,unresolved,Positive,Negative,0.15249807579251984,0.014551281929016113,0.8429707757055649,True,support
+tXQpm-nKxNA$_$5,text,5,1,"[2, 3, 4, 5, 6]",those of you already pursuing,4,33,verified,,,unresolved,Positive,Negative,0.1359529856744559,0.05352818965911865,0.842130197052336,True,support
+tXQpm-nKxNA$_$5,text,5,7,"[8, 9, 10, 11, 12]",education abroad I'm,37,57,verified,,,unresolved,Positive,Negative,0.04531483051924301,0.03809237480163574,0.8479031151042191,True,support
+tXQpm-nKxNA$_$5,text,3,13,"[14, 15, 16]",grateful and wish,63,80,verified,,,unresolved,Positive,Negative,-0.11699139680485082,0.2402435541152954,0.8395440494125425,True,oppose
+tXQpm-nKxNA$_$5,text,3,11,"[12, 13, 14]",m very grateful,56,71,verified,,,unresolved,Positive,Negative,-0.08312955983670411,0.1287781000137329,0.8487555319620561,True,oppose
+tXQpm-nKxNA$_$5,text,3,15,"[16, 17, 18]",wish you well,76,89,verified,,,unresolved,Positive,Negative,-0.045631608960101655,0.024406790733337402,0.8541338749754749,True,oppose
+tXQpm-nKxNA$_$5,audio,5,1,"[2, 3, 4, 5, 6]",,,,not_applicable,,,unresolved,Positive,Negative,0.06284775740265891,-0.017389655113220215,0.8512884462788087,True,support
+tXQpm-nKxNA$_$5,audio,5,9,"[10, 11, 12, 13, 14]",,,,not_applicable,,,unresolved,Positive,Negative,0.04720718008836,-0.029839038848876953,0.852140879692974,True,support
+tXQpm-nKxNA$_$5,audio,5,12,"[13, 14, 15, 16, 17]",,,,not_applicable,,,unresolved,Positive,Negative,0.04071103283251132,-0.026279449462890625,0.8524312781390194,True,support
+tXQpm-nKxNA$_$5,vision,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Negative,-0.07245554273931898,-0.026552796363830566,0.8593328303101764,True,oppose
+tXQpm-nKxNA$_$5,vision,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Negative,-0.03692501970840967,-0.01826298236846924,0.8569382170088607,True,oppose
+tXQpm-nKxNA$_$5,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Positive,Negative,-0.034656267629166404,-0.010782837867736816,0.8568098463644371,True,oppose
+unNY4zIk8MM$_$1,text,5,21,"[22, 23, 24, 25, 26]",s been an incredible fit,90,114,verified,,,unresolved,Positive,Neutral,0.1872114668639857,0.18780779838562012,0.8390238319221567,True,support
+unNY4zIk8MM$_$1,text,5,15,"[16, 17, 18, 19, 20]","of the team, it",74,89,verified,,,unresolved,Positive,Neutral,0.14605684168487487,0.15694618225097656,0.8416121203716483,True,support
+unNY4zIk8MM$_$1,text,5,18,"[19, 20, 21, 22, 23]",", it’s been",85,96,verified,,,unresolved,Positive,Neutral,0.13777713292972082,0.14600849151611328,0.8434178957408597,True,support
+unNY4zIk8MM$_$1,text,3,26,"[27, 28, 29]",the last couple,115,130,verified,,,unresolved,Positive,Neutral,-0.019186313925731113,-0.008327722549438477,0.8527914850329411,True,oppose
+unNY4zIk8MM$_$1,text,1,25,[26],fit,111,114,verified,,,unresolved,Positive,Neutral,-0.01861600824802956,-0.00848400592803955,0.8536440137772162,True,oppose
+unNY4zIk8MM$_$1,text,1,23,[24],an,97,99,verified,,,unresolved,Positive,Neutral,-0.010778706164176644,-0.00272369384765625,0.8536405672173114,True,oppose
+unNY4zIk8MM$_$1,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.05026083394175451,-0.049103736877441406,0.8558645519697657,True,oppose
+unNY4zIk8MM$_$1,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.04556724189189865,-0.03673839569091797,0.8560064883775449,True,oppose
+unNY4zIk8MM$_$1,audio,5,14,"[15, 16, 17, 18, 19]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.045206381105550086,-0.04071497917175293,0.8560999364991068,True,oppose
+unNY4zIk8MM$_$1,vision,1,0,[9],,,,not_applicable,,,unresolved,Positive,Neutral,0.006467888900407726,0.0018589496612548828,0.8527259522543877,True,support
+unNY4zIk8MM$_$1,vision,1,3,[15],,,,not_applicable,,,unresolved,Positive,Neutral,0.004253138085640984,-0.0005593299865722656,0.8527952069909968,True,support
+unNY4zIk8MM$_$1,vision,1,2,[12],,,,not_applicable,,,unresolved,Positive,Neutral,0.003877671566824503,-0.000194549560546875,0.8527547217790736,True,support
+vU0a4F36Ksw$_$17,text,5,1,"[2, 3, 4, 5, 6]",last two papers actually resulted,3,36,verified,,,unresolved,Neutral,Positive,0.4361701310737922,-0.09970119595527649,0.3783670087182986,True,support
+vU0a4F36Ksw$_$17,text,5,11,"[12, 13, 14, 15, 16]",that originated at the University,74,107,verified,,,unresolved,Neutral,Positive,0.2002698018811928,-0.03795355558395386,0.42253350533799683,True,support
+vU0a4F36Ksw$_$17,text,1,3,[4],papers,12,18,verified,,,unresolved,Neutral,Positive,0.10251188407289002,-0.0231592059135437,0.44760722246722634,True,support
+vU0a4F36Ksw$_$17,text,1,0,[1],My,0,2,verified,,,unresolved,Neutral,Positive,-0.1914599673369035,0.04152747988700867,0.5014955633216783,True,oppose
+vU0a4F36Ksw$_$17,text,1,7,[8],having,42,48,verified,,,unresolved,Neutral,Positive,-0.0666251107410123,0.016283929347991943,0.47972649403190526,True,oppose
+vU0a4F36Ksw$_$17,text,1,6,[7],from,37,41,verified,,,unresolved,Neutral,Positive,-0.06385314359687422,0.017193585634231567,0.4790578130005851,True,oppose
+vU0a4F36Ksw$_$17,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Neutral,Positive,0.09236079026864985,-0.015477567911148071,0.4518288133130621,True,support
+vU0a4F36Ksw$_$17,audio,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,0.05677107124242753,-0.006622195243835449,0.4591560683759572,True,support
+vU0a4F36Ksw$_$17,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Neutral,Positive,0.0367934412694767,-0.008915245532989502,0.462570387903631,True,support
+vU0a4F36Ksw$_$17,audio,3,13,"[14, 15, 16]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.042589669887757586,0.011568427085876465,0.4768711464414496,True,oppose
+vU0a4F36Ksw$_$17,audio,3,11,"[12, 13, 14]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.016450061968212193,0.0025338828563690186,0.4720868505637908,True,oppose
+vU0a4F36Ksw$_$17,audio,1,0,[1],,,,not_applicable,,,unresolved,Neutral,Positive,-0.0013970281475763624,0.0005701780319213867,0.46883863312044266,True,oppose
+vU0a4F36Ksw$_$17,vision,5,10,"[11, 12, 13, 14, 15]",,,,not_applicable,,,unresolved,Neutral,Positive,0.11414872476232563,-0.022032111883163452,0.4504700577865107,True,support
+vU0a4F36Ksw$_$17,vision,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Neutral,Positive,0.02664508103889429,-0.006528079509735107,0.46682662932070573,True,support
+vU0a4F36Ksw$_$17,vision,1,13,[14],,,,not_applicable,,,unresolved,Neutral,Positive,0.023551758316723403,-0.004334151744842529,0.46454387559110155,True,support
+vU0a4F36Ksw$_$17,vision,5,4,"[5, 6, 7, 8, 9]",,,,not_applicable,,,unresolved,Neutral,Positive,-0.027524993800149833,0.0074329376220703125,0.47731688036191916,True,oppose
+vU0a4F36Ksw$_$17,vision,1,7,[8],,,,not_applicable,,,unresolved,Neutral,Positive,-0.0068011084514190134,0.0014790892601013184,0.4701684776838748,True,oppose
+vU0a4F36Ksw$_$17,vision,1,5,[6],,,,not_applicable,,,unresolved,Neutral,Positive,-0.0067041230108282335,0.001148998737335205,0.4704538594499206,True,oppose
+vU0a4F36Ksw$_$5,text,1,2,[3],interested,11,21,verified,,,unresolved,Positive,Neutral,0.25839303222775745,0.11464861035346985,0.37326037836319514,True,support
+vU0a4F36Ksw$_$5,text,5,0,"[1, 2, 3, 4, 5]",People are interested when you,0,30,verified,,,unresolved,Positive,Neutral,0.13787822865282717,0.11137491464614868,0.3893824122996957,True,support
+vU0a4F36Ksw$_$5,text,1,0,[1],People,0,6,verified,,,unresolved,Positive,Neutral,0.11065485803425801,0.010132193565368652,0.4413843680435466,True,support
+vU0a4F36Ksw$_$5,text,5,20,"[21, 22, 23, 24, 25]",questioning the big why are,106,133,verified,,,unresolved,Positive,Neutral,-0.7490018714577951,-0.29086440801620483,0.6484674556694616,True,oppose
+vU0a4F36Ksw$_$5,text,5,7,"[8, 9, 10, 11, 12]","something, or when you",48,70,verified,,,unresolved,Positive,Neutral,-0.2676782090019221,-0.08099484443664551,0.5189685365844249,True,oppose
+vU0a4F36Ksw$_$5,text,1,20,[21],questioning,106,117,verified,,,unresolved,Positive,Neutral,-0.2515526146508936,-0.10538280010223389,0.5402502410963712,True,oppose
+vU0a4F36Ksw$_$5,audio,5,18,"[19, 20, 21, 22, 23]",,,,not_applicable,,,unresolved,Positive,Neutral,0.03930160388807469,0.014053702354431152,0.4457430719464664,True,support
+vU0a4F36Ksw$_$5,audio,1,27,[28],,,,not_applicable,,,unresolved,Positive,Neutral,0.016665460072811666,0.0040364861488342285,0.45095755979843083,True,support
+vU0a4F36Ksw$_$5,audio,1,21,[22],,,,not_applicable,,,unresolved,Positive,Neutral,0.015483766284293266,0.004397869110107422,0.45061067038880037,True,support
+vU0a4F36Ksw$_$5,audio,5,0,"[1, 2, 3, 4, 5]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.09710816220676044,-0.020517408847808838,0.4760787053871163,True,oppose
+vU0a4F36Ksw$_$5,audio,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.058147044941396775,-0.010520696640014648,0.46493552914069247,True,oppose
+vU0a4F36Ksw$_$5,audio,5,3,"[4, 5, 6, 7, 8]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.053574756064789675,-0.01163327693939209,0.466164105205803,True,oppose
+vU0a4F36Ksw$_$5,vision,5,15,"[16, 17, 18, 19, 20]",,,,not_applicable,,,unresolved,Positive,Neutral,0.02496873831290214,-0.012521326541900635,0.4570510658094875,True,support
+vU0a4F36Ksw$_$5,vision,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Positive,Neutral,0.02434762870896312,-0.009590744972229004,0.45317760778047833,True,support
+vU0a4F36Ksw$_$5,vision,3,0,"[1, 2, 3]",,,,not_applicable,,,unresolved,Positive,Neutral,0.009218993927197605,-0.004997998476028442,0.4538492689812936,True,support
+vU0a4F36Ksw$_$5,vision,5,23,"[24, 25, 26, 27, 28]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.03959688137075679,-0.025847196578979492,0.4677988273282551,True,oppose
+vU0a4F36Ksw$_$5,vision,5,20,"[21, 22, 23, 24, 25]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.027956227649275633,-0.018228232860565186,0.46449062882623376,True,oppose
+vU0a4F36Ksw$_$5,vision,5,7,"[8, 9, 10, 11, 12]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.0161811431982104,-0.019702494144439697,0.4626929710287113,True,oppose
+zhE_68GMJIk$_$5,text,5,1,"[2, 3, 4, 5, 6]","1950, Sweden was already",3,27,verified,,,unresolved,Positive,Neutral,0.1972280166051289,-0.014698147773742676,0.41340694830911817,True,support
+zhE_68GMJIk$_$5,text,1,12,[13],richest,47,54,verified,,,unresolved,Positive,Neutral,0.08448375713276313,0.056508779525756836,0.37268843357793613,True,support
+zhE_68GMJIk$_$5,text,5,8,"[9, 10, 11, 12, 13]",the world's richest,35,54,verified,,,unresolved,Positive,Neutral,0.08444225249091697,0.0766734778881073,0.3631074298477913,True,support
+zhE_68GMJIk$_$5,text,5,16,"[17, 18, 19, 20, 21]",back then taxes were lower,70,96,verified,,,unresolved,Positive,Neutral,-0.4402126731360677,-0.2011648416519165,0.567207644264398,True,oppose
+zhE_68GMJIk$_$5,text,1,17,[18],then,75,79,verified,,,unresolved,Positive,Neutral,-0.2162502829429871,-0.0792047381401062,0.4648666316156068,True,oppose
+zhE_68GMJIk$_$5,text,5,13,"[14, 15, 16, 17, 18]","countries, and back then",55,79,verified,,,unresolved,Positive,Neutral,-0.19727920816329125,-0.08762812614440918,0.475958282887849,True,oppose
+zhE_68GMJIk$_$5,audio,1,27,[28],,,,not_applicable,,,unresolved,Positive,Neutral,0.00338610786741389,-0.00037226080894470215,0.40656791194606573,True,support
+zhE_68GMJIk$_$5,audio,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.1357331842810796,-0.03631216287612915,0.436191887122425,True,oppose
+zhE_68GMJIk$_$5,audio,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.11109897579831385,-0.02491670846939087,0.426570347091249,True,oppose
+zhE_68GMJIk$_$5,audio,5,2,"[3, 4, 5, 6, 7]",,,,not_applicable,,,unresolved,Positive,Neutral,-0.09636461346650471,-0.025423288345336914,0.42638547223482465,True,oppose
+zhE_68GMJIk$_$5,vision,5,8,"[9, 10, 11, 12, 13]",,,,not_applicable,,,unresolved,Positive,Neutral,0.15246092536047084,0.026224911212921143,0.3812123309526027,True,support
+zhE_68GMJIk$_$5,vision,5,11,"[12, 13, 14, 15, 16]",,,,not_applicable,,,unresolved,Positive,Neutral,0.1229374154852243,0.021076112985610962,0.3866275271546706,True,support
+zhE_68GMJIk$_$5,vision,5,5,"[6, 7, 8, 9, 10]",,,,not_applicable,,,unresolved,Positive,Neutral,0.10778638654627393,0.014953196048736572,0.3898166346440449,True,support
+zhE_68GMJIk$_$5,vision,1,28,[29],,,,not_applicable,,,unresolved,Positive,Neutral,-0.006930722395573907,-0.005115538835525513,0.41099009975182077,True,oppose
+zhE_68GMJIk$_$5,vision,1,27,[28],,,,not_applicable,,,unresolved,Positive,Neutral,-0.0056113852331969305,-0.0030199289321899414,0.4097863078938894,True,oppose

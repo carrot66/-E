@@ -1,0 +1,18 @@
+{
+  "model_version": 5,
+  "class_bias": [
+    0.30000000000000004,
+    -0.30000000000000004,
+    0.0
+  ],
+  "components": [
+    {
+      "path": "模型参数/component_0.pt",
+      "sha256": "214616f8b186f110097b88308338f443ee533e06eaba86120eba8f7403ef88d8",
+      "weight": 1.0
+    }
+  ],
+  "classification_target": "fixed full-input class vs runner-up; log probability difference of deployed predictor",
+  "text_intervention": "token identity and attention removed BEFORE each adapted BERT",
+  "zero_reference": "separate representation-zero game with original observed masks"
+}

@@ -1,0 +1,94 @@
+{
+  "version": 5,
+  "components": [
+    {
+      "path": "模型参数/component_0.pt",
+      "sha256": "214616f8b186f110097b88308338f443ee533e06eaba86120eba8f7403ef88d8",
+      "weight": 1.0
+    }
+  ],
+  "selected": {
+    "name": "token_interaction_hierarchical",
+    "config": {
+      "rank": 8,
+      "dropout": 0.3,
+      "head_lr": 0.0002,
+      "adapter_lr": 0.0001,
+      "seed": 2026,
+      "lora_layers": 4,
+      "hierarchical": true,
+      "full_layers": 0,
+      "fusion": "token_interaction",
+      "weight_power": 0.5,
+      "smoothing": 0.03,
+      "reg_weight": 0.3,
+      "text_ce": 0.2,
+      "text_reg": 0.1,
+      "av_aux": 0.05,
+      "augmentation": 0.15,
+      "token_layers": 2
+    },
+    "best_epoch": 3,
+    "checkpoint": "训练记录/token_interaction_hierarchical/best.pt",
+    "sha256": "214616f8b186f110097b88308338f443ee533e06eaba86120eba8f7403ef88d8",
+    "Accuracy": 0.625,
+    "Macro_F1": 0.6156484751518271,
+    "Weighted_F1": 0.6346360924237019,
+    "MAE": 0.5832294821739197,
+    "Pearson": 0.6607026983126006,
+    "sign_conflict_rate": 0.3695054945054945,
+    "confusion_matrix": [
+      [
+        122,
+        57,
+        27
+      ],
+      [
+        25,
+        110,
+        49
+      ],
+      [
+        21,
+        94,
+        223
+      ]
+    ],
+    "prediction_sha256": "32af388fa690c21b5f0b3444beaa59d04cfda3efd2491e944f3a5d6579ccd1d9"
+  },
+  "ensemble": false,
+  "class_bias": [
+    0.30000000000000004,
+    -0.30000000000000004,
+    0.0
+  ],
+  "deployment_rule": "token_interaction_hierarchical",
+  "smoke": false,
+  "bert_fingerprint": "c6d1313525d01cb786371972638d0f63dd799c3d39466980d534ec5d1ff65306",
+  "metrics": {
+    "Accuracy": 0.6634615384615384,
+    "Macro_F1": 0.6432399504374707,
+    "Weighted_F1": 0.6646764494316857,
+    "MAE": 0.5832294821739197,
+    "Pearson": 0.6607026983126006,
+    "sign_conflict_rate": 0.3008241758241758,
+    "confusion_matrix": [
+      [
+        138,
+        37,
+        31
+      ],
+      [
+        29,
+        94,
+        61
+      ],
+      [
+        24,
+        63,
+        251
+      ]
+    ]
+  },
+  "selection": "official-valid: declared structures, winner seed mean, top-two structure mean; group-crossfit-guarded 81-point class-bias grid; not independent test performance"
+}

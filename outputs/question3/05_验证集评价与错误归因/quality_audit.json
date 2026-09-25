@@ -1,0 +1,19 @@
+{
+  "checkpoint_hash": true,
+  "smoke": false,
+  "附件4预测": {
+    "count": 20,
+    "shapley_recomputed": true,
+    "text_spans_checked": true
+  },
+  "验证集解释": {
+    "count": 728,
+    "shapley_recomputed": true,
+    "text_spans_checked": true
+  },
+  "inference_matches_validation": true,
+  "metrics_recomputed": true,
+  "cards": 20,
+  "numerical_passed": true,
+  "scope": "numerical audit; precise AV timing and manual semantic error causes require separate review"
+}

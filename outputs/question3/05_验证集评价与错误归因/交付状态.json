@@ -1,0 +1,11 @@
+{
+  "smoke": false,
+  "attachment4_count": 20,
+  "cards": 20,
+  "prediction_and_attribution_generated": true,
+  "verified_time_windows": 0,
+  "precise_av_mapping_complete": false,
+  "manual_error_causes_reviewed": false,
+  "manual_reviewed_error_count": 0,
+  "numerical_audit": "passed"
+}

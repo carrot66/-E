@@ -1,0 +1,9 @@
+{
+  "train": 3395,
+  "valid": 728,
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "train_valid_video_overlap": 0,
+  "special_test_used_for_selection": false,
+  "test": "not scored or used for selection",
+  "smoke": false
+}

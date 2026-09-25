@@ -1,0 +1,1 @@
+{'torch': '2.6.0+cu124', 'bert_verified': 'c6d1313525d01cb786371972638d0f63dd799c3d39466980d534ec5d1ff65306', 'device': 'cuda:0'}

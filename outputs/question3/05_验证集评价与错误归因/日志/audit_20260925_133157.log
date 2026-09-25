@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_run.py", line 60, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_run.py", line 57, in main
+    audit_outputs(args.out)
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v2_audit.py", line 18, in audit_outputs
+    assert sha(out / '模型参数/best.pt') == manifest['sha256']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v2_common.py", line 34, in sha
+    with Path(path).open('rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/user/cs_tcci_yeguoao/miniconda3/envs/MathE/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/user/cs_tcci_yeguoao/MathE/outputs/question3/q3_v5_01/模型参数/best.pt'

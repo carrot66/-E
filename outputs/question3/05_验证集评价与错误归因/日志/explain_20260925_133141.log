@@ -1,0 +1,19 @@
+Explain 验证集 1/728
+Traceback (most recent call last):
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_run.py", line 60, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_run.py", line 51, in main
+    explain(args)
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_explain.py", line 79, in explain
+    explain_split(args,pred,valid,'验证集',selected,{})
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v2_explain.py", line 203, in explain_split
+    zl, zr, _ = pred.masks(data, i, masks, zero_feature=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/user/cs_tcci_yeguoao/miniconda3/envs/MathE/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/user/cs_tcci_yeguoao/MathE/question3/q3v5_explain.py", line 40, in masks
+    b=np.where(bmask,data['b'][i:i+1],b)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: operands could not be broadcast together with shapes (8,50,1) (1,3,50) (8,3,50) 

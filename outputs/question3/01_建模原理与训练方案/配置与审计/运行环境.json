@@ -1,0 +1,7 @@
+{
+  "python": "3.12.14",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.57.6",
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX A6000"
+}

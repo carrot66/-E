@@ -1,0 +1,21 @@
+<mxfile host="app.diagrams.net" modified="2026-09-25T00:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="q3-v5-validation" name="Q3 v5 验证分析流程">
+    <mxGraphModel dx="1360" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="data" value="官方 aligned_50&#xa;固定 3395 / 728&#xa;按视频分组无重叠" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173F5F;fontColor=#FFFFFF;strokeColor=#173F5F;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="270" width="210" height="110" as="geometry"/></mxCell>
+        <mxCell id="candidates" value="候选结构比较&#xa;v3 control&#xa;token interaction 系列" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2F80ED;fontColor=#FFFFFF;strokeColor=#2166C1;fontSize=15;" vertex="1" parent="1"><mxGeometry x="330" y="270" width="210" height="110" as="geometry"/></mxCell>
+        <mxCell id="seeds" value="重复种子与部署选择&#xa;2026 / 2027 / 2028&#xa;模型、种子、偏置比较" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9B51E0;fontColor=#FFFFFF;strokeColor=#753BAA;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="630" y="270" width="230" height="110" as="geometry"/></mxCell>
+        <mxCell id="metrics" value="基础性能评价&#xa;Accuracy / Macro-F1&#xa;MAE / Pearson / 混淆矩阵" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#27AE60;fontColor=#FFFFFF;strokeColor=#1E874B;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="950" y="150" width="230" height="120" as="geometry"/></mxCell>
+        <mxCell id="error" value="错误分层归因&#xa;中性、近零强度、模态缺失&#xa;置信度与强度误差" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2994A;fontColor=#FFFFFF;strokeColor=#C7772C;fontSize=15;" vertex="1" parent="1"><mxGeometry x="950" y="390" width="230" height="120" as="geometry"/></mxCell>
+        <mxCell id="report" value="论文结果&#xa;指标表、混淆矩阵、回归图&#xa;可复核审计与限制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D32F2F;fontColor=#FFFFFF;strokeColor=#A62323;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1290" y="270" width="220" height="110" as="geometry"/></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#52606D;strokeWidth=2;" edge="1" parent="1" source="data" target="candidates"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#52606D;strokeWidth=2;" edge="1" parent="1" source="candidates" target="seeds"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#52606D;strokeWidth=2;" edge="1" parent="1" source="seeds" target="metrics"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#52606D;strokeWidth=2;" edge="1" parent="1" source="seeds" target="error"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#52606D;strokeWidth=2;" edge="1" parent="1" source="metrics" target="report"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#52606D;strokeWidth=2;" edge="1" parent="1" source="error" target="report"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,32 @@
+{
+  "data_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "bert": "c6d1313525d01cb786371972638d0f63dd799c3d39466980d534ec5d1ff65306",
+  "epochs": 20,
+  "patience": 8,
+  "batch_size": 16,
+  "smoke": false,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "target_macro_f1": 0.65,
+  "candidates": [
+    "v3_control",
+    "token_interaction",
+    "token_interaction_hierarchical",
+    "token_interaction_light"
+  ],
+  "code": {
+    "q3v5_report.py": "aa7b9b5de4c6c2d11493d3e3bc17be2ece0f8d3f578199acde468941a862ac64",
+    "q3v5_model.py": "0914085717b8a956fa7973faa42e6a37f948a54e129edafa8ea0b09c87f9725b",
+    "q3v5_train.py": "0b5e3dd2e00f2ce794b90cc31e9b0996e346a42dcceca1e0c50877aba456c5b1",
+    "q3v5_run.py": "7e1e46ac217f2095ffef589a5e812e78d1456a2d06ea05906388d827233ee171",
+    "q3v5_explain.py": "0ffc93bb03fc29e7d76adf4b2942ef82b2fcd6cb2d98be485d9514d92a9672ff",
+    "q3v3_model.py": "ce87c42740156b1d2a54c73b60154f2191f6886318855bc288e1d04f0b2d5139",
+    "q3v3_explain.py": "bfbd595274b780b517b50c7d6140e39dc6706b0c90bb2d7bf9d0d921fb78bdb0",
+    "q3v2_common.py": "b805db5fd9af1d5fd18b4d5e91f49cd6764a831839dd7e66f1aca2b32ddb09b0",
+    "q3v2_model.py": "327b15261115b41271f4db50904e278ce0d6c3b8d76cba86431bd7d4b861699d",
+    "q3v2_train.py": "00fb7dd6c33adc1c914dec44dc918bf84faf1df4d43ac2cd62a52553854659f2"
+  }
+}
