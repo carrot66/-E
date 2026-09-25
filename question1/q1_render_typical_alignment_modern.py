@@ -128,11 +128,13 @@ def assign_lanes(intervals: np.ndarray, gap: float = 0.015) -> np.ndarray:
 
 
 def downsample_wave(wave: np.ndarray, max_points: int = 30_000) -> tuple[np.ndarray, np.ndarray]:
-    stride = max(1, int(math.ceil(len(wave) / max_points)))
-    n = len(wave) // stride
-    x = wave[:n * stride].reshape(n, stride)
-    # Envelope preserves both polarities while keeping the PDF light.
-    return np.arange(n, dtype=float) * stride / SAMPLE_RATE, x.mean(axis=1)
+    stride = max(1, int(math.ceil(2 * len(wave) / max_points)))
+    indices = []
+    for start in range(0, len(wave), stride):
+        block = wave[start:start + stride]
+        indices.extend([start + int(block.argmin()), start + int(block.argmax())])
+    indices = np.unique(indices)
+    return indices / SAMPLE_RATE, wave[indices]
 
 
 def build_payload(video: Path, npz_path: Path, anchor_word: str) -> dict:
@@ -242,12 +244,11 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     # B. True waveform and RMS from the embedded audio track.
     ax = fig.add_subplot(gs[1], sharex=ax)
     style_axis(ax, d, grids)
-    ax.set_ylim(-.55, .55); ax.set_ylabel("B  语音", rotation=0, labelpad=35, color=INK, fontsize=11,
+    amplitude_limit = max(float(np.max(np.abs(payload["wave"]))), .01) * 1.05
+    ax.set_ylim(-amplitude_limit, amplitude_limit); ax.set_ylabel("B  语音", rotation=0, labelpad=35, color=INK, fontsize=11,
                                            fontweight="bold", va="top"); ax.set_xlabel("")
-    highlight(ax, anchor_a, anchor_b, -.55, .55)
+    highlight(ax, anchor_a, anchor_b, -amplitude_limit, amplitude_limit)
     ax.plot(payload["wave_t"], payload["wave_y"], color=SLATE, lw=.42, alpha=.7, label="原始波形", zorder=2)
-    ax.fill_between(payload["wave_t"], -np.abs(payload["wave_y"]), np.abs(payload["wave_y"]),
-                    color=SLATE, alpha=.27, linewidth=0, zorder=1)
     ax.plot(payload["rms_t"], payload["rms"], color=SEAFOAM, lw=1.55, label="RMS（25 ms / 10 ms）", zorder=4)
     ax.legend(loc="upper right", frameon=True, framealpha=.9, edgecolor=GRID, fontsize=8)
     # The source/reproducibility statement is kept in the accompanying JSON;
@@ -273,11 +274,11 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
         iax.imshow(frame); iax.axis("off")
         for spine in iax.spines.values():
             spine.set_visible(True); spine.set_color(RED if selected else BLUE); spine.set_linewidth(1.6)
-            iax.set_title(f"帧 {int(round(ts * 30))}｜{ts:.2f} 秒", fontsize=7.3,
+            iax.set_title(f"视频帧｜{ts:.2f} 秒", fontsize=7.3,
                           color=CORAL_BLOOM if selected else LAVENDER, pad=3)
         ax.plot([ts, ts], [.08, .19], color=RED if selected else BLUE, lw=.9)
         ax.scatter([ts], [.07], s=15, color=RED if selected else BLUE, zorder=7)
-    ax.text(.005, .88, "帧图取自原始视频；红框为锚点词区间中点", transform=ax.transAxes,
+    ax.text(.005, 1.08, "帧图取自原始视频；桃色标记为锚点词区间中点", transform=ax.transAxes,
             fontsize=7.6, color=GREY, va="top")
 
     # D. Shared 50-bin representation with explicit missingness.
@@ -286,7 +287,7 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     ax = fig.add_subplot(gs[3])
     ax.set_xlim(0, 50); ax.set_ylim(-.5, 2.5); ax.set_yticks([2, 1, 0], ["文本", "语音", "视觉"])
     ax.tick_params(axis="y", labelsize=8, colors=INK, length=0)
-    ax.set_xlabel("共享片段时间（秒）；蓝色=有效观测，浅灰=缺失", color=GREY, fontsize=8.5, labelpad=7)
+    ax.set_xlabel("共享时间箱编号（1—50）；蓝色=有效观测，浅灰=缺失", color=GREY, fontsize=8.5, labelpad=7)
     for r, valid in enumerate(payload["validity"]):
         y = 2 - r
         for k in range(50):
@@ -295,14 +296,15 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     for k in payload["anchor_bins"]:
         for y in (0, 1, 2):
             ax.add_patch(Rectangle((k, y - .38), .96, .76, fill=False, edgecolor=RED, linewidth=1.3))
-    ax.set_xticks(np.arange(0, 51, 5), [str(x) for x in np.arange(0, 51, 5)], fontsize=7.5)
+    tick_bins = np.array([1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
+    ax.set_xticks(tick_bins - .5, [str(x) for x in tick_bins], fontsize=7.5)
     ax.grid(False)
     ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
     ax.spines["left"].set_color(INK); ax.spines["bottom"].set_color(INK)
     ax.text(0, 2.46, "D  共享 50 时间箱表示", color=INK, fontsize=11, fontweight="bold", va="bottom")
 
     fig.text(.075, .045,
-             "红色=锚点区间   ·   蓝色=有效观测   ·   浅灰=缺失   ·   词界来自 wav2vec2 CTC 强制对齐",
+             "桃色=锚点区间   ·   蓝色=有效观测   ·   浅灰=缺失   ·   词界来自 wav2vec2 CTC 强制对齐",
              fontsize=8, color=GREY, ha="left")
     out.mkdir(parents=True, exist_ok=True)
     stem = out / "q1_fig11_典型样本三模态时序对齐_现代版"
