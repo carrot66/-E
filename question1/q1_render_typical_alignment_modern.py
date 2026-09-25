@@ -33,21 +33,18 @@ DEFAULT_FEATURES = ROOT / "outputs" / "question1" / "问题1_全量特征结果"
 DEFAULT_OUT = ROOT / "outputs" / "question1" / "问题1_补充结果图"
 DEFAULT_SAMPLE = "-wny0OAz3g8__7"
 SAMPLE_RATE = 16_000
-# Nature-inspired scientific palette supplied by the user.
-LAVENDER = "#6A5C95"      # Lavender Dusk
-CORAL_BLOOM = "#D99AAE"   # Coral Bloom
-CORAL_PEACH = "#E7A889"   # Coral Peach / anchor highlight
-SEAFOAM = "#A9CBB8"       # Seafoam Mist / RMS
-PALE_AQUA = "#CFE3E6"      # Pale Aqua / grids
-BLUE = "#8FA2D6"           # Periwinkle Blue / valid observations
-SLATE = "#5B608C"          # Slate Violet / waveform
-RED = CORAL_PEACH
-LIGHT_RED = "#FBEFEA"
-GRID = PALE_AQUA
-GREY = "#6E7185"
-INK = "#2E3142"
-MISSING = "#EFF3F5"
-BACKGROUND = "#F6FAFB"
+# Restrained petrol-teal / ochre / rust palette, distinct from the reference.
+DEEP_TEAL = "#145A57"    # text intervals and secondary frame labels
+TEAL = "#287C73"         # valid multimodal observations
+WAVE = "#3E5664"         # raw audio waveform
+OCHRE = "#B8860B"        # RMS envelope
+RUST = "#B95635"         # anchor word and selected interval
+RUST_LIGHT = "#F9ECE6"
+GRID = "#DEE7E2"
+GREY = "#637179"
+INK = "#26363B"
+MISSING = "#E9EFEB"
+BACKGROUND = "#FBFCFA"
 
 
 def configure_font() -> None:
@@ -57,7 +54,7 @@ def configure_font() -> None:
         if any(required.issubset(FT2Font(f.fname).get_charmap()) for f in fonts):
             mpl.rcParams.update({
                 "font.family": "sans-serif", "font.sans-serif": [family, "DejaVu Sans"],
-                "axes.unicode_minus": False, "svg.fonttype": "path", "pdf.fonttype": 42,
+                "axes.unicode_minus": False, "svg.fonttype": "none", "pdf.fonttype": 42,
                 "figure.facecolor": BACKGROUND, "axes.facecolor": BACKGROUND,
                 "axes.spines.top": False, "axes.spines.right": False,
                 "savefig.facecolor": "white",
@@ -201,8 +198,8 @@ def style_axis(ax, duration: float, grids: np.ndarray) -> None:
 
 
 def highlight(ax, a: float, b: float, ymin: float, ymax: float) -> None:
-    ax.axvspan(a, b, color=LIGHT_RED, alpha=.9, zorder=0)
-    ax.vlines([a, b], ymin, ymax, color=RED, lw=1.0, ls=(0, (4, 2)), zorder=5)
+    ax.axvspan(a, b, color=RUST_LIGHT, alpha=.9, zorder=0)
+    ax.vlines([a, b], ymin, ymax, color=RUST, lw=1.0, ls=(0, (4, 2)), zorder=5)
 
 
 def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
@@ -214,13 +211,13 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     gs = fig.add_gridspec(4, 1, left=.075, right=.965, top=.82, bottom=.115,
                           height_ratios=[1.16, .92, 1.16, .54], hspace=.44)
 
-    # Header mirrors the reference's strong navy title and red anchor callout.
+    # Teal, ochre, and rust keep the same time evidence while separating the palette from the reference.
     fig.text(.075, .964, "问题一｜三模态时序对齐", color=INK, fontsize=22, fontweight="bold", va="top")
     fig.text(.075, .924, f"{payload['sample_id']}   ·   {d:.2f} 秒   ·   情感标注 {payload['label']:+.2f}（{payload['annotation']}）",
              color=GREY, fontsize=10.5, va="top")
     bins = ", ".join(str(int(x) + 1) for x in payload["anchor_bins"])
     fig.text(.075, .887, f"锚点词“{payload['anchor_word']}”  [{anchor_a:.3f}, {anchor_b:.3f}] 秒  →  时间箱 {bins}",
-             color=RED, fontsize=12.5, fontweight="bold", va="top")
+             color=RUST, fontsize=12.5, fontweight="bold", va="top")
 
     # A. Text bars with the exact aligned intervals.
     ax = fig.add_subplot(gs[0])
@@ -232,7 +229,7 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     bar_h = .026
     for i, (word, (a, b), lane) in enumerate(zip(payload["words"], payload["intervals"], payload["lanes"])):
         selected = i == payload["anchor_i"]
-        color = RED if selected else BLUE
+        color = RUST if selected else DEEP_TEAL
         y = lane_y[int(lane)]
         ax.plot([a, b], [y, y], color=color, lw=4.5, solid_capstyle="butt", zorder=7)
         ax.text((a + b) / 2, y + .045, word, ha="center", va="bottom", fontsize=7.6,
@@ -248,8 +245,8 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     ax.set_ylim(-amplitude_limit, amplitude_limit); ax.set_ylabel("B  语音", rotation=0, labelpad=35, color=INK, fontsize=11,
                                            fontweight="bold", va="top"); ax.set_xlabel("")
     highlight(ax, anchor_a, anchor_b, -amplitude_limit, amplitude_limit)
-    ax.plot(payload["wave_t"], payload["wave_y"], color=SLATE, lw=.42, alpha=.7, label="原始波形", zorder=2)
-    ax.plot(payload["rms_t"], payload["rms"], color=SEAFOAM, lw=1.55, label="RMS（25 ms / 10 ms）", zorder=4)
+    ax.plot(payload["wave_t"], payload["wave_y"], color=WAVE, lw=.42, alpha=.7, label="原始波形", zorder=2)
+    ax.plot(payload["rms_t"], payload["rms"], color=OCHRE, lw=1.55, label="RMS（25 ms / 10 ms）", zorder=4)
     ax.legend(loc="upper right", frameon=True, framealpha=.9, edgecolor=GRID, fontsize=8)
     # The source/reproducibility statement is kept in the accompanying JSON;
     # leaving the waveform panel clean prevents annotation text from covering
@@ -273,12 +270,12 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
         iax = ax.inset_axes([x_norm - .085, .19, .17, .68], transform=ax.transAxes)
         iax.imshow(frame); iax.axis("off")
         for spine in iax.spines.values():
-            spine.set_visible(True); spine.set_color(RED if selected else BLUE); spine.set_linewidth(1.6)
+            spine.set_visible(True); spine.set_color(RUST if selected else TEAL); spine.set_linewidth(1.6)
             iax.set_title(f"视频帧｜{ts:.2f} 秒", fontsize=7.3,
-                          color=CORAL_BLOOM if selected else LAVENDER, pad=3)
-        ax.plot([ts, ts], [.08, .19], color=RED if selected else BLUE, lw=.9)
-        ax.scatter([ts], [.07], s=15, color=RED if selected else BLUE, zorder=7)
-    ax.text(.005, 1.08, "帧图取自原始视频；桃色标记为锚点词区间中点", transform=ax.transAxes,
+                          color=RUST if selected else DEEP_TEAL, pad=3)
+        ax.plot([ts, ts], [.08, .19], color=RUST if selected else TEAL, lw=.9)
+        ax.scatter([ts], [.07], s=15, color=RUST if selected else TEAL, zorder=7)
+    ax.text(.005, 1.08, "帧图取自原始视频；赭红标记为锚点词区间中点", transform=ax.transAxes,
             fontsize=7.6, color=GREY, va="top")
 
     # D. Shared 50-bin representation with explicit missingness.
@@ -287,15 +284,15 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     ax = fig.add_subplot(gs[3])
     ax.set_xlim(0, 50); ax.set_ylim(-.5, 2.5); ax.set_yticks([2, 1, 0], ["文本", "语音", "视觉"])
     ax.tick_params(axis="y", labelsize=8, colors=INK, length=0)
-    ax.set_xlabel("共享时间箱编号（1—50）；蓝色=有效观测，浅灰=缺失", color=GREY, fontsize=8.5, labelpad=7)
+    ax.set_xlabel("共享时间箱编号（1—50）；青绿=有效观测，浅灰=缺失", color=GREY, fontsize=8.5, labelpad=7)
     for r, valid in enumerate(payload["validity"]):
         y = 2 - r
         for k in range(50):
-            ax.add_patch(Rectangle((k, y - .38), .96, .76, facecolor=BLUE if valid[k] else MISSING,
-                                   edgecolor="white", linewidth=.25))
+            ax.add_patch(Rectangle((k, y - .38), .96, .76, facecolor=TEAL if valid[k] else MISSING,
+                                   edgecolor=BACKGROUND, linewidth=.25))
     for k in payload["anchor_bins"]:
         for y in (0, 1, 2):
-            ax.add_patch(Rectangle((k, y - .38), .96, .76, fill=False, edgecolor=RED, linewidth=1.3))
+            ax.add_patch(Rectangle((k, y - .38), .96, .76, fill=False, edgecolor=RUST, linewidth=1.3))
     tick_bins = np.array([1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
     ax.set_xticks(tick_bins - .5, [str(x) for x in tick_bins], fontsize=7.5)
     ax.grid(False)
@@ -304,7 +301,7 @@ def render(payload: dict, video: Path, out: Path, anchor_word: str) -> None:
     ax.text(0, 2.46, "D  共享 50 时间箱表示", color=INK, fontsize=11, fontweight="bold", va="bottom")
 
     fig.text(.075, .045,
-             "桃色=锚点区间   ·   蓝色=有效观测   ·   浅灰=缺失   ·   词界来自 wav2vec2 CTC 强制对齐",
+             "赭红=锚点区间   ·   青绿=有效观测   ·   浅灰=缺失   ·   词界来自 wav2vec2 CTC 强制对齐",
              fontsize=8, color=GREY, ha="left")
     out.mkdir(parents=True, exist_ok=True)
     stem = out / "q1_fig11_典型样本三模态时序对齐_现代版"
