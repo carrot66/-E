@@ -1,0 +1,15 @@
+{
+  "route": "B",
+  "route_description": "原始 MP4/内嵌音频为来源；所有派生特征与词级区间均逐条回指原始媒体",
+  "sample_count_in_manifest": 100,
+  "raw_media_found": 100,
+  "feature_npz_found": 100,
+  "word_alignment_in_bounds": 100,
+  "waveform_statistics_match": 100,
+  "max_abs_effective_duration_diff_sec": 4.999999999988347e-05,
+  "mean_abs_effective_duration_diff_sec": 2.399999999997071e-05,
+  "passed": true,
+  "source_media_uploaded": false,
+  "source_media_note": "原始 MP4 仅保留在 38001 数据目录；GitHub 仅提交哈希、汇总和可复现实验脚本",
+  "representative_sample": "-wny0OAz3g8__7"
+}

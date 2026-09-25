@@ -1,0 +1,26 @@
+{
+  "route": "B",
+  "sample_id": "-wny0OAz3g8__7",
+  "anchor_word": "economic",
+  "anchor_interval_sec": [
+    4.706246852874756,
+    5.066725254058838
+  ],
+  "anchor_bins_1_based": [
+    30,
+    31,
+    32,
+    33
+  ],
+  "duration_sec": 7.9105,
+  "word_count": 29,
+  "audio_sample_rate_hz": 16000,
+  "audio_sample_count": 126568,
+  "waveform_rms": 0.17774701923471653,
+  "waveform_peak": 1.077629566192627,
+  "video_frame_count_in_effective_duration": 80,
+  "face_blendshape_valid_word_count": 4,
+  "source_video_sha256": "cbf9cac1048ce191aef781d0c4563eb97f9f3ddd52eb1f9551fa78d31d70e7cd",
+  "source_video_relative": "附件1-数据集原始多模态样本/MOSEI数据集部分原始视频-100条/-wny0OAz3g8/7.mp4",
+  "derived_only": true
+}

@@ -63,7 +63,9 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 完整的题目第1问文字说明、典型样本数据表和全量结果摘要见项目根目录的 `问题1_特征提取与时序对齐说明.md`。
 
-另有 [9 张问题一补充结果图](../outputs/question1/问题1_补充结果图/)（PNG、PDF、SVG），覆盖全量质量、对齐置信度、ASR 诊断、语音处理前后对比、典型样本特征和可复现流程。运行 `python question1/q1_make_figures.py` 重绘前 8 张；有原始视频和问题一提取环境时运行 `python question1/q1_audio_processing_comparison.py` 重绘第 9 张。[配图核验与口径说明](q1_figures_QA.md)说明数据与图表口径。
+另有 [10 张问题一补充结果图](../outputs/question1/问题1_补充结果图/)（PNG、PDF、SVG），覆盖全量质量、对齐置信度、ASR 诊断、语音处理前后对比、现代四联三模态时序对齐、典型样本特征和可复现流程。第 9 张按路线 B 从原始 MP4 直接解码语音；第 10 张 `q1_fig11_典型样本三模态时序对齐_现代版` 采用现代四联版式，使用不同于参考图的 `-wny0OAz3g8__7`，并把真实文本词界、波形/RMS、视频帧和 50 个共享时间箱放到同一张图。两张图同目录的核验 JSON、CSV/NPZ 保留源文件哈希、解码参数及图中数值。运行 `python question1/q1_make_figures.py` 重绘前 8 张；有原始视频和问题一提取环境时运行 `python question1/q1_audio_processing_comparison.py` 重绘第 9 张，运行 `python question1/q1_render_typical_alignment_modern.py` 重绘第 10 张。[配图核验与口径说明](q1_figures_QA.md)说明数据与图表口径。
+
+路线 B 的全量证据另存于 [问题1_路线B原始媒体审计](../outputs/question1/问题1_路线B原始媒体审计/)：脚本 `q1_routeb_raw_media_audit.py` 对附件 1 的 100 个原始 MP4 逐条计算 SHA-256，读取容器/轨道时长，现场解码内嵌音频为 16 kHz 单声道波形，并核对 NPZ 的词区间、音频统计和时间边界。审计结果为 100/100 条原始媒体、100/100 个特征 NPZ、100/100 条词区间和 100/100 条波形统计通过，最大有效时长差为 0.00005 秒。`q1_fig10_路线B原始音视频取证` 直接展示同一原始 MP4 的真实波形、词级边界和视频帧；仓库只提交派生审计结果与一条典型样本波形，不提交原始视频。第 9 张用于声学特征处理前后，第 10 张用于原始媒体取证。
 
 ## 复核要点
 

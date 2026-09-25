@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import argparse
+import csv
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -15,11 +17,13 @@ from matplotlib import font_manager
 from matplotlib.ft2font import FT2Font
 import numpy as np
 
-from q1_feature_extract import decode_audio, mel_mfcc_prosody, pool_by_word
+from q1_feature_extract import SAMPLE_RATE, decode_audio, mel_mfcc_prosody, pool_by_word
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SAMPLE = "-3g5yACwYnA__13"
+# Route-B example: complete text coverage (first word ≈0.16 s, last word
+# ≈7.77 s) leaves no artificial blank region at the left of the raw panel.
+DEFAULT_SAMPLE = "-wny0OAz3g8__7"
 DEFAULT_DATA = ROOT / "E题数据" / "E题数据"
 DEFAULT_FEATURES = ROOT / "outputs" / "question1" / "问题1_全量特征结果" / "features"
 DEFAULT_OUT = ROOT / "outputs" / "question1" / "问题1_补充结果图"
@@ -59,7 +63,11 @@ def source_video(data_root: Path, sample_id: str) -> Path:
 def prepare(video: Path, npz_path: Path) -> dict:
     if not video.is_file() or not npz_path.is_file():
         raise FileNotFoundError("原始视频或对应的第一问特征 NPZ 不存在")
-    frame, times = mel_mfcc_prosody(decode_audio(video))
+    # Route B: always decode the audio from the original MP4.  The NPZ is used
+    # only for the saved word intervals and the stored word-level audit values;
+    # it is never used as a substitute for the source waveform.
+    wave = decode_audio(video)
+    frame, times = mel_mfcc_prosody(wave)
     with np.load(npz_path, allow_pickle=False) as z:
         if str(z["sample_id"].item()) != npz_path.stem:
             raise AssertionError("NPZ 内的样本编号与请求的原始视频不一致")
@@ -90,9 +98,13 @@ def prepare(video: Path, npz_path: Path) -> dict:
     if not np.allclose(pooled_z, word_z, atol=2e-4, rtol=2e-4):
         raise AssertionError("标准化后的帧均值与已保存词级特征的同尺度表示不一致")
     return {
-        "times": times, "raw": raw, "frame_z": frame_z, "word_z": word_z,
+        "times": times, "raw": raw, "frame_z": frame_z, "word_raw": saved, "word_z": word_z,
         "words": words, "intervals": intervals, "counts": counts,
         "center": center, "scale": scale, "max_diff": max_diff,
+        "audio_sample_rate": SAMPLE_RATE, "audio_sample_count": int(len(wave)),
+        "audio_duration_sec": float(len(wave) / SAMPLE_RATE),
+        "audio_rms": float(np.sqrt(np.mean(np.square(wave, dtype=np.float64)))),
+        "audio_peak": float(np.max(np.abs(wave))) if len(wave) else 0.0,
     }
 
 
@@ -155,9 +167,55 @@ def render(data: dict, sample_id: str, out: Path) -> None:
 
 
 def write_audit(data: dict, sample_id: str, video: Path, data_root: Path, out: Path) -> None:
+    def sha256_file(path: Path) -> str:
+        digest = hashlib.sha256()
+        with path.open("rb") as fh:
+            for block in iter(lambda: fh.read(1024 * 1024), b""):
+                digest.update(block)
+        return digest.hexdigest()
+
+    def word_for_time(t: float) -> int:
+        hit = np.flatnonzero((data["intervals"][:, 0] <= t) & (t < data["intervals"][:, 1]))
+        return int(hit[0]) if len(hit) else -1
+
+    # Keep the data used for the figure beside it.  This makes the plotted
+    # values independently checkable without re-reading the original video.
+    frame_csv = out / f"{STEM}_逐帧.csv"
+    with frame_csv.open("w", newline="", encoding="utf-8-sig") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["帧序号", "时间_秒", "原始_MFCC1", "原始_RMS", "标准化_MFCC1", "标准化_RMS", "词序号", "词语"])
+        for i, t in enumerate(data["times"]):
+            wi = word_for_time(float(t))
+            writer.writerow([
+                i, f"{float(t):.6f}", f"{data['raw'][i, 0]:.9g}", f"{data['raw'][i, 1]:.9g}",
+                f"{data['frame_z'][i, 0]:.9g}", f"{data['frame_z'][i, 1]:.9g}",
+                wi + 1 if wi >= 0 else "", data["words"][wi] if wi >= 0 else "",
+            ])
+
+    word_csv = out / f"{STEM}_逐词.csv"
+    with word_csv.open("w", newline="", encoding="utf-8-sig") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["对齐位置_k", "词语", "开始_秒", "结束_秒", "帧数", "原始_MFCC1", "原始_RMS", "标准化_MFCC1", "标准化_RMS"])
+        for i, (word, (a, b), n) in enumerate(zip(data["words"], data["intervals"], data["counts"]), 1):
+            writer.writerow([
+                i, word, f"{float(a):.6f}", f"{float(b):.6f}", n,
+                f"{data['word_raw'][i-1, 0]:.9g}", f"{data['word_raw'][i-1, 1]:.9g}",
+                f"{data['word_z'][i-1, 0]:.9g}", f"{data['word_z'][i-1, 1]:.9g}",
+            ])
+
     audit = {
+        "route": "B",
+        "route_description": "原始 MP4 直接解码语音；NPZ 仅提供已核验的词区间和保存特征作一致性核验",
         "sample_id": sample_id,
         "source_video": str(video.relative_to(data_root)),
+        "source_video_size_bytes": int(video.stat().st_size),
+        "source_video_sha256": sha256_file(video),
+        "audio_decode": {"sample_rate_hz": int(data["audio_sample_rate"]), "channels": 1,
+                         "pcm_format": "float32 little-endian", "sample_count": int(data["audio_sample_count"]),
+                         "duration_sec": round(data["audio_duration_sec"], 6),
+                         "ffmpeg_options": ["-vn", "-ac", "1", "-ar", str(data["audio_sample_rate"]), "-f", "f32le"]},
+        "source_waveform_rms": data["audio_rms"],
+        "source_waveform_peak": data["audio_peak"],
         "frame_count": int(len(data["times"])),
         "word_count": int(len(data["words"])),
         "frame_window_ms": 25, "frame_hop_ms": 10,
@@ -168,6 +226,7 @@ def write_audit(data: dict, sample_id: str, video: Path, data_root: Path, out: P
         "frame_std": data["scale"].tolist(),
         "pooled_vs_saved_max_abs_diff": data["max_diff"],
         "words_without_interval_frame": int(sum(count == 0 for count in data["counts"])),
+        "data_files": [frame_csv.name, word_csv.name],
         "formats": ["png", "pdf", "svg", "tif"],
     }
     (out / f"{STEM}_核验.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -176,6 +235,9 @@ def write_audit(data: dict, sample_id: str, video: Path, data_root: Path, out: P
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         manifest["figure_count"] = len(list(out.glob("q1_fig*.png")))
         manifest["audio_comparison_figure"] = STEM
+        manifest["audio_comparison_data_files"] = [
+            f"{STEM}_核验.json", frame_csv.name, word_csv.name,
+        ]
         manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
 

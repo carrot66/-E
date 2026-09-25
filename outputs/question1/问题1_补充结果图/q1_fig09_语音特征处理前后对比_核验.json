@@ -1,8 +1,30 @@
 {
-  "sample_id": "-3g5yACwYnA__13",
-  "source_video": "附件1-数据集原始多模态样本/MOSEI数据集部分原始视频-100条/-3g5yACwYnA/13.mp4",
-  "frame_count": 540,
-  "word_count": 15,
+  "route": "B",
+  "route_description": "原始 MP4 直接解码语音；NPZ 仅提供已核验的词区间和保存特征作一致性核验",
+  "sample_id": "-wny0OAz3g8__7",
+  "source_video": "附件1-数据集原始多模态样本/MOSEI数据集部分原始视频-100条/-wny0OAz3g8/7.mp4",
+  "source_video_size_bytes": 1016813,
+  "source_video_sha256": "cbf9cac1048ce191aef781d0c4563eb97f9f3ddd52eb1f9551fa78d31d70e7cd",
+  "audio_decode": {
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "pcm_format": "float32 little-endian",
+    "sample_count": 126568,
+    "duration_sec": 7.9105,
+    "ffmpeg_options": [
+      "-vn",
+      "-ac",
+      "1",
+      "-ar",
+      "16000",
+      "-f",
+      "f32le"
+    ]
+  },
+  "source_waveform_rms": 0.17774701923471653,
+  "source_waveform_peak": 1.077629566192627,
+  "frame_count": 792,
+  "word_count": 29,
   "frame_window_ms": 25,
   "frame_hop_ms": 10,
   "features": {
@@ -12,15 +34,19 @@
   "z_score_for_display_only": true,
   "saved_audio_is_raw_scale_word_mean": true,
   "frame_mean": [
-    -40.37919968499078,
-    0.008767465999321926
+    -11.167683014943679,
+    0.14060142929395283
   ],
   "frame_std": [
-    12.531389808544386,
-    0.007627936262300636
+    10.179807456365808,
+    0.10877927389136992
   ],
   "pooled_vs_saved_max_abs_diff": 0.0,
   "words_without_interval_frame": 0,
+  "data_files": [
+    "q1_fig09_语音特征处理前后对比_逐帧.csv",
+    "q1_fig09_语音特征处理前后对比_逐词.csv"
+  ],
   "formats": [
     "png",
     "pdf",
