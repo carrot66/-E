@@ -15,7 +15,7 @@
 
 完整MOSEI的安全训练集为16,326条，按视频组隔离的验证集为1,871条。当前模型验证集 Accuracy **70.18%**、Macro-F1 **67.09%**、MAE **0.4924**；附件3共30条无标签样本，已全部预测，但不能计算其真实Acc/F1。附件3的131个联合缺失UNK位置在编码前屏蔽。训练、融合参数选择和模型选择均未使用附件3标签或完整MOSEI test标签。
 
-实验运行于远程38001服务器的 **GPU 1 (`cuda:1`)：NVIDIA RTX A6000，49140 MiB**。原始数据、完整MOSEI压缩包、特征缓存和模型权重不提交GitHub；权重仍保存在服务器 `outputs/question2/问题2_跨模态交互完整优化/` 和 `outputs/question2/问题2_DeBERTa文本增强_v1/`，SHA-256见 `../outputs/question2/最终最优结果/README.md`。
+实验运行于远程38001服务器的 **GPU 1 (`cuda:1`)：NVIDIA RTX A6000，49140 MiB**。原始数据、完整 MOSEI 压缩包和特征缓存不提交 GitHub；最终 DeBERTa 文本权重与跨模态权重已使用 Git LFS 提交，服务器目录仍保留副本，SHA-256 见 `../outputs/question2/最终最优结果/README.md`。克隆仓库后运行 `git lfs pull` 获取权重实体文件。
 
 ## 复现附件3预测与图
 

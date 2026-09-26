@@ -10,6 +10,11 @@ outputs/question2/**/*.pth
 outputs/question2/**/*.bin
 outputs/question2/**/*.pkl
 outputs/question2/**/*.tiff
+# The two final Q2 checkpoints are stored with Git LFS for reproducibility.
+!outputs/question2/问题2_DeBERTa文本增强_v1/
+!outputs/question2/问题2_DeBERTa文本增强_v1/问题2_DeBERTa文本最佳.pt
+!outputs/question2/问题2_跨模态交互完整优化/
+!outputs/question2/问题2_跨模态交互完整优化/问题2_跨模态交互完整优化_best.pt
 __pycache__/
 *.py[cod]
 .env

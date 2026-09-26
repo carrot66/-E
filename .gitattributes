@@ -1,0 +1,2 @@
+outputs/question2/问题2_DeBERTa文本增强_v1/问题2_DeBERTa文本最佳.pt filter=lfs diff=lfs merge=lfs -text
+outputs/question2/问题2_跨模态交互完整优化/问题2_跨模态交互完整优化_best.pt filter=lfs diff=lfs merge=lfs -text

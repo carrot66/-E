@@ -30,9 +30,9 @@
 
 本目录根部原跨模态结果作为可复核基线保留，没有覆盖或删除。
 
-模型权重没有上传 GitHub，两个分支均保存在远程 38001：
+最终使用的两份模型权重已上传 GitHub，并通过 Git LFS 管理；服务器 38001 仍保留原始副本：
 
-- DeBERTa：`~/数模比赛题/outputs/question2/问题2_DeBERTa文本增强_v1/问题2_DeBERTa文本最佳.pt`
-- 跨模态：`~/数模比赛题/outputs/question2/问题2_跨模态交互完整优化/问题2_跨模态交互完整优化_best.pt`
+- DeBERTa：`outputs/question2/问题2_DeBERTa文本增强_v1/问题2_DeBERTa文本最佳.pt`
+- 跨模态：`outputs/question2/问题2_跨模态交互完整优化/问题2_跨模态交互完整优化_best.pt`
 
-模型 SHA-256 分别为 `565a34365754f12fca2ac6a87fdd705aeec241ee059978d7f4ddedb517584ab4` 和 `31fcae7dddea5f9008a1d42918dc0fc2daadb7115ccf1096b1424ac1ceb13d0f`。
+模型 SHA-256 分别为 `565a34365754f12fca2ac6a87fdd705aeec241ee059978d7f4ddedb517584ab4` 和 `31fcae7dddea5f9008a1d42918dc0fc2daadb7115ccf1096b1424ac1ceb13d0f`；下载后可用 `git lfs pull` 获取实体文件。
