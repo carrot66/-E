@@ -9,8 +9,8 @@ from pathlib import Path
 import numpy as np
 import torch
 from torch.nn import functional as F
-from q3v2_common import ROOT, adapt, read_pickle, fit_stats, normalize, dump, csv_write, sha, seed_all, scores, LABELS
-from q3v2_model import FrozenText, Q3Model, tensor_inputs
+from q3_common import ROOT, adapt, read_pickle, fit_stats, normalize, dump, csv_write, sha, seed_all, scores, LABELS
+from q3_base_model import FrozenText, Q3Model, tensor_inputs
 
 
 def cache_text(data, encoder, cache, name, source_hash):
@@ -178,14 +178,14 @@ def run_train(args, encoder=None):
                      'smoke': args.smoke, 'search': args.search, 'seeds': args.seeds,
                      'ablations': not args.no_ablations, 'bert': encoder.fingerprint,
                      'data_sha256': sha(args.data_root / '附件2-数据集特征文件/aligned_50.pkl'),
-                     'code': {p.name: sha(p) for p in Path(__file__).parent.glob('q3v2_*.py')}}
+                     'code': {p.name: sha(p) for p in Path(__file__).parent.glob('q3_*.py')}}
         if prior != requested: raise ValueError('Run configuration/source changed; use a new Q3_RUN')
     train, valid, stats, source_hash = load_training(args, encoder)
     cfg = {'hidden': 96, 'dropout': .2, 'lr': 3e-4, 'mode': 'gated', 'augmentation': True, 'seed': 2026}
     provenance = {'data_sha256': source_hash, 'bert': encoder.fingerprint, 'epochs': args.epochs,
                   'patience': args.patience, 'batch_size': args.batch_size, 'smoke': args.smoke, 'search': args.search,
                   'seeds': args.seeds, 'ablations': not args.no_ablations,
-                  'code': {p.name: sha(p) for p in Path(__file__).parent.glob('q3v2_*.py')}}
+                  'code': {p.name: sha(p) for p in Path(__file__).parent.glob('q3_*.py')}}
     path = args.out / '配置与审计/训练配置.json'
     if path.exists() and json.loads(path.read_text(encoding='utf-8')) != provenance:
         raise ValueError('Existing run provenance differs; choose a new --out / Q3_RUN')

@@ -4,7 +4,7 @@ import json
 import numpy as np
 import torch
 from torch import nn
-from q3v2_common import sha
+from q3_common import sha
 
 
 class FrozenText:

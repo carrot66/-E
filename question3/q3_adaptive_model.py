@@ -1,11 +1,11 @@
-"""Trainable BERT LoRA and text-anchored residual A/V fusion for Q3 v3."""
+"""Trainable BERT LoRA and text-anchored residual A/V fusion for Q3."""
 import math
 from pathlib import Path
 import numpy as np
 import torch
 from torch import nn
 from torch.nn import functional as F
-from q3v2_model import Temporal, FrozenText
+from q3_base_model import Temporal, FrozenText
 
 
 class LoRALinear(nn.Module):

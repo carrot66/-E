@@ -1,4 +1,4 @@
-"""V5 official Q3 experiments with conservative and token-interaction candidates."""
+"""Official Q3 experiments with conservative and token-interaction candidates."""
 import copy
 import json
 import math
@@ -7,13 +7,13 @@ from pathlib import Path
 import numpy as np
 import torch
 from torch.nn import functional as F
-from q3v2_common import (read_pickle, adapt, fit_stats, normalize, scores, seed_all,
+from q3_common import (read_pickle, adapt, fit_stats, normalize, scores, seed_all,
                          csv_write, dump, sha)
-from q3v2_model import FrozenText
-from q3v2_train import subset, better
-from q3v3_model import model_inputs
-from q3v5_model import fresh_model, candidates as candidate_configs
-from q3v4_decision import adjust, select as select_bias, crossfit
+from q3_base_model import FrozenText
+from q3_train_utils import subset, better
+from q3_adaptive_model import model_inputs
+from q3_model import fresh_model, candidates as candidate_configs
+from q3_decision import adjust, select as select_bias, crossfit
 
 
 def load_data(args, tokenizer):
@@ -174,7 +174,7 @@ def train(args):
     provenance = {'data_sha256': sha(source), 'bert': fingerprint, 'epochs': args.epochs, 'patience': args.patience,
                   'batch_size': args.batch_size, 'smoke': args.smoke, 'seeds': args.seeds, 'target_macro_f1': .65,
                   'candidates': args.candidates,
-                   'code': {p.name: sha(p) for pattern in ('q3v5_*.py', 'q3v5_model.py', 'q3v3_model.py', 'q3v3_explain.py', 'q3v2_common.py', 'q3v2_model.py', 'q3v2_train.py') for p in Path(__file__).parent.glob(pattern)}}
+                   'code': {p.name: sha(p) for p in Path(__file__).parent.glob('q3_*.py')}}
     config_path = args.out / '配置与审计/训练配置.json'
     if config_path.exists() and json.loads(config_path.read_text(encoding='utf-8')) != provenance:
         raise ValueError('Changed run configuration/code: use a new Q3_RUN')

@@ -5,9 +5,9 @@ import math
 from pathlib import Path
 import numpy as np
 import torch
-from q3v2_common import MODS, LABELS, csv_write, dump, sha, normalize, special_data
-from q3v2_model import FrozenText, Q3Model
-from q3v2_train import subset, cache_text
+from q3_common import MODS, LABELS, csv_write, dump, sha, normalize, special_data
+from q3_base_model import FrozenText, Q3Model
+from q3_train_utils import subset, cache_text
 
 
 def exact_shapley(values):
@@ -71,7 +71,7 @@ def text_span(data, i, positions):
 
 def load_evidence_map(path):
     if not path: return {}
-    from q3v2_common import csv_read
+    from q3_common import csv_read
     result = {}
     for r in csv_read(path):
         key = (r['sample_id'], r['modality'], int(r['feature_index']))
@@ -234,7 +234,7 @@ def run_explain(args, encoder=None, valid=None):
     pred = Predictor(model, encoder, args.device)
     evidence_map = load_evidence_map(args.evidence_map)
     if valid is None:
-        from q3v2_common import adapt, read_pickle
+        from q3_common import adapt, read_pickle
         source = args.data_root / '附件2-数据集特征文件/aligned_50.pkl'
         training_audit = json.loads((args.out / '配置与审计/数据审计.json').read_text(encoding='utf-8'))
         source_hash = sha(source)

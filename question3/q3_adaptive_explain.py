@@ -1,14 +1,14 @@
-"""Explain the actual v3 predictor, including adapters and all deployed ensemble members."""
+"""Explain the adapter-based predictor and all deployed ensemble members."""
 import json
 import math
 from pathlib import Path
 import numpy as np
 import torch
-from q3v2_common import read_pickle, adapt, normalize, special_data, csv_write, dump, sha
-from q3v2_train import subset
-from q3v2_explain import explain_split, load_evidence_map
-from q3v2_model import FrozenText
-from q3v3_model import fresh_model
+from q3_common import read_pickle, adapt, normalize, special_data, csv_write, dump, sha
+from q3_train_utils import subset
+from q3_explain_utils import explain_split, load_evidence_map
+from q3_base_model import FrozenText
+from q3_adaptive_model import fresh_model
 
 
 class AdaptivePredictor:

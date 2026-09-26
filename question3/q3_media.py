@@ -4,7 +4,7 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
-from q3v2_common import csv_read, csv_write, dump, sha
+from q3_common import csv_read, csv_write, dump, sha
 
 
 def main():

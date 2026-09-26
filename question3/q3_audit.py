@@ -2,8 +2,8 @@
 import json
 from pathlib import Path
 import numpy as np
-from q3v2_common import MODS, csv_read, dump, sha, scores
-from q3v2_explain import exact_shapley
+from q3_common import MODS, csv_read, dump, sha, scores
+from q3_explain_utils import exact_shapley
 
 
 def audit_outputs(out):

@@ -1,4 +1,4 @@
-"""Shared I/O, metrics and official aligned-data adapter for Q3 v2."""
+"""Shared I/O, metrics and official aligned-data adapter for Q3."""
 from __future__ import annotations
 import csv
 import hashlib

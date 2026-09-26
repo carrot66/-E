@@ -1,4 +1,4 @@
-"""V5 model behavior, token interaction, bias consistency, and recovery."""
+"""Q3 model behavior, token interaction, bias consistency, and recovery."""
 import os,sys,copy,unittest,uuid,shutil
 if sys.platform=='win32': os.environ.setdefault('MKL_THREADING_LAYER','SEQUENTIAL')
 from pathlib import Path
@@ -7,9 +7,9 @@ from unittest.mock import patch
 import numpy as np
 import torch
 from transformers import BertConfig,BertModel
-from q3v5_model import TokenInteractionModel,TunedModel,candidates
-from q3v5_explain import AdaptivePredictor
-from q3v4_decision import adjust,select,crossfit,macro
+from q3_model import TokenInteractionModel,TunedModel,candidates
+from q3_explain import AdaptivePredictor
+from q3_decision import adjust,select,crossfit,macro
 
 
 class Tests(unittest.TestCase):
@@ -66,7 +66,7 @@ class Tests(unittest.TestCase):
         self.assertEqual(len(check['folds']),5)
 
     def test_resume_matches_continuous(self):
-        import q3v5_train as training
+        import q3_train as training
         data={'b':self.b.numpy(),'a':self.a.numpy(),'v':self.v.numpy(),'mask':self.mask.numpy(),
               'y':np.arange(3,dtype=np.int64),'r':np.array([-.5,0,.8],np.float32),'ids':['a','b','c'],'text_mapping':[False]*3}
         cfg=dict(self.config('v3_control'),dropout=.2)
@@ -76,7 +76,7 @@ class Tests(unittest.TestCase):
         def stop(path,obj):
             save(path,obj)
             if path.parent.name=='interrupted' and path.name=='last.pt': raise InterruptedError('simulated')
-        parent=(Path(__file__).resolve().parents[1]/'work').resolve(); folder=parent/('q3v5_test_'+uuid.uuid4().hex)
+        parent=(Path(__file__).resolve().parents[1]/'work').resolve(); folder=parent/('q3_test_'+uuid.uuid4().hex)
         folder.mkdir(parents=True)
         try:
             args=SimpleNamespace(out=folder,bert='unused',device='cpu',batch_size=2,epochs=2,patience=4)
@@ -87,7 +87,7 @@ class Tests(unittest.TestCase):
                 _,p,r=training.train_one(args,data,data,{},cfg,'interrupted','test')
             np.testing.assert_allclose(p,pp,atol=1e-7); np.testing.assert_allclose(r,rr,atol=1e-7)
         finally:
-            if folder.resolve().is_relative_to(parent) and folder.name.startswith('q3v5_test_'): shutil.rmtree(folder)
+            if folder.resolve().is_relative_to(parent) and folder.name.startswith('q3_test_'): shutil.rmtree(folder)
 
 
 if __name__=='__main__':

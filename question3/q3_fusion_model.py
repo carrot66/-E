@@ -1,7 +1,7 @@
-"""V4: stronger BERT adaptation and optional text-conditioned multimodal head."""
+"""BERT adaptation and optional text-conditioned multimodal fusion head."""
 import torch
 from torch import nn
-from q3v3_model import AdaptiveModel,Head
+from q3_adaptive_model import AdaptiveModel, Head
 
 
 class TunedModel(AdaptiveModel):
@@ -40,7 +40,7 @@ class TunedModel(AdaptiveModel):
 
 def fresh_model(bert_path,config,prior,mean_score,device,verify=False):
     from transformers import AutoModel
-    from q3v2_model import FrozenText
+    from q3_base_model import FrozenText
     fingerprint=None
     if verify:
         original=FrozenText(bert_path,'cpu'); base=original.model; fingerprint=original.fingerprint

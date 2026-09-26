@@ -5,7 +5,7 @@ import shutil
 import subprocess
 from pathlib import Path
 import numpy as np
-from q3v2_common import ROOT, MODS, special_data, csv_write, dump, sha
+from q3_common import ROOT, MODS, special_data, csv_write, dump, sha
 
 
 def forced_path(logp, labels, blank):

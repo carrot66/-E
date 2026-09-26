@@ -1,6 +1,6 @@
-"""Shared numerical figures, with accurate v5 architecture and selection disclosure."""
+"""Shared numerical figures with architecture and selection disclosure."""
 import json
-from q3v2_report import run_report as shared_report
+from q3_report_base import run_report as shared_report
 
 
 def run_report(args):
@@ -11,9 +11,9 @@ def run_report(args):
     config=json.loads((args.out/'配置与审计/训练配置.json').read_text(encoding='utf-8'))
     intro=f'''## 建模、网络和训练
 
- v5沿用官方aligned_50接口、原始文本词元和音视频特征。控制组复现v3的保守LoRA设置；新增模型在每个aligned_50位置保留文本、语音、视觉三个token，经跨模态Transformer和时间Transformer池化。层次头定义P(中性)=sigmoid(n)，正负概率由非中性概率与sigmoid(s)分解。主模型参数只从官方训练3395条样本学习。
+ 当前实现沿用官方aligned_50接口、原始文本词元和音视频特征。控制组保留保守LoRA设置；新增模型在每个aligned_50位置保留文本、语音、视觉三个token，经跨模态Transformer和时间Transformer池化。层次头定义P(中性)=sigmoid(n)，正负概率由非中性概率与sigmoid(s)分解。主模型参数只从官方训练3395条样本学习。
 
-分类和回归使用独立头。总损失为融合CE + reg_weight×SmoothL1 + text_ce×文本CE + text_reg×文本SmoothL1 + av_aux×(AV CE + reg_weight×AV SmoothL1)，干预视图额外增加augmentation×(CE+reg_weight×SmoothL1)。类别权重与训练类别频率的负weight_power次幂成比例。控制组保留v3的标签平滑和辅助损失；token交互候选只改变融合结构或单项正则参数，所有实际系数保存在各模型config中。
+分类和回归使用独立头。总损失为融合CE + reg_weight×SmoothL1 + text_ce×文本CE + text_reg×文本SmoothL1 + av_aux×(AV CE + reg_weight×AV SmoothL1)，干预视图额外增加augmentation×(CE+reg_weight×SmoothL1)。类别权重与训练类别频率的负weight_power次幂成比例。控制组保留保守配置的标签平滑和辅助损失；token交互候选只改变融合结构或单项正则参数，所有实际系数保存在各模型config中。
 
 最终首组件参数：{json.dumps(m['selected']['config'],ensure_ascii=False)}。正式训练计划：epochs={config['epochs']}、patience={config['patience']}、batch_size={config['batch_size']}。优化器AdamW、weight decay=0.01、10%预热与余弦衰减、梯度范数上限1。
 
@@ -33,6 +33,6 @@ Macro-F1≥0.65是否实际达标见目标检查.json。旧结果和烟雾实验
 
 解释始终对实际部署概率执行：先对组件概率等权平均，再应用固定类别偏置归一化，随后枚举8子集和局部遮挡。分类目标为最终log(P(c))-log(P(d))，回归为组件均值；空输入基线也经过同样固定偏置。
 
-运行命令见question3/README_Q3_V5_SERVER.md。问题1修订目录不在本模型输入依赖中；不可靠时间对应关系的处理原则可以借鉴，但附件1词时段不能直接移植至附件4。若没有附件4特征行到原媒体的已核验映射，不能宣称已交付精确语音时段或关键帧定位。
+运行命令见question3/README_Q3_SERVER.md。问题1修订目录不在本模型输入依赖中；不可靠时间对应关系的处理原则可以借鉴，但附件1词时段不能直接移植至附件4。若没有附件4特征行到原媒体的已核验映射，不能宣称已交付精确语音时段或关键帧定位。
 '''
     path.write_text(text,encoding='utf-8')

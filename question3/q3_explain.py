@@ -1,16 +1,16 @@
-"""Explain the actual v5 predictor, including token interaction and deployment rules."""
+"""Explain the deployed predictor, including token interaction and deployment rules."""
 import json
 import math
 from pathlib import Path
 import numpy as np
 import torch
-from q3v2_common import read_pickle, adapt, normalize, special_data, csv_write, dump, sha
-from q3v2_train import subset
-from q3v2_explain import explain_split, load_evidence_map
-from q3v2_model import FrozenText
-from q3v5_model import fresh_model
-from q3v4_decision import adjust
-from q3v3_explain import AdaptivePredictor as BasePredictor
+from q3_common import read_pickle, adapt, normalize, special_data, csv_write, dump, sha
+from q3_train_utils import subset
+from q3_explain_utils import explain_split, load_evidence_map
+from q3_base_model import FrozenText
+from q3_model import fresh_model
+from q3_decision import adjust
+from q3_adaptive_explain import AdaptivePredictor as BasePredictor
 
 
 class AdaptivePredictor(BasePredictor):
@@ -20,7 +20,7 @@ class AdaptivePredictor(BasePredictor):
 
     @torch.inference_mode()
     def masks(self,data,i,masks,batch=16,zero_feature=False):
-        # V5 token interaction models must re-encode all three streams for
+        # Token-interaction models must re-encode all three streams for
         # each coalition. Calling the old pooled `heads()` path would bypass
         # the cross-modal Transformer and explain a different predictor.
         masks=np.asarray(masks,bool)

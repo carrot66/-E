@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from q3v2_common import MODS, LABELS, csv_read, csv_write, dump, sha
+from q3_common import MODS, LABELS, csv_read, csv_write, dump, sha
 
 
 def read_json(path): return json.loads(Path(path).read_text(encoding='utf-8'))
@@ -138,7 +138,7 @@ def run_report(args):
     cfg = manifest['selected']['config']
     architecture = '冻结同版本BERT，输入词元遮挡后重编码；A/V按训练集观测行标准化。三模态使用独立时序轴，投影后两层残差深度卷积TCN（核3，扩张1/2），模态级4头注意力、可用性门控池化、64维共享头和三分类/强度双头。门控不是归因结果。'
     training = '损失为CE + 0.6 SmoothL1；增强开启时约10%样本生成额外遮挡视图，附加损失权重0.2。AdamW，weight decay=1e-4，梯度范数上限1，完整验证Macro-F1选模，完全同分时选MAE较低者。'
-    deployment = '最终模型在模型参数/best.pt，BERT不重复打包，使用固定资源manifest；脚本见question3/q3v2_*.py与run_q3_server.sh。'
+    deployment = '最终模型在模型参数/best.pt，BERT不重复打包，使用固定资源manifest；脚本见question3/q3_*.py与run_q3_server.sh。'
     target_text = ''
     if version == 3:
         architecture = ('固定基础BERT权重，在最后四层query/value注入rank=8、alpha=16的LoRA适配器；冻结对照不启用LoRA。'
@@ -157,7 +157,7 @@ def run_report(args):
         deployment = (f'最终部署包含{len(manifest["components"])}个组件，ensemble={manifest["ensemble"]}。'
             '模型参数/manifest.json列出组件文件、哈希和权重；component_*.pt仅保存适配器、任务层及训练标准化统计，外部BERT必须匹配指纹。'
             '集成按概率和回归值分别等权平均，解释也对同一个集成执行干预；分类目标采用log(P(c))-log(P(d))。'
-            '复现脚本为question3/q3v5_*.py与run_q3_v5_server.sh。')
+            '复现脚本为question3/q3_*.py与run_q3_server.sh。')
         target = read_json(out / '目标检查.json')
         target_text = f'\n\nMacro-F1目标=0.65；本次实测={target["value"]:.6f}；达标={target["passed"]}。烟雾测试不计达标。'
     report = f'''# 问题3：模型与实测结果说明

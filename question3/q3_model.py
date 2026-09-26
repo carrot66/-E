@@ -1,12 +1,12 @@
-"""Q3 v5 models: conservative control plus per-position cross-modal fusion."""
+"""Q3 models: conservative control plus per-position cross-modal fusion."""
 import torch
 from torch import nn
 
-from q3v3_model import FrozenText, Head, LoRALinear
-from q3v4_model import TunedModel as V4TunedModel
+from q3_adaptive_model import FrozenText, Head, LoRALinear
+from q3_fusion_model import TunedModel as ResidualFusionModel
 
 
-class TokenInteractionModel(V4TunedModel):
+class TokenInteractionModel(ResidualFusionModel):
     """Keep the three aligned modalities at each position before pooling.
 
     This follows the useful part of Q2's architecture while retaining Q3's
@@ -38,8 +38,8 @@ class TokenInteractionModel(V4TunedModel):
         self.token_head = Head(hidden, drop, config['hierarchical'])
 
     def train(self, mode=True):
-        # V3's train() correctly freezes the base BERT for LoRA, but also
-        # disables dropout in layers intentionally unfrozen by v4. Restore
+        # The shared train mode freezes base BERT; restore dropout for any
+        # layers intentionally unfrozen by a full-tuning configuration.
         # train mode only for those full-tuned layers.
         super().train(mode)
         if int(self.config.get('full_layers', 0)):
@@ -104,7 +104,7 @@ class TokenInteractionModel(V4TunedModel):
         prior_l = self.prior.clamp_min(1e-8).log()[None]
         logits = torch.where(empty[:, None], prior_l, logits)
         regression = torch.where(empty, self.mean_score, regression)
-        # Keep the auxiliary losses used by q3v4_train, with text and A/V
+        # Keep the auxiliary losses used by the training pipeline, with text and A/V
         # summaries computed from the same masked inputs.
         text_mean = text_tokens.sum(1) / observed_text.sum(1, keepdim=True).clamp_min(1)
         text_summary = torch.cat([text_tokens[:, 0], text_mean], -1)
@@ -129,7 +129,7 @@ def fresh_model(bert_path, config, prior, mean_score, device, verify=False):
     else:
         base = AutoModel.from_pretrained(bert_path, local_files_only=True, attn_implementation='eager')
         fingerprint = None
-    model_cls = TokenInteractionModel if config.get('fusion') == 'token_interaction' else V4TunedModel
+    model_cls = TokenInteractionModel if config.get('fusion') == 'token_interaction' else ResidualFusionModel
     model = model_cls(base, config, prior, mean_score).to(device)
     for module in model.modules():
         if isinstance(module, LoRALinear):
@@ -154,5 +154,5 @@ def candidates(seed):
     }
 
 
-# Compatibility name used by the v4-style smoke tests.
+# Compatibility name used by the model smoke tests.
 TunedModel = TokenInteractionModel
